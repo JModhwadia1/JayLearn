@@ -208,13 +208,10 @@ button:disabled {
 
 .practice-editor {
   width: 100%;
-  resize: vertical;
+  min-height: 13rem;
   border: 1px solid rgba(56, 189, 248, 0.25);
   border-radius: 0.9rem;
-  padding: 1rem;
-  color: #e0f2fe;
-  background: #080d1c;
-  font: 400 0.85rem/1.7 "Space Mono", monospace;
+  overflow: hidden;
 }
 
 .practice-editor:focus {
