@@ -1413,6 +1413,7 @@ const progress = {
   arrays: new Set()
 };
 const progressStorageKey = "jaylearn-progress-v1";
+const practiceStorageKey = "jaylearn-practice-v1";
 const supabaseClient = supabase.createClient(
   "https://xgmaefjrcdtyzxesmmnw.supabase.co",
   "sb_publishable_k3FcY5cJBMB0QX7uyAsHzw_6XKIeLke"
@@ -1435,6 +1436,19 @@ function loadProgress() {
 function saveProgress() {
   const saved = Object.fromEntries(Object.entries(progress).map(([moduleKey, lessons]) => [moduleKey, [...lessons].sort((a, b) => a - b)]));
   localStorage.setItem(progressStorageKey, JSON.stringify(saved));
+}
+
+function practiceDraftKey() {
+  return `${activeModule}-${activeLesson}`;
+}
+
+function savePracticeDraft() {
+  const editor = document.getElementById("practice-editor");
+  if (!editor) return;
+  const drafts = JSON.parse(localStorage.getItem(practiceStorageKey) || "{}");
+  drafts[practiceDraftKey()] = editor.value;
+  localStorage.setItem(practiceStorageKey, JSON.stringify(drafts));
+  document.getElementById("practice-status").textContent = "Draft saved on this device.";
 }
 
 async function loadRemoteProgress() {
@@ -1604,6 +1618,12 @@ function renderLesson() {
       <section class="callout mt-5 rounded-2xl p-5">
         <h3 class="text-xl font-bold text-sky-200">Try It Yourself</h3>
         <p class="mt-3 text-slate-300">${lesson.tryIt}</p>
+        <label class="mt-4 block text-sm font-bold text-white" for="practice-editor">Your answer</label>
+        <textarea id="practice-editor" class="practice-editor mt-2" rows="8" placeholder="Write your C# code or pseudocode here..."></textarea>
+        <div class="mt-3 flex flex-wrap items-center gap-3">
+          <button id="save-practice" class="btn-secondary" type="button">Save draft</button>
+          <span id="practice-status" class="text-sm text-slate-400" aria-live="polite"></span>
+        </div>
       </section>
       <section class="surface mt-5 rounded-3xl p-6">
         <h3 class="text-2xl font-bold">Lesson quiz · 5 questions</h3>
@@ -1628,6 +1648,10 @@ function renderLesson() {
     </article>`;
 
   content.querySelector("code").textContent = lesson.code;
+  const drafts = JSON.parse(localStorage.getItem(practiceStorageKey) || "{}");
+  const practiceEditor = document.getElementById("practice-editor");
+  practiceEditor.value = drafts[practiceDraftKey()] || "";
+  document.getElementById("save-practice").addEventListener("click", savePracticeDraft);
   const quizList = content.querySelector(".quiz-list");
   lesson.quiz.forEach((question, qIndex) => {
     const block = document.createElement("div");

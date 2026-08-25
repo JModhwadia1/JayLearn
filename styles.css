@@ -206,6 +206,22 @@ button:disabled {
   background: #10172a;
 }
 
+.practice-editor {
+  width: 100%;
+  resize: vertical;
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 0.9rem;
+  padding: 1rem;
+  color: #e0f2fe;
+  background: #080d1c;
+  font: 400 0.85rem/1.7 "Space Mono", monospace;
+}
+
+.practice-editor:focus {
+  border-color: var(--blue);
+  outline: 3px solid rgba(56, 189, 248, 0.2);
+}
+
 .progress-track {
   background: rgba(148, 163, 184, 0.13);
 }
