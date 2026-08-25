@@ -1443,10 +1443,10 @@ function practiceDraftKey() {
 }
 
 function savePracticeDraft() {
-  const editor = window.practiceEditor;
+  const editor = document.getElementById("practice-editor");
   if (!editor) return;
   const drafts = JSON.parse(localStorage.getItem(practiceStorageKey) || "{}");
-  drafts[practiceDraftKey()] = editor.getValue();
+  drafts[practiceDraftKey()] = editor.value;
   localStorage.setItem(practiceStorageKey, JSON.stringify(drafts));
   document.getElementById("practice-status").textContent = "Draft saved on this device.";
 }
@@ -1618,8 +1618,8 @@ function renderLesson() {
       <section class="callout mt-5 rounded-2xl p-5">
         <h3 class="text-xl font-bold text-sky-200">Try It Yourself</h3>
         <p class="mt-3 text-slate-300">${lesson.tryIt}</p>
-        <label class="mt-4 block text-sm font-bold text-white" for="practice-editor">C# editor</label>
-        <div id="practice-editor" class="practice-editor mt-2" role="textbox" aria-label="C# code editor"></div>
+        <label class="mt-4 block text-sm font-bold text-white" for="practice-editor">Your answer</label>
+        <textarea id="practice-editor" class="practice-editor mt-2" rows="8" placeholder="Write your C# code or pseudocode here..."></textarea>
         <div class="mt-3 flex flex-wrap items-center gap-3">
           <button id="save-practice" class="btn-secondary" type="button">Save draft</button>
           <span id="practice-status" class="text-sm text-slate-400" aria-live="polite"></span>
@@ -1649,19 +1649,8 @@ function renderLesson() {
 
   content.querySelector("code").textContent = lesson.code;
   const drafts = JSON.parse(localStorage.getItem(practiceStorageKey) || "{}");
-  const practiceEditor = window.ace.edit("practice-editor");
-  practiceEditor.setTheme("ace/theme/tomorrow_night");
-  practiceEditor.session.setMode("ace/mode/csharp");
-  practiceEditor.setValue(drafts[practiceDraftKey()] || "", -1);
-  practiceEditor.setOptions({
-    fontSize: "14px",
-    minLines: 8,
-    maxLines: 24,
-    showPrintMargin: false,
-    tabSize: 4,
-    useSoftTabs: true
-  });
-  window.practiceEditor = practiceEditor;
+  const practiceEditor = document.getElementById("practice-editor");
+  practiceEditor.value = drafts[practiceDraftKey()] || "";
   document.getElementById("save-practice").addEventListener("click", savePracticeDraft);
   const quizList = content.querySelector(".quiz-list");
   lesson.quiz.forEach((question, qIndex) => {
