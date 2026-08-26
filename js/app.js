@@ -1633,7 +1633,7 @@ async function authenticate(action, prefix = "") {
   }
 
   if (action === "signUp" && !result.data.session) {
-    showAuthMessage("Check your email to confirm your account.");
+    showAuthMessage("Account created. Check your email to confirm it, then click 'Already have an account? Sign in'.");
   } else {
     showAuthMessage("Signed in");
     await loadRemoteProgress();
