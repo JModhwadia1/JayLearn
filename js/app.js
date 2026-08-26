@@ -1526,22 +1526,39 @@ const supabaseClient = supabase.createClient(
 );
 let activeModule = "fundamentals";
 let activeLesson = 0;
+let activeUserId = null;
 
-function loadProgress() {
+function resetProgress() {
+  Object.keys(progress).forEach(moduleKey => {
+    progress[moduleKey] = new Set();
+  });
+}
+
+function userProgressStorageKey(userId) {
+  return `${progressStorageKey}-${userId}`;
+}
+
+function loadProgress(userId) {
+  resetProgress();
+  if (!userId) return;
+
+  const storageKey = userProgressStorageKey(userId);
   try {
-    const saved = JSON.parse(localStorage.getItem(progressStorageKey) || "{}");
+    const saved = JSON.parse(localStorage.getItem(storageKey) || "{}");
     Object.keys(progress).forEach(moduleKey => {
       const lessonIndexes = Array.isArray(saved[moduleKey]) ? saved[moduleKey] : [];
       progress[moduleKey] = new Set(lessonIndexes.filter(index => Number.isInteger(index) && index >= 0 && index < modules[moduleKey].lessons.length));
     });
   } catch (error) {
-    localStorage.removeItem(progressStorageKey);
+    localStorage.removeItem(storageKey);
   }
 }
 
 function saveProgress() {
+  if (!activeUserId) return;
+
   const saved = Object.fromEntries(Object.entries(progress).map(([moduleKey, lessons]) => [moduleKey, [...lessons].sort((a, b) => a - b)]));
-  localStorage.setItem(progressStorageKey, JSON.stringify(saved));
+  localStorage.setItem(userProgressStorageKey(activeUserId), JSON.stringify(saved));
 }
 
 function practiceDraftKey() {
@@ -1561,6 +1578,9 @@ async function loadRemoteProgress() {
   const { data: { user } } = await supabaseClient.auth.getUser();
   setAuthenticated(user);
   if (!user) return;
+
+  activeUserId = user.id;
+  loadProgress(activeUserId);
 
   const { data, error } = await supabaseClient
     .from("lesson_progress")
@@ -1600,6 +1620,10 @@ function showAuthMessage(message) {
 }
 
 function setAuthenticated(user) {
+  if (!user) {
+    activeUserId = null;
+    resetProgress();
+  }
   document.getElementById("app-shell").classList.toggle("hidden", !user);
   document.getElementById("auth-gate").classList.toggle("is-hidden", Boolean(user));
   updateAccountControls(user);
@@ -1851,6 +1875,6 @@ document.getElementById("gate-sign-in-button").addEventListener("click", () => a
 document.getElementById("gate-sign-up-button").addEventListener("click", () => authenticate("signUp", "gate-"));
 
 lucide.createIcons();
-loadProgress();
+  resetProgress();
 renderModule();
 loadRemoteProgress();
