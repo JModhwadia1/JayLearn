@@ -1579,8 +1579,7 @@ async function loadRemoteProgress() {
   setAuthenticated(user);
   if (!user) return;
 
-  activeUserId = user.id;
-  loadProgress(activeUserId);
+  const loadingUserId = user.id;
 
   const { data, error } = await supabaseClient
     .from("lesson_progress")
@@ -1592,6 +1591,8 @@ async function loadRemoteProgress() {
     return;
   }
 
+  if (activeUserId !== loadingUserId) return;
+
   data.forEach(({ module_key, lesson_index }) => {
     if (progress[module_key] && Number.isInteger(lesson_index)) progress[module_key].add(lesson_index);
   });
@@ -1601,7 +1602,7 @@ async function loadRemoteProgress() {
 
 async function saveRemoteProgress(moduleKey, lessonIndex) {
   const { data: { user } } = await supabaseClient.auth.getUser();
-  if (!user) return;
+  if (!user || user.id !== activeUserId) return;
 
   const { error } = await supabaseClient.from("lesson_progress").upsert({
     user_id: user.id,
@@ -1620,9 +1621,10 @@ function showAuthMessage(message) {
 }
 
 function setAuthenticated(user) {
-  if (!user) {
-    activeUserId = null;
-    resetProgress();
+  const userId = user ? user.id : null;
+  if (activeUserId !== userId) {
+    activeUserId = userId;
+    loadProgress(userId);
   }
   document.getElementById("app-shell").classList.toggle("hidden", !user);
   document.getElementById("auth-gate").classList.toggle("is-hidden", Boolean(user));
