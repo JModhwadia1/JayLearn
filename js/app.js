@@ -1399,6 +1399,111 @@ const modules = {
         ]
       }
     ]
+  },
+  classes: {
+    eyebrow: "Module 8 · C# object-oriented programming · 8 lessons",
+    title: "Classes & Objects",
+    description: "Learn how to model game entities with classes, objects, fields, properties, constructors, and methods in C#.",
+    completion: "Module 8 complete",
+    completionText: "You are ready to use object-oriented design to build larger C# applications and game systems.",
+    lessons: [
+      {
+        title: "Introduction to Classes", time: "45 minutes",
+        objectives: ["Explain a class as a blueprint for objects.", "Create a class with fields.", "Instantiate objects with new.", "Access data through an object."],
+        theory: ["A class defines the data and behaviour that objects of a particular kind will have. A Player class can describe every player, while each Player object represents one specific player.", "The <code>new</code> keyword creates an object from a class. Each object has its own instance data, so two players can have different names and scores.", "Good classes model one clear concept. In a game, classes might represent players, enemies, weapons, inventory items, or quests."],
+        terms: [["Class", "A definition used to create objects."], ["Object", "An instance created from a class."], ["Instance", "A specific object belonging to a class."], ["Field", "Data stored inside an object."]],
+        code: 'class Player\n{\n    public string Name = "Mira";\n    public int Score = 100;\n}\n\nPlayer player = new Player();\nConsole.WriteLine(player.Name);\nConsole.WriteLine(player.Score);',
+        tryIt: "Create a Player class with name and health fields, then create one Player object and print its values.",
+        challenge: "Create two Enemy objects with different names and health values. Display both objects.",
+        mistakes: ["A class definition does not create an object by itself.", "Use new to create an instance.", "Access instance fields through an object variable.", "Give classes and fields meaningful names."],
+        summary: "Classes define a type of object. The new keyword creates instances, and each instance stores its own values.",
+        quiz: [["What is a class?", ["A blueprint for objects", "A loop", "A compiler error"], 0, "A class defines the structure and behaviour of objects."], ["Which keyword creates an object?", ["make", "new", "class"], 1, "new creates an instance."], ["What is an object?", ["An instance of a class", "A comment", "A data type only"], 0, "An object is a specific instance created from a class."], ["How is a field accessed?", ["Through the object", "Through a comment", "Through a loop only"], 0, "The dot accesses a member on an object."], ["Can two objects have different values?", ["Yes", "No", "Only strings"], 0, "Each instance has its own instance data."]]
+      },
+      {
+        title: "Fields and Properties", time: "50 minutes",
+        objectives: ["Distinguish fields from properties.", "Use access modifiers.", "Expose controlled object data.", "Apply encapsulation."],
+        theory: ["A field stores data directly inside a class. A property provides a controlled way to read or change a value using <code>get</code> and <code>set</code>.", "Keeping data private protects an object's internal state. A property can allow other code to read a value while only the class can change it.", "Use properties when validation or controlled access matters, such as preventing a player's health from becoming negative."],
+        terms: [["Property", "A controlled way to access data."], ["Access modifier", "A keyword controlling visibility."], ["private", "Accessible only within its containing class."], ["Encapsulation", "Protecting internal state behind a public interface."]],
+        code: 'class Player\n{\n    public string Name { get; set; } = "Mira";\n    public int Health { get; private set; } = 100;\n\n    public void TakeDamage(int amount)\n    {\n        Health = Math.Max(0, Health - amount);\n    }\n}',
+        tryIt: "Create a Character class with a public Name property and a Health property that cannot be changed directly outside the class.",
+        challenge: "Add validation so TakeDamage cannot reduce Health below zero.",
+        mistakes: ["Do not expose every field publicly without a reason.", "private members cannot be accessed from unrelated classes.", "A property is not the same as a method.", "Validate values before changing state."],
+        summary: "Properties provide controlled access to data. Encapsulation protects object state and keeps values valid.",
+        quiz: [["What does private control?", ["Visibility", "Loop count", "File size"], 0, "private limits access to the containing class."], ["What does a property provide?", ["Controlled data access", "A namespace", "A comment"], 0, "Properties expose controlled get and set operations."], ["What does private set allow?", ["Only the class changes it", "Nobody reads it", "Any code changes it"], 0, "The class controls assignment while readers can still access it."], ["What is encapsulation?", ["Protecting internal state", "Removing all methods", "Creating arrays"], 0, "Encapsulation protects implementation details and state."], ["Why validate Health?", ["Keep state valid", "Increase screen size", "Rename the class"], 0, "Validation prevents invalid object data."]]
+      },
+      {
+        title: "Constructors", time: "45 minutes",
+        objectives: ["Explain a constructor.", "Write a parameterised constructor.", "Use this to refer to the current object.", "Initialise objects consistently."],
+        theory: ["A constructor is a special member that runs when an object is created. It has the same name as the class and no return type.", "Constructors establish a valid starting state. A parameterised constructor receives values so each object can be initialised with the data it needs.", "A class can have multiple constructors with different parameter lists. This is called constructor overloading."],
+        terms: [["Constructor", "A member that initialises a new object."], ["Parameter", "Input supplied to a method or constructor."], ["this", "A reference to the current object."], ["Overloading", "Multiple members with different parameter lists."]],
+        code: 'class Enemy\n{\n    public string Name { get; }\n    public int Health { get; }\n\n    public Enemy(string name, int health)\n    {\n        Name = name;\n        Health = health;\n    }\n}\n\nEnemy dragon = new Enemy("Dragon", 250);',
+        tryIt: "Create a Weapon class with a constructor that receives a name and damage value.",
+        challenge: "Add a second constructor that creates a default weapon with no arguments.",
+        mistakes: ["Constructors do not have a return type.", "The constructor name must match the class name.", "Initialise required properties in the constructor.", "Pass arguments in the correct order and type."],
+        summary: "Constructors run during object creation and establish the object's initial valid state.",
+        quiz: [["When does a constructor run?", ["When an object is created", "Only after a loop", "When a file closes"], 0, "Constructors initialise new objects."], ["Does a constructor have a return type?", ["Yes, int", "No", "Only string"], 1, "Constructors have no return type."], ["What must match the class name?", ["Constructor name", "Field value", "Namespace"], 0, "The constructor has the class name."], ["What does a parameter provide?", ["Input data", "A colour", "A comment"], 0, "Parameters supply values to initialise the object."], ["What is overloading?", ["Different parameter lists", "Deleting a class", "Changing a file"], 0, "Overloads share a name but accept different parameters."]]
+      },
+      {
+        title: "Instance Methods", time: "50 minutes",
+        objectives: ["Add behaviour to a class.", "Call methods through objects.", "Change state through methods.", "Return useful results."],
+        theory: ["An instance method is behaviour that belongs to an object. A Player object might have Heal, Jump, or AddScore methods.", "Instance methods can read and change the current object's state. A method can return a value when its caller needs a result, or use void when it performs an action without returning data.", "Methods should have one clear responsibility and should use parameters for information supplied by the caller."],
+        terms: [["Instance method", "Behaviour belonging to one object."], ["void", "A return type meaning no value is returned."], ["Return value", "The result sent back by a method."], ["Behaviour", "An action an object can perform."]],
+        code: 'class Player\n{\n    public int Score { get; private set; }\n\n    public void AddScore(int points)\n    {\n        Score += points;\n    }\n\n    public bool HasWon(int winningScore)\n    {\n        return Score >= winningScore;\n    }\n}',
+        tryIt: "Add Heal and IsAlive methods to your Character class.",
+        challenge: "Build a Player class with methods to add score, lose health, and report whether the player has won.",
+        mistakes: ["Call instance methods on an object.", "Keep method names descriptive.", "Return a value when the caller needs an answer.", "Keep each method focused."],
+        summary: "Instance methods give objects behaviour and allow them to manage their own state.",
+        quiz: [["Where does an instance method belong?", ["An object", "Only a comment", "The HTML page"], 0, "Instance methods belong to objects created from a class."], ["What does void mean?", ["No return value", "Private data", "A Boolean"], 0, "void methods perform an action without returning a value."], ["How is an instance method called?", ["object.Method()", "class = Method", "Method only"], 0, "The dot accesses the method on an object."], ["Why use parameters?", ["Supply method data", "Hide all logic", "Create a class"], 0, "Parameters let callers provide required information."], ["What should a method usually have?", ["One clear responsibility", "Every responsibility", "No name"], 0, "Focused methods are easier to understand and test."]]
+      },
+      {
+        title: "Static Members", time: "40 minutes",
+        objectives: ["Distinguish static and instance members.", "Call static methods through a class.", "Identify shared behaviour.", "Avoid unnecessary static state."],
+        theory: ["A static member belongs to the class itself rather than to one object. It can be used without creating an instance.", "Static members suit shared utilities and values common to the whole type. Instance members represent data or behaviour that differs between objects.", "Static state is shared by every caller, so use it deliberately."],
+        terms: [["static", "A member belonging to the class itself."], ["Shared state", "Data accessed by all users of a type."], ["Utility", "A general-purpose helper operation."], ["Instance state", "Data belonging to one object."]],
+        code: 'class ScoreTools\n{\n    public static int DoubleScore(int score)\n    {\n        return score * 2;\n    }\n}\n\nint bonus = ScoreTools.DoubleScore(50);\nConsole.WriteLine(bonus);',
+        tryIt: "Create a static method that converts game minutes into seconds.",
+        challenge: "Create ScoreTools methods for doubling a score and checking a pass mark.",
+        mistakes: ["Do not call an instance member as if it were static.", "Static data is shared, not copied per object.", "Use static only when object state is unnecessary.", "Call static members through the class name."],
+        summary: "Static members belong to the class and are useful for shared utilities. Instance members belong to individual objects.",
+        quiz: [["What does static belong to?", ["The class", "One object only", "A loop"], 0, "Static members belong to the type itself."], ["How do you call a static method?", ["Through the class name", "Through an unrelated object", "With new only"], 0, "Static methods are called through their class."], ["When is an instance member useful?", ["When objects have separate state", "For every constant", "Only for HTML"], 0, "Instance members store or use per-object data."], ["Is static state shared?", ["Yes", "No", "Only for strings"], 0, "All callers see the same static state."], ["What should static state be used for?", ["Genuinely shared data", "Every changing player value", "All methods"], 0, "Static state is appropriate only when sharing is intentional."]]
+      },
+      {
+        title: "Inheritance", time: "50 minutes",
+        objectives: ["Explain base and derived classes.", "Reuse common members with inheritance.", "Recognise an is-a relationship.", "Identify when composition is clearer."],
+        theory: ["Inheritance lets a derived class reuse members from a base class. A Mage is a Character, so Mage can inherit common name and health behaviour from Character.", "The colon in <code>class Mage : Character</code> declares the inheritance relationship. Derived classes can add their own members.", "Inheritance models an is-a relationship. If the relationship is has-a, composition is usually clearer: a Player has an Inventory."],
+        terms: [["Base class", "The class whose members are inherited."], ["Derived class", "A class that inherits from another class."], ["Inheritance", "Reusing and extending a base class."], ["Composition", "Building a type from other objects."]],
+        code: 'class Character\n{\n    public string Name { get; }\n\n    public Character(string name)\n    {\n        Name = name;\n    }\n}\n\nclass Mage : Character\n{\n    public int Mana { get; } = 100;\n\n    public Mage(string name) : base(name) { }\n}',
+        tryIt: "Create a Character base class and derive Warrior and Mage classes from it.",
+        challenge: "Give Warrior a Strength property and Mage a Mana property while keeping Name in the base class.",
+        mistakes: ["Inheritance should represent an is-a relationship.", "Use base to call the base constructor.", "Do not duplicate common members.", "Prefer composition for has-a relationships."],
+        summary: "Inheritance allows a derived class to reuse and extend a base class. Use it for clear is-a relationships.",
+        quiz: [["What is a derived class?", ["A class that inherits", "A loop", "A namespace"], 0, "A derived class receives members from a base class."], ["What does class Mage : Character mean?", ["Mage inherits Character", "Mage deletes Character", "Character inherits Mage"], 0, "The colon declares inheritance."], ["What relationship suits inheritance?", ["is-a", "has-a only", "prints-a"], 0, "Inheritance models an is-a relationship."], ["What does base(name) do?", ["Calls the base constructor", "Creates a loop", "Changes the namespace"], 0, "base forwards values to the base class constructor."], ["What is composition?", ["Building with other objects", "A compiler error", "A static method"], 0, "Composition models has-a relationships."]]
+      },
+      {
+        title: "Polymorphism and Interfaces", time: "55 minutes",
+        objectives: ["Explain polymorphism.", "Override virtual methods.", "Use a shared base type.", "Describe an interface contract."],
+        theory: ["Polymorphism allows code to work with a common type while each derived object provides its own behaviour.", "A base method marked <code>virtual</code> can be replaced by a derived class using <code>override</code>.", "An interface defines a contract that a class promises to provide. Interfaces are useful when unrelated classes share a capability, such as being damageable."],
+        terms: [["Polymorphism", "One interface with multiple implementations."], ["virtual", "A method that derived classes may replace."], ["override", "A derived implementation of a virtual member."], ["Interface", "A contract describing required members."]],
+        code: 'interface IDamageable\n{\n    void TakeDamage(int amount);\n}\n\nclass Enemy : IDamageable\n{\n    public int Health { get; private set; } = 100;\n\n    public void TakeDamage(int amount)\n    {\n        Health = Math.Max(0, Health - amount);\n    }\n}\n\nIDamageable target = new Enemy();\ntarget.TakeDamage(25);',
+        tryIt: "Create an IDamageable interface and implement it in an Enemy class.",
+        challenge: "Create two different IDamageable types and write a method that damages either one through the interface.",
+        mistakes: ["Implement every required interface member.", "Use override only for an inherited virtual member.", "Use a shared base type or interface for polymorphism.", "Keep interfaces focused on capabilities."],
+        summary: "Polymorphism supports interchangeable implementations, while interfaces define capabilities different classes can share.",
+        quiz: [["What does polymorphism allow?", ["Different implementations through one type", "Only one object", "No methods"], 0, "Polymorphism supports interchangeable implementations."], ["What does override do?", ["Replaces an inherited virtual method", "Creates an array", "Makes a field private"], 0, "override supplies a derived implementation."], ["What is an interface?", ["A contract", "A constructor only", "A loop"], 0, "Interfaces describe members a class promises to implement."], ["Can unrelated classes share an interface?", ["Yes", "No", "Only if static"], 0, "Interfaces can describe a shared capability."], ["What must an implementing class provide?", ["Required interface members", "Every class in the project", "Only comments"], 0, "The class must fulfil the interface contract."]]
+      },
+      {
+        title: "Object-Oriented Game Project", time: "75 minutes",
+        objectives: ["Plan a small object-oriented game system.", "Combine classes, constructors, properties, and methods.", "Represent game state with objects.", "Test interactions between objects."],
+        theory: ["Object-oriented design breaks a game into collaborating objects. A Player can hold health and score, an Enemy can hold health and damage, and a Battle can coordinate their interactions.", "Identify nouns that may become classes and verbs that may become methods. Keep each class responsible for one concept.", "Test each class separately, then test the interactions between objects."],
+        terms: [["Object-oriented design", "Organising software around collaborating objects."], ["Responsibility", "The work a class should own."], ["Collaboration", "Objects working together through members."], ["State", "The current data held by an object."]],
+        code: 'class Player\n{\n    public string Name { get; }\n    public int Health { get; private set; } = 100;\n\n    public Player(string name)\n    {\n        Name = name;\n    }\n\n    public void TakeDamage(int amount)\n    {\n        Health = Math.Max(0, Health - amount);\n    }\n}\n\nPlayer player = new Player("Mira");\nplayer.TakeDamage(30);\nConsole.WriteLine($"{player.Name}: {player.Health} HP");',
+        tryIt: "Build a Player and Enemy class, then make the player take damage and display updated health.",
+        challenge: "Extend the project with score, an enemy attack method, and a win condition. Test three scenarios.",
+        mistakes: ["Do not put every responsibility into one class.", "Protect state changes with methods when validation is needed.", "Test normal and boundary values.", "Keep object responsibilities clear."],
+        summary: "Classes and objects model game entities. Constructors, properties, methods, and collaboration create maintainable game systems.",
+        quiz: [["What should a class own?", ["A clear responsibility", "Every feature", "Only output"], 0, "Focused responsibilities make designs easier to maintain."], ["What establishes starting state?", ["A constructor", "A comment", "An icon"], 0, "Constructors initialise objects."], ["What protects state?", ["Controlled properties and methods", "Random changes", "Duplicate code"], 0, "Encapsulation controls valid changes."], ["What should you test?", ["Classes and their interactions", "Only colours", "Nothing until release"], 0, "Individual behaviour and collaboration need testing."], ["What does Module 8 combine?", ["Classes, objects, and object-oriented design", "Only arrays", "Only loops"], 0, "The project applies the module's object-oriented concepts."]]
+      }
+    ]
   }
 };
 
@@ -1410,7 +1515,8 @@ const progress = {
   conditionals: new Set(),
   loops: new Set(),
   methods: new Set(),
-  arrays: new Set()
+  arrays: new Set(),
+  classes: new Set()
 };
 const progressStorageKey = "jaylearn-progress-v1";
 const practiceStorageKey = "jaylearn-practice-v1";
