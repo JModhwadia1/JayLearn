@@ -79,6 +79,16 @@ const progress = {
   arrays: new Set(),
   classes: new Set(),
 };
+const moduleOrder = [
+  'fundamentals',
+  'variables',
+  'operators',
+  'conditionals',
+  'loops',
+  'methods',
+  'arrays',
+  'classes',
+];
 const progressStorageKey = 'jaylearn-progress-v1';
 const practiceStorageKey = 'jaylearn-practice-v1';
 const supabaseClient = supabase.createClient(
@@ -180,6 +190,7 @@ async function loadRemoteProgress() {
   });
   saveProgress();
   renderModule();
+  updateModuleButtons();
 }
 
 async function saveRemoteProgress(moduleKey, lessonIndex) {
@@ -286,7 +297,34 @@ function showPage(page) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+function isModuleUnlocked(moduleKey) {
+  const moduleIndex = moduleOrder.indexOf(moduleKey);
+  if (moduleIndex === 0) return true; // First module always unlocked
+  const previousModule = moduleOrder[moduleIndex - 1];
+  const prevModuleComplete =
+    progress[previousModule].size ===
+    modules[previousModule].lessons.length;
+  return prevModuleComplete;
+}
+
+function updateModuleButtons() {
+  document.querySelectorAll('[data-open-module]').forEach((button) => {
+    const moduleKey = button.dataset.openModule;
+    const isUnlocked = isModuleUnlocked(moduleKey);
+    button.disabled = !isUnlocked;
+    button.classList.toggle('opacity-50', !isUnlocked);
+    button.classList.toggle('cursor-not-allowed', !isUnlocked);
+    button.title = isUnlocked
+      ? ''
+      : 'Complete the previous module to unlock this course';
+  });
+}
+
 function openModule(key) {
+  if (!isModuleUnlocked(key)) {
+    showAuthMessage('Complete the previous module to unlock this course.');
+    return;
+  }
   activeModule = key;
   activeLesson = modules[key].lessons.findIndex(
     (_, index) => !progress[key].has(index),
@@ -484,6 +522,7 @@ function updateProgress() {
   document
     .getElementById('module-complete-panel')
     .classList.toggle('hidden', count !== totalLessons);
+  updateModuleButtons();
 }
 
 document
@@ -547,4 +586,5 @@ lucide.createIcons();
   resetProgress();
   renderModule();
   await loadRemoteProgress();
+  updateModuleButtons();
 })();
