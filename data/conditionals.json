@@ -1,0 +1,785 @@
+{
+  "eyebrow": "Module 4 · C# foundations · 8 lessons",
+  "title": "Conditional Statements",
+  "description": "Learn how programs make decisions using conditional logic in C#. Master if, else if, else, switch, and logical operators to build interactive applications that respond to user input.",
+  "completion": "Module 4 complete",
+  "completionText": "You are ready for Module 5, where loops teach you how to repeat code efficiently using for, while, do...while, and foreach loops.",
+  "lessons": [
+    {
+      "title": "Introduction to Conditional Statements",
+      "time": "45 minutes",
+      "objectives": [
+        "Explain what conditional statements are and why they matter.",
+        "Describe how programs evaluate true and false conditions.",
+        "Identify real-world decision-making scenarios.",
+        "Understand flowcharts as a planning tool."
+      ],
+      "theory": [
+        "Conditional statements allow a program to make decisions. When a program evaluates a condition as true or false, it can execute different code paths. Without conditionals, programs would execute the same steps every time.",
+        "A condition is a Boolean expression that evaluates to true or false. Examples include <code>score >= 50</code>, <code>name == \"Admin\"</code>, and <code>lives > 0</code>. Every decision depends on evaluating one or more conditions.",
+        "Real-world decision making is everywhere. A game decides whether a player has won. A form validator checks whether entered text is valid. A login system determines whether credentials match. A grading system assigns letter grades based on numeric scores.",
+        "A flowchart visually represents decision logic using diamond shapes for conditions and rectangles for actions. Flowcharts help programmers plan code before writing it. The flowchart structure directly translates to if, else if, else, and switch statements.",
+        "C# provides several conditional statement types. The if statement executes code only if a condition is true. The if...else statement chooses between two paths. The else if statement evaluates multiple conditions. The switch statement is useful when one variable has many possible values."
+      ],
+      "terms": [
+        [
+          "Condition",
+          "A Boolean expression evaluating to true or false."
+        ],
+        [
+          "Decision",
+          "Choosing which code to execute based on a condition."
+        ],
+        [
+          "Branch",
+          "A path of execution chosen by a conditional."
+        ],
+        [
+          "Flowchart",
+          "A visual representation of program logic using symbols."
+        ]
+      ],
+      "code": "// Simple decision\nif (score >= 50)\n{\n    Console.WriteLine(\"You passed!\");\n}\n\n// Choose between two outcomes\nif (age >= 13)\n{\n    Console.WriteLine(\"Welcome to the game.\");\n}\nelse\n{\n    Console.WriteLine(\"You are too young.\");\n}",
+      "tryIt": "Draw a flowchart for a login system that checks whether a password is correct.",
+      "challenge": "Describe three everyday situations where a computer needs to make a decision.",
+      "mistakes": [
+        "Do not assume a program always follows the same path.",
+        "Remember that conditions produce Boolean results.",
+        "Use flowcharts to plan before coding.",
+        "All code paths should be intentional, not accidental."
+      ],
+      "summary": "Conditional statements let programs make decisions. True conditions execute one block; false conditions execute another or skip entirely. Flowcharts plan decision logic.",
+      "quiz": [
+        [
+          "What does a condition produce?",
+          [
+            "Text",
+            "A Boolean value",
+            "An error"
+          ],
+          1,
+          "Conditions evaluate to true or false."
+        ],
+        [
+          "Why use conditionals?",
+          [
+            "Make programs wait",
+            "Execute different code based on situations",
+            "Slow programs down"
+          ],
+          1,
+          "Conditionals allow different outcomes based on data."
+        ],
+        [
+          "What is a flowchart?",
+          [
+            "Source code",
+            "A visual logic diagram",
+            "A compiler message"
+          ],
+          1,
+          "Flowcharts plan decision structures visually."
+        ],
+        [
+          "Which evaluates to true?",
+          [
+            "score < 50",
+            "age == 5 && age > 10",
+            "name == name"
+          ],
+          2,
+          "A variable always equals itself."
+        ],
+        [
+          "What happens if a condition is false?",
+          [
+            "Program crashes",
+            "Else block executes or code skips",
+            "Variables are deleted"
+          ],
+          1,
+          "False conditions skip the if block or run else."
+        ]
+      ]
+    },
+    {
+      "title": "The if Statement",
+      "time": "50 minutes",
+      "objectives": [
+        "Write if statements with correct syntax.",
+        "Use code blocks to group statements.",
+        "Create Boolean expressions.",
+        "Build practical programs with single conditions."
+      ],
+      "theory": [
+        "An if statement executes a code block only if its condition is true. The syntax is <code>if (condition) { statements }</code>. If the condition is false, the entire block is skipped.",
+        "The condition goes in parentheses and must evaluate to a Boolean. Comparison operators such as ==, !=, <, >, <=, and >= produce Boolean results. Logical operators such as && and || combine conditions.",
+        "Code blocks group statements using curly braces. The statements inside execute only if the condition is true. Indentation makes nesting visible and readable.",
+        "A common mistake is confusing assignment <code>=</code> with comparison <code>==</code>. The condition <code>score = 50</code> assigns 50 to score, while <code>score == 50</code> tests whether score equals 50.",
+        "If statements are the foundation of decision-making. A program might check whether a user has entered valid input, whether an item is available, or whether a game has ended. Each check uses an if statement."
+      ],
+      "terms": [
+        [
+          "if statement",
+          "Executes code if a condition is true."
+        ],
+        [
+          "Condition",
+          "The Boolean expression tested."
+        ],
+        [
+          "Code block",
+          "Statements grouped with curly braces."
+        ],
+        [
+          "Indentation",
+          "Spacing that shows code structure."
+        ]
+      ],
+      "code": "int score = 75;\nif (score >= 50)\n{\n    Console.WriteLine(\"Congratulations!\");\n    Console.WriteLine(\"You passed the exam.\");\n}\nConsole.WriteLine(\"Test complete.\");\n\nstring status = \"admin\";\nif (status == \"admin\")\n{\n    Console.WriteLine(\"You have access.\");\n}",
+      "tryIt": "Write an if statement that checks whether a number is positive and displays a message.",
+      "challenge": "Create a program that asks for a user's age and displays a message only if they are 18 or older.",
+      "mistakes": [
+        "Use == for comparison, not =.",
+        "Include curly braces even for single statements.",
+        "The condition must be Boolean.",
+        "Ensure statements end with semicolons."
+      ],
+      "summary": "If statements execute code blocks only when conditions are true. Use == to compare, not = to assign. Indentation clarifies structure.",
+      "quiz": [
+        [
+          "When does an if block execute?",
+          [
+            "Always",
+            "Only if the condition is true",
+            "Never"
+          ],
+          1,
+          "An if block runs only when the condition is true."
+        ],
+        [
+          "Correct if syntax?",
+          [
+            "if condition { }",
+            "if (condition) { }",
+            "if [condition] { }"
+          ],
+          1,
+          "Parentheses and braces are required."
+        ],
+        [
+          "What does score = 50 do in an if?",
+          [
+            "Tests equality",
+            "Assigns 50",
+            "Creates an error"
+          ],
+          1,
+          "= is assignment, not comparison."
+        ],
+        [
+          "What executes if the condition is false?",
+          [
+            "The if block",
+            "The next line after the if",
+            "An error"
+          ],
+          1,
+          "False conditions skip the if block entirely."
+        ],
+        [
+          "Why use curly braces?",
+          [
+            "Terminate statements",
+            "Group related statements",
+            "End the program"
+          ],
+          1,
+          "Braces create code blocks."
+        ]
+      ]
+    },
+    {
+      "title": "The if...else Statement",
+      "time": "50 minutes",
+      "objectives": [
+        "Write if...else statements.",
+        "Choose between two alternative code paths.",
+        "Improve program interaction with alternative outcomes.",
+        "Apply if...else to real-world scenarios."
+      ],
+      "theory": [
+        "An if...else statement provides two paths: one if the condition is true and another if it is false. The syntax is <code>if (condition) { true block } else { false block }</code>. Exactly one block executes.",
+        "The else keyword introduces the alternative code. The else block has no condition; it executes automatically if the if condition is false.",
+        "If...else is perfect for yes-or-no decisions. A login system checks whether the password matches. A validator checks whether input is empty. A game checks whether the player has won or lost.",
+        "A common pattern is checking whether a numeric value meets a threshold. <code>if (age >= 13)</code> might allow access; <code>else</code> might deny it. Another pattern checks whether text matches an expected value.",
+        "Every conditional program should handle both the true and false cases. Forgetting the else path means some user inputs produce no visible feedback, which is confusing."
+      ],
+      "terms": [
+        [
+          "if...else",
+          "Executes one of two code blocks."
+        ],
+        [
+          "else block",
+          "Code that runs if the if condition is false."
+        ],
+        [
+          "Alternative outcome",
+          "A different result based on conditions."
+        ],
+        [
+          "Mutual exclusivity",
+          "Only one block can execute."
+        ]
+      ],
+      "code": "int age = 20;\nif (age >= 18)\n{\n    Console.WriteLine(\"You are an adult.\");\n}\nelse\n{\n    Console.WriteLine(\"You are a minor.\");\n}\n\nstring password = \"secret123\";\nif (password == \"secret123\")\n{\n    Console.WriteLine(\"Access granted.\");\n}\nelse\n{\n    Console.WriteLine(\"Access denied.\");\n}",
+      "tryIt": "Write an if...else that checks whether a number is even or odd.",
+      "challenge": "Create a program asking for a user's test score and displaying either \"Pass\" or \"Fail\" based on whether the score is 50 or higher.",
+      "mistakes": [
+        "Use else, not else if, for the final alternative.",
+        "Ensure both blocks handle the expected cases.",
+        "Do not put a condition after else.",
+        "Each path should be clear to the user."
+      ],
+      "summary": "If...else provides two paths. True executes the if block; false executes the else block. Always handle both outcomes.",
+      "quiz": [
+        [
+          "When does the else block execute?",
+          [
+            "Always",
+            "If the if condition is true",
+            "If the if condition is false"
+          ],
+          2,
+          "Else runs when the if condition is false."
+        ],
+        [
+          "Can both if and else blocks execute?",
+          [
+            "Yes",
+            "No",
+            "Only if both are true"
+          ],
+          1,
+          "Exactly one block executes."
+        ],
+        [
+          "Does else need a condition?",
+          [
+            "Yes",
+            "No",
+            "Only sometimes"
+          ],
+          1,
+          "Else has no condition."
+        ],
+        [
+          "Best use for if...else?",
+          [
+            "Yes-or-no decisions",
+            "Multiple outcomes",
+            "Loops"
+          ],
+          0,
+          "If...else suits binary choices."
+        ],
+        [
+          "Result of wrong password?",
+          [
+            "Program crashes",
+            "Else block executes",
+            "Nothing happens"
+          ],
+          1,
+          "Else block provides feedback."
+        ]
+      ]
+    },
+    {
+      "title": "The else if Statement",
+      "time": "55 minutes",
+      "objectives": [
+        "Evaluate multiple conditions sequentially.",
+        "Choose among more than two paths.",
+        "Write readable chains of conditions.",
+        "Apply else if to real-world problems."
+      ],
+      "theory": [
+        "An else if statement evaluates additional conditions when the first if is false. The syntax chains conditions: <code>if (condition1) { } else if (condition2) { } else if (condition3) { } else { }</code>.",
+        "The first true condition executes its block. Once a condition is true, all remaining else if and else blocks are skipped. This is called short-circuit evaluation.",
+        "Else if is useful for grade calculation: if score >= 90, assign A; else if score >= 80, assign B; else if score >= 70, assign C; and so on. The first matching condition determines the outcome.",
+        "Weather advisors, game difficulty selectors, and shipping calculators all use else if chains. The logic is: check the most specific conditions first, then general ones, with a fallback else for unexpected cases.",
+        "Order matters. If you check <code>score >= 60</code> before <code>score >= 80</code>, a score of 85 matches the first condition and the second is never checked. Arrange conditions from most specific to least specific."
+      ],
+      "terms": [
+        [
+          "else if",
+          "Tests an additional condition if previous ones are false."
+        ],
+        [
+          "Chain",
+          "A series of conditions evaluated sequentially."
+        ],
+        [
+          "Short-circuit",
+          "Stopping evaluation once a condition is true."
+        ],
+        [
+          "Specificity",
+          "Arranging conditions from precise to general."
+        ]
+      ],
+      "code": "int score = 85;\nif (score >= 90)\n{\n    Console.WriteLine(\"Grade: A\");\n}\nelse if (score >= 80)\n{\n    Console.WriteLine(\"Grade: B\");\n}\nelse if (score >= 70)\n{\n    Console.WriteLine(\"Grade: C\");\n}\nelse if (score >= 60)\n{\n    Console.WriteLine(\"Grade: D\");\n}\nelse\n{\n    Console.WriteLine(\"Grade: F\");\n}",
+      "tryIt": "Build a grade calculator that assigns A, B, C, D, or F based on a numeric score.",
+      "challenge": "Create a weather advice system that recommends clothing based on temperature ranges.",
+      "mistakes": [
+        "Do not forget that conditions are checked in order.",
+        "Arrange from specific to general.",
+        "Include a final else for unexpected cases.",
+        "Test boundary values carefully."
+      ],
+      "summary": "Else if evaluates additional conditions. The first true condition executes; others are skipped. Arrange conditions from specific to general.",
+      "quiz": [
+        [
+          "How many else if can follow an if?",
+          [
+            "One",
+            "As many as needed",
+            "None"
+          ],
+          1,
+          "Multiple else if statements can chain."
+        ],
+        [
+          "What happens after a true condition?",
+          [
+            "All blocks execute",
+            "Remaining conditions are skipped",
+            "An error occurs"
+          ],
+          1,
+          "Remaining else if and else are skipped."
+        ],
+        [
+          "Order of conditions matters?",
+          [
+            "Yes",
+            "No",
+            "Only sometimes"
+          ],
+          0,
+          "Specific conditions should come first."
+        ],
+        [
+          "Best for else if?",
+          [
+            "Binary choices",
+            "Multiple categories",
+            "Loops"
+          ],
+          1,
+          "Else if handles multiple outcomes."
+        ],
+        [
+          "Result of score 75 in grade system?",
+          [
+            "A",
+            "C",
+            "D"
+          ],
+          2,
+          "75 >= 70 but < 80 produces C."
+        ]
+      ]
+    },
+    {
+      "title": "Nested if Statements",
+      "time": "55 minutes",
+      "objectives": [
+        "Understand when to nest conditions.",
+        "Write readable nested logic.",
+        "Identify when nesting becomes problematic.",
+        "Simplify nested conditions with logical operators."
+      ],
+      "theory": [
+        "A nested if statement is an if statement inside another if statement. The inner if only executes if the outer condition is true. Nesting is useful when decisions depend on multiple independent conditions.",
+        "A common example is validating user input. Outer if checks whether input is not empty; inner if checks whether it is numeric. Only if both are true does the program proceed.",
+        "Deep nesting—three or more levels—makes code hard to read. A rule of thumb: limit nesting to two levels. Deeper nesting is usually a sign to use logical operators instead.",
+        "Logical operators &&, ||, and ! let you combine conditions in a single if statement instead of nesting. <code>if (age >= 13 && parent_consent == true)</code> is clearer than nesting two ifs.",
+        "Nested ifs are still useful for sequential checks where later decisions depend on earlier results. For independent conditions, use && and || to keep code flat."
+      ],
+      "terms": [
+        [
+          "Nested if",
+          "An if statement inside another if."
+        ],
+        [
+          "Outer condition",
+          "The first if being evaluated."
+        ],
+        [
+          "Inner condition",
+          "The second if that depends on the first."
+        ],
+        [
+          "Logical operators",
+          "&&, ||, and ! for combining conditions."
+        ]
+      ],
+      "code": "int age = 20;\nbool hasConsent = true;\n\nif (age >= 13)\n{\n    if (hasConsent)\n    {\n        Console.WriteLine(\"Access granted.\");\n    }\n    else\n    {\n        Console.WriteLine(\"Parent consent required.\");\n    }\n}\nelse\n{\n    Console.WriteLine(\"Too young for access.\");\n}\n\n// Better: combine with logical operator\nif (age >= 13 && hasConsent)\n{\n    Console.WriteLine(\"Access granted.\");\n}\nelse if (age >= 13 && !hasConsent)\n{\n    Console.WriteLine(\"Parent consent required.\");\n}\nelse\n{\n    Console.WriteLine(\"Too young for access.\");\n}",
+      "tryIt": "Write nested ifs checking whether a user is an admin and has a valid password.",
+      "challenge": "Rewrite a two-level nested if using logical operators instead.",
+      "mistakes": [
+        "Do not nest more than two levels.",
+        "Use && and || instead of deep nesting.",
+        "Ensure inner blocks are indented clearly.",
+        "Test all paths through nested logic."
+      ],
+      "summary": "Nested ifs handle sequential dependent conditions. For independent conditions, use logical operators to keep code flat and readable.",
+      "quiz": [
+        [
+          "When is nesting useful?",
+          [
+            "For all conditions",
+            "For sequential dependent decisions",
+            "For independent choices"
+          ],
+          1,
+          "Nesting is for conditions that depend on previous results."
+        ],
+        [
+          "How many nesting levels are recommended?",
+          [
+            "One or two",
+            "As many as needed",
+            "Five or more"
+          ],
+          0,
+          "Limit nesting to two levels for readability."
+        ],
+        [
+          "What replaces deep nesting?",
+          [
+            "Comments",
+            "Logical operators",
+            "Variables"
+          ],
+          1,
+          "&& and || flatten conditions."
+        ],
+        [
+          "Inner if executes when?",
+          [
+            "Always",
+            "Only if outer if is true",
+            "Never"
+          ],
+          1,
+          "Inner ifs depend on outer conditions."
+        ],
+        [
+          "Best alternative to nesting?",
+          [
+            "More ifs",
+            "Logical operators",
+            "Larger blocks"
+          ],
+          1,
+          "Combine conditions with && or ||."
+        ]
+      ]
+    },
+    {
+      "title": "The switch Statement",
+      "time": "50 minutes",
+      "objectives": [
+        "Write switch statements with correct syntax.",
+        "Use case and break keywords.",
+        "Handle default cases.",
+        "Identify when switch is better than if...else."
+      ],
+      "theory": [
+        "A switch statement is useful when a single variable has many possible values. Instead of a long chain of else if statements, switch provides a cleaner syntax.",
+        "The syntax is <code>switch (expression) { case value1: code; break; case value2: code; break; default: code; }</code>. The expression is evaluated once. Each case compares to the expression value.",
+        "The break keyword exits the switch. Without break, execution continues to the next case, causing unintended behavior. Most cases need break unless intentionally falling through.",
+        "The default case handles unexpected values. It is like the final else in an if...else chain. Default is optional but recommended for safety.",
+        "Switch works well for menu selection, day of the week, game states, or any situation with discrete, predictable values. Switch is clearer than else if when comparing one variable to multiple constants."
+      ],
+      "terms": [
+        [
+          "switch",
+          "Tests one expression against multiple values."
+        ],
+        [
+          "case",
+          "A label matching a specific value."
+        ],
+        [
+          "break",
+          "Exits the switch statement."
+        ],
+        [
+          "default",
+          "Executes if no case matches."
+        ]
+      ],
+      "code": "int day = 3;\nswitch (day)\n{\n    case 1:\n        Console.WriteLine(\"Monday\");\n        break;\n    case 2:\n        Console.WriteLine(\"Tuesday\");\n        break;\n    case 3:\n        Console.WriteLine(\"Wednesday\");\n        break;\n    default:\n        Console.WriteLine(\"Invalid day\");\n        break;\n}\n\nchar grade = 'B';\nswitch (grade)\n{\n    case 'A':\n    case 'B':\n        Console.WriteLine(\"Excellent work!\");\n        break;\n    case 'C':\n        Console.WriteLine(\"Good effort.\");\n        break;\n    default:\n        Console.WriteLine(\"Keep improving.\");\n        break;\n}",
+      "tryIt": "Create a switch that translates a number 1-3 into a colour name.",
+      "challenge": "Build a calculator menu using switch to select between +, −, *, and / operations.",
+      "mistakes": [
+        "Do not forget break statements.",
+        "Each case needs a value, not a condition.",
+        "Default handles unexpected cases.",
+        "Test all possible values."
+      ],
+      "summary": "Switch tests one expression against multiple values. Each case needs break. Default handles unexpected cases. Use switch when comparing one variable to many constants.",
+      "quiz": [
+        [
+          "When is switch better than if...else?",
+          [
+            "For multiple independent conditions",
+            "For one variable with many possible values",
+            "For complex logic"
+          ],
+          1,
+          "Switch is cleaner for discrete values."
+        ],
+        [
+          "What does break do?",
+          [
+            "Ends the program",
+            "Skips to default",
+            "Exits the switch"
+          ],
+          2,
+          "Break prevents fall-through to the next case."
+        ],
+        [
+          "What if break is missing?",
+          [
+            "Error",
+            "Fall-through to next case",
+            "Automatic exit"
+          ],
+          1,
+          "Missing break causes execution to continue to the next case."
+        ],
+        [
+          "Is default required?",
+          [
+            "Yes",
+            "No",
+            "Only for numbers"
+          ],
+          1,
+          "Default is optional but recommended."
+        ],
+        [
+          "Result of switch (3) with no matching case and no default?",
+          [
+            "Error",
+            "Nothing happens",
+            "Fall-through"
+          ],
+          1,
+          "Without default, unmatched cases do nothing."
+        ]
+      ]
+    },
+    {
+      "title": "Combining Conditions with Logical Operators",
+      "time": "60 minutes",
+      "objectives": [
+        "Use && to require all conditions to be true.",
+        "Use || to require at least one condition to be true.",
+        "Use ! to invert a condition.",
+        "Build complex conditional logic safely."
+      ],
+      "theory": [
+        "Logical operators combine Boolean expressions. The AND operator <code>&&</code> returns true only if both operands are true. The OR operator <code>||</code> returns true if at least one operand is true. The NOT operator <code>!</code> inverts a Boolean.",
+        "<code>if (age >= 13 && age < 18)</code> is true only if both conditions are true. This checks a range. <code>if (hasWeapon || hasShield)</code> is true if the player has either item or both. This offers alternatives.",
+        "Complex conditions become unreadable without parentheses. <code>if (score >= 50 && bonus > 0 || lives > 0)</code> is ambiguous. Rewrite as <code>if ((score >= 50 && bonus > 0) || lives > 0)</code> for clarity.",
+        "De Morgan's Law states <code>!(a && b)</code> is equivalent to <code>!a || !b</code> and <code>!(a || b)</code> is equivalent to <code>!a && !b</code>. These are useful for simplifying negations.",
+        "Combining conditions is powerful but can become confusing. A rule of thumb: keep single if conditions to three comparisons. More complex logic belongs in a helper method."
+      ],
+      "terms": [
+        [
+          "AND operator",
+          "Both conditions must be true."
+        ],
+        [
+          "OR operator",
+          "At least one condition must be true."
+        ],
+        [
+          "NOT operator",
+          "Inverts a Boolean value."
+        ],
+        [
+          "Short-circuit",
+          "Stopping evaluation when the result is certain."
+        ]
+      ],
+      "code": "int age = 25;\nbool hasLicense = true;\nbool hasInsurance = true;\n\n// AND: all conditions must be true\nif (age >= 18 && hasLicense && hasInsurance)\n{\n    Console.WriteLine(\"You can rent a car.\");\n}\n\n// OR: at least one must be true\nif (hasLicense || hasInsurance)\n{\n    Console.WriteLine(\"You have some documentation.\");\n}\n\n// NOT: invert the condition\nif (!hasLicense)\n{\n    Console.WriteLine(\"You need a license.\");\n}\n\n// Complex condition with parentheses\nif ((age >= 13 && age < 65) || isStudent)\n{\n    Console.WriteLine(\"You qualify for a discount.\");\n}",
+      "tryIt": "Write a condition checking whether a user is an adult AND has an email AND has accepted terms.",
+      "challenge": "Build a game eligibility checker requiring age between 13-17 OR parental consent.",
+      "mistakes": [
+        "Use && for AND, || for OR.",
+        "Use parentheses to clarify complex conditions.",
+        "Short-circuit evaluation stops when result is certain.",
+        "Test all branches of complex logic."
+      ],
+      "summary": "&& requires all true, || requires at least one true, ! inverts. Use parentheses for complex conditions. Test all combinations.",
+      "quiz": [
+        [
+          "Result of true && false?",
+          [
+            "true",
+            "false",
+            "Error"
+          ],
+          1,
+          "AND requires both to be true."
+        ],
+        [
+          "Result of true || false?",
+          [
+            "true",
+            "false",
+            "Error"
+          ],
+          0,
+          "OR requires at least one true."
+        ],
+        [
+          "What does !true produce?",
+          [
+            "true",
+            "false",
+            "null"
+          ],
+          1,
+          "NOT inverts Boolean values."
+        ],
+        [
+          "Age >= 18 && age < 65 means?",
+          [
+            "18 or older",
+            "Between 18 and 65",
+            "65 or younger"
+          ],
+          1,
+          "Both conditions must be true."
+        ],
+        [
+          "Why use parentheses in complex conditions?",
+          [
+            "Increase speed",
+            "Clarify precedence",
+            "Reduce memory"
+          ],
+          1,
+          "Parentheses make evaluation order explicit."
+        ]
+      ]
+    },
+    {
+      "title": "Practice Project · Student Results System",
+      "time": "90 minutes",
+      "objectives": [
+        "Collect and validate student data.",
+        "Calculate averages using arithmetic.",
+        "Use conditionals to assign grades and feedback.",
+        "Build a menu-driven application."
+      ],
+      "theory": [
+        "This project integrates all Module 4 concepts. It asks for a student's name, reads three assessment marks, calculates the average, determines pass/fail status, assigns a letter grade, and provides feedback.",
+        "The program should loop, allowing entry of multiple students. After each result, it asks whether the user wants to continue.",
+        "Grade assignment uses else if to check ranges: >= 90 is A, >= 80 is B, >= 70 is C, >= 60 is D, < 60 is F. Feedback should be encouraging for passes and motivating for failures.",
+        "Input validation checks whether entered marks are numeric and within range (0-100). Invalid input displays an error and re-prompts.",
+        "A main menu can use switch to allow exit or entry of new students. The complete system demonstrates planning (IPO), conditionals (if/else/else if), logical operators (&&), and repetition (loops)."
+      ],
+      "terms": [
+        [
+          "Validation",
+          "Checking whether input meets requirements."
+        ],
+        [
+          "Range check",
+          "Verifying a value is within acceptable bounds."
+        ],
+        [
+          "Feedback",
+          "User-facing messages providing context."
+        ],
+        [
+          "Menu-driven",
+          "Programs that present choices to the user."
+        ]
+      ],
+      "code": "Console.WriteLine(\"===== Student Results System =====\");\nbool continueProgram = true;\n\nwhile (continueProgram)\n{\n    Console.Write(\"Enter student name: \");\n    string name = Console.ReadLine() ?? \"\";\n    \n    int total = 0;\n    bool validInput = true;\n    \n    for (int i = 1; i <= 3; i++)\n    {\n        Console.Write($\"Enter mark {i}: \");\n        if (int.TryParse(Console.ReadLine() ?? \"0\", out int mark))\n        {\n            if (mark >= 0 && mark <= 100)\n            {\n                total += mark;\n            }\n            else\n            {\n                Console.WriteLine(\"Mark must be between 0 and 100.\");\n                validInput = false;\n                break;\n            }\n        }\n        else\n        {\n            Console.WriteLine(\"Please enter a valid number.\");\n            validInput = false;\n            break;\n        }\n    }\n    \n    if (validInput)\n    {\n        int average = total / 3;\n        string grade = average >= 90 ? \"A\" : average >= 80 ? \"B\" : average >= 70 ? \"C\" : average >= 60 ? \"D\" : \"F\";\n        bool passed = average >= 50;\n        \n        Console.WriteLine();\n        Console.WriteLine($\"Name: {name}\");\n        Console.WriteLine($\"Average: {average}\");\n        Console.WriteLine($\"Grade: {grade}\");\n        Console.WriteLine(passed ? \"Status: PASS\" : \"Status: FAIL\");\n        Console.WriteLine();\n    }\n    \n    Console.Write(\"Enter another student? (yes/no): \");\n    string response = Console.ReadLine()?.ToLower() ?? \"\";\n    continueProgram = response == \"yes\" || response == \"y\";\n}",
+      "tryIt": "Build a simple version that calculates and displays a grade for one student.",
+      "challenge": "Extend the system to ask for subject name and display a complete report with all students entered.",
+      "mistakes": [
+        "Validate input before using it.",
+        "Check ranges for marks.",
+        "Ensure calculations are correct.",
+        "Test the exit condition."
+      ],
+      "summary": "You can now build interactive applications that make decisions, validate input, assign grades, provide feedback, and loop through multiple entries.",
+      "quiz": [
+        [
+          "What is input validation?",
+          [
+            "Printing data",
+            "Checking if input meets requirements",
+            "Storing values"
+          ],
+          1,
+          "Validation ensures data is correct before using it."
+        ],
+        [
+          "How to assign grades?",
+          [
+            "Random selection",
+            "Use else if chains",
+            "Use variables only"
+          ],
+          1,
+          "Else if chains check ranges and assign grades."
+        ],
+        [
+          "Best way to repeat student entry?",
+          [
+            "Copy code",
+            "Use a loop",
+            "Manual repeats"
+          ],
+          1,
+          "Loops allow repeated execution."
+        ],
+        [
+          "Grade for average 85?",
+          [
+            "A",
+            "B",
+            "C"
+          ],
+          1,
+          "85 >= 80 but < 90 produces B."
+        ],
+        [
+          "How to exit the loop?",
+          [
+            "break statement",
+            "Set continueProgram to false",
+            "Both"
+          ],
+          2,
+          "Set the loop condition to false."
+        ]
+      ]
+    }
+  ]
+}

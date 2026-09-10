@@ -1,0 +1,777 @@
+{
+  "eyebrow": "Module 1 · C# foundations · 8 lessons",
+  "title": "Programming Fundamentals",
+  "description": "Learn how programs work, plan precise algorithms, write valid C# statements, display output, interpret errors, and solve small programming problems.",
+  "completion": "Module 1 complete",
+  "completionText": "You have restored and completed the programming foundation. Continue to Module 2 to store information using variables and data types.",
+  "lessons": [
+    {
+      "title": "What Is Programming?",
+      "time": "40 minutes",
+      "objectives": [
+        "Explain programming as creating instructions for a computer.",
+        "Identify hardware, software, programs, and programmers.",
+        "Describe source code, compilation, and execution.",
+        "Recognise C# as a general-purpose programming language."
+      ],
+      "theory": [
+        "Programming is the process of designing and writing instructions that a computer can execute. Computers are fast and consistent, but they do not infer what a programmer meant. Instructions must be precise, correctly ordered, and written using rules the computer's tools understand.",
+        "A <strong>program</strong> is a collection of instructions created to complete a task. The human-readable instructions are called <strong>source code</strong>. C# source code is processed by compiler tools before it runs. These tools check syntax and transform the program into a form the .NET runtime can execute.",
+        "Hardware refers to physical components such as the processor, memory, keyboard, and display. Software refers to programs and their supporting data. A programmer connects the two by creating software instructions that cause hardware to perform useful work.",
+        "C# is strongly typed, case-sensitive, and widely used for console programs, desktop applications, web services, and Unity games. Learning C# fundamentals develops transferable problem-solving skills."
+      ],
+      "terms": [
+        [
+          "Program",
+          "A collection of instructions that performs a task."
+        ],
+        [
+          "Source code",
+          "Human-readable instructions written in a programming language."
+        ],
+        [
+          "Compiler",
+          "Software that checks and transforms source code."
+        ],
+        [
+          "Runtime",
+          "The environment that executes a prepared program."
+        ]
+      ],
+      "code": "Console.WriteLine(\"My first C# program\");\nConsole.WriteLine(\"Programming turns ideas into instructions.\");",
+      "tryIt": "List three programs you use. For each one, identify an input, a task it performs, and an output.",
+      "challenge": "Write a three-line console introduction explaining your name, course, and one program you would like to build.",
+      "mistakes": [
+        "Do not assume the computer understands unstated intentions.",
+        "Remember that C# is case-sensitive.",
+        "Distinguish physical hardware from software instructions.",
+        "Use exact syntax when entering source code."
+      ],
+      "summary": "Programming turns a planned solution into precise source-code instructions that compiler and runtime tools can execute.",
+      "quiz": [
+        [
+          "What is a program?",
+          [
+            "A physical keyboard",
+            "A collection of instructions",
+            "A programming error"
+          ],
+          1,
+          "A program is an ordered collection of instructions that performs a task."
+        ],
+        [
+          "What is source code?",
+          [
+            "Human-readable program instructions",
+            "A computer monitor",
+            "The final output only"
+          ],
+          0,
+          "Source code is the text programmers write in a programming language."
+        ],
+        [
+          "Which language is used in this course?",
+          [
+            "C#",
+            "HTML only",
+            "SQL only"
+          ],
+          0,
+          "JayLearn uses C# before applying it to Unity."
+        ],
+        [
+          "What does a compiler help check?",
+          [
+            "Screen brightness",
+            "Syntax and program structure",
+            "Internet speed"
+          ],
+          1,
+          "Compiler tools detect invalid syntax and prepare code for execution."
+        ],
+        [
+          "Is C# case-sensitive?",
+          [
+            "Yes",
+            "No",
+            "Only in comments"
+          ],
+          0,
+          "C# treats names with different capitalisation as different identifiers."
+        ]
+      ]
+    },
+    {
+      "title": "Algorithms and Problem Solving",
+      "time": "50 minutes",
+      "objectives": [
+        "Define an algorithm as a finite sequence of steps.",
+        "Break a problem into input, processing, and output.",
+        "Write simple pseudocode.",
+        "Trace an algorithm manually."
+      ],
+      "theory": [
+        "An <strong>algorithm</strong> is a finite, ordered set of unambiguous steps for solving a problem. Algorithms exist independently of a programming language. Planning the steps first helps programmers focus on the solution before worrying about punctuation or C# syntax.",
+        "Many beginner problems can be divided into <strong>input</strong>, <strong>processing</strong>, and <strong>output</strong>. Input is information supplied to the program. Processing transforms or examines it. Output communicates a result.",
+        "Pseudocode describes an algorithm using structured plain language. Statements such as INPUT, CALCULATE, and DISPLAY make intent visible without requiring exact C# syntax. Good pseudocode is specific enough that another person could implement it.",
+        "Tracing means following an algorithm one step at a time while recording changing values and produced output. A trace helps reveal missing steps, incorrect order, and faulty assumptions before or after coding."
+      ],
+      "terms": [
+        [
+          "Algorithm",
+          "A finite sequence of steps that solves a problem."
+        ],
+        [
+          "Input",
+          "Information supplied to a program."
+        ],
+        [
+          "Processing",
+          "Work performed on input data."
+        ],
+        [
+          "Output",
+          "Information produced by a program."
+        ]
+      ],
+      "code": "INPUT length\nINPUT width\nCALCULATE area = length × width\nDISPLAY area",
+      "tryIt": "Write pseudocode for making a hot drink or calculating the total cost of three items.",
+      "challenge": "Plan an algorithm that asks for a player's name and score, adds a 100-point bonus, and displays the updated score.",
+      "mistakes": [
+        "Keep steps in executable order.",
+        "Do not hide several unclear actions inside one vague step.",
+        "Include both required inputs and expected outputs.",
+        "Ensure the algorithm eventually finishes."
+      ],
+      "summary": "Algorithms convert problems into finite, precise steps. Input, processing, output, pseudocode, and tracing make solutions easier to implement.",
+      "quiz": [
+        [
+          "What is an algorithm?",
+          [
+            "A random guess",
+            "A finite ordered solution",
+            "A compiler warning"
+          ],
+          1,
+          "An algorithm is an ordered and finite sequence of solution steps."
+        ],
+        [
+          "Which stage transforms data?",
+          [
+            "Processing",
+            "Input",
+            "Output"
+          ],
+          0,
+          "Processing performs calculations or decisions using input."
+        ],
+        [
+          "What is pseudocode?",
+          [
+            "Structured solution steps",
+            "Machine hardware",
+            "A C# compiler"
+          ],
+          0,
+          "Pseudocode expresses logic without requiring exact language syntax."
+        ],
+        [
+          "Why trace an algorithm?",
+          [
+            "To change the monitor",
+            "To follow values and detect logic problems",
+            "To remove all inputs"
+          ],
+          1,
+          "Tracing checks each step and records its effects."
+        ],
+        [
+          "Which should an algorithm have?",
+          [
+            "Ambiguous steps",
+            "No ending",
+            "A clear sequence"
+          ],
+          2,
+          "A useful algorithm has a clear, executable sequence."
+        ]
+      ]
+    },
+    {
+      "title": "Your First C# Program",
+      "time": "45 minutes",
+      "objectives": [
+        "Recognise a basic console application.",
+        "Use Console.WriteLine to display output.",
+        "Explain statements and semicolons.",
+        "Run and inspect a simple program."
+      ],
+      "theory": [
+        "A console application communicates through text. Modern C# supports top-level statements, allowing a beginner program to begin directly with instructions such as <code>Console.WriteLine</code>.",
+        "<code>Console</code> represents the console interface. The dot selects one of its members, and <code>WriteLine</code> displays information followed by a new line. Parentheses contain the value supplied to the method.",
+        "A string literal is text enclosed in double quotation marks. The semicolon marks the end of a C# statement. Removing a quotation mark, parenthesis, or semicolon usually produces a syntax error.",
+        "Programs normally execute statements from top to bottom. Changing statement order changes output order, making a small console program a useful way to observe sequence."
+      ],
+      "terms": [
+        [
+          "Statement",
+          "A complete instruction in source code."
+        ],
+        [
+          "Method",
+          "A named block of behaviour that can be called."
+        ],
+        [
+          "String literal",
+          "Text written inside double quotation marks."
+        ],
+        [
+          "Semicolon",
+          "Punctuation that terminates many C# statements."
+        ]
+      ],
+      "code": "Console.WriteLine(\"JayLearn\");\nConsole.WriteLine(\"C# Fundamentals\");\nConsole.WriteLine(\"Ready to build.\");",
+      "tryIt": "Display your name, course, and favourite game on separate lines. Rearrange the statements and run the program again.",
+      "challenge": "Create a five-line welcome screen with a title, divider, learner name, goal, and closing message.",
+      "mistakes": [
+        "Use double quotation marks around text.",
+        "Include both opening and closing parentheses.",
+        "End each WriteLine statement with a semicolon.",
+        "Capitalise Console and WriteLine correctly."
+      ],
+      "summary": "A console program executes statements in sequence. Console.WriteLine displays a value and then moves output to a new line.",
+      "quiz": [
+        [
+          "Which method displays a line?",
+          [
+            "Console.WriteLine",
+            "Console.ReadOnly",
+            "String.Print"
+          ],
+          0,
+          "Console.WriteLine displays a value and adds a line break."
+        ],
+        [
+          "What encloses a string literal?",
+          [
+            "Double quotation marks",
+            "Square brackets",
+            "Semicolons"
+          ],
+          0,
+          "C# string literals use double quotation marks."
+        ],
+        [
+          "What commonly ends a statement?",
+          [
+            "A colon",
+            "A semicolon",
+            "A hashtag"
+          ],
+          1,
+          "Many C# statements end with a semicolon."
+        ],
+        [
+          "In which order do simple statements run?",
+          [
+            "Top to bottom",
+            "Randomly",
+            "Bottom to top only"
+          ],
+          0,
+          "Straight-line code normally executes from top to bottom."
+        ],
+        [
+          "Is Console.WriteLine capitalisation important?",
+          [
+            "Yes",
+            "No",
+            "Only in output"
+          ],
+          0,
+          "C# is case-sensitive, including member names."
+        ]
+      ]
+    },
+    {
+      "title": "Syntax, Keywords and Comments",
+      "time": "45 minutes",
+      "objectives": [
+        "Explain syntax as a language's grammar.",
+        "Recognise identifiers and keywords.",
+        "Write single-line and multi-line comments.",
+        "Use indentation and whitespace for readability."
+      ],
+      "theory": [
+        "Every programming language has <strong>syntax</strong>: rules that describe valid code structure. Syntax includes punctuation, ordering, spelling, and capitalisation. Compiler errors often indicate that one of these rules has been broken.",
+        "A <strong>keyword</strong> has a reserved meaning in C#, such as <code>int</code>, <code>string</code>, <code>if</code>, or <code>class</code>. An <strong>identifier</strong> is a name created for something in the program. Identifiers cannot normally reuse reserved keywords.",
+        "Comments explain intent and are ignored during execution. A single-line comment starts with <code>//</code>. A block comment begins with <code>/*</code> and ends with <code>*/</code>. Comments should explain why, not restate obvious code.",
+        "Whitespace and indentation make structure visible. Although extra spaces often do not change behaviour, consistent formatting reduces mistakes and helps other programmers review code."
+      ],
+      "terms": [
+        [
+          "Syntax",
+          "Rules that define valid program structure."
+        ],
+        [
+          "Keyword",
+          "A word reserved by the language."
+        ],
+        [
+          "Identifier",
+          "A programmer-defined name."
+        ],
+        [
+          "Comment",
+          "Explanatory source text ignored during execution."
+        ]
+      ],
+      "code": "// Display the learning goal\nConsole.WriteLine(\"Learn C# clearly.\");\n\n/* This comment can\n   span multiple lines. */",
+      "tryIt": "Add one useful single-line comment and one block comment to a three-line console program.",
+      "challenge": "Correct a program containing incorrect capitalisation, a missing quote, a missing parenthesis, and a missing semicolon.",
+      "mistakes": [
+        "Do not place required code inside a comment accidentally.",
+        "Close every block comment with */.",
+        "Avoid using reserved keywords as ordinary names.",
+        "Use comments to explain purpose rather than obvious punctuation."
+      ],
+      "summary": "Syntax defines valid C# structure. Keywords have reserved meanings, identifiers name program elements, and comments document intent.",
+      "quiz": [
+        [
+          "What is syntax?",
+          [
+            "Language structure rules",
+            "A physical device",
+            "Only program output"
+          ],
+          0,
+          "Syntax defines how valid C# structure must be arranged."
+        ],
+        [
+          "Which starts a single-line comment?",
+          [
+            "//",
+            "##",
+            "**"
+          ],
+          0,
+          "Two forward slashes begin a single-line C# comment."
+        ],
+        [
+          "What is a keyword?",
+          [
+            "A reserved language word",
+            "Any sentence",
+            "A file extension"
+          ],
+          0,
+          "Keywords have predefined meanings in C#."
+        ],
+        [
+          "Are comments executed?",
+          [
+            "Yes",
+            "No",
+            "Only on Fridays"
+          ],
+          1,
+          "Comments are ignored during program execution."
+        ],
+        [
+          "Why use indentation?",
+          [
+            "To improve readability",
+            "To increase internet speed",
+            "To rename C#"
+          ],
+          0,
+          "Consistent indentation makes code structure easier to understand."
+        ]
+      ]
+    },
+    {
+      "title": "Input, Processing and Output",
+      "time": "50 minutes",
+      "objectives": [
+        "Identify program inputs and outputs.",
+        "Describe processing as transformation.",
+        "Use Write and WriteLine appropriately.",
+        "Design an IPO table for a simple program."
+      ],
+      "theory": [
+        "The input-process-output model provides a simple way to analyse a program. Inputs enter the system, processing applies instructions, and outputs communicate results.",
+        "A keyboard response, mouse click, file value, or sensor reading can be input. Processing can include calculations, conversion, comparison, or arranging information. Text, images, sounds, and saved values can be output.",
+        "<code>Console.Write</code> displays text without automatically moving to a new line. <code>Console.WriteLine</code> adds a line break. Prompts commonly use Write so the response appears beside the question.",
+        "An IPO table lists required data, the operations performed, and expected results. It helps prevent programmers from coding before understanding the problem."
+      ],
+      "terms": [
+        [
+          "IPO model",
+          "A view of a program as input, processing, and output."
+        ],
+        [
+          "Prompt",
+          "A message asking the user for input."
+        ],
+        [
+          "Transformation",
+          "Changing input into a result."
+        ],
+        [
+          "Console",
+          "A text-based input and output interface."
+        ]
+      ],
+      "code": "Console.Write(\"Enter your name: \");\nstring name = Console.ReadLine() ?? \"\";\nConsole.WriteLine($\"Welcome, {name}!\");",
+      "tryIt": "Create an IPO table for a rectangle-area calculator and for a simple game score bonus.",
+      "challenge": "Write a program that asks for a nickname and displays a three-line welcome message.",
+      "mistakes": [
+        "Do not confuse input with the prompt that requests it.",
+        "Account for every value needed during processing.",
+        "Choose Write or WriteLine based on desired layout.",
+        "Make output labels clear enough to understand."
+      ],
+      "summary": "The IPO model separates collected data, performed work, and produced results. It is a practical foundation for planning programs.",
+      "quiz": [
+        [
+          "Which is an input?",
+          [
+            "A typed name",
+            "A displayed total",
+            "A heading already printed"
+          ],
+          0,
+          "A typed name supplies information to the program."
+        ],
+        [
+          "Which stage calculates a result?",
+          [
+            "Output",
+            "Processing",
+            "Input"
+          ],
+          1,
+          "Processing transforms input into results."
+        ],
+        [
+          "What does Console.Write omit?",
+          [
+            "The text",
+            "The automatic line break",
+            "The method call"
+          ],
+          1,
+          "Console.Write does not automatically add a line break."
+        ],
+        [
+          "What does an IPO table document?",
+          [
+            "Inputs, processing, outputs",
+            "Only colours",
+            "Only errors"
+          ],
+          0,
+          "An IPO table records all three program stages."
+        ],
+        [
+          "Why label output?",
+          [
+            "To communicate meaning",
+            "To make syntax invalid",
+            "To hide results"
+          ],
+          0,
+          "Labels help users interpret displayed values."
+        ]
+      ]
+    },
+    {
+      "title": "Errors and Debugging",
+      "time": "55 minutes",
+      "objectives": [
+        "Distinguish syntax, runtime, and logic errors.",
+        "Read compiler messages carefully.",
+        "Use tracing and incremental testing.",
+        "Apply a repeatable debugging process."
+      ],
+      "theory": [
+        "A <strong>syntax error</strong> breaks the grammar of C#, such as a missing quote or semicolon. Compiler messages usually prevent the program from running until the source is corrected.",
+        "A <strong>runtime error</strong> occurs while a validly structured program executes. Examples include invalid conversion or attempting an operation the running program cannot complete.",
+        "A <strong>logic error</strong> allows the program to run but produces an incorrect result. Logic errors can be difficult because no compiler message is required. Tracing values and testing known examples help reveal them.",
+        "Debugging is a disciplined process: reproduce the problem, read available messages, isolate the relevant code, inspect assumptions and values, make one focused change, and test again. Changing many unrelated lines at once makes causes harder to identify."
+      ],
+      "terms": [
+        [
+          "Bug",
+          "A defect that causes incorrect program behaviour."
+        ],
+        [
+          "Debugging",
+          "Finding, understanding, and correcting defects."
+        ],
+        [
+          "Syntax error",
+          "A violation of language grammar."
+        ],
+        [
+          "Logic error",
+          "Valid code that produces the wrong result."
+        ]
+      ],
+      "code": "// Logic error: multiplication was intended\nint width = 5;\nint height = 4;\nint area = width + height;\nConsole.WriteLine(area);",
+      "tryIt": "Classify a missing semicolon, invalid numeric input, and an incorrect total as syntax, runtime, or logic errors.",
+      "challenge": "Debug a small program containing one syntax error and one logic error. Record each symptom, cause, fix, and retest result.",
+      "mistakes": [
+        "Read the first relevant compiler message before later cascading errors.",
+        "Reproduce a problem before changing code.",
+        "Test one focused correction at a time.",
+        "Do not assume code is correct merely because it runs."
+      ],
+      "summary": "Errors may involve syntax, execution, or logic. Effective debugging combines messages, tracing, isolation, focused changes, and repeated testing.",
+      "quiz": [
+        [
+          "Which error breaks C# grammar?",
+          [
+            "Syntax error",
+            "Logic error",
+            "Design colour"
+          ],
+          0,
+          "A syntax error violates language structure."
+        ],
+        [
+          "Which error can produce a wrong answer without stopping?",
+          [
+            "Logic error",
+            "Keyboard error",
+            "Comment"
+          ],
+          0,
+          "Logic errors often run successfully but calculate the wrong result."
+        ],
+        [
+          "When does a runtime error occur?",
+          [
+            "During execution",
+            "Before code exists",
+            "Only in comments"
+          ],
+          0,
+          "Runtime errors occur while a program is running."
+        ],
+        [
+          "What should debugging begin with?",
+          [
+            "Reproducing the issue",
+            "Deleting everything",
+            "Changing many lines"
+          ],
+          0,
+          "A repeatable issue can be investigated and verified."
+        ],
+        [
+          "Why make one focused change?",
+          [
+            "To identify whether it fixes the cause",
+            "To create more uncertainty",
+            "To avoid testing"
+          ],
+          0,
+          "Focused changes make cause and effect easier to evaluate."
+        ]
+      ]
+    },
+    {
+      "title": "Decomposition and Testing",
+      "time": "50 minutes",
+      "objectives": [
+        "Break large problems into smaller tasks.",
+        "Define expected results before testing.",
+        "Use normal, boundary, and invalid test data.",
+        "Document test outcomes."
+      ],
+      "theory": [
+        "<strong>Decomposition</strong> divides a complex problem into smaller, manageable parts. A user-profile program can be separated into displaying prompts, collecting values, validating them, and printing a summary.",
+        "Each subproblem should have a clear responsibility and a result that can be checked. Smaller pieces are easier to understand, implement, test, and reuse.",
+        "Testing compares actual behaviour with expected behaviour. Normal data represents typical use. Boundary data checks values at important limits. Invalid data checks whether the program responds safely to unsuitable input.",
+        "A useful test plan records the test input, expected result, actual result, and pass/fail status. Testing should begin early rather than being postponed until every feature is finished."
+      ],
+      "terms": [
+        [
+          "Decomposition",
+          "Breaking a problem into smaller subproblems."
+        ],
+        [
+          "Test case",
+          "A defined input and expected result."
+        ],
+        [
+          "Boundary value",
+          "A value at or near an important limit."
+        ],
+        [
+          "Expected result",
+          "The behaviour a correct program should produce."
+        ]
+      ],
+      "code": "Task 1: Display instructions\nTask 2: Collect player details\nTask 3: Validate entered values\nTask 4: Calculate the result\nTask 5: Display a summary",
+      "tryIt": "Decompose a quiz program into at least five tasks, then propose one normal, one boundary, and one invalid test.",
+      "challenge": "Create a four-row test table for a game-age checker. Include input, expected output, actual output, and pass/fail.",
+      "mistakes": [
+        "Do not treat the entire application as one indivisible task.",
+        "Define expected results before running tests.",
+        "Include invalid and boundary cases, not only typical data.",
+        "Retest earlier behaviour after making corrections."
+      ],
+      "summary": "Decomposition reduces complexity. Planned test cases verify normal behaviour, limits, and responses to invalid input.",
+      "quiz": [
+        [
+          "What is decomposition?",
+          [
+            "Breaking a problem into smaller tasks",
+            "Adding random features",
+            "Removing all output"
+          ],
+          0,
+          "Decomposition separates a complex problem into manageable parts."
+        ],
+        [
+          "What does a test case include?",
+          [
+            "Input and expected result",
+            "Only a colour",
+            "Only source comments"
+          ],
+          0,
+          "A test case defines data and the correct expected behaviour."
+        ],
+        [
+          "What is boundary data?",
+          [
+            "Data near an important limit",
+            "Always a name",
+            "A compiler"
+          ],
+          0,
+          "Boundary tests examine behaviour at limits."
+        ],
+        [
+          "When should testing begin?",
+          [
+            "Early and incrementally",
+            "Only after release",
+            "Never"
+          ],
+          0,
+          "Early testing finds defects close to where they were introduced."
+        ],
+        [
+          "Why record actual results?",
+          [
+            "To compare them with expectations",
+            "To hide failures",
+            "To change syntax"
+          ],
+          0,
+          "The comparison determines whether a test passes."
+        ]
+      ]
+    },
+    {
+      "title": "Practice Project · Console Welcome App",
+      "time": "70 minutes",
+      "objectives": [
+        "Plan a complete beginner console application.",
+        "Use comments, prompts, input, and output.",
+        "Apply decomposition and testing.",
+        "Review the complete programming workflow."
+      ],
+      "theory": [
+        "This project combines the restored Programming Fundamentals module. You will create a console welcome application that introduces JayLearn, asks for a learner's name and goal, and prints a personalised study card.",
+        "Begin with an IPO plan. Inputs are the learner's name and goal. Processing consists of storing and arranging those responses. Output includes the heading, divider, and labelled summary.",
+        "Decompose the solution into instructions, name input, goal input, and final output. Enter and test each part before continuing. This makes syntax problems easier to isolate.",
+        "Use comments to explain the purpose of each major phase. Test ordinary text, empty input, and long text. Module 2 expands this project with typed numeric and Boolean values."
+      ],
+      "terms": [
+        [
+          "Plan",
+          "A description of the intended solution before coding."
+        ],
+        [
+          "Implementation",
+          "Turning a plan into source code."
+        ],
+        [
+          "Verification",
+          "Checking that results match requirements."
+        ],
+        [
+          "Iteration",
+          "Improving a solution through repeated changes and tests."
+        ]
+      ],
+      "code": "// Display the application heading\nConsole.WriteLine(\"JAYLEARN STUDY CARD\");\nConsole.WriteLine(\"-------------------\");\n\n// Collect input\nConsole.Write(\"Name: \");\nstring name = Console.ReadLine() ?? \"\";\n\nConsole.Write(\"Programming goal: \");\nstring goal = Console.ReadLine() ?? \"\";\n\n// Display output\nConsole.WriteLine();\nConsole.WriteLine($\"Learner: {name}\");\nConsole.WriteLine($\"Goal: {goal}\");\nConsole.WriteLine(\"Next step: Variables & Data Types\");",
+      "tryIt": "Type the project yourself, test it, and add one more text question without removing the original fields.",
+      "challenge": "Extend the welcome app with a favourite game, a divider, and a final encouragement message. Create three documented test cases.",
+      "mistakes": [
+        "Do not skip the IPO plan.",
+        "Keep quotation marks, parentheses, and semicolons paired.",
+        "Test after each small addition.",
+        "Do not remove working requirements while extending the program."
+      ],
+      "summary": "You can now explain programs, plan algorithms, write console statements, use syntax and comments, analyse IPO, debug errors, decompose problems, and test solutions.",
+      "quiz": [
+        [
+          "What should happen before implementation?",
+          [
+            "Planning the solution",
+            "Deleting requirements",
+            "Ignoring inputs"
+          ],
+          0,
+          "Planning clarifies requirements and program flow."
+        ],
+        [
+          "Which inputs does the base project collect?",
+          [
+            "Name and programming goal",
+            "Password and card number",
+            "Only a number"
+          ],
+          0,
+          "The welcome app collects a learner name and goal."
+        ],
+        [
+          "Why test after small additions?",
+          [
+            "To isolate problems quickly",
+            "To prevent all output",
+            "To change the language"
+          ],
+          0,
+          "Incremental testing makes defects easier to locate."
+        ],
+        [
+          "Which module follows Programming Fundamentals?",
+          [
+            "Variables & Data Types",
+            "Networking",
+            "Advanced graphics"
+          ],
+          0,
+          "Module 2 introduces variables and data types."
+        ],
+        [
+          "What should extensions preserve?",
+          [
+            "Working original requirements",
+            "Only errors",
+            "Nothing"
+          ],
+          0,
+          "New work should retain existing required behaviour."
+        ]
+      ]
+    }
+  ]
+}

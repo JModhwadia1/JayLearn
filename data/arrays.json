@@ -1,0 +1,785 @@
+{
+  "eyebrow": "Module 7 · C# data collections · 8 lessons",
+  "title": "Arrays & Data Collections",
+  "description": "Learn how to store, organise, and manage multiple values using arrays and basic collections in C#. Master arrays, lists, and collection methods to build scalable applications and prepare for game development.",
+  "completion": "Module 7 complete",
+  "completionText": "You are ready for Module 8, where object-oriented programming teaches you how to create custom classes and objects for building professional applications and games.",
+  "lessons": [
+    {
+      "title": "Introduction to Arrays",
+      "time": "45 minutes",
+      "objectives": [
+        "Explain what arrays are and why they matter.",
+        "Identify problems with creating separate variables.",
+        "Describe array indexing and zero-based positioning.",
+        "Access array elements using indexes."
+      ],
+      "theory": [
+        "An <strong>array</strong> is a collection of values all of the same type stored in a single variable. Without arrays, storing ten scores would require ten separate variables: score1, score2, ..., score10. This is tedious and hard to manage.",
+        "With an array, you store all ten scores in one variable: <code>int[] scores = new int[10];</code> Each score has a position in the array.",
+        "C# uses zero-based indexing. The first element is at index 0, the second at index 1, and so on. An array of 10 elements has indices 0 through 9. This is universal across programming languages.",
+        "Arrays are especially useful when processing groups of related data. Game inventories, enemy lists, high scores, and player statistics all use arrays. Professional programs rely on arrays and collections.",
+        "Arrays are fixed size. Once you declare <code>int[] scores = new int[10];</code>, the array always holds 10 elements. If you need a flexible size, you can use a List instead, which you will learn in Lesson 6."
+      ],
+      "terms": [
+        [
+          "Array",
+          "A collection of values of the same type."
+        ],
+        [
+          "Index",
+          "The position of an element in an array."
+        ],
+        [
+          "Zero-based indexing",
+          "First element at index 0."
+        ],
+        [
+          "Element",
+          "One value in an array."
+        ]
+      ],
+      "code": "// Without arrays: tedious and hard to scale\nstring enemy1 = \"Goblin\";\nstring enemy2 = \"Dragon\";\nstring enemy3 = \"Knight\";\n\n// With an array: clean and scalable\nstring[] enemies = {\"Goblin\", \"Dragon\", \"Knight\"};\nConsole.WriteLine(enemies[0]);\nConsole.WriteLine(enemies[1]);\nConsole.WriteLine(enemies[2]);",
+      "tryIt": "Create an array of five numbers and print each one using its index.",
+      "challenge": "Create an array of animal names and print them all using a loop.",
+      "mistakes": [
+        "Remember arrays are zero-indexed.",
+        "Arrays are fixed size once created.",
+        "All elements must be the same type.",
+        "Index errors cause exceptions."
+      ],
+      "summary": "Arrays store multiple values of the same type in one variable. Zero-based indexing positions elements. Arrays are essential for managing groups of data.",
+      "quiz": [
+        [
+          "What is an array?",
+          [
+            "A method",
+            "A collection of values of same type",
+            "A loop"
+          ],
+          1,
+          "An array groups multiple values."
+        ],
+        [
+          "First element index?",
+          [
+            "1",
+            "0",
+            "First"
+          ],
+          1,
+          "C# uses zero-based indexing."
+        ],
+        [
+          "How to access enemies[1]?",
+          [
+            "First element",
+            "Second element",
+            "Error"
+          ],
+          1,
+          "Index 1 is the second element."
+        ],
+        [
+          "Array size set?",
+          [
+            "At creation",
+            "During runtime",
+            "Whenever needed"
+          ],
+          0,
+          "Array size is fixed at creation."
+        ],
+        [
+          "Can different types mix?",
+          [
+            "Yes",
+            "No",
+            "Only sometimes"
+          ],
+          1,
+          "All array elements must be the same type."
+        ]
+      ]
+    },
+    {
+      "title": "Creating and Initialising Arrays",
+      "time": "50 minutes",
+      "objectives": [
+        "Declare arrays with the correct syntax.",
+        "Initialise arrays with values.",
+        "Understand array size and default values.",
+        "Create arrays for different data types."
+      ],
+      "theory": [
+        "An array declaration specifies the type and size. <code>int[] scores = new int[5];</code> creates an integer array with 5 elements. The <code>new</code> keyword allocates memory.",
+        "When declared this way, elements receive default values. Numeric arrays default to 0. Boolean arrays default to false. String arrays default to null.",
+        "You can also initialise an array with specific values. <code>int[] scores = {90, 85, 88};</code> creates an array and fills it immediately. The size is inferred from the number of values.",
+        "Arrays can hold any data type. <code>string[] names</code> holds text. <code>bool[] flags</code> holds true/false values. <code>double[] temperatures</code> holds decimal numbers. <code>char[] letters</code> holds individual characters.",
+        "Choosing between empty initialization and value initialization depends on your needs. Empty arrays are useful when filling data later. Value initialization is useful when you know the data upfront."
+      ],
+      "terms": [
+        [
+          "Declaration",
+          "Specifying type and size."
+        ],
+        [
+          "Initialisation",
+          "Providing initial values."
+        ],
+        [
+          "new keyword",
+          "Allocates memory for the array."
+        ],
+        [
+          "Default values",
+          "What empty elements contain."
+        ]
+      ],
+      "code": "// Empty array: filled with defaults\nint[] scores = new int[5];\nConsole.WriteLine(scores[0]);\n\n// Array with values\nstring[] weapons = {\"Sword\", \"Bow\", \"Staff\"};\nConsole.WriteLine(weapons[2]);\n\n// Different types\nbool[] achievements = {true, false, true};\ndouble[] health = {100.0, 75.5, 50.0};\nchar[] grades = {'A', 'B', 'C'};\n\n// Modify an element\nscores[0] = 95;\nConsole.WriteLine(scores[0]);",
+      "tryIt": "Create an array of five player scores, then change the first score to a new value.",
+      "challenge": "Create three arrays: one of strings, one of integers, and one of booleans. Print all values.",
+      "mistakes": [
+        "Use the correct type syntax (int[], string[], etc.).",
+        "Remember the new keyword for empty arrays.",
+        "Array size is fixed after creation.",
+        "All values must match the array type."
+      ],
+      "summary": "Arrays are declared with type and size. Initialise with defaults or specific values. Different types create different arrays. Modify elements using index assignment.",
+      "quiz": [
+        [
+          "Syntax for integer array?",
+          [
+            "int array",
+            "int[] scores",
+            "array[int]"
+          ],
+          1,
+          "Type and square brackets precede the name."
+        ],
+        [
+          "Creating empty array?",
+          [
+            "int[] x = {};",
+            "int[] x = new int[5];",
+            "Both"
+          ],
+          1,
+          "new keyword allocates memory."
+        ],
+        [
+          "Size of new int[3]?",
+          [
+            "1",
+            "3",
+            "Variable"
+          ],
+          1,
+          "Size is specified in brackets."
+        ],
+        [
+          "Default int value?",
+          [
+            "1",
+            "null",
+            "0"
+          ],
+          2,
+          "Numeric arrays default to 0."
+        ],
+        [
+          "Initialising with values?",
+          [
+            "int[] x = new int[3];",
+            "int[] x = {1, 2, 3};",
+            "Both"
+          ],
+          1,
+          "Both syntax forms are valid."
+        ]
+      ]
+    },
+    {
+      "title": "Accessing and Modifying Array Values",
+      "time": "50 minutes",
+      "objectives": [
+        "Read values from arrays using indexes.",
+        "Change array values.",
+        "Understand index boundaries.",
+        "Handle common index errors."
+      ],
+      "theory": [
+        "Reading an array element uses the index. <code>int firstScore = scores[0];</code> reads the first element. <code>Console.WriteLine(weapons[2]);</code> prints the third element.",
+        "Changing an array element uses assignment. <code>scores[0] = 95;</code> replaces the first element with 95. <code>inventory[2] = \"Key\";</code> changes the third inventory item.",
+        "Index boundaries are critical. An array of size 5 has valid indices 0 through 4. Accessing <code>scores[5]</code> is out of bounds and causes an IndexOutOfRangeException.",
+        "The .Length property tells you the array size. <code>scores.Length</code> returns 5 for an array of 5 elements. Use it to prevent index errors: <code>if (i < scores.Length)</code>",
+        "Common mistakes include forgetting zero-based indexing, accessing beyond array bounds, and confusing index numbers. Always verify indices are within 0 to length−1."
+      ],
+      "terms": [
+        [
+          "Index bounds",
+          "Valid range 0 to length−1."
+        ],
+        [
+          "IndexOutOfRangeException",
+          "Error accessing invalid index."
+        ],
+        [
+          "Length property",
+          "Returns array size."
+        ],
+        [
+          "Out of bounds",
+          "Accessing invalid index."
+        ]
+      ],
+      "code": "string[] weapons = {\"Sword\", \"Bow\", \"Staff\"};\n\n// Read values\nConsole.WriteLine(weapons[0]);\nConsole.WriteLine(weapons[1]);\n\n// Modify values\nweapons[0] = \"Great Sword\";\nConsole.WriteLine(weapons[0]);\n\n// Check length\nConsole.WriteLine(weapons.Length);\n\n// Verify index before accessing\nint index = 1;\nif (index < weapons.Length)\n{\n    Console.WriteLine(weapons[index]);\n}\nelse\n{\n    Console.WriteLine(\"Index out of bounds\");\n}",
+      "tryIt": "Create an array, modify a value, and print it before and after the change.",
+      "challenge": "Create an array and verify the index is valid before accessing each element.",
+      "mistakes": [
+        "Remember zero-based indexing starts at 0.",
+        "Use .Length to check valid range.",
+        "Index out of bounds causes exceptions.",
+        "Always verify before accessing unfamiliar indices."
+      ],
+      "summary": "Access array elements using indexes within bounds. Modify with assignment. Use .Length to check validity. Index errors are a common source of bugs.",
+      "quiz": [
+        [
+          "Accessing second element?",
+          [
+            "scores[1]",
+            "scores[2]",
+            "scores[0]"
+          ],
+          0,
+          "Index 1 is the second element."
+        ],
+        [
+          "Out of bounds error?",
+          [
+            "Syntax error",
+            "RuntimeException",
+            "IndexOutOfRangeException"
+          ],
+          2,
+          "This exception is thrown for invalid indices."
+        ],
+        [
+          "Check array size?",
+          [
+            "Length()",
+            "length",
+            "Length"
+          ],
+          2,
+          "Length is a property without parentheses."
+        ],
+        [
+          "Valid indices for int[5]?",
+          [
+            "0 to 5",
+            "0 to 4",
+            "1 to 5"
+          ],
+          1,
+          "Last index is length−1."
+        ],
+        [
+          "Modify element?",
+          [
+            "array[i]",
+            "array[i] = value",
+            "element(i)"
+          ],
+          1,
+          "Assignment updates the element."
+        ]
+      ]
+    },
+    {
+      "title": "Looping Through Arrays",
+      "time": "55 minutes",
+      "objectives": [
+        "Use for loops with arrays.",
+        "Process each element with foreach.",
+        "Combine loops and arrays.",
+        "Choose the right loop type."
+      ],
+      "theory": [
+        "Processing every array element is common. A for loop with a counter is perfect for this. <code>for (int i = 0; i < scores.Length; i++) { }</code> iterates through each index.",
+        "The foreach loop is even simpler when you only need the values, not indices. <code>foreach (int score in scores) { }</code> automatically provides each element.",
+        "For loops give you the index, useful when you need to know position or modify elements. Foreach is cleaner when you just want to read each value.",
+        "Nested loops process multi-dimensional data. Outer loops iterate rows, inner loops iterate columns. This is essential for game grids and matrices.",
+        "Combining loops and arrays unlocks powerful data processing. Calculating sums, finding averages, searching for values, and transforming data all use loops over arrays."
+      ],
+      "terms": [
+        [
+          "for loop with arrays",
+          "Using index to access elements."
+        ],
+        [
+          "foreach loop",
+          "Iterating without explicit index."
+        ],
+        [
+          "Loop variable",
+          "Current element or index."
+        ],
+        [
+          "Array length",
+          "Property used in loop condition."
+        ]
+      ],
+      "code": "int[] scores = {90, 85, 88, 92, 87};\n\n// For loop: access by index\nint sum = 0;\nfor (int i = 0; i < scores.Length; i++)\n{\n    sum += scores[i];\n}\nConsole.WriteLine($\"Total: {sum}\");\n\n// Foreach loop: direct element access\nforeach (int score in scores)\n{\n    Console.WriteLine(score);\n}\n\n// Find highest\nint highest = scores[0];\nforeach (int score in scores)\n{\n    if (score > highest) highest = score;\n}\nConsole.WriteLine($\"Highest: {highest}\");",
+      "tryIt": "Create an array and calculate the sum using a for loop.",
+      "challenge": "Use a foreach loop to find the average of array values.",
+      "mistakes": [
+        "For loop condition uses < not <=.",
+        "Use scores[i], not scores.",
+        "Foreach creates a new variable each iteration.",
+        "Initialize accumulator variables before loops."
+      ],
+      "summary": "For loops process arrays by index. Foreach loops process by value. Choose based on needs: for when you need index, foreach when you don't. Both are essential.",
+      "quiz": [
+        [
+          "For loop array syntax?",
+          [
+            "for (int i=0; i<array.Length; i++)",
+            "for (i in array)",
+            "for (array)"
+          ],
+          0,
+          "For loops use index and .Length."
+        ],
+        [
+          "Foreach syntax?",
+          [
+            "foreach (type var in array)",
+            "foreach array",
+            "foreach type array"
+          ],
+          0,
+          "Type, variable, in, array."
+        ],
+        [
+          "Sum accumulator start?",
+          [
+            "1",
+            "array[0]",
+            "0"
+          ],
+          2,
+          "Sums start at 0."
+        ],
+        [
+          "Find highest?",
+          [
+            "Min value first",
+            "First element as initial",
+            "array[0]"
+          ],
+          2,
+          "Start with first element."
+        ],
+        [
+          "When use foreach?",
+          [
+            "Need index",
+            "Just reading values",
+            "Modifying array"
+          ],
+          1,
+          "Foreach is for reading without index."
+        ]
+      ]
+    },
+    {
+      "title": "Multi-Dimensional Arrays",
+      "time": "55 minutes",
+      "objectives": [
+        "Understand multi-dimensional arrays.",
+        "Create and access 2D arrays.",
+        "Use nested loops with grids.",
+        "Apply to game maps and grids."
+      ],
+      "theory": [
+        "A multi-dimensional array has rows and columns. A 2D array is like a table. <code>int[,] grid = new int[3, 3];</code> creates a 3×3 grid.",
+        "Access 2D elements with two indices. <code>grid[0, 1]</code> accesses row 0, column 1. <code>grid[2, 2]</code> is bottom-right of a 3×3 grid.",
+        "Looping through 2D arrays requires nested loops. Outer loop iterates rows, inner loop iterates columns. <code>for (int row = 0; row < 3; row++) { for (int col = 0; col < 3; col++) { } }</code>",
+        "Games use 2D arrays for maps, tile systems, and game boards. A chess board is 8×8. A tic-tac-toe board is 3×3. Dungeon levels are large grids.",
+        "Higher dimensions exist: 3D arrays, 4D arrays, etc. But 2D is most common and sufficient for most applications. 3D arrays are rare in basic programming."
+      ],
+      "terms": [
+        [
+          "Multi-dimensional array",
+          "Arrays with multiple dimensions."
+        ],
+        [
+          "2D array",
+          "Rows and columns."
+        ],
+        [
+          "Index pair",
+          "Two indices for row and column."
+        ],
+        [
+          "Grid",
+          "A 2D data structure."
+        ]
+      ],
+      "code": "// Create 3x3 grid\nint[,] grid = new int[3, 3];\n\n// Set values\ngrid[0, 0] = 1;\ngrid[1, 1] = 5;\ngrid[2, 2] = 9;\n\n// Initialize with values\nint[,] board = {\n    {1, 2, 3},\n    {4, 5, 6},\n    {7, 8, 9}\n};\n\n// Loop through grid\nfor (int row = 0; row < 3; row++)\n{\n    for (int col = 0; col < 3; col++)\n    {\n        Console.WriteLine($\"[{row},{col}] = {board[row, col]}\");\n    }\n}",
+      "tryIt": "Create a 2×2 grid, set all values, and print them using nested loops.",
+      "challenge": "Create a tic-tac-toe board and print it with X and O symbols.",
+      "mistakes": [
+        "Use comma between dimensions, not separate brackets.",
+        "Nested loops: outer for rows, inner for columns.",
+        "Two indices required for 2D access.",
+        "Check both dimensions for bounds."
+      ],
+      "summary": "Multi-dimensional arrays store tabular data. 2D arrays use row and column indices. Nested loops process grids. Games use 2D arrays for maps and boards.",
+      "quiz": [
+        [
+          "2D array syntax?",
+          [
+            "int[] array[,]",
+            "int[,] array",
+            "int array[,]"
+          ],
+          1,
+          "Type, comma in brackets, name."
+        ],
+        [
+          "Access element?",
+          [
+            "array[0][1]",
+            "array[0,1]",
+            "array[0;1]"
+          ],
+          1,
+          "Comma separates dimensions."
+        ],
+        [
+          "Nested loop order?",
+          [
+            "Cols then rows",
+            "Rows then cols",
+            "Doesn't matter"
+          ],
+          1,
+          "Outer loop rows, inner loop columns."
+        ],
+        [
+          "3x3 grid dimensions?",
+          [
+            "New int[2,2]",
+            "New int[3,3]",
+            "New int[4,4]"
+          ],
+          1,
+          "3x3 requires [3,3]."
+        ],
+        [
+          "Real-world 2D use?",
+          [
+            "Calculations",
+            "Game maps",
+            "Strings"
+          ],
+          1,
+          "Maps and grids use 2D arrays."
+        ]
+      ]
+    },
+    {
+      "title": "Lists (List<T>)",
+      "time": "55 minutes",
+      "objectives": [
+        "Understand why Lists are useful.",
+        "Create and use Lists.",
+        "Add and remove items.",
+        "Compare Lists and arrays."
+      ],
+      "theory": [
+        "An array has fixed size. A <strong>List</strong> grows and shrinks dynamically. <code>List&lt;string&gt; inventory = new List&lt;string&gt;();</code> creates an empty list.",
+        "Lists use angle brackets <code>&lt;&gt;</code> to specify the item type. <code>List&lt;int&gt;</code> holds integers. <code>List&lt;string&gt;</code> holds text. The syntax reads 'List of type'.",
+        "Add items with <code>Add()</code>. <code>inventory.Add(\"Sword\");</code> adds a sword. Remove items with <code>Remove()</code> or <code>RemoveAt()</code>.",
+        "Lists have many useful methods. <code>Count</code> returns the number of items. <code>Contains()</code> checks if an item exists. <code>Clear()</code> removes all items.",
+        "Use arrays for fixed-size data. Use Lists for dynamic data. Game inventories, enemy lists, and collectible items all benefit from Lists because they change during gameplay."
+      ],
+      "terms": [
+        [
+          "List",
+          "A dynamic collection that grows."
+        ],
+        [
+          "Generic type",
+          "Specified in angle brackets <T>."
+        ],
+        [
+          "Add method",
+          "Inserts an item."
+        ],
+        [
+          "Remove method",
+          "Deletes an item."
+        ]
+      ],
+      "code": "// Create a list\nList<string> inventory = new List<string>();\n\n// Add items\ninventory.Add(\"Sword\");\ninventory.Add(\"Shield\");\ninventory.Add(\"Potion\");\nConsole.WriteLine($\"Items: {inventory.Count}\");\n\n// Access by index\nConsole.WriteLine(inventory[0]);\n\n// Check if item exists\nif (inventory.Contains(\"Sword\"))\n{\n    Console.WriteLine(\"You have a sword!\");\n}\n\n// Remove item\ninventory.Remove(\"Potion\");\nConsole.WriteLine($\"Items after removal: {inventory.Count}\");\n\n// Loop through list\nforeach (string item in inventory)\n{\n    Console.WriteLine(item);\n}",
+      "tryIt": "Create a list of numbers, add five values, print them all, then remove one.",
+      "challenge": "Create a list of player names and remove anyone whose name starts with 'Z'.",
+      "mistakes": [
+        "Use angle brackets for type: List<type>.",
+        "Count is a property, not a method.",
+        "Lists use the same index access as arrays.",
+        "RemoveAt uses index; Remove uses value."
+      ],
+      "summary": "Lists are dynamic arrays that grow and shrink. Use Add to insert, Remove to delete, Count to check size. Lists are essential for data that changes during runtime.",
+      "quiz": [
+        [
+          "Create list syntax?",
+          [
+            "List array",
+            "List<T>()",
+            "ListT()"
+          ],
+          1,
+          "Angle brackets specify type."
+        ],
+        [
+          "Add item?",
+          [
+            "inventory.Add()",
+            "inventory.Insert()",
+            "inventory.Push()"
+          ],
+          0,
+          "Add method appends item."
+        ],
+        [
+          "Check count?",
+          [
+            "inventory.Count()",
+            "inventory.Count",
+            "inventory.Length"
+          ],
+          1,
+          "Count is a property."
+        ],
+        [
+          "List vs array?",
+          [
+            "Same thing",
+            "List is dynamic",
+            "Array is flexible"
+          ],
+          1,
+          "Lists grow; arrays are fixed."
+        ],
+        [
+          "Remove item?",
+          [
+            "inventory.Remove(item)",
+            "inventory.RemoveAt(index)",
+            "Both work"
+          ],
+          2,
+          "Both methods are valid for different purposes."
+        ]
+      ]
+    },
+    {
+      "title": "Useful Collection Methods",
+      "time": "55 minutes",
+      "objectives": [
+        "Use common List methods.",
+        "Understand method purposes.",
+        "Apply methods to real problems.",
+        "Build practical solutions."
+      ],
+      "theory": [
+        "Lists have many useful methods beyond Add and Remove. <code>Add()</code> appends to the end. <code>RemoveAt(int index)</code> removes by position. <code>Remove(T item)</code> removes by value.",
+        "<code>Contains(T item)</code> returns true if the item exists, useful for inventory checks. <code>IndexOf(T item)</code> returns the position of an item, or −1 if not found.",
+        "<code>Clear()</code> removes all items. <code>Count</code> returns the number of items. <code>Insert(int index, T item)</code> adds an item at a specific position.",
+        "Practical examples show method power. Inventory systems check Contains before using an item. Quest systems clear objectives with Clear(). Undo systems use RemoveAt on the most recent action.",
+        "Mastering these methods makes programs cleaner and more efficient. Instead of manual loops searching for items, Contains does it directly. Professional code uses built-in methods rather than reinventing them."
+      ],
+      "terms": [
+        [
+          "Contains",
+          "Checks if item exists."
+        ],
+        [
+          "IndexOf",
+          "Finds item position."
+        ],
+        [
+          "Insert",
+          "Adds at specific position."
+        ],
+        [
+          "Clear",
+          "Removes all items."
+        ]
+      ],
+      "code": "List<string> inventory = new List<string> {\"Sword\", \"Shield\", \"Potion\", \"Key\"};\n\n// Check if item exists\nif (inventory.Contains(\"Key\"))\n{\n    Console.WriteLine(\"Door unlocked!\");\n}\n\n// Find position\nint pos = inventory.IndexOf(\"Potion\");\nif (pos >= 0)\n{\n    Console.WriteLine($\"Potion at position {pos}\");\n}\n\n// Insert at position\ninventory.Insert(0, \"Crown\");\nConsole.WriteLine($\"First item: {inventory[0]}\");\n\n// Remove by position\ninventory.RemoveAt(2);\n\n// Show all items\nforeach (string item in inventory)\n{\n    Console.WriteLine(item);\n}\n\n// Clear inventory\ninventory.Clear();\nConsole.WriteLine($\"Items remaining: {inventory.Count}\");",
+      "tryIt": "Create a list, use Contains to check for an item, then use IndexOf to find its position.",
+      "challenge": "Build an inventory where you can add, remove, and search for weapons by name.",
+      "mistakes": [
+        "IndexOf returns −1 if not found, not null.",
+        "Insert shifts other items, does not replace.",
+        "Remove removes first occurrence only.",
+        "Clear removes everything permanently in that session."
+      ],
+      "summary": "Essential List methods include Add, Remove, Contains, IndexOf, Insert, and Clear. These methods handle common tasks efficiently. Master them for professional code.",
+      "quiz": [
+        [
+          "Contains method?",
+          [
+            "Checks if item exists",
+            "Adds item",
+            "Removes item"
+          ],
+          0,
+          "Contains returns true/false."
+        ],
+        [
+          "IndexOf not found?",
+          [
+            "Returns null",
+            "Returns -1",
+            "Throws error"
+          ],
+          1,
+          "IndexOf returns −1 if not found."
+        ],
+        [
+          "Insert at position?",
+          [
+            "Replaces item",
+            "Adds and shifts items",
+            "Appends only"
+          ],
+          1,
+          "Insert shifts existing items right."
+        ],
+        [
+          "Difference Remove and RemoveAt?",
+          [
+            "Same",
+            "Remove uses value, RemoveAt uses index",
+            "No difference"
+          ],
+          1,
+          "Remove takes item, RemoveAt takes index."
+        ],
+        [
+          "Clear method?",
+          [
+            "Removes one item",
+            "Removes all items",
+            "Shows all items"
+          ],
+          1,
+          "Clear empties the entire list."
+        ]
+      ]
+    },
+    {
+      "title": "Practice Project · Inventory Management System",
+      "time": "90 minutes",
+      "objectives": [
+        "Build a complete RPG inventory system.",
+        "Apply array and list concepts.",
+        "Implement menu-driven interface.",
+        "Demonstrate practical collection usage."
+      ],
+      "theory": [
+        "This project brings together all Module 7 concepts. You will create a simple RPG-style inventory system where players can view, add, and remove items.",
+        "The program uses a List to store inventory items. A menu offers choices: view inventory, add item, remove item, search for item, or exit.",
+        "For each choice, appropriate methods handle the logic. View loops through items. Add uses Add(). Remove uses RemoveAt after finding the index. Search uses IndexOf.",
+        "Input validation ensures menu choices are valid and item names are not empty. Error handling manages invalid operations gracefully.",
+        "A complete system demonstrates professional software design: clear menus, input validation, appropriate data structures, and logical method organization."
+      ],
+      "terms": [
+        [
+          "Menu system",
+          "Offering user choices."
+        ],
+        [
+          "Inventory logic",
+          "Managing items."
+        ],
+        [
+          "Input validation",
+          "Checking user input."
+        ],
+        [
+          "Item management",
+          "Add, remove, search operations."
+        ]
+      ],
+      "code": "List<string> inventory = new List<string>();\nbool playing = true;\n\nwhile (playing)\n{\n    Console.WriteLine(\"\\n=== INVENTORY ===\" );\n    Console.WriteLine($\"Items: {inventory.Count}\");\n    Console.WriteLine(\"1. View items\");\n    Console.WriteLine(\"2. Add item\");\n    Console.WriteLine(\"3. Remove item\");\n    Console.WriteLine(\"4. Search item\");\n    Console.WriteLine(\"5. Exit\");\n    Console.Write(\"Choose: \");\n    \n    string choice = Console.ReadLine() ?? \"\";\n    \n    if (choice == \"1\")\n    {\n        if (inventory.Count == 0)\n        {\n            Console.WriteLine(\"Inventory empty.\");\n        }\n        else\n        {\n            foreach (string item in inventory)\n            {\n                Console.WriteLine($\"- {item}\");\n            }\n        }\n    }\n    else if (choice == \"2\")\n    {\n        Console.Write(\"Item name: \");\n        string item = Console.ReadLine() ?? \"\";\n        if (!string.IsNullOrEmpty(item))\n        {\n            inventory.Add(item);\n            Console.WriteLine(\"Added!\");\n        }\n    }\n    else if (choice == \"3\")\n    {\n        Console.Write(\"Item name to remove: \");\n        string item = Console.ReadLine() ?? \"\";\n        if (inventory.Remove(item))\n        {\n            Console.WriteLine(\"Removed!\");\n        }\n        else\n        {\n            Console.WriteLine(\"Item not found.\");\n        }\n    }\n    else if (choice == \"4\")\n    {\n        Console.Write(\"Search for: \");\n        string item = Console.ReadLine() ?? \"\";\n        int pos = inventory.IndexOf(item);\n        if (pos >= 0)\n        {\n            Console.WriteLine($\"Found at position {pos + 1}\");\n        }\n        else\n        {\n            Console.WriteLine(\"Not found.\");\n        }\n    }\n    else if (choice == \"5\")\n    {\n        playing = false;\n    }\n}",
+      "tryIt": "Build a basic version where you can add and view items.",
+      "challenge": "Extend the system to show item count, limit inventory size, or track item quantities.",
+      "mistakes": [
+        "Validate all user input before using it.",
+        "Check if inventory is empty before viewing.",
+        "Use appropriate List methods for each operation.",
+        "Handle edge cases like empty names."
+      ],
+      "summary": "A complete inventory system demonstrates practical list usage. Menu-driven interfaces, input validation, and appropriate methods create professional applications.",
+      "quiz": [
+        [
+          "Best collection for inventory?",
+          [
+            "Array",
+            "List",
+            "Dictionary"
+          ],
+          1,
+          "Lists grow with new items."
+        ],
+        [
+          "View all items?",
+          [
+            "for loop",
+            "foreach loop",
+            "Both work"
+          ],
+          1,
+          "Foreach is cleaner here."
+        ],
+        [
+          "Check item exists?",
+          [
+            "Contains method",
+            "Loop search",
+            "Both"
+          ],
+          0,
+          "Contains is direct and clear."
+        ],
+        [
+          "Remove by name?",
+          [
+            "Remove method",
+            "RemoveAt",
+            "Need IndexOf first"
+          ],
+          0,
+          "Remove takes the item name directly."
+        ],
+        [
+          "Module 7 learning?",
+          [
+            "Arrays only",
+            "Lists only",
+            "Arrays and Lists"
+          ],
+          2,
+          "This covers both comprehensively."
+        ]
+      ]
+    }
+  ]
+}

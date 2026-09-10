@@ -1,0 +1,785 @@
+{
+  "eyebrow": "Module 6 · C# foundations · 8 lessons",
+  "title": "Methods & Reusable Code",
+  "description": "Learn how to organise your programs into reusable blocks of code using methods in C#. Master method creation, parameters, return values, and scope to write cleaner, more maintainable programs.",
+  "completion": "Module 6 complete",
+  "completionText": "You are ready for Module 7, where arrays teach you how to store and manage multiple pieces of information efficiently.",
+  "lessons": [
+    {
+      "title": "Introduction to Methods",
+      "time": "45 minutes",
+      "objectives": [
+        "Explain what methods are and why they matter.",
+        "Identify problems with writing all code in one place.",
+        "Describe code reusability and organisation.",
+        "Recognise methods as the foundation of professional programming."
+      ],
+      "theory": [
+        "A <strong>method</strong> is a named block of code that performs a specific task. Without methods, programmers would write the same instructions repeatedly. This leads to error-prone, hard-to-maintain code.",
+        "Consider a greeting program. Without methods, you might write <code>Console.WriteLine(\"Welcome\");</code> three times. With a method, you write it once and call it three times. The method groups related statements into a reusable unit.",
+        "Methods solve several problems. They eliminate repetition—write once, use many times. They improve readability—a method name explains what code does. They enable easier debugging—fix once, not multiple times. They organize large programs into smaller, understandable pieces.",
+        "A method like <code>DisplayMenu()</code> clearly communicates its purpose. Another like <code>CalculateTotal()</code> is self-documenting. Programmers reading the code understand what each method does without examining every line.",
+        "Professional programs contain hundreds of methods. Games have methods for player movement, enemy AI, health systems, and UI updates. Without methods, such programs would be impossible to manage. Learning to write and organize methods is essential for becoming a professional programmer."
+      ],
+      "terms": [
+        [
+          "Method",
+          "A named block of code performing a specific task."
+        ],
+        [
+          "Reusability",
+          "Using the same code multiple times."
+        ],
+        [
+          "Code organisation",
+          "Grouping related instructions logically."
+        ],
+        [
+          "Maintainability",
+          "How easy code is to update and fix."
+        ]
+      ],
+      "code": "// Without methods: repetitive and hard to maintain\nConsole.WriteLine(\"Welcome to the game!\");\nConsole.WriteLine(\"Welcome to the game!\");\nConsole.WriteLine(\"Welcome to the game!\");\n\n// With methods: clean and reusable\nDisplayWelcome();\nDisplayWelcome();\nDisplayWelcome();\n\nvoid DisplayWelcome()\n{\n    Console.WriteLine(\"Welcome to the game!\");\n}",
+      "tryIt": "Identify three pieces of code you write repeatedly in your programs. How would methods help?",
+      "challenge": "Imagine a game with a menu, battle system, and score tracker. List five methods that might exist.",
+      "mistakes": [
+        "Do not assume methods are optional.",
+        "Remember methods reduce errors through reuse.",
+        "Methods improve code clarity and organisation.",
+        "Professional code is built from many methods."
+      ],
+      "summary": "Methods are named code blocks that perform specific tasks. They eliminate repetition, improve readability, enable reuse, and organise large programs. Methods are the foundation of professional programming.",
+      "quiz": [
+        [
+          "What is a method?",
+          [
+            "A loop type",
+            "A named code block performing a task",
+            "A variable type"
+          ],
+          1,
+          "A method is a named block of code."
+        ],
+        [
+          "Why use methods?",
+          [
+            "Repetition only",
+            "Reusability and clarity",
+            "Loops only"
+          ],
+          1,
+          "Methods provide reusability and organisation."
+        ],
+        [
+          "Best benefit of methods?",
+          [
+            "Slower code",
+            "Reusing code reduces errors",
+            "Longer programs"
+          ],
+          1,
+          "Reusing code reduces repeated errors."
+        ],
+        [
+          "Can methods be called multiple times?",
+          [
+            "No",
+            "Yes",
+            "Only in games"
+          ],
+          1,
+          "Methods are designed to be called repeatedly."
+        ],
+        [
+          "Do professional programs use methods?",
+          [
+            "No",
+            "Yes, hundreds or more",
+            "Only sometimes"
+          ],
+          1,
+          "Professional programs use many methods."
+        ]
+      ]
+    },
+    {
+      "title": "Creating and Calling Methods",
+      "time": "50 minutes",
+      "objectives": [
+        "Write method declarations.",
+        "Understand method structure and syntax.",
+        "Call methods from Main.",
+        "Trace method execution flow."
+      ],
+      "theory": [
+        "A method has a structure: return type, name, parentheses, and a code block. The simplest method returns nothing and looks like <code>void MethodName() { }</code>.",
+        "<code>void</code> means the method does not return a value. <code>MethodName</code> is the method's name. Empty parentheses mean it takes no parameters. Curly braces contain the code.",
+        "A method name should clearly describe what the method does. <code>DisplayMenu()</code> is clear; <code>DoStuff()</code> is vague. Use camelCase: start with lowercase, capitalize subsequent words.",
+        "Calling a method means executing it. In Main, write the method name followed by parentheses: <code>DisplayMenu();</code>. The computer runs the method's code block, then returns to the next line in Main.",
+        "Execution flow is important. Main calls a method, the method executes, then control returns to Main. Understanding this flow prevents confusion when multiple methods are involved."
+      ],
+      "terms": [
+        [
+          "Method declaration",
+          "Defining a method with its structure."
+        ],
+        [
+          "Return type",
+          "What the method returns (void means nothing)."
+        ],
+        [
+          "Method name",
+          "The identifier used to call the method."
+        ],
+        [
+          "Method call",
+          "Executing a method by name with parentheses."
+        ]
+      ],
+      "code": "void DisplayMenu()\n{\n    Console.WriteLine(\"=== Main Menu ===\" );\n    Console.WriteLine(\"1. Start Game\");\n    Console.WriteLine(\"2. Settings\");\n    Console.WriteLine(\"3. Exit\");\n}\n\nvoid DisplayWelcome()\n{\n    Console.WriteLine(\"Welcome, adventurer!\");\n}\n\n// In Main:\nDisplayWelcome();\nDisplayMenu();\nConsole.WriteLine(\"Choose an option.\");",
+      "tryIt": "Create two simple methods: one that prints a greeting and one that prints a separator line. Call both from Main.",
+      "challenge": "Write a calculator menu method displaying arithmetic operations, then a goodbye method.",
+      "mistakes": [
+        "Use void for methods that do not return values.",
+        "End method names with parentheses when calling.",
+        "Method declarations belong above Main or in a separate class.",
+        "Indentation makes structure clear."
+      ],
+      "summary": "Methods have a return type (void), name, parentheses, and code block. Calling a method executes its code. Control returns to Main after the method completes.",
+      "quiz": [
+        [
+          "Complete the declaration: void DisplayScore() { }?",
+          [
+            "Missing closing brace",
+            "Missing parentheses",
+            "Correct syntax"
+          ],
+          2,
+          "This syntax is correct."
+        ],
+        [
+          "What does void mean?",
+          [
+            "Returns a number",
+            "Returns nothing",
+            "Returns text"
+          ],
+          1,
+          "Void means the method returns nothing."
+        ],
+        [
+          "How to call a method?",
+          [
+            "methodName",
+            "methodName()",
+            "void methodName"
+          ],
+          1,
+          "Parentheses are required."
+        ],
+        [
+          "Where does Main call a method?",
+          [
+            "Inside the method",
+            "In Main's code block",
+            "After all methods"
+          ],
+          1,
+          "Main calls methods from its own code block."
+        ],
+        [
+          "After a method completes, what happens?",
+          [
+            "Program ends",
+            "Control returns to caller",
+            "Loops forever"
+          ],
+          1,
+          "Control returns to the caller."
+        ]
+      ]
+    },
+    {
+      "title": "Method Parameters",
+      "time": "50 minutes",
+      "objectives": [
+        "Understand what parameters are.",
+        "Pass values into methods.",
+        "Use multiple parameters.",
+        "Apply parameters to real problems."
+      ],
+      "theory": [
+        "Parameters let methods receive information. Without parameters, a method always behaves the same way. With parameters, a method adapts based on input.",
+        "A method that prints a greeting always prints the same thing. With a parameter, it can greet different names: <code>void SayHello(string name) { Console.WriteLine(\"Hello \" + name); }</code>",
+        "Parameters go in parentheses after the method name. Each parameter has a type and name. <code>void Damage(int amount) { health -= amount; }</code> takes an integer amount.",
+        "Multiple parameters are separated by commas. <code>void PlayerInfo(string name, int level, int health)</code> receives three values. When called, provide them in order: <code>PlayerInfo(\"Alex\", 5, 100);</code>",
+        "Parameter names should be clear. <code>void Attack(int damageAmount)</code> is clearer than <code>void Attack(int x)</code>. Good names make code self-documenting."
+      ],
+      "terms": [
+        [
+          "Parameter",
+          "A variable received by a method."
+        ],
+        [
+          "Argument",
+          "The value passed to a parameter."
+        ],
+        [
+          "Formal parameter",
+          "The parameter defined in the method."
+        ],
+        [
+          "Actual argument",
+          "The value provided when calling the method."
+        ]
+      ],
+      "code": "void SayHello(string name)\n{\n    Console.WriteLine($\"Hello, {name}!\");\n}\n\nvoid TakeDamage(int damageAmount)\n{\n    health -= damageAmount;\n    Console.WriteLine($\"You took {damageAmount} damage.\");\n}\n\nvoid DisplayPlayerStats(string playerName, int level, int health)\n{\n    Console.WriteLine($\"Player: {playerName}\");\n    Console.WriteLine($\"Level: {level}\");\n    Console.WriteLine($\"Health: {health}\");\n}\n\n// Calls:\nSayHello(\"Maya\");\nTakeDamage(15);\nDisplayPlayerStats(\"Alex\", 7, 80);",
+      "tryIt": "Create a method that takes a player name and a score, then displays both.",
+      "challenge": "Write a method accepting three numbers and displaying their sum.",
+      "mistakes": [
+        "Parameter type and name are required.",
+        "Arguments must be provided in order.",
+        "Types must match.",
+        "Use meaningful parameter names."
+      ],
+      "summary": "Parameters allow methods to receive information. Provide values in the same order as method definition. Parameters make methods flexible and reusable.",
+      "quiz": [
+        [
+          "Method taking parameters syntax?",
+          [
+            "void Method(int x)",
+            "void Method int x",
+            "int Method(x)"
+          ],
+          0,
+          "Parameter type and name go in parentheses."
+        ],
+        [
+          "Calling SayHello(string name) with \"Bob\"?",
+          [
+            "SayHello(Bob)",
+            "SayHello(\"Bob\")",
+            "SayHello Bob"
+          ],
+          1,
+          "String arguments use double quotes."
+        ],
+        [
+          "Multiple parameters?",
+          [
+            "Separated by commas",
+            "Separated by semicolons",
+            "One per method"
+          ],
+          0,
+          "Commas separate multiple parameters."
+        ],
+        [
+          "What is an argument?",
+          [
+            "Parameter name",
+            "Value passed to parameter",
+            "Method name"
+          ],
+          1,
+          "Arguments are the values passed to parameters."
+        ],
+        [
+          "Order of arguments?",
+          [
+            "Any order",
+            "Same as definition",
+            "Reversed order"
+          ],
+          1,
+          "Arguments must be in the defined order."
+        ]
+      ]
+    },
+    {
+      "title": "Return Values",
+      "time": "55 minutes",
+      "objectives": [
+        "Return information from methods.",
+        "Distinguish void from returning methods.",
+        "Use return keyword correctly.",
+        "Store and use returned values."
+      ],
+      "theory": [
+        "A method can return a value to the caller. Instead of <code>void</code>, specify the return type: <code>int Add(int a, int b)</code> means the method returns an integer.",
+        "The <code>return</code> keyword sends a value back. <code>return a + b;</code> calculates and returns the sum. Without return, the method returns nothing and should be void.",
+        "A method returning a value must return something of the correct type. <code>int Add(int a, int b) { return \"hello\"; }</code> is wrong—the method promises int but returns string.",
+        "When you call a method that returns a value, you can store the result. <code>int sum = Add(5, 3);</code> stores the return value in sum. You can also use it directly: <code>Console.WriteLine(Add(5, 3));</code>",
+        "Return types can be int, double, string, bool, or any other type. A method might return a player's health, a calculated score, true or false for success, or a formatted message."
+      ],
+      "terms": [
+        [
+          "Return type",
+          "The type of value the method returns."
+        ],
+        [
+          "return keyword",
+          "Sends a value back to the caller."
+        ],
+        [
+          "Returned value",
+          "The value sent back by the method."
+        ],
+        [
+          "Assignment",
+          "Storing a returned value in a variable."
+        ]
+      ],
+      "code": "int Add(int a, int b)\n{\n    return a + b;\n}\n\nstring GetPlayerStatus(int health)\n{\n    if (health > 50)\n        return \"Healthy\";\n    else if (health > 0)\n        return \"Injured\";\n    else\n        return \"Defeated\";\n}\n\nbool IsGameOver(int lives)\n{\n    return lives <= 0;\n}\n\n// Calls:\nint total = Add(10, 5);\nConsole.WriteLine(total);\nstring status = GetPlayerStatus(30);\nbool gameEnded = IsGameOver(-5);",
+      "tryIt": "Create a method that takes two numbers and returns their product.",
+      "challenge": "Write a method that calculates and returns a grade (A, B, C, D, F) based on a score.",
+      "mistakes": [
+        "Specify the correct return type.",
+        "Every path must return a value.",
+        "Return type must match the value.",
+        "Use return keyword."
+      ],
+      "summary": "Methods can return values using the return keyword. Specify the return type instead of void. Store or use returned values in the caller.",
+      "quiz": [
+        [
+          "Method returning int syntax?",
+          [
+            "int MethodName() { return 5; }",
+            "void MethodName() { return 5; }",
+            "MethodName() { return 5; }"
+          ],
+          0,
+          "Return type goes before method name."
+        ],
+        [
+          "What does return do?",
+          [
+            "Ends the program",
+            "Sends value back to caller",
+            "Prints output"
+          ],
+          1,
+          "Return sends a value back."
+        ],
+        [
+          "Calling int Add(2, 3)?",
+          [
+            "Prints 5",
+            "Returns 5",
+            "Displays nothing"
+          ],
+          1,
+          "The method returns 5."
+        ],
+        [
+          "Storing a returned value?",
+          [
+            "int result = Add(2, 3);",
+            "Add(2, 3);",
+            "Add(2, 3) = result;"
+          ],
+          0,
+          "Assign return value to a variable."
+        ],
+        [
+          "Return value type must match?",
+          [
+            "No",
+            "Yes",
+            "Only for int"
+          ],
+          1,
+          "Return type and value must match."
+        ]
+      ]
+    },
+    {
+      "title": "Method Overloading",
+      "time": "50 minutes",
+      "objectives": [
+        "Understand method overloading.",
+        "Create multiple methods with the same name.",
+        "Distinguish methods by parameter types.",
+        "Apply overloading to real problems."
+      ],
+      "theory": [
+        "Method overloading allows multiple methods to share the same name if their parameters differ. C# distinguishes them by the number or type of parameters.",
+        "<code>void Attack() { }</code> and <code>void Attack(int damage) { }</code> are two different methods. Both are named Attack, but the first takes no parameters while the second takes an integer. When you call Attack, C# chooses the correct version based on your arguments.",
+        "You can overload by parameter count. <code>void Add(int a, int b)</code> and <code>void Add(int a, int b, int c)</code> both add values but handle different quantities.",
+        "You can overload by parameter type. <code>void Display(int number)</code> and <code>void Display(string text)</code> both display information but handle different types.",
+        "Overloading makes code more flexible. A single method name like Add can handle integers or doubles. A method like Print can display numbers or text. This is convenient and reduces the need to remember many method names."
+      ],
+      "terms": [
+        [
+          "Overloading",
+          "Multiple methods with the same name."
+        ],
+        [
+          "Signature",
+          "The method name and parameter list."
+        ],
+        [
+          "Overload resolution",
+          "How C# chooses the correct method."
+        ],
+        [
+          "Polymorphism",
+          "Using the same name for different behaviours."
+        ]
+      ],
+      "code": "void Attack()\n{\n    Console.WriteLine(\"Basic attack!\");\n}\n\nvoid Attack(int damage)\n{\n    Console.WriteLine($\"Attack for {damage} damage!\");\n}\n\nvoid Attack(string weaponName)\n{\n    Console.WriteLine($\"Attack with {weaponName}!\");\n}\n\nint Add(int a, int b)\n{\n    return a + b;\n}\n\ndouble Add(double a, double b)\n{\n    return a + b;\n}\n\n// Calls:\nAttack();\nAttack(25);\nAttack(\"Sword\");\nint sum1 = Add(5, 3);\ndouble sum2 = Add(5.5, 3.2);",
+      "tryIt": "Create two overloaded Display methods: one for int and one for string.",
+      "challenge": "Write three overloaded Greet methods: no parameters, one string, and two strings.",
+      "mistakes": [
+        "Methods must differ in parameters.",
+        "Same name but same parameters is an error.",
+        "C# matches based on argument types.",
+        "Return type alone does not overload."
+      ],
+      "summary": "Overloading allows methods to share names if parameters differ. C# chooses the correct method based on arguments. Overloading makes code flexible and intuitive.",
+      "quiz": [
+        [
+          "Can methods have the same name?",
+          [
+            "No",
+            "Yes, if parameters differ",
+            "Yes, if return type differs"
+          ],
+          1,
+          "Overloading requires different parameters."
+        ],
+        [
+          "Which is overloading?",
+          [
+            "void Test() and void Test(int)",
+            "void Test() and int Test()",
+            "void Test() twice"
+          ],
+          0,
+          "Different parameters enable overloading."
+        ],
+        [
+          "How does C# choose method?",
+          [
+            "By name only",
+            "By name and parameters",
+            "By return type"
+          ],
+          1,
+          "C# matches name and parameter types."
+        ],
+        [
+          "Can you overload by return type?",
+          [
+            "Yes",
+            "No",
+            "Only for void"
+          ],
+          1,
+          "Return type alone does not distinguish overloads."
+        ],
+        [
+          "Calling Attack(25) with two Attack methods?",
+          [
+            "Ambiguous",
+            "Calls Attack() first",
+            "Calls Attack(int)"
+          ],
+          2,
+          "C# matches the integer parameter version."
+        ]
+      ]
+    },
+    {
+      "title": "Variable Scope",
+      "time": "55 minutes",
+      "objectives": [
+        "Understand variable scope.",
+        "Distinguish local and global scope.",
+        "Recognise scope boundaries.",
+        "Pass data between methods."
+      ],
+      "theory": [
+        "Variable scope defines where a variable can be accessed. A variable declared inside a method is local to that method. It cannot be accessed elsewhere.",
+        "<code>void Test() { int score = 100; }</code> declares score inside Test. The variable exists only within Test's curly braces. Outside Test, score does not exist.",
+        "Attempting to use a variable outside its scope causes a compiler error. <code>void Main() { Console.WriteLine(score); }</code> fails because score was declared in a different method.",
+        "Local scope is intentional protection. Multiple methods can each have a variable named score without confusion. Each is independent. This prevents accidental overwrites and makes code modular.",
+        "To use data across methods, pass it as a parameter or return it from a method. <code>void UpdateScore(int newScore)</code> receives the score. <code>int GetScore()</code> returns it. This controlled data flow is professional practice."
+      ],
+      "terms": [
+        [
+          "Scope",
+          "The region where a variable can be accessed."
+        ],
+        [
+          "Local variable",
+          "A variable declared inside a method."
+        ],
+        [
+          "Method scope",
+          "The boundaries of a method."
+        ],
+        [
+          "Lifetime",
+          "How long a variable exists."
+        ]
+      ],
+      "code": "void Test1()\n{\n    int score = 100;\n    Console.WriteLine(score);\n}\n\nvoid Test2()\n{\n    // score is not accessible here\n    // Uncomment to see error:\n    // Console.WriteLine(score);\n}\n\nvoid DisplayScore(int score)\n{\n    Console.WriteLine($\"Score: {score}\");\n}\n\nint GetScore()\n{\n    return 250;\n}\n\n// In Main:\nint mainScore = 50;\nDisplayScore(mainScore);\nint retrievedScore = GetScore();\nConsole.WriteLine(retrievedScore);",
+      "tryIt": "Create two methods, each with a local variable named x. Change one and observe the other is unaffected.",
+      "challenge": "Write a method that calculates and returns a value, then use it in another method.",
+      "mistakes": [
+        "Variables declared in a method stay local.",
+        "Use parameters to pass data between methods.",
+        "Scope protects variables from unwanted access.",
+        "Each block has its own scope."
+      ],
+      "summary": "Variable scope determines where variables can be accessed. Local variables are confined to their method. Use parameters and return values to share data between methods.",
+      "quiz": [
+        [
+          "Can a variable declared in Method1 be used in Method2?",
+          [
+            "Yes, always",
+            "No, unless passed as parameter",
+            "Yes, if global"
+          ],
+          1,
+          "Local variables stay local."
+        ],
+        [
+          "What creates a scope?",
+          [
+            "A variable name",
+            "Curly braces {}",
+            "A method call"
+          ],
+          1,
+          "Curly braces define scope boundaries."
+        ],
+        [
+          "How to use data across methods?",
+          [
+            "Share global variables",
+            "Pass parameters or return values",
+            "Copy the code"
+          ],
+          1,
+          "Parameters and returns are the proper way."
+        ],
+        [
+          "Can two methods have variables named x?",
+          [
+            "No",
+            "Yes, they are independent",
+            "Only in the same file"
+          ],
+          1,
+          "Each scope has independent variables."
+        ],
+        [
+          "Scope protects against what?",
+          [
+            "Performance issues",
+            "Accidental variable overwrites",
+            "Slow compilation"
+          ],
+          1,
+          "Scope prevents naming conflicts and accidents."
+        ]
+      ]
+    },
+    {
+      "title": "Static Methods",
+      "time": "50 minutes",
+      "objectives": [
+        "Understand what static means.",
+        "Call methods without object instances.",
+        "Recognise common static patterns.",
+        "Compare static to instance methods."
+      ],
+      "theory": [
+        "A static method belongs to a class, not to a specific instance. You can call a static method without creating an object. This is why <code>Console.WriteLine()</code> works—WriteLine is a static method.",
+        "<code>static void DisplayMenu()</code> is a static method. Call it directly: <code>DisplayMenu();</code> No object creation required.",
+        "The Math class contains many static methods. <code>Math.Abs(-10)</code> returns 10. <code>Math.Sqrt(16)</code> returns 4. These work without creating a Math object.",
+        "Beginners typically write static methods in console programs. As you learn objects and classes, you will create instance methods belonging to objects. For now, understand that static methods are called directly on the class.",
+        "The keyword <code>static</code> indicates the method belongs to the class itself. Non-static (instance) methods belong to objects created from the class. For learners beginning with console programs, static is the norm."
+      ],
+      "terms": [
+        [
+          "static",
+          "Belongs to the class, not instances."
+        ],
+        [
+          "Instance method",
+          "Belongs to an object created from the class."
+        ],
+        [
+          "Class method",
+          "Another name for static method."
+        ],
+        [
+          "Namespace",
+          "Organises related classes and methods."
+        ]
+      ],
+      "code": "static void DisplayMenu()\n{\n    Console.WriteLine(\"=== Menu ===\" );\n    Console.WriteLine(\"1. Play\");\n    Console.WriteLine(\"2. Quit\");\n}\n\nstatic int CalculateTotal(int a, int b)\n{\n    return a + b;\n}\n\nstatic double GetTemperature()\n{\n    Console.Write(\"Enter temperature: \");\n    return double.Parse(Console.ReadLine() ?? \"0\");\n}\n\n// Calls:\nDisplayMenu();\nint total = CalculateTotal(10, 20);\ndouble temp = GetTemperature();",
+      "tryIt": "Create a static method that calculates and returns the area of a rectangle.",
+      "challenge": "Write two static methods: one that prompts for input and one that displays results.",
+      "mistakes": [
+        "Use static for console application methods.",
+        "Call static methods directly without objects.",
+        "Non-static methods require object instances.",
+        "Console class methods are static."
+      ],
+      "summary": "Static methods belong to the class and are called directly. Console.WriteLine is static. In console programs, methods are typically static. Instance methods belong to objects and come later.",
+      "quiz": [
+        [
+          "What does static mean?",
+          [
+            "Unchanging value",
+            "Belongs to class, not instances",
+            "A loop type"
+          ],
+          1,
+          "Static means belonging to the class."
+        ],
+        [
+          "How to call a static method?",
+          [
+            "Create an object first",
+            "Call directly: MethodName()",
+            "Use new keyword"
+          ],
+          1,
+          "Static methods are called directly."
+        ],
+        [
+          "Is Console.WriteLine static?",
+          [
+            "No",
+            "Yes",
+            "Only sometimes"
+          ],
+          1,
+          "Console.WriteLine is a static method."
+        ],
+        [
+          "When to use static?",
+          [
+            "Always",
+            "In console programs initially",
+            "Never"
+          ],
+          1,
+          "Static is common in beginner console programs."
+        ],
+        [
+          "Difference from instance methods?",
+          [
+            "None",
+            "Instance methods require objects",
+            "Same thing"
+          ],
+          1,
+          "Instance methods require object instances."
+        ]
+      ]
+    },
+    {
+      "title": "Practice Project · Text Adventure Game",
+      "time": "90 minutes",
+      "objectives": [
+        "Apply all method concepts.",
+        "Create a complete game with multiple methods.",
+        "Manage game state and player progress.",
+        "Demonstrate professional code organisation."
+      ],
+      "theory": [
+        "This project brings together all Module 6 concepts. You will create a simple text adventure game with methods for menus, player interactions, battles, and game flow.",
+        "A complete game needs several methods: DisplayMenu displays choices, GetPlayerChoice reads input, StartBattle handles combat, CalculateDamage applies harm, CheckGameOver tests win/loss conditions, and more.",
+        "Methods receive parameters for flexibility. StartBattle might take enemy health and damage. CalculateDamage takes player and enemy stats. Methods return values for decision-making.",
+        "The game demonstrates scope: local variables in each method, parameters for data exchange, and return values for results. Main orchestrates the overall flow.",
+        "A professional program is built from many small, focused methods. Each method has a clear purpose and name. Methods call other methods in a logical order."
+      ],
+      "terms": [
+        [
+          "Game loop",
+          "Continuous gameplay cycle."
+        ],
+        [
+          "State management",
+          "Tracking health, choices, outcomes."
+        ],
+        [
+          "Method orchestration",
+          "Calling methods in a logical order."
+        ],
+        [
+          "Game flow",
+          "The progression from start to end."
+        ]
+      ],
+      "code": "static void DisplayMenu()\n{\n    Console.WriteLine(\"\\n=== Adventure ===\" );\n    Console.WriteLine(\"1. Explore\");\n    Console.WriteLine(\"2. Rest\");\n    Console.WriteLine(\"3. Quit\");\n}\n\nstatic string GetPlayerChoice()\n{\n    Console.Write(\"Choose: \");\n    return Console.ReadLine() ?? \"\";\n}\n\nstatic int CalculateDamage(int baseDamage, bool critical)\n{\n    return critical ? baseDamage * 2 : baseDamage;\n}\n\nstatic void StartBattle(int playerHealth, int enemyHealth)\n{\n    Console.WriteLine(\"\\n=== Battle ===\" );\n    Console.WriteLine($\"Enemy HP: {enemyHealth}\");\n    Console.WriteLine($\"Your HP: {playerHealth}\");\n    int damage = CalculateDamage(15, false);\n    Console.WriteLine($\"You deal {damage} damage!\");\n}\n\nstatic bool IsGameOver(int playerHealth)\n{\n    return playerHealth <= 0;\n}\n\n// In Main:\nint health = 100;\nbool playing = true;\nwhile (playing)\n{\n    DisplayMenu();\n    string choice = GetPlayerChoice();\n    if (choice == \"1\") StartBattle(health, 50);\n    else if (choice == \"3\") playing = false;\n}\nConsole.WriteLine(\"Thanks for playing!\");",
+      "tryIt": "Build a simple game with a menu, player input, and battle system.",
+      "challenge": "Extend the game with inventory, leveling, or multiple enemies.",
+      "mistakes": [
+        "Each method should have a clear purpose.",
+        "Pass necessary data as parameters.",
+        "Use meaningful method and variable names.",
+        "Organize methods logically."
+      ],
+      "summary": "A complete game is built from many methods. Each method has a specific role. Methods exchange data through parameters and return values. Professional code is organized and reusable.",
+      "quiz": [
+        [
+          "Best method for displaying options?",
+          [
+            "In Main only",
+            "Separate DisplayMenu method",
+            "In every method"
+          ],
+          1,
+          "Separate methods improve organisation."
+        ],
+        [
+          "Purpose of parameters in methods?",
+          [
+            "Speed up code",
+            "Pass data between methods",
+            "Create variables"
+          ],
+          1,
+          "Parameters enable data exchange."
+        ],
+        [
+          "How does Main coordinate?",
+          [
+            "Manually doing everything",
+            "Calling organised methods",
+            "Writing all code inline"
+          ],
+          1,
+          "Main calls methods in logical order."
+        ],
+        [
+          "Why separate battle logic?",
+          [
+            "Shorter code",
+            "Clearer purpose",
+            "Both"
+          ],
+          2,
+          "Separation improves clarity and reuse."
+        ],
+        [
+          "Module 6 learning?",
+          [
+            "Only static methods",
+            "All method concepts",
+            "Just return values"
+          ],
+          1,
+          "This covers methods comprehensively."
+        ]
+      ]
+    }
+  ]
+}

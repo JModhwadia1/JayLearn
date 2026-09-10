@@ -1,0 +1,785 @@
+{
+  "eyebrow": "Module 3 · C# foundations · 8 lessons",
+  "title": "Operators & Expressions",
+  "description": "Learn how C# performs calculations, comparisons, and logical operations. Complete every five-question quiz to unlock the next lesson and prepare for conditional statements.",
+  "completion": "Module 3 complete",
+  "completionText": "You are ready for Module 4, where conditional statements guide program decisions using the operators you have mastered.",
+  "lessons": [
+    {
+      "title": "Introduction to Operators",
+      "time": "40 minutes",
+      "objectives": [
+        "Explain what an operator does.",
+        "Distinguish operands from operators.",
+        "Describe an expression as a statement producing a value.",
+        "Write and evaluate simple expressions."
+      ],
+      "theory": [
+        "An operator is a symbol that performs an operation on one or more values. The values being operated on are called operands. Together, an operator and its operands form an <strong>expression</strong>.",
+        "In the expression <code>5 + 3</code>, the plus sign is the operator and 5 and 3 are operands. This expression evaluates to 8.",
+        "Expressions are central to programming. They calculate new values, compare values, combine conditions, and drive programme logic. Every quiz answer, calculation, and decision depends on evaluating expressions.",
+        "C# has many operators: arithmetic operators for calculations, assignment operators for storing values, comparison operators for Boolean results, and logical operators for combining conditions.",
+        "Operators have precedence—some execute before others. Parentheses always execute first, making complex expressions clearer and less error-prone."
+      ],
+      "terms": [
+        [
+          "Operator",
+          "A symbol performing an action on operands."
+        ],
+        [
+          "Operand",
+          "A value used by an operator."
+        ],
+        [
+          "Expression",
+          "Code combining operators and operands."
+        ],
+        [
+          "Evaluation",
+          "The process of computing an expression's result."
+        ]
+      ],
+      "code": "int a = 5;\nint b = 3;\nint sum = a + b;\nConsole.WriteLine(sum);\nConsole.WriteLine(a + b + 2);\nConsole.WriteLine((a + b) * 2);",
+      "tryIt": "Write expressions adding two numbers, multiplying two variables, and combining three values with parentheses.",
+      "challenge": "Create four variables and write three expressions mixing different operators and values.",
+      "mistakes": [
+        "Do not confuse the operator symbol with variable names.",
+        "Remember that an expression must produce a value.",
+        "Use parentheses for clarity.",
+        "End statements with semicolons."
+      ],
+      "summary": "An operator acts on operands to form an expression. Expressions evaluate to produce results that drive program logic.",
+      "quiz": [
+        [
+          "What is an operator?",
+          [
+            "A variable name",
+            "A symbol performing an action",
+            "A comment"
+          ],
+          1,
+          "An operator performs an action on operands."
+        ],
+        [
+          "In 7 - 2, what are the operands?",
+          [
+            "7 and 2",
+            "7 and minus",
+            "The result"
+          ],
+          0,
+          "The numbers being operated on are operands."
+        ],
+        [
+          "What is an expression?",
+          [
+            "A variable type",
+            "Code combining operators and operands",
+            "A label"
+          ],
+          1,
+          "An expression combines operators and operands to produce a value."
+        ],
+        [
+          "Does 10 / 3 produce a result?",
+          [
+            "No",
+            "Yes, it evaluates",
+            "Only in comments"
+          ],
+          1,
+          "Every expression produces a value."
+        ],
+        [
+          "Why use parentheses?",
+          [
+            "Control precedence and clarity",
+            "Add semicolons",
+            "Declare variables"
+          ],
+          0,
+          "Parentheses make precedence explicit."
+        ]
+      ]
+    },
+    {
+      "title": "Arithmetic Operators",
+      "time": "50 minutes",
+      "objectives": [
+        "Perform addition, subtraction, multiplication, division, and modulus.",
+        "Understand integer vs decimal division.",
+        "Apply order of operations.",
+        "Write realistic calculations."
+      ],
+      "theory": [
+        "Arithmetic operators act on numeric values. The plus operator <code>+</code> adds, minus <code>-</code> subtracts, asterisk <code>*</code> multiplies, forward slash <code>/</code> divides, and percent <code>%</code> computes the remainder.",
+        "When both operands are <strong>int</strong>, division produces an int result truncating any fractional part. <code>(int)7 / 3</code> is 2. When either operand is <strong>double</strong>, division produces a double. <code>7.0 / 3</code> is 2.333...",
+        "The modulus operator returns the remainder. <code>17 % 5</code> is 2 because 17 divided by 5 is 3 with remainder 2. Modulus helps detect even and odd numbers: <code>number % 2 == 0</code> means even.",
+        "Order of operations follows the PEMDAS/BODMAS rule: parentheses first, then multiplication and division from left to right, then addition and subtraction from left to right.",
+        "Expressions commonly represent real calculations. A game might compute damage as <code>baseDamage * multiplier - armourReduction</code>."
+      ],
+      "terms": [
+        [
+          "Division",
+          "Splitting a value by another."
+        ],
+        [
+          "Remainder",
+          "The value left after division."
+        ],
+        [
+          "Modulus",
+          "The operator computing remainder."
+        ],
+        [
+          "Precedence",
+          "The order in which operators execute."
+        ]
+      ],
+      "code": "int damage = 10 * 3 - 2;\nConsole.WriteLine(damage);\nint health = 100;\nint reduced = health - damage;\nConsole.WriteLine(reduced);\ndouble average = 7.0 / 3;\nConsole.WriteLine(average);\nint remainder = 17 % 5;\nConsole.WriteLine(remainder);",
+      "tryIt": "Calculate a recipe scaling, a game score penalty, and a remainder from a division.",
+      "challenge": "Write a calculation for employee overtime pay, student average marks, and enemy health reduction.",
+      "mistakes": [
+        "Integer division truncates without rounding.",
+        "Modulus works only with integers.",
+        "Order matters: 2 + 3 * 4 is 14, not 20.",
+        "Use parentheses to override precedence."
+      ],
+      "summary": "Arithmetic operators calculate new values. Division behaves differently for int and double. Modulus finds remainders. Order of operations governs evaluation.",
+      "quiz": [
+        [
+          "Result of 10 + 3 * 2?",
+          [
+            "26",
+            "16",
+            "14"
+          ],
+          2,
+          "Multiplication happens before addition."
+        ],
+        [
+          "Result of 7 / 2 (both int)?",
+          [
+            "3.5",
+            "3",
+            "Error"
+          ],
+          1,
+          "Integer division truncates: 7 / 2 = 3."
+        ],
+        [
+          "Result of 7 / 2.0?",
+          [
+            "3",
+            "3.5",
+            "Error"
+          ],
+          1,
+          "One double operand produces a double result."
+        ],
+        [
+          "What is 17 % 5?",
+          [
+            "3",
+            "2",
+            "Error"
+          ],
+          1,
+          "The remainder of 17 divided by 5 is 2."
+        ],
+        [
+          "How to override precedence?",
+          [
+            "Use semicolons",
+            "Use parentheses",
+            "Use comments"
+          ],
+          1,
+          "Parentheses force evaluation order."
+        ]
+      ]
+    },
+    {
+      "title": "Assignment Operators",
+      "time": "45 minutes",
+      "objectives": [
+        "Use the basic assignment operator =.",
+        "Apply compound assignment operators.",
+        "Recognise how compound operators simplify code.",
+        "Write clear and concise variable updates."
+      ],
+      "theory": [
+        "The equals sign <code>=</code> is the basic assignment operator. It stores the right-hand value into the left-hand variable.",
+        "Compound assignment operators combine an arithmetic operator with assignment. <code>score += 10</code> is equivalent to <code>score = score + 10</code>. The compound version is shorter and clearer.",
+        "Available compound operators are <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, and <code>%=</code>. Each combines the corresponding arithmetic operator with assignment.",
+        "<code>health -= 5</code> subtracts 5 from health. <code>multiplier *= 2</code> doubles the multiplier. <code>shares /= 4</code> divides shares by 4.",
+        "Using compound operators makes intent clearer and reduces the chance of accidentally typing the wrong variable name when updating a value."
+      ],
+      "terms": [
+        [
+          "Assignment",
+          "Storing a value in a variable."
+        ],
+        [
+          "Compound assignment",
+          "Combining an operation with assignment."
+        ],
+        [
+          "Update",
+          "Changing a variable's value."
+        ],
+        [
+          "Equivalent",
+          "Producing the same result."
+        ]
+      ],
+      "code": "int score = 100;\nscore += 50;\nConsole.WriteLine(score);\nint health = 50;\nhealth -= 10;\nConsole.WriteLine(health);\nint lives = 3;\nlives *= 2;\nConsole.WriteLine(lives);",
+      "tryIt": "Create a variable and use four different compound assignment operators to modify it.",
+      "challenge": "Build a score tracker using compound assignment for bonuses, penalties, and multipliers.",
+      "mistakes": [
+        "Do not forget the variable name on the left side.",
+        "Remember that score += 5 is not the same as 5 += score.",
+        "Compound operators require a variable, not just a value.",
+        "Use appropriate suffixes for float and decimal."
+      ],
+      "summary": "Assignment operators store values. Compound operators combine arithmetic with assignment, simplifying and clarifying code.",
+      "quiz": [
+        [
+          "What does score += 10 do?",
+          [
+            "Adds 10 to score",
+            "Sets score to 10",
+            "Subtracts 10"
+          ],
+          0,
+          "Compound += adds to the variable."
+        ],
+        [
+          "Equivalent to health -= 5?",
+          [
+            "health = health - 5",
+            "5 = health - health",
+            "health = 5 -"
+          ],
+          0,
+          "Compound -= simplifies subtraction assignment."
+        ],
+        [
+          "Valid compound operator?",
+          [
+            "=-",
+            "*=",
+            "^="
+          ],
+          1,
+          "Multiply-assign *=  is valid."
+        ],
+        [
+          "Result of x *= 3?",
+          [
+            "x set to 3",
+            "x multiplied by 3",
+            "Error"
+          ],
+          1,
+          "*= multiplies the variable by the right operand."
+        ],
+        [
+          "Why use compound operators?",
+          [
+            "Clearer intent",
+            "Fewer characters",
+            "Both"
+          ],
+          2,
+          "Compound operators are concise and readable."
+        ]
+      ]
+    },
+    {
+      "title": "Increment & Decrement Operators",
+      "time": "45 minutes",
+      "objectives": [
+        "Use ++ and -- operators.",
+        "Distinguish prefix from postfix.",
+        "Recognise practical applications.",
+        "Avoid common mistakes."
+      ],
+      "theory": [
+        "The increment operator <code>++</code> increases a variable by 1. The decrement operator <code>--</code> decreases it by 1. These are shortcuts: <code>score++</code> is equivalent to <code>score += 1</code>.",
+        "Prefix increment <code>++score</code> increases the variable and then returns the new value. Postfix increment <code>score++</code> increases the variable but returns the old value before the increase.",
+        "In most practical cases, prefix and postfix behave identically because the returned value is not used. <code>int x = 5; x++;</code> and <code>++x;</code> both result in x being 6.",
+        "In loops and arrays, increment and decrement are essential. A loop counter increments each iteration. Countdown timers decrement. Practising with loops solidifies understanding.",
+        "Prefix is marginally more efficient in complex scenarios but both are suitable for beginners. The difference rarely matters in simple programs."
+      ],
+      "terms": [
+        [
+          "Increment",
+          "Increasing a value by 1."
+        ],
+        [
+          "Decrement",
+          "Decreasing a value by 1."
+        ],
+        [
+          "Prefix",
+          "Operator before the variable."
+        ],
+        [
+          "Postfix",
+          "Operator after the variable."
+        ]
+      ],
+      "code": "int count = 0;\ncount++;\nConsole.WriteLine(count);\nint level = 10;\nlevel--;\nConsole.WriteLine(level);\nint attempts = 1;\nConsole.WriteLine(attempts++);\nConsole.WriteLine(attempts);",
+      "tryIt": "Create a variable, increment it five times using ++, and display each result.",
+      "challenge": "Build a countdown timer using decrement and a loop counter using increment.",
+      "mistakes": [
+        "Prefix and postfix usually behave identically; do not overthink.",
+        "++ and -- require a variable, not a constant.",
+        "Use in loops where they are most common.",
+        "Avoid complex expressions mixing prefix, postfix, and other operators."
+      ],
+      "summary": "Increment ++ adds 1; decrement -- subtracts 1. Prefix executes before returning; postfix after. Both simplify common updates.",
+      "quiz": [
+        [
+          "What does count++ do?",
+          [
+            "Subtracts 1",
+            "Adds 1 to count",
+            "Divides by 1"
+          ],
+          1,
+          "++ increases the variable."
+        ],
+        [
+          "Prefix vs postfix: Which increases first?",
+          [
+            "Both the same in most cases",
+            "Prefix",
+            "Postfix"
+          ],
+          0,
+          "Typically both behave identically."
+        ],
+        [
+          "Result of x++ in a simple statement?",
+          [
+            "x is unchanged",
+            "x increases by 1",
+            "Error"
+          ],
+          1,
+          "The variable increases even if the returned value is ignored."
+        ],
+        [
+          "Valid syntax?",
+          [
+            "count++",
+            "++count",
+            "Both"
+          ],
+          2,
+          "Both prefix and postfix are valid."
+        ],
+        [
+          "Best use for ++?",
+          [
+            "Declaring variables",
+            "Loops and counters",
+            "Comments"
+          ],
+          1,
+          "Increment is essential in loops."
+        ]
+      ]
+    },
+    {
+      "title": "Comparison Operators",
+      "time": "55 minutes",
+      "objectives": [
+        "Compare values using ==, !=, <, >, <=, and >=.",
+        "Understand Boolean results.",
+        "Avoid comparing strings with ==.",
+        "Prepare for conditional logic."
+      ],
+      "theory": [
+        "Comparison operators test relationships between values and return a Boolean: true or false. They form the foundation of decision-making in programs.",
+        "The equals operator <code>==</code> tests whether two values are identical. <code>5 == 5</code> is true; <code>5 == 3</code> is false. The not-equals operator <code>!=</code> is the opposite.",
+        "Less than <code><</code> and greater than <code>></code> compare magnitude. <code>3 < 5</code> is true. Less-than-or-equal <code><=</code> and greater-than-or-equal <code>>=</code> include the boundary.",
+        "A common mistake is using <code>=</code> (assignment) instead of <code>==</code> (comparison). <code>if (score = 10)</code> assigns 10 to score and is syntactically different from <code>if (score == 10)</code>.",
+        "Comparing strings with <code>==</code> checks reference equality, not content. Module 4 introduces proper string comparison. For now, focus on numeric comparisons."
+      ],
+      "terms": [
+        [
+          "Comparison",
+          "Testing a relationship between values."
+        ],
+        [
+          "Boolean",
+          "A true or false result."
+        ],
+        [
+          "Equality",
+          "Testing whether values are identical."
+        ],
+        [
+          "Magnitude",
+          "Comparing size or quantity."
+        ]
+      ],
+      "code": "int score = 50;\nbool passed = score >= 40;\nConsole.WriteLine(passed);\nbool failed = score < 40;\nConsole.WriteLine(failed);\nbool isPerfect = score == 100;\nConsole.WriteLine(isPerfect);\nbool needsImprovement = score != 100;\nConsole.WriteLine(needsImprovement);",
+      "tryIt": "Create variables and test comparisons, printing the Boolean results.",
+      "challenge": "Compare three numeric values and display whether each passes a threshold.",
+      "mistakes": [
+        "Use == for comparison, = for assignment.",
+        "Remember that < and > do not include equality.",
+        "<= and >= include the boundary.",
+        "Numeric comparisons produce Boolean results."
+      ],
+      "summary": "Comparison operators return true or false. They form the basis of conditional decisions and logic.",
+      "quiz": [
+        [
+          "Result of 10 == 10?",
+          [
+            "false",
+            "true",
+            "Error"
+          ],
+          1,
+          "== tests whether values are equal."
+        ],
+        [
+          "What does != mean?",
+          [
+            "Greater than",
+            "Not equal to",
+            "Assignment"
+          ],
+          1,
+          "!= tests inequality."
+        ],
+        [
+          "Is 5 < 5 true?",
+          [
+            "No, false",
+            "Yes, true",
+            "Error"
+          ],
+          0,
+          "< does not include equality."
+        ],
+        [
+          "Result of 10 >= 10?",
+          [
+            "false",
+            "true",
+            "Error"
+          ],
+          1,
+          ">= includes the boundary."
+        ],
+        [
+          "Correct comparison operator?",
+          [
+            "=",
+            "==",
+            ":="
+          ],
+          1,
+          "== compares values."
+        ]
+      ]
+    },
+    {
+      "title": "Logical Operators",
+      "time": "55 minutes",
+      "objectives": [
+        "Combine conditions using &&, ||, and !.",
+        "Understand truth tables.",
+        "Write complex conditional expressions.",
+        "Avoid short-circuit pitfalls."
+      ],
+      "theory": [
+        "Logical operators combine Boolean values. The AND operator <code>&&</code> returns true only when both operands are true. The OR operator <code>||</code> returns true when at least one operand is true. The NOT operator <code>!</code> inverts a Boolean.",
+        "<code>age >= 13 && age < 65</code> is true only if age satisfies both conditions. This range check is common for validation.",
+        "<code>hasWeapon || hasShield</code> is true if the player has either item or both. This allows flexibility in game logic.",
+        "<code>!isGameOver</code> flips the Boolean. If isGameOver is false, <code>!isGameOver</code> is true, making the game active.",
+        "C# uses short-circuit evaluation. In <code>a && b</code>, if a is false, b is never evaluated because the result must be false. In <code>a || b</code>, if a is true, b is skipped."
+      ],
+      "terms": [
+        [
+          "Logical AND",
+          "Both conditions must be true."
+        ],
+        [
+          "Logical OR",
+          "At least one condition is true."
+        ],
+        [
+          "Logical NOT",
+          "Inverts a Boolean value."
+        ],
+        [
+          "Short-circuit",
+          "Skipping evaluation when result is certain."
+        ]
+      ],
+      "code": "int age = 20;\nbool canVote = age >= 18 && age < 150;\nConsole.WriteLine(canVote);\nbool hasAccess = isAdmin || isModerator;\nConsole.WriteLine(hasAccess);\nbool isActive = !isGameOver;\nConsole.WriteLine(isActive);\nbool qualified = score >= 50 && attempts <= 3;\nConsole.WriteLine(qualified);",
+      "tryIt": "Write expressions combining three numeric comparisons with && and ||.",
+      "challenge": "Build a game eligibility checker using multiple logical operators.",
+      "mistakes": [
+        "Do not confuse && and || .",
+        "Remember that && is stricter than ||.",
+        "!true is false; !false is true.",
+        "Parentheses clarify complex logical expressions."
+      ],
+      "summary": "Logical operators combine Booleans. && requires both true, || requires at least one true, ! inverts.",
+      "quiz": [
+        [
+          "Result of true && false?",
+          [
+            "true",
+            "false",
+            "Error"
+          ],
+          1,
+          "&& requires both to be true."
+        ],
+        [
+          "Result of true || false?",
+          [
+            "true",
+            "false",
+            "Error"
+          ],
+          0,
+          "|| requires at least one true."
+        ],
+        [
+          "Result of !true?",
+          [
+            "true",
+            "false",
+            "Error"
+          ],
+          1,
+          "! inverts the Boolean."
+        ],
+        [
+          "What does age >= 13 && age < 18 mean?",
+          [
+            "Age 13 or older",
+            "Age 13 to 17",
+            "Age 18"
+          ],
+          1,
+          "Both conditions must be true."
+        ],
+        [
+          "When is a || b false?",
+          [
+            "When a is false",
+            "When b is false",
+            "When both are false"
+          ],
+          2,
+          "OR is false only when both operands are false."
+        ]
+      ]
+    },
+    {
+      "title": "Operator Precedence",
+      "time": "50 minutes",
+      "objectives": [
+        "Understand the order operators execute.",
+        "Use parentheses to control evaluation.",
+        "Break down complex expressions.",
+        "Write readable code."
+      ],
+      "theory": [
+        "When an expression contains multiple operators, precedence determines which execute first. All operators have a precedence level established by C#.",
+        "Parentheses always execute first, making them the highest precedence. Then multiplication, division, and modulus from left to right. Then addition and subtraction from left to right. Then comparison operators. Then logical AND. Finally logical OR.",
+        "<code>2 + 3 * 4</code> is 14, not 20, because <code>*</code> has higher precedence than <code>+</code>. Writing <code>(2 + 3) * 4</code> makes intent explicit and produces 20.",
+        "Complex expressions become unreadable without parentheses. <code>score >= 50 && bonus > 0 || lives > 0</code> is ambiguous. Rewrite as <code>(score >= 50 && bonus > 0) || lives > 0</code> for clarity.",
+        "Readability is more important than relying on precedence memory. Break complex expressions into smaller parts or use intermediate variables."
+      ],
+      "terms": [
+        [
+          "Precedence",
+          "The order operators execute."
+        ],
+        [
+          "Parentheses",
+          "Highest-precedence grouping."
+        ],
+        [
+          "Left to right",
+          "Evaluation direction for same-precedence operators."
+        ],
+        [
+          "Readability",
+          "Code clarity through explicit grouping."
+        ]
+      ],
+      "code": "int result = 2 + 3 * 4;\nConsole.WriteLine(result);\nresult = (2 + 3) * 4;\nConsole.WriteLine(result);\nbool qualified = score >= 50 && bonus > 0 || lives > 0;\nbool explicit = (score >= 50 && bonus > 0) || lives > 0;\nConsole.WriteLine(qualified);\nConsole.WriteLine(explicit);",
+      "tryIt": "Write two expressions: one relying on precedence and one using parentheses for clarity.",
+      "challenge": "Rewrite a complex expression using parentheses and break it into simpler intermediate calculations.",
+      "mistakes": [
+        "Do not assume readers remember precedence rules.",
+        "Use parentheses liberally for clarity.",
+        "Precedence is left-to-right for same levels.",
+        "Test expressions by adding parentheses incrementally."
+      ],
+      "summary": "Parentheses override precedence. Use them to clarify intent and make complex expressions readable.",
+      "quiz": [
+        [
+          "Result of 5 + 2 * 3?",
+          [
+            "21",
+            "11",
+            "14"
+          ],
+          2,
+          "Multiplication before addition."
+        ],
+        [
+          "Result of (5 + 2) * 3?",
+          [
+            "21",
+            "11",
+            "14"
+          ],
+          0,
+          "Parentheses force addition first."
+        ],
+        [
+          "Highest precedence?",
+          [
+            "Arithmetic",
+            "Logical OR",
+            "Parentheses"
+          ],
+          2,
+          "Parentheses always execute first."
+        ],
+        [
+          "Which evaluates first: && or ||?",
+          [
+            "Both equally",
+            "&&",
+            "||"
+          ],
+          1,
+          "AND has higher precedence than OR."
+        ],
+        [
+          "Why use extra parentheses?",
+          [
+            "Clearer intent",
+            "No other reason",
+            "Slower code"
+          ],
+          0,
+          "Parentheses make precedence explicit."
+        ]
+      ]
+    },
+    {
+      "title": "Practice Project · Student Grade Calculator",
+      "time": "75 minutes",
+      "objectives": [
+        "Combine arithmetic and comparison operators.",
+        "Calculate averages and identify extremes.",
+        "Apply logical operators for decisions.",
+        "Display formatted results."
+      ],
+      "theory": [
+        "This project integrates Module 3 concepts. It reads three assessment marks, calculates the average, identifies the highest and lowest values, and determines pass/fail status.",
+        "Use int or double for marks depending on whether decimals are allowed. Read three values using Console.ReadLine and Convert or TryParse.",
+        "Calculate average by adding marks and dividing by 3. Find the highest using comparison: if mark1 > mark2 && mark1 > mark3, mark1 is highest.",
+        "A student passes when average >= 50. Combine comparison and logical operators: <code>average >= 50 && average >= 0</code>.",
+        "Display all results using interpolation with labels and clear formatting. Use newlines and dashes to create visual structure."
+      ],
+      "terms": [
+        [
+          "Average",
+          "Sum divided by count."
+        ],
+        [
+          "Highest value",
+          "Maximum among multiple values."
+        ],
+        [
+          "Lowest value",
+          "Minimum among multiple values."
+        ],
+        [
+          "Pass threshold",
+          "The score required to succeed."
+        ]
+      ],
+      "code": "Console.WriteLine(\"Student Grade Calculator\");\nConsole.WriteLine(\"------------------------\");\nConsole.Write(\"Mark 1: \");\nint mark1 = int.Parse(Console.ReadLine() ?? \"0\");\nConsole.Write(\"Mark 2: \");\nint mark2 = int.Parse(Console.ReadLine() ?? \"0\");\nConsole.Write(\"Mark 3: \");\nint mark3 = int.Parse(Console.ReadLine() ?? \"0\");\n\nint total = mark1 + mark2 + mark3;\nint average = total / 3;\nint highest = mark1;\nif (mark2 > highest) highest = mark2;\nif (mark3 > highest) highest = mark3;\n\nbool passed = average >= 50;\nConsole.WriteLine($\"\\nAverage: {average}\");\nConsole.WriteLine($\"Highest: {highest}\");\nConsole.WriteLine($\"Status: {(passed ? \"PASS\" : \"FAIL\")}\");\nConsole.WriteLine(\"------------------------\");",
+      "tryIt": "Build the calculator and test with three marks that produce a clear average and pass/fail result.",
+      "challenge": "Add decimal support, calculate the lowest mark, and display additional statistics.",
+      "mistakes": [
+        "Integer division truncates; use double for precise averages.",
+        "Validate that marks are within a valid range.",
+        "Ensure all three marks are read before calculating.",
+        "Check comparison logic for highest and lowest."
+      ],
+      "summary": "You can now use arithmetic to calculate, comparisons to test conditions, and logical operators to combine them into complete programs.",
+      "quiz": [
+        [
+          "How to find the highest of three values?",
+          [
+            "Add them",
+            "Compare using <",
+            "Use multiple if comparisons"
+          ],
+          2,
+          "Successive comparisons identify the maximum."
+        ],
+        [
+          "Result of (10 + 15 + 20) / 3?",
+          [
+            "15",
+            "15.0",
+            "Error"
+          ],
+          0,
+          "Integer division produces 15."
+        ],
+        [
+          "Operator for AND in the code?",
+          [
+            "||",
+            "&&",
+            "|"
+          ],
+          1,
+          "&& combines conditions."
+        ],
+        [
+          "Best data type for marks with decimals?",
+          [
+            "int",
+            "double",
+            "bool"
+          ],
+          1,
+          "double allows fractional marks."
+        ],
+        [
+          "How to display pass or fail?",
+          [
+            "Use if/else output",
+            "Use interpolation with ? :",
+            "Both"
+          ],
+          2,
+          "Both methods work; choose for clarity."
+        ]
+      ]
+    }
+  ]
+}
