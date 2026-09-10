@@ -1,0 +1,97 @@
+﻿{
+    "title":  "Introduction to Operators",
+    "time":  "40 minutes",
+    "objectives":  [
+                       "Explain what an operator does.",
+                       "Distinguish operands from operators.",
+                       "Describe an expression as a statement producing a value.",
+                       "Write and evaluate simple expressions."
+                   ],
+    "theory":  [
+                   "An operator is a symbol that performs an operation on one or more values. The values being operated on are called operands. Together, an operator and its operands form an \u003cstrong\u003eexpression\u003c/strong\u003e.",
+                   "In the expression \u003ccode\u003e5 + 3\u003c/code\u003e, the plus sign is the operator and 5 and 3 are operands. This expression evaluates to 8.",
+                   "Expressions are central to programming. They calculate new values, compare values, combine conditions, and drive programme logic. Every quiz answer, calculation, and decision depends on evaluating expressions.",
+                   "C# has many operators: arithmetic operators for calculations, assignment operators for storing values, comparison operators for Boolean results, and logical operators for combining conditions.",
+                   "Operators have precedence—some execute before others. Parentheses always execute first, making complex expressions clearer and less error-prone."
+               ],
+    "terms":  [
+                  [
+                      "Operator",
+                      "A symbol performing an action on operands."
+                  ],
+                  [
+                      "Operand",
+                      "A value used by an operator."
+                  ],
+                  [
+                      "Expression",
+                      "Code combining operators and operands."
+                  ],
+                  [
+                      "Evaluation",
+                      "The process of computing an expression\u0027s result."
+                  ]
+              ],
+    "code":  "int a = 5;\nint b = 3;\nint sum = a + b;\nConsole.WriteLine(sum);\nConsole.WriteLine(a + b + 2);\nConsole.WriteLine((a + b) * 2);",
+    "tryIt":  "Write expressions adding two numbers, multiplying two variables, and combining three values with parentheses.",
+    "challenge":  "Create four variables and write three expressions mixing different operators and values.",
+    "mistakes":  [
+                     "Do not confuse the operator symbol with variable names.",
+                     "Remember that an expression must produce a value.",
+                     "Use parentheses for clarity.",
+                     "End statements with semicolons."
+                 ],
+    "summary":  "An operator acts on operands to form an expression. Expressions evaluate to produce results that drive program logic.",
+    "quiz":  [
+                 [
+                     "What is an operator?",
+                     [
+                         "A variable name",
+                         "A symbol performing an action",
+                         "A comment"
+                     ],
+                     1,
+                     "An operator performs an action on operands."
+                 ],
+                 [
+                     "In 7 - 2, what are the operands?",
+                     [
+                         "7 and 2",
+                         "7 and minus",
+                         "The result"
+                     ],
+                     0,
+                     "The numbers being operated on are operands."
+                 ],
+                 [
+                     "What is an expression?",
+                     [
+                         "A variable type",
+                         "Code combining operators and operands",
+                         "A label"
+                     ],
+                     1,
+                     "An expression combines operators and operands to produce a value."
+                 ],
+                 [
+                     "Does 10 / 3 produce a result?",
+                     [
+                         "No",
+                         "Yes, it evaluates",
+                         "Only in comments"
+                     ],
+                     1,
+                     "Every expression produces a value."
+                 ],
+                 [
+                     "Why use parentheses?",
+                     [
+                         "Control precedence and clarity",
+                         "Add semicolons",
+                         "Declare variables"
+                     ],
+                     0,
+                     "Parentheses make precedence explicit."
+                 ]
+             ]
+}

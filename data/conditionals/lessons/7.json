@@ -1,0 +1,97 @@
+﻿{
+    "title":  "Combining Conditions with Logical Operators",
+    "time":  "60 minutes",
+    "objectives":  [
+                       "Use \u0026\u0026 to require all conditions to be true.",
+                       "Use || to require at least one condition to be true.",
+                       "Use ! to invert a condition.",
+                       "Build complex conditional logic safely."
+                   ],
+    "theory":  [
+                   "Logical operators combine Boolean expressions. The AND operator \u003ccode\u003e\u0026\u0026\u003c/code\u003e returns true only if both operands are true. The OR operator \u003ccode\u003e||\u003c/code\u003e returns true if at least one operand is true. The NOT operator \u003ccode\u003e!\u003c/code\u003e inverts a Boolean.",
+                   "\u003ccode\u003eif (age \u003e= 13 \u0026\u0026 age \u003c 18)\u003c/code\u003e is true only if both conditions are true. This checks a range. \u003ccode\u003eif (hasWeapon || hasShield)\u003c/code\u003e is true if the player has either item or both. This offers alternatives.",
+                   "Complex conditions become unreadable without parentheses. \u003ccode\u003eif (score \u003e= 50 \u0026\u0026 bonus \u003e 0 || lives \u003e 0)\u003c/code\u003e is ambiguous. Rewrite as \u003ccode\u003eif ((score \u003e= 50 \u0026\u0026 bonus \u003e 0) || lives \u003e 0)\u003c/code\u003e for clarity.",
+                   "De Morgan\u0027s Law states \u003ccode\u003e!(a \u0026\u0026 b)\u003c/code\u003e is equivalent to \u003ccode\u003e!a || !b\u003c/code\u003e and \u003ccode\u003e!(a || b)\u003c/code\u003e is equivalent to \u003ccode\u003e!a \u0026\u0026 !b\u003c/code\u003e. These are useful for simplifying negations.",
+                   "Combining conditions is powerful but can become confusing. A rule of thumb: keep single if conditions to three comparisons. More complex logic belongs in a helper method."
+               ],
+    "terms":  [
+                  [
+                      "AND operator",
+                      "Both conditions must be true."
+                  ],
+                  [
+                      "OR operator",
+                      "At least one condition must be true."
+                  ],
+                  [
+                      "NOT operator",
+                      "Inverts a Boolean value."
+                  ],
+                  [
+                      "Short-circuit",
+                      "Stopping evaluation when the result is certain."
+                  ]
+              ],
+    "code":  "int age = 25;\nbool hasLicense = true;\nbool hasInsurance = true;\n\n// AND: all conditions must be true\nif (age \u003e= 18 \u0026\u0026 hasLicense \u0026\u0026 hasInsurance)\n{\n    Console.WriteLine(\"You can rent a car.\");\n}\n\n// OR: at least one must be true\nif (hasLicense || hasInsurance)\n{\n    Console.WriteLine(\"You have some documentation.\");\n}\n\n// NOT: invert the condition\nif (!hasLicense)\n{\n    Console.WriteLine(\"You need a license.\");\n}\n\n// Complex condition with parentheses\nif ((age \u003e= 13 \u0026\u0026 age \u003c 65) || isStudent)\n{\n    Console.WriteLine(\"You qualify for a discount.\");\n}",
+    "tryIt":  "Write a condition checking whether a user is an adult AND has an email AND has accepted terms.",
+    "challenge":  "Build a game eligibility checker requiring age between 13-17 OR parental consent.",
+    "mistakes":  [
+                     "Use \u0026\u0026 for AND, || for OR.",
+                     "Use parentheses to clarify complex conditions.",
+                     "Short-circuit evaluation stops when result is certain.",
+                     "Test all branches of complex logic."
+                 ],
+    "summary":  "\u0026\u0026 requires all true, || requires at least one true, ! inverts. Use parentheses for complex conditions. Test all combinations.",
+    "quiz":  [
+                 [
+                     "Result of true \u0026\u0026 false?",
+                     [
+                         "true",
+                         "false",
+                         "Error"
+                     ],
+                     1,
+                     "AND requires both to be true."
+                 ],
+                 [
+                     "Result of true || false?",
+                     [
+                         "true",
+                         "false",
+                         "Error"
+                     ],
+                     0,
+                     "OR requires at least one true."
+                 ],
+                 [
+                     "What does !true produce?",
+                     [
+                         "true",
+                         "false",
+                         "null"
+                     ],
+                     1,
+                     "NOT inverts Boolean values."
+                 ],
+                 [
+                     "Age \u003e= 18 \u0026\u0026 age \u003c 65 means?",
+                     [
+                         "18 or older",
+                         "Between 18 and 65",
+                         "65 or younger"
+                     ],
+                     1,
+                     "Both conditions must be true."
+                 ],
+                 [
+                     "Why use parentheses in complex conditions?",
+                     [
+                         "Increase speed",
+                         "Clarify precedence",
+                         "Reduce memory"
+                     ],
+                     1,
+                     "Parentheses make evaluation order explicit."
+                 ]
+             ]
+}

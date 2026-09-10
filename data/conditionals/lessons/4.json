@@ -1,0 +1,97 @@
+﻿{
+    "title":  "The else if Statement",
+    "time":  "55 minutes",
+    "objectives":  [
+                       "Evaluate multiple conditions sequentially.",
+                       "Choose among more than two paths.",
+                       "Write readable chains of conditions.",
+                       "Apply else if to real-world problems."
+                   ],
+    "theory":  [
+                   "An else if statement evaluates additional conditions when the first if is false. The syntax chains conditions: \u003ccode\u003eif (condition1) { } else if (condition2) { } else if (condition3) { } else { }\u003c/code\u003e.",
+                   "The first true condition executes its block. Once a condition is true, all remaining else if and else blocks are skipped. This is called short-circuit evaluation.",
+                   "Else if is useful for grade calculation: if score \u003e= 90, assign A; else if score \u003e= 80, assign B; else if score \u003e= 70, assign C; and so on. The first matching condition determines the outcome.",
+                   "Weather advisors, game difficulty selectors, and shipping calculators all use else if chains. The logic is: check the most specific conditions first, then general ones, with a fallback else for unexpected cases.",
+                   "Order matters. If you check \u003ccode\u003escore \u003e= 60\u003c/code\u003e before \u003ccode\u003escore \u003e= 80\u003c/code\u003e, a score of 85 matches the first condition and the second is never checked. Arrange conditions from most specific to least specific."
+               ],
+    "terms":  [
+                  [
+                      "else if",
+                      "Tests an additional condition if previous ones are false."
+                  ],
+                  [
+                      "Chain",
+                      "A series of conditions evaluated sequentially."
+                  ],
+                  [
+                      "Short-circuit",
+                      "Stopping evaluation once a condition is true."
+                  ],
+                  [
+                      "Specificity",
+                      "Arranging conditions from precise to general."
+                  ]
+              ],
+    "code":  "int score = 85;\nif (score \u003e= 90)\n{\n    Console.WriteLine(\"Grade: A\");\n}\nelse if (score \u003e= 80)\n{\n    Console.WriteLine(\"Grade: B\");\n}\nelse if (score \u003e= 70)\n{\n    Console.WriteLine(\"Grade: C\");\n}\nelse if (score \u003e= 60)\n{\n    Console.WriteLine(\"Grade: D\");\n}\nelse\n{\n    Console.WriteLine(\"Grade: F\");\n}",
+    "tryIt":  "Build a grade calculator that assigns A, B, C, D, or F based on a numeric score.",
+    "challenge":  "Create a weather advice system that recommends clothing based on temperature ranges.",
+    "mistakes":  [
+                     "Do not forget that conditions are checked in order.",
+                     "Arrange from specific to general.",
+                     "Include a final else for unexpected cases.",
+                     "Test boundary values carefully."
+                 ],
+    "summary":  "Else if evaluates additional conditions. The first true condition executes; others are skipped. Arrange conditions from specific to general.",
+    "quiz":  [
+                 [
+                     "How many else if can follow an if?",
+                     [
+                         "One",
+                         "As many as needed",
+                         "None"
+                     ],
+                     1,
+                     "Multiple else if statements can chain."
+                 ],
+                 [
+                     "What happens after a true condition?",
+                     [
+                         "All blocks execute",
+                         "Remaining conditions are skipped",
+                         "An error occurs"
+                     ],
+                     1,
+                     "Remaining else if and else are skipped."
+                 ],
+                 [
+                     "Order of conditions matters?",
+                     [
+                         "Yes",
+                         "No",
+                         "Only sometimes"
+                     ],
+                     0,
+                     "Specific conditions should come first."
+                 ],
+                 [
+                     "Best for else if?",
+                     [
+                         "Binary choices",
+                         "Multiple categories",
+                         "Loops"
+                     ],
+                     1,
+                     "Else if handles multiple outcomes."
+                 ],
+                 [
+                     "Result of score 75 in grade system?",
+                     [
+                         "A",
+                         "C",
+                         "D"
+                     ],
+                     2,
+                     "75 \u003e= 70 but \u003c 80 produces C."
+                 ]
+             ]
+}

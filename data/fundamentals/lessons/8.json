@@ -1,0 +1,96 @@
+﻿{
+    "title":  "Practice Project · Console Welcome App",
+    "time":  "70 minutes",
+    "objectives":  [
+                       "Plan a complete beginner console application.",
+                       "Use comments, prompts, input, and output.",
+                       "Apply decomposition and testing.",
+                       "Review the complete programming workflow."
+                   ],
+    "theory":  [
+                   "This project combines the restored Programming Fundamentals module. You will create a console welcome application that introduces JayLearn, asks for a learner\u0027s name and goal, and prints a personalised study card.",
+                   "Begin with an IPO plan. Inputs are the learner\u0027s name and goal. Processing consists of storing and arranging those responses. Output includes the heading, divider, and labelled summary.",
+                   "Decompose the solution into instructions, name input, goal input, and final output. Enter and test each part before continuing. This makes syntax problems easier to isolate.",
+                   "Use comments to explain the purpose of each major phase. Test ordinary text, empty input, and long text. Module 2 expands this project with typed numeric and Boolean values."
+               ],
+    "terms":  [
+                  [
+                      "Plan",
+                      "A description of the intended solution before coding."
+                  ],
+                  [
+                      "Implementation",
+                      "Turning a plan into source code."
+                  ],
+                  [
+                      "Verification",
+                      "Checking that results match requirements."
+                  ],
+                  [
+                      "Iteration",
+                      "Improving a solution through repeated changes and tests."
+                  ]
+              ],
+    "code":  "// Display the application heading\nConsole.WriteLine(\"JAYLEARN STUDY CARD\");\nConsole.WriteLine(\"-------------------\");\n\n// Collect input\nConsole.Write(\"Name: \");\nstring name = Console.ReadLine() ?? \"\";\n\nConsole.Write(\"Programming goal: \");\nstring goal = Console.ReadLine() ?? \"\";\n\n// Display output\nConsole.WriteLine();\nConsole.WriteLine($\"Learner: {name}\");\nConsole.WriteLine($\"Goal: {goal}\");\nConsole.WriteLine(\"Next step: Variables \u0026 Data Types\");",
+    "tryIt":  "Type the project yourself, test it, and add one more text question without removing the original fields.",
+    "challenge":  "Extend the welcome app with a favourite game, a divider, and a final encouragement message. Create three documented test cases.",
+    "mistakes":  [
+                     "Do not skip the IPO plan.",
+                     "Keep quotation marks, parentheses, and semicolons paired.",
+                     "Test after each small addition.",
+                     "Do not remove working requirements while extending the program."
+                 ],
+    "summary":  "You can now explain programs, plan algorithms, write console statements, use syntax and comments, analyse IPO, debug errors, decompose problems, and test solutions.",
+    "quiz":  [
+                 [
+                     "What should happen before implementation?",
+                     [
+                         "Planning the solution",
+                         "Deleting requirements",
+                         "Ignoring inputs"
+                     ],
+                     0,
+                     "Planning clarifies requirements and program flow."
+                 ],
+                 [
+                     "Which inputs does the base project collect?",
+                     [
+                         "Name and programming goal",
+                         "Password and card number",
+                         "Only a number"
+                     ],
+                     0,
+                     "The welcome app collects a learner name and goal."
+                 ],
+                 [
+                     "Why test after small additions?",
+                     [
+                         "To isolate problems quickly",
+                         "To prevent all output",
+                         "To change the language"
+                     ],
+                     0,
+                     "Incremental testing makes defects easier to locate."
+                 ],
+                 [
+                     "Which module follows Programming Fundamentals?",
+                     [
+                         "Variables \u0026 Data Types",
+                         "Networking",
+                         "Advanced graphics"
+                     ],
+                     0,
+                     "Module 2 introduces variables and data types."
+                 ],
+                 [
+                     "What should extensions preserve?",
+                     [
+                         "Working original requirements",
+                         "Only errors",
+                         "Nothing"
+                     ],
+                     0,
+                     "New work should retain existing required behaviour."
+                 ]
+             ]
+}

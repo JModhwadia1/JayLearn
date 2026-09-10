@@ -1,0 +1,97 @@
+﻿{
+    "title":  "Nested if Statements",
+    "time":  "55 minutes",
+    "objectives":  [
+                       "Understand when to nest conditions.",
+                       "Write readable nested logic.",
+                       "Identify when nesting becomes problematic.",
+                       "Simplify nested conditions with logical operators."
+                   ],
+    "theory":  [
+                   "A nested if statement is an if statement inside another if statement. The inner if only executes if the outer condition is true. Nesting is useful when decisions depend on multiple independent conditions.",
+                   "A common example is validating user input. Outer if checks whether input is not empty; inner if checks whether it is numeric. Only if both are true does the program proceed.",
+                   "Deep nesting—three or more levels—makes code hard to read. A rule of thumb: limit nesting to two levels. Deeper nesting is usually a sign to use logical operators instead.",
+                   "Logical operators \u0026\u0026, ||, and ! let you combine conditions in a single if statement instead of nesting. \u003ccode\u003eif (age \u003e= 13 \u0026\u0026 parent_consent == true)\u003c/code\u003e is clearer than nesting two ifs.",
+                   "Nested ifs are still useful for sequential checks where later decisions depend on earlier results. For independent conditions, use \u0026\u0026 and || to keep code flat."
+               ],
+    "terms":  [
+                  [
+                      "Nested if",
+                      "An if statement inside another if."
+                  ],
+                  [
+                      "Outer condition",
+                      "The first if being evaluated."
+                  ],
+                  [
+                      "Inner condition",
+                      "The second if that depends on the first."
+                  ],
+                  [
+                      "Logical operators",
+                      "\u0026\u0026, ||, and ! for combining conditions."
+                  ]
+              ],
+    "code":  "int age = 20;\nbool hasConsent = true;\n\nif (age \u003e= 13)\n{\n    if (hasConsent)\n    {\n        Console.WriteLine(\"Access granted.\");\n    }\n    else\n    {\n        Console.WriteLine(\"Parent consent required.\");\n    }\n}\nelse\n{\n    Console.WriteLine(\"Too young for access.\");\n}\n\n// Better: combine with logical operator\nif (age \u003e= 13 \u0026\u0026 hasConsent)\n{\n    Console.WriteLine(\"Access granted.\");\n}\nelse if (age \u003e= 13 \u0026\u0026 !hasConsent)\n{\n    Console.WriteLine(\"Parent consent required.\");\n}\nelse\n{\n    Console.WriteLine(\"Too young for access.\");\n}",
+    "tryIt":  "Write nested ifs checking whether a user is an admin and has a valid password.",
+    "challenge":  "Rewrite a two-level nested if using logical operators instead.",
+    "mistakes":  [
+                     "Do not nest more than two levels.",
+                     "Use \u0026\u0026 and || instead of deep nesting.",
+                     "Ensure inner blocks are indented clearly.",
+                     "Test all paths through nested logic."
+                 ],
+    "summary":  "Nested ifs handle sequential dependent conditions. For independent conditions, use logical operators to keep code flat and readable.",
+    "quiz":  [
+                 [
+                     "When is nesting useful?",
+                     [
+                         "For all conditions",
+                         "For sequential dependent decisions",
+                         "For independent choices"
+                     ],
+                     1,
+                     "Nesting is for conditions that depend on previous results."
+                 ],
+                 [
+                     "How many nesting levels are recommended?",
+                     [
+                         "One or two",
+                         "As many as needed",
+                         "Five or more"
+                     ],
+                     0,
+                     "Limit nesting to two levels for readability."
+                 ],
+                 [
+                     "What replaces deep nesting?",
+                     [
+                         "Comments",
+                         "Logical operators",
+                         "Variables"
+                     ],
+                     1,
+                     "\u0026\u0026 and || flatten conditions."
+                 ],
+                 [
+                     "Inner if executes when?",
+                     [
+                         "Always",
+                         "Only if outer if is true",
+                         "Never"
+                     ],
+                     1,
+                     "Inner ifs depend on outer conditions."
+                 ],
+                 [
+                     "Best alternative to nesting?",
+                     [
+                         "More ifs",
+                         "Logical operators",
+                         "Larger blocks"
+                     ],
+                     1,
+                     "Combine conditions with \u0026\u0026 or ||."
+                 ]
+             ]
+}

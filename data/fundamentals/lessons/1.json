@@ -1,0 +1,96 @@
+﻿{
+    "title":  "What Is Programming?",
+    "time":  "40 minutes",
+    "objectives":  [
+                       "Explain programming as creating instructions for a computer.",
+                       "Identify hardware, software, programs, and programmers.",
+                       "Describe source code, compilation, and execution.",
+                       "Recognise C# as a general-purpose programming language."
+                   ],
+    "theory":  [
+                   "Programming is the process of designing and writing instructions that a computer can execute. Computers are fast and consistent, but they do not infer what a programmer meant. Instructions must be precise, correctly ordered, and written using rules the computer\u0027s tools understand.",
+                   "A \u003cstrong\u003eprogram\u003c/strong\u003e is a collection of instructions created to complete a task. The human-readable instructions are called \u003cstrong\u003esource code\u003c/strong\u003e. C# source code is processed by compiler tools before it runs. These tools check syntax and transform the program into a form the .NET runtime can execute.",
+                   "Hardware refers to physical components such as the processor, memory, keyboard, and display. Software refers to programs and their supporting data. A programmer connects the two by creating software instructions that cause hardware to perform useful work.",
+                   "C# is strongly typed, case-sensitive, and widely used for console programs, desktop applications, web services, and Unity games. Learning C# fundamentals develops transferable problem-solving skills."
+               ],
+    "terms":  [
+                  [
+                      "Program",
+                      "A collection of instructions that performs a task."
+                  ],
+                  [
+                      "Source code",
+                      "Human-readable instructions written in a programming language."
+                  ],
+                  [
+                      "Compiler",
+                      "Software that checks and transforms source code."
+                  ],
+                  [
+                      "Runtime",
+                      "The environment that executes a prepared program."
+                  ]
+              ],
+    "code":  "Console.WriteLine(\"My first C# program\");\nConsole.WriteLine(\"Programming turns ideas into instructions.\");",
+    "tryIt":  "List three programs you use. For each one, identify an input, a task it performs, and an output.",
+    "challenge":  "Write a three-line console introduction explaining your name, course, and one program you would like to build.",
+    "mistakes":  [
+                     "Do not assume the computer understands unstated intentions.",
+                     "Remember that C# is case-sensitive.",
+                     "Distinguish physical hardware from software instructions.",
+                     "Use exact syntax when entering source code."
+                 ],
+    "summary":  "Programming turns a planned solution into precise source-code instructions that compiler and runtime tools can execute.",
+    "quiz":  [
+                 [
+                     "What is a program?",
+                     [
+                         "A physical keyboard",
+                         "A collection of instructions",
+                         "A programming error"
+                     ],
+                     1,
+                     "A program is an ordered collection of instructions that performs a task."
+                 ],
+                 [
+                     "What is source code?",
+                     [
+                         "Human-readable program instructions",
+                         "A computer monitor",
+                         "The final output only"
+                     ],
+                     0,
+                     "Source code is the text programmers write in a programming language."
+                 ],
+                 [
+                     "Which language is used in this course?",
+                     [
+                         "C#",
+                         "HTML only",
+                         "SQL only"
+                     ],
+                     0,
+                     "JayLearn uses C# before applying it to Unity."
+                 ],
+                 [
+                     "What does a compiler help check?",
+                     [
+                         "Screen brightness",
+                         "Syntax and program structure",
+                         "Internet speed"
+                     ],
+                     1,
+                     "Compiler tools detect invalid syntax and prepare code for execution."
+                 ],
+                 [
+                     "Is C# case-sensitive?",
+                     [
+                         "Yes",
+                         "No",
+                         "Only in comments"
+                     ],
+                     0,
+                     "C# treats names with different capitalisation as different identifiers."
+                 ]
+             ]
+}

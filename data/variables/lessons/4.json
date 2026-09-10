@@ -1,0 +1,97 @@
+﻿{
+    "title":  "Constants",
+    "time":  "40 minutes",
+    "objectives":  [
+                       "Explain what const guarantees.",
+                       "Declare constants.",
+                       "Choose constants versus variables.",
+                       "Replace magic numbers."
+                   ],
+    "theory":  [
+                   "A regular variable can change. A constant represents a value that must remain fixed throughout the program.",
+                   "A constant uses \u003ccode\u003econst\u003c/code\u003e, a type, a name, and a value. It must be initialised in its declaration and cannot later be reassigned.",
+                   "Constants suit compile-time values such as conversion factors, fixed limits, and repeated labels.",
+                   "Named constants replace unexplained magic numbers. \u003ccode\u003eSecondsPerMinute\u003c/code\u003e communicates more meaning than a repeated literal 60.",
+                   "Use const only for genuinely fixed values, not player health, user input, or runtime calculations."
+               ],
+    "terms":  [
+                  [
+                      "Constant",
+                      "A named value that cannot be reassigned."
+                  ],
+                  [
+                      "const",
+                      "The C# keyword used for constants."
+                  ],
+                  [
+                      "Magic number",
+                      "An unexplained numeric literal."
+                  ],
+                  [
+                      "PascalCase",
+                      "A naming style often used for constants."
+                  ]
+              ],
+    "code":  "const int MaximumLives = 3;\nconst double Gravity = 9.81;\nconst string GameTitle = \"Crystal Quest\";\nConsole.WriteLine(GameTitle);",
+    "tryIt":  "Create constants for DaysPerWeek, PassingMark, and CollegeName, then regular variables for changing values.",
+    "challenge":  "Build a ticket calculator with fixed TicketPrice and MaximumTickets.",
+    "mistakes":  [
+                     "Initialise every constant immediately.",
+                     "Do not use const for user input.",
+                     "Never reassign a constant.",
+                     "Use a compatible type and suffix."
+                 ],
+    "summary":  "Constants protect genuinely fixed values and replace unexplained literals with meaningful names.",
+    "quiz":  [
+                 [
+                     "What does const mean?",
+                     [
+                         "Text only",
+                         "Cannot be reassigned",
+                         "User input"
+                     ],
+                     1,
+                     "A constant cannot be reassigned."
+                 ],
+                 [
+                     "Which declaration is valid?",
+                     [
+                         "const int Days = 7;",
+                         "int const Days;",
+                         "const int Days;"
+                     ],
+                     0,
+                     "A const requires an initial value."
+                 ],
+                 [
+                     "Best constant candidate?",
+                     [
+                         "currentHealth",
+                         "userName",
+                         "MaximumPlayers"
+                     ],
+                     2,
+                     "MaximumPlayers represents a fixed rule."
+                 ],
+                 [
+                     "What if a constant is reassigned?",
+                     [
+                         "It changes",
+                         "Compiler error",
+                         "It becomes null"
+                     ],
+                     1,
+                     "The compiler rejects constant reassignment."
+                 ],
+                 [
+                     "Why replace magic numbers?",
+                     [
+                         "Clarify meaning",
+                         "Create strings",
+                         "Remove semicolons"
+                     ],
+                     0,
+                     "Named constants explain repeated fixed values."
+                 ]
+             ]
+}

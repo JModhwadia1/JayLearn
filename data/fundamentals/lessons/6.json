@@ -1,0 +1,96 @@
+﻿{
+    "title":  "Errors and Debugging",
+    "time":  "55 minutes",
+    "objectives":  [
+                       "Distinguish syntax, runtime, and logic errors.",
+                       "Read compiler messages carefully.",
+                       "Use tracing and incremental testing.",
+                       "Apply a repeatable debugging process."
+                   ],
+    "theory":  [
+                   "A \u003cstrong\u003esyntax error\u003c/strong\u003e breaks the grammar of C#, such as a missing quote or semicolon. Compiler messages usually prevent the program from running until the source is corrected.",
+                   "A \u003cstrong\u003eruntime error\u003c/strong\u003e occurs while a validly structured program executes. Examples include invalid conversion or attempting an operation the running program cannot complete.",
+                   "A \u003cstrong\u003elogic error\u003c/strong\u003e allows the program to run but produces an incorrect result. Logic errors can be difficult because no compiler message is required. Tracing values and testing known examples help reveal them.",
+                   "Debugging is a disciplined process: reproduce the problem, read available messages, isolate the relevant code, inspect assumptions and values, make one focused change, and test again. Changing many unrelated lines at once makes causes harder to identify."
+               ],
+    "terms":  [
+                  [
+                      "Bug",
+                      "A defect that causes incorrect program behaviour."
+                  ],
+                  [
+                      "Debugging",
+                      "Finding, understanding, and correcting defects."
+                  ],
+                  [
+                      "Syntax error",
+                      "A violation of language grammar."
+                  ],
+                  [
+                      "Logic error",
+                      "Valid code that produces the wrong result."
+                  ]
+              ],
+    "code":  "// Logic error: multiplication was intended\nint width = 5;\nint height = 4;\nint area = width + height;\nConsole.WriteLine(area);",
+    "tryIt":  "Classify a missing semicolon, invalid numeric input, and an incorrect total as syntax, runtime, or logic errors.",
+    "challenge":  "Debug a small program containing one syntax error and one logic error. Record each symptom, cause, fix, and retest result.",
+    "mistakes":  [
+                     "Read the first relevant compiler message before later cascading errors.",
+                     "Reproduce a problem before changing code.",
+                     "Test one focused correction at a time.",
+                     "Do not assume code is correct merely because it runs."
+                 ],
+    "summary":  "Errors may involve syntax, execution, or logic. Effective debugging combines messages, tracing, isolation, focused changes, and repeated testing.",
+    "quiz":  [
+                 [
+                     "Which error breaks C# grammar?",
+                     [
+                         "Syntax error",
+                         "Logic error",
+                         "Design colour"
+                     ],
+                     0,
+                     "A syntax error violates language structure."
+                 ],
+                 [
+                     "Which error can produce a wrong answer without stopping?",
+                     [
+                         "Logic error",
+                         "Keyboard error",
+                         "Comment"
+                     ],
+                     0,
+                     "Logic errors often run successfully but calculate the wrong result."
+                 ],
+                 [
+                     "When does a runtime error occur?",
+                     [
+                         "During execution",
+                         "Before code exists",
+                         "Only in comments"
+                     ],
+                     0,
+                     "Runtime errors occur while a program is running."
+                 ],
+                 [
+                     "What should debugging begin with?",
+                     [
+                         "Reproducing the issue",
+                         "Deleting everything",
+                         "Changing many lines"
+                     ],
+                     0,
+                     "A repeatable issue can be investigated and verified."
+                 ],
+                 [
+                     "Why make one focused change?",
+                     [
+                         "To identify whether it fixes the cause",
+                         "To create more uncertainty",
+                         "To avoid testing"
+                     ],
+                     0,
+                     "Focused changes make cause and effect easier to evaluate."
+                 ]
+             ]
+}

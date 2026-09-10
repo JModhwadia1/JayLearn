@@ -1,0 +1,97 @@
+﻿{
+    "title":  "Practice Project · Number Guessing Game",
+    "time":  "90 minutes",
+    "objectives":  [
+                       "Combine loops, conditionals, and variables.",
+                       "Implement game logic with user interaction.",
+                       "Track attempts and provide hints.",
+                       "Build a complete console game."
+                   ],
+    "theory":  [
+                   "This project integrates all Module 5 concepts. The program generates a random number, asks the player to guess, provides hints, counts attempts, and allows replaying.",
+                   "The game uses a do...while loop for main gameplay. Each guess is processed by an if...else chain. A for loop could count attempts. The Random class generates a secret number.",
+                   "Hints help the player: too high, too low, or correct. Attempts count each guess. The player should be able to play again after winning.",
+                   "Input validation ensures guesses are numeric. Boundary checks prevent guesses outside the range. Feedback makes the game engaging.",
+                   "The complete game demonstrates modules 1-5: variables store the secret and attempts, operators compare guesses, conditionals provide feedback, and loops repeat gameplay."
+               ],
+    "terms":  [
+                  [
+                      "Random number generation",
+                      "Using Random class."
+                  ],
+                  [
+                      "Game loop",
+                      "The do...while repeating gameplay."
+                  ],
+                  [
+                      "Hints",
+                      "Feedback guiding the player."
+                  ],
+                  [
+                      "Attempts",
+                      "Tracking number of guesses."
+                  ]
+              ],
+    "code":  "using System;\n\nRandom random = new Random();\nbool playAgain = true;\n\nwhile (playAgain)\n{\n    int secret = random.Next(1, 101);\n    int attempts = 0;\n    int guess = 0;\n    bool correct = false;\n    \n    Console.WriteLine(\"\\n=== Number Guessing Game ===\" );\n    Console.WriteLine(\"Guess the number between 1 and 100!\");\n    \n    while (!correct)\n    {\n        Console.Write(\"Your guess: \");\n        if (int.TryParse(Console.ReadLine() ?? \"0\", out guess))\n        {\n            if (guess \u003c 1 || guess \u003e 100)\n            {\n                Console.WriteLine(\"Please guess between 1 and 100.\");\n                continue;\n            }\n            \n            attempts++;\n            \n            if (guess == secret)\n            {\n                Console.WriteLine($\"Correct! You won in {attempts} attempts!\");\n                correct = true;\n            }\n            else if (guess \u003c secret)\n            {\n                Console.WriteLine(\"Too low. Try higher.\");\n            }\n            else\n            {\n                Console.WriteLine(\"Too high. Try lower.\");\n            }\n        }\n        else\n        {\n            Console.WriteLine(\"Please enter a valid number.\");\n        }\n    }\n    \n    Console.Write(\"Play again? (yes/no): \");\n    string response = Console.ReadLine()?.ToLower() ?? \"no\";\n    playAgain = response == \"yes\" || response == \"y\";\n}\n\nConsole.WriteLine(\"Thanks for playing!\");",
+    "tryIt":  "Run the game and play a complete round, guessing the number.",
+    "challenge":  "Extend the game to track high scores, difficulty levels, or best attempts.",
+    "mistakes":  [
+                     "Validate all user input before using it.",
+                     "Ensure the loop terminates when guesses are correct.",
+                     "Provide clear feedback after each guess.",
+                     "Test boundary values (1, 100)."
+                 ],
+    "summary":  "You can now build interactive games using loops, conditionals, variables, and user input. Loops provide repetition; conditionals guide logic; variables track state.",
+    "quiz":  [
+                 [
+                     "Purpose of do...while here?",
+                     [
+                         "Count attempts",
+                         "Repeat gameplay",
+                         "Generate random"
+                     ],
+                     1,
+                     "Do...while ensures at least one game before asking to replay."
+                 ],
+                 [
+                     "What does random.Next(1, 101) do?",
+                     [
+                         "Always returns 1",
+                         "Random 0-100",
+                         "Random 1-100"
+                     ],
+                     2,
+                     "Next generates a random number in the range."
+                 ],
+                 [
+                     "How to exit guess loop?",
+                     [
+                         "Set correct = true",
+                         "Use break",
+                         "Stop input"
+                     ],
+                     0,
+                     "Setting correct = true exits the while loop."
+                 ],
+                 [
+                     "Why validate guess?",
+                     [
+                         "Improve performance",
+                         "Ensure numeric and in range",
+                         "Skip processing"
+                     ],
+                     1,
+                     "Validation prevents crashes and invalid states."
+                 ],
+                 [
+                     "Module 5 learning?",
+                     [
+                         "Only loops",
+                         "Loops + modules 1-4",
+                         "Just random"
+                     ],
+                     1,
+                     "This project combines all previous modules."
+                 ]
+             ]
+}

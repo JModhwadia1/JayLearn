@@ -1,0 +1,97 @@
+﻿{
+    "title":  "Return Values",
+    "time":  "55 minutes",
+    "objectives":  [
+                       "Return information from methods.",
+                       "Distinguish void from returning methods.",
+                       "Use return keyword correctly.",
+                       "Store and use returned values."
+                   ],
+    "theory":  [
+                   "A method can return a value to the caller. Instead of \u003ccode\u003evoid\u003c/code\u003e, specify the return type: \u003ccode\u003eint Add(int a, int b)\u003c/code\u003e means the method returns an integer.",
+                   "The \u003ccode\u003ereturn\u003c/code\u003e keyword sends a value back. \u003ccode\u003ereturn a + b;\u003c/code\u003e calculates and returns the sum. Without return, the method returns nothing and should be void.",
+                   "A method returning a value must return something of the correct type. \u003ccode\u003eint Add(int a, int b) { return \"hello\"; }\u003c/code\u003e is wrong—the method promises int but returns string.",
+                   "When you call a method that returns a value, you can store the result. \u003ccode\u003eint sum = Add(5, 3);\u003c/code\u003e stores the return value in sum. You can also use it directly: \u003ccode\u003eConsole.WriteLine(Add(5, 3));\u003c/code\u003e",
+                   "Return types can be int, double, string, bool, or any other type. A method might return a player\u0027s health, a calculated score, true or false for success, or a formatted message."
+               ],
+    "terms":  [
+                  [
+                      "Return type",
+                      "The type of value the method returns."
+                  ],
+                  [
+                      "return keyword",
+                      "Sends a value back to the caller."
+                  ],
+                  [
+                      "Returned value",
+                      "The value sent back by the method."
+                  ],
+                  [
+                      "Assignment",
+                      "Storing a returned value in a variable."
+                  ]
+              ],
+    "code":  "int Add(int a, int b)\n{\n    return a + b;\n}\n\nstring GetPlayerStatus(int health)\n{\n    if (health \u003e 50)\n        return \"Healthy\";\n    else if (health \u003e 0)\n        return \"Injured\";\n    else\n        return \"Defeated\";\n}\n\nbool IsGameOver(int lives)\n{\n    return lives \u003c= 0;\n}\n\n// Calls:\nint total = Add(10, 5);\nConsole.WriteLine(total);\nstring status = GetPlayerStatus(30);\nbool gameEnded = IsGameOver(-5);",
+    "tryIt":  "Create a method that takes two numbers and returns their product.",
+    "challenge":  "Write a method that calculates and returns a grade (A, B, C, D, F) based on a score.",
+    "mistakes":  [
+                     "Specify the correct return type.",
+                     "Every path must return a value.",
+                     "Return type must match the value.",
+                     "Use return keyword."
+                 ],
+    "summary":  "Methods can return values using the return keyword. Specify the return type instead of void. Store or use returned values in the caller.",
+    "quiz":  [
+                 [
+                     "Method returning int syntax?",
+                     [
+                         "int MethodName() { return 5; }",
+                         "void MethodName() { return 5; }",
+                         "MethodName() { return 5; }"
+                     ],
+                     0,
+                     "Return type goes before method name."
+                 ],
+                 [
+                     "What does return do?",
+                     [
+                         "Ends the program",
+                         "Sends value back to caller",
+                         "Prints output"
+                     ],
+                     1,
+                     "Return sends a value back."
+                 ],
+                 [
+                     "Calling int Add(2, 3)?",
+                     [
+                         "Prints 5",
+                         "Returns 5",
+                         "Displays nothing"
+                     ],
+                     1,
+                     "The method returns 5."
+                 ],
+                 [
+                     "Storing a returned value?",
+                     [
+                         "int result = Add(2, 3);",
+                         "Add(2, 3);",
+                         "Add(2, 3) = result;"
+                     ],
+                     0,
+                     "Assign return value to a variable."
+                 ],
+                 [
+                     "Return value type must match?",
+                     [
+                         "No",
+                         "Yes",
+                         "Only for int"
+                     ],
+                     1,
+                     "Return type and value must match."
+                 ]
+             ]
+}

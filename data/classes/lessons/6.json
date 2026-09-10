@@ -1,0 +1,95 @@
+﻿{
+    "title":  "Inheritance",
+    "time":  "50 minutes",
+    "objectives":  [
+                       "Explain base and derived classes.",
+                       "Reuse common members with inheritance.",
+                       "Recognise an is-a relationship.",
+                       "Identify when composition is clearer."
+                   ],
+    "theory":  [
+                   "Inheritance lets a derived class reuse members from a base class. A Mage is a Character, so Mage can inherit common name and health behaviour from Character.",
+                   "The colon in \u003ccode\u003eclass Mage : Character\u003c/code\u003e declares the inheritance relationship. Derived classes can add their own members.",
+                   "Inheritance models an is-a relationship. If the relationship is has-a, composition is usually clearer: a Player has an Inventory."
+               ],
+    "terms":  [
+                  [
+                      "Base class",
+                      "The class whose members are inherited."
+                  ],
+                  [
+                      "Derived class",
+                      "A class that inherits from another class."
+                  ],
+                  [
+                      "Inheritance",
+                      "Reusing and extending a base class."
+                  ],
+                  [
+                      "Composition",
+                      "Building a type from other objects."
+                  ]
+              ],
+    "code":  "class Character\n{\n    public string Name { get; }\n\n    public Character(string name)\n    {\n        Name = name;\n    }\n}\n\nclass Mage : Character\n{\n    public int Mana { get; } = 100;\n\n    public Mage(string name) : base(name) { }\n}",
+    "tryIt":  "Create a Character base class and derive Warrior and Mage classes from it.",
+    "challenge":  "Give Warrior a Strength property and Mage a Mana property while keeping Name in the base class.",
+    "mistakes":  [
+                     "Inheritance should represent an is-a relationship.",
+                     "Use base to call the base constructor.",
+                     "Do not duplicate common members.",
+                     "Prefer composition for has-a relationships."
+                 ],
+    "summary":  "Inheritance allows a derived class to reuse and extend a base class. Use it for clear is-a relationships.",
+    "quiz":  [
+                 [
+                     "What is a derived class?",
+                     [
+                         "A class that inherits",
+                         "A loop",
+                         "A namespace"
+                     ],
+                     0,
+                     "A derived class receives members from a base class."
+                 ],
+                 [
+                     "What does class Mage : Character mean?",
+                     [
+                         "Mage inherits Character",
+                         "Mage deletes Character",
+                         "Character inherits Mage"
+                     ],
+                     0,
+                     "The colon declares inheritance."
+                 ],
+                 [
+                     "What relationship suits inheritance?",
+                     [
+                         "is-a",
+                         "has-a only",
+                         "prints-a"
+                     ],
+                     0,
+                     "Inheritance models an is-a relationship."
+                 ],
+                 [
+                     "What does base(name) do?",
+                     [
+                         "Calls the base constructor",
+                         "Creates a loop",
+                         "Changes the namespace"
+                     ],
+                     0,
+                     "base forwards values to the base class constructor."
+                 ],
+                 [
+                     "What is composition?",
+                     [
+                         "Building with other objects",
+                         "A compiler error",
+                         "A static method"
+                     ],
+                     0,
+                     "Composition models has-a relationships."
+                 ]
+             ]
+}

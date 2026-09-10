@@ -1,0 +1,97 @@
+﻿{
+    "title":  "Creating and Calling Methods",
+    "time":  "50 minutes",
+    "objectives":  [
+                       "Write method declarations.",
+                       "Understand method structure and syntax.",
+                       "Call methods from Main.",
+                       "Trace method execution flow."
+                   ],
+    "theory":  [
+                   "A method has a structure: return type, name, parentheses, and a code block. The simplest method returns nothing and looks like \u003ccode\u003evoid MethodName() { }\u003c/code\u003e.",
+                   "\u003ccode\u003evoid\u003c/code\u003e means the method does not return a value. \u003ccode\u003eMethodName\u003c/code\u003e is the method\u0027s name. Empty parentheses mean it takes no parameters. Curly braces contain the code.",
+                   "A method name should clearly describe what the method does. \u003ccode\u003eDisplayMenu()\u003c/code\u003e is clear; \u003ccode\u003eDoStuff()\u003c/code\u003e is vague. Use camelCase: start with lowercase, capitalize subsequent words.",
+                   "Calling a method means executing it. In Main, write the method name followed by parentheses: \u003ccode\u003eDisplayMenu();\u003c/code\u003e. The computer runs the method\u0027s code block, then returns to the next line in Main.",
+                   "Execution flow is important. Main calls a method, the method executes, then control returns to Main. Understanding this flow prevents confusion when multiple methods are involved."
+               ],
+    "terms":  [
+                  [
+                      "Method declaration",
+                      "Defining a method with its structure."
+                  ],
+                  [
+                      "Return type",
+                      "What the method returns (void means nothing)."
+                  ],
+                  [
+                      "Method name",
+                      "The identifier used to call the method."
+                  ],
+                  [
+                      "Method call",
+                      "Executing a method by name with parentheses."
+                  ]
+              ],
+    "code":  "void DisplayMenu()\n{\n    Console.WriteLine(\"=== Main Menu ===\" );\n    Console.WriteLine(\"1. Start Game\");\n    Console.WriteLine(\"2. Settings\");\n    Console.WriteLine(\"3. Exit\");\n}\n\nvoid DisplayWelcome()\n{\n    Console.WriteLine(\"Welcome, adventurer!\");\n}\n\n// In Main:\nDisplayWelcome();\nDisplayMenu();\nConsole.WriteLine(\"Choose an option.\");",
+    "tryIt":  "Create two simple methods: one that prints a greeting and one that prints a separator line. Call both from Main.",
+    "challenge":  "Write a calculator menu method displaying arithmetic operations, then a goodbye method.",
+    "mistakes":  [
+                     "Use void for methods that do not return values.",
+                     "End method names with parentheses when calling.",
+                     "Method declarations belong above Main or in a separate class.",
+                     "Indentation makes structure clear."
+                 ],
+    "summary":  "Methods have a return type (void), name, parentheses, and code block. Calling a method executes its code. Control returns to Main after the method completes.",
+    "quiz":  [
+                 [
+                     "Complete the declaration: void DisplayScore() { }?",
+                     [
+                         "Missing closing brace",
+                         "Missing parentheses",
+                         "Correct syntax"
+                     ],
+                     2,
+                     "This syntax is correct."
+                 ],
+                 [
+                     "What does void mean?",
+                     [
+                         "Returns a number",
+                         "Returns nothing",
+                         "Returns text"
+                     ],
+                     1,
+                     "Void means the method returns nothing."
+                 ],
+                 [
+                     "How to call a method?",
+                     [
+                         "methodName",
+                         "methodName()",
+                         "void methodName"
+                     ],
+                     1,
+                     "Parentheses are required."
+                 ],
+                 [
+                     "Where does Main call a method?",
+                     [
+                         "Inside the method",
+                         "In Main\u0027s code block",
+                         "After all methods"
+                     ],
+                     1,
+                     "Main calls methods from its own code block."
+                 ],
+                 [
+                     "After a method completes, what happens?",
+                     [
+                         "Program ends",
+                         "Control returns to caller",
+                         "Loops forever"
+                     ],
+                     1,
+                     "Control returns to the caller."
+                 ]
+             ]
+}

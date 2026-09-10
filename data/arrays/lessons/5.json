@@ -1,0 +1,97 @@
+﻿{
+    "title":  "Multi-Dimensional Arrays",
+    "time":  "55 minutes",
+    "objectives":  [
+                       "Understand multi-dimensional arrays.",
+                       "Create and access 2D arrays.",
+                       "Use nested loops with grids.",
+                       "Apply to game maps and grids."
+                   ],
+    "theory":  [
+                   "A multi-dimensional array has rows and columns. A 2D array is like a table. \u003ccode\u003eint[,] grid = new int[3, 3];\u003c/code\u003e creates a 3×3 grid.",
+                   "Access 2D elements with two indices. \u003ccode\u003egrid[0, 1]\u003c/code\u003e accesses row 0, column 1. \u003ccode\u003egrid[2, 2]\u003c/code\u003e is bottom-right of a 3×3 grid.",
+                   "Looping through 2D arrays requires nested loops. Outer loop iterates rows, inner loop iterates columns. \u003ccode\u003efor (int row = 0; row \u003c 3; row++) { for (int col = 0; col \u003c 3; col++) { } }\u003c/code\u003e",
+                   "Games use 2D arrays for maps, tile systems, and game boards. A chess board is 8×8. A tic-tac-toe board is 3×3. Dungeon levels are large grids.",
+                   "Higher dimensions exist: 3D arrays, 4D arrays, etc. But 2D is most common and sufficient for most applications. 3D arrays are rare in basic programming."
+               ],
+    "terms":  [
+                  [
+                      "Multi-dimensional array",
+                      "Arrays with multiple dimensions."
+                  ],
+                  [
+                      "2D array",
+                      "Rows and columns."
+                  ],
+                  [
+                      "Index pair",
+                      "Two indices for row and column."
+                  ],
+                  [
+                      "Grid",
+                      "A 2D data structure."
+                  ]
+              ],
+    "code":  "// Create 3x3 grid\nint[,] grid = new int[3, 3];\n\n// Set values\ngrid[0, 0] = 1;\ngrid[1, 1] = 5;\ngrid[2, 2] = 9;\n\n// Initialize with values\nint[,] board = {\n    {1, 2, 3},\n    {4, 5, 6},\n    {7, 8, 9}\n};\n\n// Loop through grid\nfor (int row = 0; row \u003c 3; row++)\n{\n    for (int col = 0; col \u003c 3; col++)\n    {\n        Console.WriteLine($\"[{row},{col}] = {board[row, col]}\");\n    }\n}",
+    "tryIt":  "Create a 2×2 grid, set all values, and print them using nested loops.",
+    "challenge":  "Create a tic-tac-toe board and print it with X and O symbols.",
+    "mistakes":  [
+                     "Use comma between dimensions, not separate brackets.",
+                     "Nested loops: outer for rows, inner for columns.",
+                     "Two indices required for 2D access.",
+                     "Check both dimensions for bounds."
+                 ],
+    "summary":  "Multi-dimensional arrays store tabular data. 2D arrays use row and column indices. Nested loops process grids. Games use 2D arrays for maps and boards.",
+    "quiz":  [
+                 [
+                     "2D array syntax?",
+                     [
+                         "int[] array[,]",
+                         "int[,] array",
+                         "int array[,]"
+                     ],
+                     1,
+                     "Type, comma in brackets, name."
+                 ],
+                 [
+                     "Access element?",
+                     [
+                         "array[0][1]",
+                         "array[0,1]",
+                         "array[0;1]"
+                     ],
+                     1,
+                     "Comma separates dimensions."
+                 ],
+                 [
+                     "Nested loop order?",
+                     [
+                         "Cols then rows",
+                         "Rows then cols",
+                         "Doesn\u0027t matter"
+                     ],
+                     1,
+                     "Outer loop rows, inner loop columns."
+                 ],
+                 [
+                     "3x3 grid dimensions?",
+                     [
+                         "New int[2,2]",
+                         "New int[3,3]",
+                         "New int[4,4]"
+                     ],
+                     1,
+                     "3x3 requires [3,3]."
+                 ],
+                 [
+                     "Real-world 2D use?",
+                     [
+                         "Calculations",
+                         "Game maps",
+                         "Strings"
+                     ],
+                     1,
+                     "Maps and grids use 2D arrays."
+                 ]
+             ]
+}

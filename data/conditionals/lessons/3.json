@@ -1,0 +1,97 @@
+﻿{
+    "title":  "The if...else Statement",
+    "time":  "50 minutes",
+    "objectives":  [
+                       "Write if...else statements.",
+                       "Choose between two alternative code paths.",
+                       "Improve program interaction with alternative outcomes.",
+                       "Apply if...else to real-world scenarios."
+                   ],
+    "theory":  [
+                   "An if...else statement provides two paths: one if the condition is true and another if it is false. The syntax is \u003ccode\u003eif (condition) { true block } else { false block }\u003c/code\u003e. Exactly one block executes.",
+                   "The else keyword introduces the alternative code. The else block has no condition; it executes automatically if the if condition is false.",
+                   "If...else is perfect for yes-or-no decisions. A login system checks whether the password matches. A validator checks whether input is empty. A game checks whether the player has won or lost.",
+                   "A common pattern is checking whether a numeric value meets a threshold. \u003ccode\u003eif (age \u003e= 13)\u003c/code\u003e might allow access; \u003ccode\u003eelse\u003c/code\u003e might deny it. Another pattern checks whether text matches an expected value.",
+                   "Every conditional program should handle both the true and false cases. Forgetting the else path means some user inputs produce no visible feedback, which is confusing."
+               ],
+    "terms":  [
+                  [
+                      "if...else",
+                      "Executes one of two code blocks."
+                  ],
+                  [
+                      "else block",
+                      "Code that runs if the if condition is false."
+                  ],
+                  [
+                      "Alternative outcome",
+                      "A different result based on conditions."
+                  ],
+                  [
+                      "Mutual exclusivity",
+                      "Only one block can execute."
+                  ]
+              ],
+    "code":  "int age = 20;\nif (age \u003e= 18)\n{\n    Console.WriteLine(\"You are an adult.\");\n}\nelse\n{\n    Console.WriteLine(\"You are a minor.\");\n}\n\nstring password = \"secret123\";\nif (password == \"secret123\")\n{\n    Console.WriteLine(\"Access granted.\");\n}\nelse\n{\n    Console.WriteLine(\"Access denied.\");\n}",
+    "tryIt":  "Write an if...else that checks whether a number is even or odd.",
+    "challenge":  "Create a program asking for a user\u0027s test score and displaying either \"Pass\" or \"Fail\" based on whether the score is 50 or higher.",
+    "mistakes":  [
+                     "Use else, not else if, for the final alternative.",
+                     "Ensure both blocks handle the expected cases.",
+                     "Do not put a condition after else.",
+                     "Each path should be clear to the user."
+                 ],
+    "summary":  "If...else provides two paths. True executes the if block; false executes the else block. Always handle both outcomes.",
+    "quiz":  [
+                 [
+                     "When does the else block execute?",
+                     [
+                         "Always",
+                         "If the if condition is true",
+                         "If the if condition is false"
+                     ],
+                     2,
+                     "Else runs when the if condition is false."
+                 ],
+                 [
+                     "Can both if and else blocks execute?",
+                     [
+                         "Yes",
+                         "No",
+                         "Only if both are true"
+                     ],
+                     1,
+                     "Exactly one block executes."
+                 ],
+                 [
+                     "Does else need a condition?",
+                     [
+                         "Yes",
+                         "No",
+                         "Only sometimes"
+                     ],
+                     1,
+                     "Else has no condition."
+                 ],
+                 [
+                     "Best use for if...else?",
+                     [
+                         "Yes-or-no decisions",
+                         "Multiple outcomes",
+                         "Loops"
+                     ],
+                     0,
+                     "If...else suits binary choices."
+                 ],
+                 [
+                     "Result of wrong password?",
+                     [
+                         "Program crashes",
+                         "Else block executes",
+                         "Nothing happens"
+                     ],
+                     1,
+                     "Else block provides feedback."
+                 ]
+             ]
+}

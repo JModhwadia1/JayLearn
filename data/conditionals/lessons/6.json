@@ -1,0 +1,97 @@
+﻿{
+    "title":  "The switch Statement",
+    "time":  "50 minutes",
+    "objectives":  [
+                       "Write switch statements with correct syntax.",
+                       "Use case and break keywords.",
+                       "Handle default cases.",
+                       "Identify when switch is better than if...else."
+                   ],
+    "theory":  [
+                   "A switch statement is useful when a single variable has many possible values. Instead of a long chain of else if statements, switch provides a cleaner syntax.",
+                   "The syntax is \u003ccode\u003eswitch (expression) { case value1: code; break; case value2: code; break; default: code; }\u003c/code\u003e. The expression is evaluated once. Each case compares to the expression value.",
+                   "The break keyword exits the switch. Without break, execution continues to the next case, causing unintended behavior. Most cases need break unless intentionally falling through.",
+                   "The default case handles unexpected values. It is like the final else in an if...else chain. Default is optional but recommended for safety.",
+                   "Switch works well for menu selection, day of the week, game states, or any situation with discrete, predictable values. Switch is clearer than else if when comparing one variable to multiple constants."
+               ],
+    "terms":  [
+                  [
+                      "switch",
+                      "Tests one expression against multiple values."
+                  ],
+                  [
+                      "case",
+                      "A label matching a specific value."
+                  ],
+                  [
+                      "break",
+                      "Exits the switch statement."
+                  ],
+                  [
+                      "default",
+                      "Executes if no case matches."
+                  ]
+              ],
+    "code":  "int day = 3;\nswitch (day)\n{\n    case 1:\n        Console.WriteLine(\"Monday\");\n        break;\n    case 2:\n        Console.WriteLine(\"Tuesday\");\n        break;\n    case 3:\n        Console.WriteLine(\"Wednesday\");\n        break;\n    default:\n        Console.WriteLine(\"Invalid day\");\n        break;\n}\n\nchar grade = \u0027B\u0027;\nswitch (grade)\n{\n    case \u0027A\u0027:\n    case \u0027B\u0027:\n        Console.WriteLine(\"Excellent work!\");\n        break;\n    case \u0027C\u0027:\n        Console.WriteLine(\"Good effort.\");\n        break;\n    default:\n        Console.WriteLine(\"Keep improving.\");\n        break;\n}",
+    "tryIt":  "Create a switch that translates a number 1-3 into a colour name.",
+    "challenge":  "Build a calculator menu using switch to select between +, −, *, and / operations.",
+    "mistakes":  [
+                     "Do not forget break statements.",
+                     "Each case needs a value, not a condition.",
+                     "Default handles unexpected cases.",
+                     "Test all possible values."
+                 ],
+    "summary":  "Switch tests one expression against multiple values. Each case needs break. Default handles unexpected cases. Use switch when comparing one variable to many constants.",
+    "quiz":  [
+                 [
+                     "When is switch better than if...else?",
+                     [
+                         "For multiple independent conditions",
+                         "For one variable with many possible values",
+                         "For complex logic"
+                     ],
+                     1,
+                     "Switch is cleaner for discrete values."
+                 ],
+                 [
+                     "What does break do?",
+                     [
+                         "Ends the program",
+                         "Skips to default",
+                         "Exits the switch"
+                     ],
+                     2,
+                     "Break prevents fall-through to the next case."
+                 ],
+                 [
+                     "What if break is missing?",
+                     [
+                         "Error",
+                         "Fall-through to next case",
+                         "Automatic exit"
+                     ],
+                     1,
+                     "Missing break causes execution to continue to the next case."
+                 ],
+                 [
+                     "Is default required?",
+                     [
+                         "Yes",
+                         "No",
+                         "Only for numbers"
+                     ],
+                     1,
+                     "Default is optional but recommended."
+                 ],
+                 [
+                     "Result of switch (3) with no matching case and no default?",
+                     [
+                         "Error",
+                         "Nothing happens",
+                         "Fall-through"
+                     ],
+                     1,
+                     "Without default, unmatched cases do nothing."
+                 ]
+             ]
+}

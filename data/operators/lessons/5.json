@@ -1,0 +1,97 @@
+﻿{
+    "title":  "Comparison Operators",
+    "time":  "55 minutes",
+    "objectives":  [
+                       "Compare values using ==, !=, \u003c, \u003e, \u003c=, and \u003e=.",
+                       "Understand Boolean results.",
+                       "Avoid comparing strings with ==.",
+                       "Prepare for conditional logic."
+                   ],
+    "theory":  [
+                   "Comparison operators test relationships between values and return a Boolean: true or false. They form the foundation of decision-making in programs.",
+                   "The equals operator \u003ccode\u003e==\u003c/code\u003e tests whether two values are identical. \u003ccode\u003e5 == 5\u003c/code\u003e is true; \u003ccode\u003e5 == 3\u003c/code\u003e is false. The not-equals operator \u003ccode\u003e!=\u003c/code\u003e is the opposite.",
+                   "Less than \u003ccode\u003e\u003c\u003c/code\u003e and greater than \u003ccode\u003e\u003e\u003c/code\u003e compare magnitude. \u003ccode\u003e3 \u003c 5\u003c/code\u003e is true. Less-than-or-equal \u003ccode\u003e\u003c=\u003c/code\u003e and greater-than-or-equal \u003ccode\u003e\u003e=\u003c/code\u003e include the boundary.",
+                   "A common mistake is using \u003ccode\u003e=\u003c/code\u003e (assignment) instead of \u003ccode\u003e==\u003c/code\u003e (comparison). \u003ccode\u003eif (score = 10)\u003c/code\u003e assigns 10 to score and is syntactically different from \u003ccode\u003eif (score == 10)\u003c/code\u003e.",
+                   "Comparing strings with \u003ccode\u003e==\u003c/code\u003e checks reference equality, not content. Module 4 introduces proper string comparison. For now, focus on numeric comparisons."
+               ],
+    "terms":  [
+                  [
+                      "Comparison",
+                      "Testing a relationship between values."
+                  ],
+                  [
+                      "Boolean",
+                      "A true or false result."
+                  ],
+                  [
+                      "Equality",
+                      "Testing whether values are identical."
+                  ],
+                  [
+                      "Magnitude",
+                      "Comparing size or quantity."
+                  ]
+              ],
+    "code":  "int score = 50;\nbool passed = score \u003e= 40;\nConsole.WriteLine(passed);\nbool failed = score \u003c 40;\nConsole.WriteLine(failed);\nbool isPerfect = score == 100;\nConsole.WriteLine(isPerfect);\nbool needsImprovement = score != 100;\nConsole.WriteLine(needsImprovement);",
+    "tryIt":  "Create variables and test comparisons, printing the Boolean results.",
+    "challenge":  "Compare three numeric values and display whether each passes a threshold.",
+    "mistakes":  [
+                     "Use == for comparison, = for assignment.",
+                     "Remember that \u003c and \u003e do not include equality.",
+                     "\u003c= and \u003e= include the boundary.",
+                     "Numeric comparisons produce Boolean results."
+                 ],
+    "summary":  "Comparison operators return true or false. They form the basis of conditional decisions and logic.",
+    "quiz":  [
+                 [
+                     "Result of 10 == 10?",
+                     [
+                         "false",
+                         "true",
+                         "Error"
+                     ],
+                     1,
+                     "== tests whether values are equal."
+                 ],
+                 [
+                     "What does != mean?",
+                     [
+                         "Greater than",
+                         "Not equal to",
+                         "Assignment"
+                     ],
+                     1,
+                     "!= tests inequality."
+                 ],
+                 [
+                     "Is 5 \u003c 5 true?",
+                     [
+                         "No, false",
+                         "Yes, true",
+                         "Error"
+                     ],
+                     0,
+                     "\u003c does not include equality."
+                 ],
+                 [
+                     "Result of 10 \u003e= 10?",
+                     [
+                         "false",
+                         "true",
+                         "Error"
+                     ],
+                     1,
+                     "\u003e= includes the boundary."
+                 ],
+                 [
+                     "Correct comparison operator?",
+                     [
+                         "=",
+                         "==",
+                         ":="
+                     ],
+                     1,
+                     "== compares values."
+                 ]
+             ]
+}

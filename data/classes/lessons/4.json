@@ -1,0 +1,95 @@
+﻿{
+    "title":  "Instance Methods",
+    "time":  "50 minutes",
+    "objectives":  [
+                       "Add behaviour to a class.",
+                       "Call methods through objects.",
+                       "Change state through methods.",
+                       "Return useful results."
+                   ],
+    "theory":  [
+                   "An instance method is behaviour that belongs to an object. A Player object might have Heal, Jump, or AddScore methods.",
+                   "Instance methods can read and change the current object\u0027s state. A method can return a value when its caller needs a result, or use void when it performs an action without returning data.",
+                   "Methods should have one clear responsibility and should use parameters for information supplied by the caller."
+               ],
+    "terms":  [
+                  [
+                      "Instance method",
+                      "Behaviour belonging to one object."
+                  ],
+                  [
+                      "void",
+                      "A return type meaning no value is returned."
+                  ],
+                  [
+                      "Return value",
+                      "The result sent back by a method."
+                  ],
+                  [
+                      "Behaviour",
+                      "An action an object can perform."
+                  ]
+              ],
+    "code":  "class Player\n{\n    public int Score { get; private set; }\n\n    public void AddScore(int points)\n    {\n        Score += points;\n    }\n\n    public bool HasWon(int winningScore)\n    {\n        return Score \u003e= winningScore;\n    }\n}",
+    "tryIt":  "Add Heal and IsAlive methods to your Character class.",
+    "challenge":  "Build a Player class with methods to add score, lose health, and report whether the player has won.",
+    "mistakes":  [
+                     "Call instance methods on an object.",
+                     "Keep method names descriptive.",
+                     "Return a value when the caller needs an answer.",
+                     "Keep each method focused."
+                 ],
+    "summary":  "Instance methods give objects behaviour and allow them to manage their own state.",
+    "quiz":  [
+                 [
+                     "Where does an instance method belong?",
+                     [
+                         "An object",
+                         "Only a comment",
+                         "The HTML page"
+                     ],
+                     0,
+                     "Instance methods belong to objects created from a class."
+                 ],
+                 [
+                     "What does void mean?",
+                     [
+                         "No return value",
+                         "Private data",
+                         "A Boolean"
+                     ],
+                     0,
+                     "void methods perform an action without returning a value."
+                 ],
+                 [
+                     "How is an instance method called?",
+                     [
+                         "object.Method()",
+                         "class = Method",
+                         "Method only"
+                     ],
+                     0,
+                     "The dot accesses the method on an object."
+                 ],
+                 [
+                     "Why use parameters?",
+                     [
+                         "Supply method data",
+                         "Hide all logic",
+                         "Create a class"
+                     ],
+                     0,
+                     "Parameters let callers provide required information."
+                 ],
+                 [
+                     "What should a method usually have?",
+                     [
+                         "One clear responsibility",
+                         "Every responsibility",
+                         "No name"
+                     ],
+                     0,
+                     "Focused methods are easier to understand and test."
+                 ]
+             ]
+}

@@ -1,0 +1,97 @@
+﻿{
+    "title":  "Practice Project · Student Grade Calculator",
+    "time":  "75 minutes",
+    "objectives":  [
+                       "Combine arithmetic and comparison operators.",
+                       "Calculate averages and identify extremes.",
+                       "Apply logical operators for decisions.",
+                       "Display formatted results."
+                   ],
+    "theory":  [
+                   "This project integrates Module 3 concepts. It reads three assessment marks, calculates the average, identifies the highest and lowest values, and determines pass/fail status.",
+                   "Use int or double for marks depending on whether decimals are allowed. Read three values using Console.ReadLine and Convert or TryParse.",
+                   "Calculate average by adding marks and dividing by 3. Find the highest using comparison: if mark1 \u003e mark2 \u0026\u0026 mark1 \u003e mark3, mark1 is highest.",
+                   "A student passes when average \u003e= 50. Combine comparison and logical operators: \u003ccode\u003eaverage \u003e= 50 \u0026\u0026 average \u003e= 0\u003c/code\u003e.",
+                   "Display all results using interpolation with labels and clear formatting. Use newlines and dashes to create visual structure."
+               ],
+    "terms":  [
+                  [
+                      "Average",
+                      "Sum divided by count."
+                  ],
+                  [
+                      "Highest value",
+                      "Maximum among multiple values."
+                  ],
+                  [
+                      "Lowest value",
+                      "Minimum among multiple values."
+                  ],
+                  [
+                      "Pass threshold",
+                      "The score required to succeed."
+                  ]
+              ],
+    "code":  "Console.WriteLine(\"Student Grade Calculator\");\nConsole.WriteLine(\"------------------------\");\nConsole.Write(\"Mark 1: \");\nint mark1 = int.Parse(Console.ReadLine() ?? \"0\");\nConsole.Write(\"Mark 2: \");\nint mark2 = int.Parse(Console.ReadLine() ?? \"0\");\nConsole.Write(\"Mark 3: \");\nint mark3 = int.Parse(Console.ReadLine() ?? \"0\");\n\nint total = mark1 + mark2 + mark3;\nint average = total / 3;\nint highest = mark1;\nif (mark2 \u003e highest) highest = mark2;\nif (mark3 \u003e highest) highest = mark3;\n\nbool passed = average \u003e= 50;\nConsole.WriteLine($\"\\nAverage: {average}\");\nConsole.WriteLine($\"Highest: {highest}\");\nConsole.WriteLine($\"Status: {(passed ? \"PASS\" : \"FAIL\")}\");\nConsole.WriteLine(\"------------------------\");",
+    "tryIt":  "Build the calculator and test with three marks that produce a clear average and pass/fail result.",
+    "challenge":  "Add decimal support, calculate the lowest mark, and display additional statistics.",
+    "mistakes":  [
+                     "Integer division truncates; use double for precise averages.",
+                     "Validate that marks are within a valid range.",
+                     "Ensure all three marks are read before calculating.",
+                     "Check comparison logic for highest and lowest."
+                 ],
+    "summary":  "You can now use arithmetic to calculate, comparisons to test conditions, and logical operators to combine them into complete programs.",
+    "quiz":  [
+                 [
+                     "How to find the highest of three values?",
+                     [
+                         "Add them",
+                         "Compare using \u003c",
+                         "Use multiple if comparisons"
+                     ],
+                     2,
+                     "Successive comparisons identify the maximum."
+                 ],
+                 [
+                     "Result of (10 + 15 + 20) / 3?",
+                     [
+                         "15",
+                         "15.0",
+                         "Error"
+                     ],
+                     0,
+                     "Integer division produces 15."
+                 ],
+                 [
+                     "Operator for AND in the code?",
+                     [
+                         "||",
+                         "\u0026\u0026",
+                         "|"
+                     ],
+                     1,
+                     "\u0026\u0026 combines conditions."
+                 ],
+                 [
+                     "Best data type for marks with decimals?",
+                     [
+                         "int",
+                         "double",
+                         "bool"
+                     ],
+                     1,
+                     "double allows fractional marks."
+                 ],
+                 [
+                     "How to display pass or fail?",
+                     [
+                         "Use if/else output",
+                         "Use interpolation with ? :",
+                         "Both"
+                     ],
+                     2,
+                     "Both methods work; choose for clarity."
+                 ]
+             ]
+}

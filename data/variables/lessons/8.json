@@ -1,0 +1,97 @@
+﻿{
+    "title":  "Practice Project · User Information Program",
+    "time":  "75 minutes",
+    "objectives":  [
+                       "Plan a small console program.",
+                       "Collect name, age, favourite game, and colour.",
+                       "Validate age with TryParse.",
+                       "Display an interpolated summary."
+                   ],
+    "theory":  [
+                   "This project combines the Module 2 workflow. It asks for a name, age, favourite game, and favourite colour.",
+                   "Name, game, and colour use string. Age uses int after validation.",
+                   "Use Console.Write for clear prompts and ReadLine with an empty-string fallback for text.",
+                   "Use int.TryParse for age. If conversion fails, display a helpful message instead of producing the profile.",
+                   "When input is valid, display labelled values and an expression for age next year."
+               ],
+    "terms":  [
+                  [
+                      "Validation",
+                      "Checking whether input meets requirements."
+                  ],
+                  [
+                      "Profile",
+                      "A structured collection of related values."
+                  ],
+                  [
+                      "Null coalescing",
+                      "Providing a fallback using ??"
+                  ],
+                  [
+                      "Summary",
+                      "Readable output combining collected values."
+                  ]
+              ],
+    "code":  "Console.Write(\"Name: \");\nstring name = Console.ReadLine() ?? \"\";\nConsole.Write(\"Age: \");\nstring ageText = Console.ReadLine() ?? \"\";\nConsole.Write(\"Favourite game: \");\nstring game = Console.ReadLine() ?? \"\";\nConsole.Write(\"Favourite colour: \");\nstring colour = Console.ReadLine() ?? \"\";\n\nif (int.TryParse(ageText, out int age))\n{\n    Console.WriteLine($\"Name: {name}\");\n    Console.WriteLine($\"Age: {age}\");\n    Console.WriteLine($\"Game: {game}\");\n    Console.WriteLine($\"Colour: {colour}\");\n    Console.WriteLine($\"Age next year: {age + 1}\");\n}\nelse\n{\n    Console.WriteLine(\"Age must be a whole number.\");\n}",
+    "tryIt":  "Type the project, test valid and invalid ages, and add one more well-named field.",
+    "challenge":  "Add weekly gaming hours and recommendation status. Validate both before displaying all fields.",
+    "mistakes":  [
+                     "Do not treat ReadLine as an int before conversion.",
+                     "Use age only after successful TryParse.",
+                     "Check every quote, brace, and semicolon.",
+                     "Keep prompts and output labels consistent."
+                 ],
+    "summary":  "You can declare variables, choose types, define constants, convert values, validate input, and build readable output.",
+    "quiz":  [
+                 [
+                     "Type for a name?",
+                     [
+                         "bool",
+                         "string",
+                         "char"
+                     ],
+                     1,
+                     "A name is a sequence of characters."
+                 ],
+                 [
+                     "Type for validated age?",
+                     [
+                         "int",
+                         "char",
+                         "bool"
+                     ],
+                     0,
+                     "Age is a whole-number value."
+                 ],
+                 [
+                     "Why TryParse?",
+                     [
+                         "Print heading",
+                         "Create constant",
+                         "Validate and convert safely"
+                     ],
+                     2,
+                     "TryParse safely reports whether conversion succeeds."
+                 ],
+                 [
+                     "Correct interpolation?",
+                     [
+                         "\"Name: {name}\"",
+                         "$\"Name: {name}\"",
+                         "$Name: name"
+                     ],
+                     1,
+                     "Interpolation uses $ and braces."
+                 ],
+                 [
+                     "Next module?",
+                     [
+                         "Operators \u0026 Expressions",
+                         "File systems",
+                         "Networking"
+                     ],
+                     0,
+                     "Module 3 applies operators to stored values."
+                 ]
+             ]
+}

@@ -1,0 +1,97 @@
+﻿{
+    "title":  "Practice Project · Text Adventure Game",
+    "time":  "90 minutes",
+    "objectives":  [
+                       "Apply all method concepts.",
+                       "Create a complete game with multiple methods.",
+                       "Manage game state and player progress.",
+                       "Demonstrate professional code organisation."
+                   ],
+    "theory":  [
+                   "This project brings together all Module 6 concepts. You will create a simple text adventure game with methods for menus, player interactions, battles, and game flow.",
+                   "A complete game needs several methods: DisplayMenu displays choices, GetPlayerChoice reads input, StartBattle handles combat, CalculateDamage applies harm, CheckGameOver tests win/loss conditions, and more.",
+                   "Methods receive parameters for flexibility. StartBattle might take enemy health and damage. CalculateDamage takes player and enemy stats. Methods return values for decision-making.",
+                   "The game demonstrates scope: local variables in each method, parameters for data exchange, and return values for results. Main orchestrates the overall flow.",
+                   "A professional program is built from many small, focused methods. Each method has a clear purpose and name. Methods call other methods in a logical order."
+               ],
+    "terms":  [
+                  [
+                      "Game loop",
+                      "Continuous gameplay cycle."
+                  ],
+                  [
+                      "State management",
+                      "Tracking health, choices, outcomes."
+                  ],
+                  [
+                      "Method orchestration",
+                      "Calling methods in a logical order."
+                  ],
+                  [
+                      "Game flow",
+                      "The progression from start to end."
+                  ]
+              ],
+    "code":  "static void DisplayMenu()\n{\n    Console.WriteLine(\"\\n=== Adventure ===\" );\n    Console.WriteLine(\"1. Explore\");\n    Console.WriteLine(\"2. Rest\");\n    Console.WriteLine(\"3. Quit\");\n}\n\nstatic string GetPlayerChoice()\n{\n    Console.Write(\"Choose: \");\n    return Console.ReadLine() ?? \"\";\n}\n\nstatic int CalculateDamage(int baseDamage, bool critical)\n{\n    return critical ? baseDamage * 2 : baseDamage;\n}\n\nstatic void StartBattle(int playerHealth, int enemyHealth)\n{\n    Console.WriteLine(\"\\n=== Battle ===\" );\n    Console.WriteLine($\"Enemy HP: {enemyHealth}\");\n    Console.WriteLine($\"Your HP: {playerHealth}\");\n    int damage = CalculateDamage(15, false);\n    Console.WriteLine($\"You deal {damage} damage!\");\n}\n\nstatic bool IsGameOver(int playerHealth)\n{\n    return playerHealth \u003c= 0;\n}\n\n// In Main:\nint health = 100;\nbool playing = true;\nwhile (playing)\n{\n    DisplayMenu();\n    string choice = GetPlayerChoice();\n    if (choice == \"1\") StartBattle(health, 50);\n    else if (choice == \"3\") playing = false;\n}\nConsole.WriteLine(\"Thanks for playing!\");",
+    "tryIt":  "Build a simple game with a menu, player input, and battle system.",
+    "challenge":  "Extend the game with inventory, leveling, or multiple enemies.",
+    "mistakes":  [
+                     "Each method should have a clear purpose.",
+                     "Pass necessary data as parameters.",
+                     "Use meaningful method and variable names.",
+                     "Organize methods logically."
+                 ],
+    "summary":  "A complete game is built from many methods. Each method has a specific role. Methods exchange data through parameters and return values. Professional code is organized and reusable.",
+    "quiz":  [
+                 [
+                     "Best method for displaying options?",
+                     [
+                         "In Main only",
+                         "Separate DisplayMenu method",
+                         "In every method"
+                     ],
+                     1,
+                     "Separate methods improve organisation."
+                 ],
+                 [
+                     "Purpose of parameters in methods?",
+                     [
+                         "Speed up code",
+                         "Pass data between methods",
+                         "Create variables"
+                     ],
+                     1,
+                     "Parameters enable data exchange."
+                 ],
+                 [
+                     "How does Main coordinate?",
+                     [
+                         "Manually doing everything",
+                         "Calling organised methods",
+                         "Writing all code inline"
+                     ],
+                     1,
+                     "Main calls methods in logical order."
+                 ],
+                 [
+                     "Why separate battle logic?",
+                     [
+                         "Shorter code",
+                         "Clearer purpose",
+                         "Both"
+                     ],
+                     2,
+                     "Separation improves clarity and reuse."
+                 ],
+                 [
+                     "Module 6 learning?",
+                     [
+                         "Only static methods",
+                         "All method concepts",
+                         "Just return values"
+                     ],
+                     1,
+                     "This covers methods comprehensively."
+                 ]
+             ]
+}

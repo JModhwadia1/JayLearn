@@ -1,0 +1,95 @@
+﻿{
+    "title":  "Object-Oriented Game Project",
+    "time":  "75 minutes",
+    "objectives":  [
+                       "Plan a small object-oriented game system.",
+                       "Combine classes, constructors, properties, and methods.",
+                       "Represent game state with objects.",
+                       "Test interactions between objects."
+                   ],
+    "theory":  [
+                   "Object-oriented design breaks a game into collaborating objects. A Player can hold health and score, an Enemy can hold health and damage, and a Battle can coordinate their interactions.",
+                   "Identify nouns that may become classes and verbs that may become methods. Keep each class responsible for one concept.",
+                   "Test each class separately, then test the interactions between objects."
+               ],
+    "terms":  [
+                  [
+                      "Object-oriented design",
+                      "Organising software around collaborating objects."
+                  ],
+                  [
+                      "Responsibility",
+                      "The work a class should own."
+                  ],
+                  [
+                      "Collaboration",
+                      "Objects working together through members."
+                  ],
+                  [
+                      "State",
+                      "The current data held by an object."
+                  ]
+              ],
+    "code":  "class Player\n{\n    public string Name { get; }\n    public int Health { get; private set; } = 100;\n\n    public Player(string name)\n    {\n        Name = name;\n    }\n\n    public void TakeDamage(int amount)\n    {\n        Health = Math.Max(0, Health - amount);\n    }\n}\n\nPlayer player = new Player(\"Mira\");\nplayer.TakeDamage(30);\nConsole.WriteLine($\"{player.Name}: {player.Health} HP\");",
+    "tryIt":  "Build a Player and Enemy class, then make the player take damage and display updated health.",
+    "challenge":  "Extend the project with score, an enemy attack method, and a win condition. Test three scenarios.",
+    "mistakes":  [
+                     "Do not put every responsibility into one class.",
+                     "Protect state changes with methods when validation is needed.",
+                     "Test normal and boundary values.",
+                     "Keep object responsibilities clear."
+                 ],
+    "summary":  "Classes and objects model game entities. Constructors, properties, methods, and collaboration create maintainable game systems.",
+    "quiz":  [
+                 [
+                     "What should a class own?",
+                     [
+                         "A clear responsibility",
+                         "Every feature",
+                         "Only output"
+                     ],
+                     0,
+                     "Focused responsibilities make designs easier to maintain."
+                 ],
+                 [
+                     "What establishes starting state?",
+                     [
+                         "A constructor",
+                         "A comment",
+                         "An icon"
+                     ],
+                     0,
+                     "Constructors initialise objects."
+                 ],
+                 [
+                     "What protects state?",
+                     [
+                         "Controlled properties and methods",
+                         "Random changes",
+                         "Duplicate code"
+                     ],
+                     0,
+                     "Encapsulation controls valid changes."
+                 ],
+                 [
+                     "What should you test?",
+                     [
+                         "Classes and their interactions",
+                         "Only colours",
+                         "Nothing until release"
+                     ],
+                     0,
+                     "Individual behaviour and collaboration need testing."
+                 ],
+                 [
+                     "What does Module 8 combine?",
+                     [
+                         "Classes, objects, and object-oriented design",
+                         "Only arrays",
+                         "Only loops"
+                     ],
+                     0,
+                     "The project applies the module\u0027s object-oriented concepts."
+                 ]
+             ]
+}

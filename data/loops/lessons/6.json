@@ -1,0 +1,97 @@
+﻿{
+    "title":  "The foreach Loop",
+    "time":  "50 minutes",
+    "objectives":  [
+                       "Understand foreach loops and their purpose.",
+                       "Iterate through collections of data.",
+                       "Compare foreach with for loops.",
+                       "Prepare for working with arrays and lists."
+                   ],
+    "theory":  [
+                   "A foreach loop is designed to process every item in a collection. The syntax is \u003ccode\u003eforeach (type item in collection) { statements }\u003c/code\u003e. Unlike for loops with counters, foreach accesses each item directly.",
+                   "Collections include arrays and lists. The foreach loop reads one item at a time, processes it, then moves to the next. The programmer does not manage counter variables.",
+                   "Foreach is cleaner and safer than for when processing all items. There is no risk of off-by-one errors or incorrect array indices.",
+                   "The loop variable can be any valid name. \u003ccode\u003eforeach (string name in names)\u003c/code\u003e reads each name from the names collection.",
+                   "Foreach is ideal for reading or processing all items. When you need the index, use for instead. When the collection is unknown or could be large, foreach is usually safer."
+               ],
+    "terms":  [
+                  [
+                      "foreach loop",
+                      "Accesses each item in a collection."
+                  ],
+                  [
+                      "Collection",
+                      "An array, list, or similar group of items."
+                  ],
+                  [
+                      "Item",
+                      "One element from the collection."
+                  ],
+                  [
+                      "Loop variable",
+                      "The current item being processed."
+                  ]
+              ],
+    "code":  "// Process each name\nstring[] names = { \"Alice\", \"Bob\", \"Charlie\" };\nforeach (string name in names)\n{\n    Console.WriteLine(name);\n}\n\n// Process each score\nint[] scores = { 95, 87, 92, 88 };\nint total = 0;\nforeach (int score in scores)\n{\n    total += score;\n    Console.WriteLine(score);\n}\nConsole.WriteLine($\"Total: {total}\");\n\n// Simple display\nstring[] colours = { \"red\", \"blue\", \"green\" };\nforeach (string colour in colours)\n{\n    Console.WriteLine($\"Colour: {colour}\");\n}",
+    "tryIt":  "Write a foreach loop that prints the letters of the alphabet.",
+    "challenge":  "Create an array of numbers and use foreach to find the highest value.",
+    "mistakes":  [
+                     "Use foreach for processing all items.",
+                     "Use for if you need the index.",
+                     "The loop variable type must match collection items.",
+                     "foreach is read-only; do not try to modify items."
+                 ],
+    "summary":  "Foreach loops process each item in a collection. Use foreach for reading; use for when you need indices or custom iteration.",
+    "quiz":  [
+                 [
+                     "When to use foreach?",
+                     [
+                         "Unknown count",
+                         "Processing all items",
+                         "Reverse order"
+                     ],
+                     1,
+                     "Foreach processes every item in a collection."
+                 ],
+                 [
+                     "Syntax for item in collection?",
+                     [
+                         "for item in collection",
+                         "foreach (type item in collection)",
+                         "while item in collection"
+                     ],
+                     1,
+                     "Foreach requires type and \u0027in\u0027 keyword."
+                 ],
+                 [
+                     "Can foreach modify items?",
+                     [
+                         "Yes, always",
+                         "No, items are read-only",
+                         "Only with arrays"
+                     ],
+                     1,
+                     "Foreach items cannot be modified directly."
+                 ],
+                 [
+                     "Best when count is?",
+                     [
+                         "Unknown",
+                         "Known exactly",
+                         "Always"
+                     ],
+                     0,
+                     "Foreach is ideal when count is unknown."
+                 ],
+                 [
+                     "Difference from for?",
+                     [
+                         "No difference",
+                         "Foreach has no counter",
+                         "Foreach is slower"
+                     ],
+                     1,
+                     "Foreach eliminates manual counter management."
+                 ]
+             ]
+}

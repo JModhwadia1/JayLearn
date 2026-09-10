@@ -1,0 +1,96 @@
+﻿{
+    "title":  "Input, Processing and Output",
+    "time":  "50 minutes",
+    "objectives":  [
+                       "Identify program inputs and outputs.",
+                       "Describe processing as transformation.",
+                       "Use Write and WriteLine appropriately.",
+                       "Design an IPO table for a simple program."
+                   ],
+    "theory":  [
+                   "The input-process-output model provides a simple way to analyse a program. Inputs enter the system, processing applies instructions, and outputs communicate results.",
+                   "A keyboard response, mouse click, file value, or sensor reading can be input. Processing can include calculations, conversion, comparison, or arranging information. Text, images, sounds, and saved values can be output.",
+                   "\u003ccode\u003eConsole.Write\u003c/code\u003e displays text without automatically moving to a new line. \u003ccode\u003eConsole.WriteLine\u003c/code\u003e adds a line break. Prompts commonly use Write so the response appears beside the question.",
+                   "An IPO table lists required data, the operations performed, and expected results. It helps prevent programmers from coding before understanding the problem."
+               ],
+    "terms":  [
+                  [
+                      "IPO model",
+                      "A view of a program as input, processing, and output."
+                  ],
+                  [
+                      "Prompt",
+                      "A message asking the user for input."
+                  ],
+                  [
+                      "Transformation",
+                      "Changing input into a result."
+                  ],
+                  [
+                      "Console",
+                      "A text-based input and output interface."
+                  ]
+              ],
+    "code":  "Console.Write(\"Enter your name: \");\nstring name = Console.ReadLine() ?? \"\";\nConsole.WriteLine($\"Welcome, {name}!\");",
+    "tryIt":  "Create an IPO table for a rectangle-area calculator and for a simple game score bonus.",
+    "challenge":  "Write a program that asks for a nickname and displays a three-line welcome message.",
+    "mistakes":  [
+                     "Do not confuse input with the prompt that requests it.",
+                     "Account for every value needed during processing.",
+                     "Choose Write or WriteLine based on desired layout.",
+                     "Make output labels clear enough to understand."
+                 ],
+    "summary":  "The IPO model separates collected data, performed work, and produced results. It is a practical foundation for planning programs.",
+    "quiz":  [
+                 [
+                     "Which is an input?",
+                     [
+                         "A typed name",
+                         "A displayed total",
+                         "A heading already printed"
+                     ],
+                     0,
+                     "A typed name supplies information to the program."
+                 ],
+                 [
+                     "Which stage calculates a result?",
+                     [
+                         "Output",
+                         "Processing",
+                         "Input"
+                     ],
+                     1,
+                     "Processing transforms input into results."
+                 ],
+                 [
+                     "What does Console.Write omit?",
+                     [
+                         "The text",
+                         "The automatic line break",
+                         "The method call"
+                     ],
+                     1,
+                     "Console.Write does not automatically add a line break."
+                 ],
+                 [
+                     "What does an IPO table document?",
+                     [
+                         "Inputs, processing, outputs",
+                         "Only colours",
+                         "Only errors"
+                     ],
+                     0,
+                     "An IPO table records all three program stages."
+                 ],
+                 [
+                     "Why label output?",
+                     [
+                         "To communicate meaning",
+                         "To make syntax invalid",
+                         "To hide results"
+                     ],
+                     0,
+                     "Labels help users interpret displayed values."
+                 ]
+             ]
+}

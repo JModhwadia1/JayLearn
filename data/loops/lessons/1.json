@@ -1,0 +1,98 @@
+﻿{
+    "title":  "Introduction to Loops",
+    "time":  "45 minutes",
+    "objectives":  [
+                       "Explain what loops are and why repetition matters.",
+                       "Identify problems caused by manually repeating code.",
+                       "Describe how loops reduce errors and improve maintainability.",
+                       "Understand loop conditions and iteration."
+                   ],
+    "theory":  [
+                   "A loop is a programming structure that repeats a block of code multiple times. Without loops, programmers would need to write the same instructions over and over. This is tedious, error-prone, and makes code harder to maintain.",
+                   "Consider printing a greeting three times. Without loops, you might write Console.WriteLine three times. With a loop, you write it once and tell the computer to repeat it.",
+                   "Loops become essential when processing collections of data. A program might read 100 student names, perform the same calculations on each, or generate patterns with repeated structures. Manual repetition would be impractical.",
+                   "Every loop has a condition that determines when to repeat. The condition is usually a Boolean expression. When the condition is true, the loop body executes. When it becomes false, the loop stops. Understanding conditions is the key to writing correct loops.",
+                   "An infinite loop occurs when the condition never becomes false. A loop that counts upward forever, a loop that never changes its Boolean, or a loop with reversed logic can all cause infinite loops. The program appears frozen. Detecting and fixing infinite loops is a critical debugging skill.",
+                   "C# provides several loop types: for loops for counted repetition, while loops for condition-based repetition, do...while loops for at-least-once execution, and foreach loops for processing collections. Each serves a specific purpose."
+               ],
+    "terms":  [
+                  [
+                      "Loop",
+                      "A structure that repeats a code block."
+                  ],
+                  [
+                      "Iteration",
+                      "One execution of the loop body."
+                  ],
+                  [
+                      "Condition",
+                      "The Boolean expression determining repetition."
+                  ],
+                  [
+                      "Infinite loop",
+                      "A loop that never terminates."
+                  ]
+              ],
+    "code":  "// Without loops: tedious repetition\nConsole.WriteLine(\"Hello\");\nConsole.WriteLine(\"Hello\");\nConsole.WriteLine(\"Hello\");\n\n// With a loop: efficient and clear\nfor (int i = 0; i \u003c 3; i++)\n{\n    Console.WriteLine(\"Hello\");\n}",
+    "tryIt":  "Write a loop that prints the numbers 1 through 5 on separate lines.",
+    "challenge":  "Create a program that asks how many times to repeat and then prints a message that many times.",
+    "mistakes":  [
+                     "Do not manually repeat code when a loop would work.",
+                     "Ensure the loop condition eventually becomes false.",
+                     "Remember that loops make code shorter and clearer.",
+                     "Test loops with small values first."
+                 ],
+    "summary":  "Loops repeat code blocks efficiently. Conditions control repetition. C# provides for, while, do...while, and foreach loops for different scenarios.",
+    "quiz":  [
+                 [
+                     "Why use loops?",
+                     [
+                         "Avoid repetition",
+                         "Make code slower",
+                         "Hide errors"
+                     ],
+                     0,
+                     "Loops eliminate tedious manual repetition."
+                 ],
+                 [
+                     "What controls loop repetition?",
+                     [
+                         "Variable names",
+                         "The loop condition",
+                         "The code inside"
+                     ],
+                     1,
+                     "Loop conditions determine when to repeat."
+                 ],
+                 [
+                     "What is an infinite loop?",
+                     [
+                         "A loop that counts up",
+                         "A loop that never stops",
+                         "A loop with one iteration"
+                     ],
+                     1,
+                     "Infinite loops never terminate."
+                 ],
+                 [
+                     "When does a loop body execute?",
+                     [
+                         "Always",
+                         "Only if the condition is false",
+                         "Only if the condition is true"
+                     ],
+                     2,
+                     "The body executes while the condition is true."
+                 ],
+                 [
+                     "Best reason for loops?",
+                     [
+                         "Shorter code",
+                         "Clearer intent",
+                         "Both"
+                     ],
+                     2,
+                     "Loops improve both efficiency and readability."
+                 ]
+             ]
+}

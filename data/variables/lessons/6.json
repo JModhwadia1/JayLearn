@@ -1,0 +1,97 @@
+﻿{
+    "title":  "Reading User Input",
+    "time":  "60 minutes",
+    "objectives":  [
+                       "Read text with Console.ReadLine.",
+                       "Convert input values.",
+                       "Use TryParse safely.",
+                       "Write clear prompts and validation messages."
+                   ],
+    "theory":  [
+                   "\u003ccode\u003eConsole.ReadLine()\u003c/code\u003e waits for input and returns the entered line as a string, even when the user types digits.",
+                   "Use Console.Write before reading input so the response appears beside the prompt. A null-coalescing fallback can provide an empty string.",
+                   "Parse methods convert correctly formatted strings but throw exceptions for invalid text.",
+                   "TryParse returns true on success and places the converted result in an out variable. Invalid text produces false rather than an ordinary format exception.",
+                   "Boolean parsing recognises true or false. Numeric parsing may depend on regional number formatting."
+               ],
+    "terms":  [
+                  [
+                      "ReadLine",
+                      "A method that reads a line as text."
+                  ],
+                  [
+                      "Parse",
+                      "A conversion that throws for invalid format."
+                  ],
+                  [
+                      "TryParse",
+                      "A safe conversion reporting success or failure."
+                  ],
+                  [
+                      "out variable",
+                      "The variable receiving a converted result."
+                  ]
+              ],
+    "code":  "Console.Write(\"Enter your age: \");\nstring ageText = Console.ReadLine() ?? \"\";\nif (int.TryParse(ageText, out int age))\n{\n    Console.WriteLine($\"Next year: {age + 1}\");\n}\nelse\n{\n    Console.WriteLine(\"Enter a whole number.\");\n}",
+    "tryIt":  "Ask for name, age, average mark, and submission status. Use TryParse for non-text values.",
+    "challenge":  "Create a game survey with safely validated hours, rating, and recommendation status.",
+    "mistakes":  [
+                     "ReadLine returns text.",
+                     "Parse can fail on invalid format.",
+                     "Check TryParse\u0027s Boolean result.",
+                     "State the expected input format."
+                 ],
+    "summary":  "ReadLine collects text. Convert it when another type is needed, and use TryParse for uncertain input.",
+    "quiz":  [
+                 [
+                     "ReadLine return type?",
+                     [
+                         "int",
+                         "string",
+                         "bool"
+                     ],
+                     1,
+                     "Console.ReadLine returns a string."
+                 ],
+                 [
+                     "Safe invalid-number handling?",
+                     [
+                         "int.TryParse",
+                         "Console.WriteLine",
+                         "string.Concat"
+                     ],
+                     0,
+                     "TryParse reports success without ordinary format exceptions."
+                 ],
+                 [
+                     "What receives the result?",
+                     [
+                         "Prompt",
+                         "Error message",
+                         "out variable"
+                     ],
+                     2,
+                     "The out variable receives the converted value."
+                 ],
+                 [
+                     "bool.TryParse can convert?",
+                     [
+                         "yes",
+                         "true",
+                         "perhaps"
+                     ],
+                     1,
+                     "Boolean parsing recognises true and false."
+                 ],
+                 [
+                     "Why use Console.Write for a prompt?",
+                     [
+                         "Same-line input",
+                         "Automatic conversion",
+                         "Creates constant"
+                     ],
+                     0,
+                     "Write does not add a line break."
+                 ]
+             ]
+}

@@ -1,0 +1,97 @@
+﻿{
+    "title":  "Practice Project · Inventory Management System",
+    "time":  "90 minutes",
+    "objectives":  [
+                       "Build a complete RPG inventory system.",
+                       "Apply array and list concepts.",
+                       "Implement menu-driven interface.",
+                       "Demonstrate practical collection usage."
+                   ],
+    "theory":  [
+                   "This project brings together all Module 7 concepts. You will create a simple RPG-style inventory system where players can view, add, and remove items.",
+                   "The program uses a List to store inventory items. A menu offers choices: view inventory, add item, remove item, search for item, or exit.",
+                   "For each choice, appropriate methods handle the logic. View loops through items. Add uses Add(). Remove uses RemoveAt after finding the index. Search uses IndexOf.",
+                   "Input validation ensures menu choices are valid and item names are not empty. Error handling manages invalid operations gracefully.",
+                   "A complete system demonstrates professional software design: clear menus, input validation, appropriate data structures, and logical method organization."
+               ],
+    "terms":  [
+                  [
+                      "Menu system",
+                      "Offering user choices."
+                  ],
+                  [
+                      "Inventory logic",
+                      "Managing items."
+                  ],
+                  [
+                      "Input validation",
+                      "Checking user input."
+                  ],
+                  [
+                      "Item management",
+                      "Add, remove, search operations."
+                  ]
+              ],
+    "code":  "List\u003cstring\u003e inventory = new List\u003cstring\u003e();\nbool playing = true;\n\nwhile (playing)\n{\n    Console.WriteLine(\"\\n=== INVENTORY ===\" );\n    Console.WriteLine($\"Items: {inventory.Count}\");\n    Console.WriteLine(\"1. View items\");\n    Console.WriteLine(\"2. Add item\");\n    Console.WriteLine(\"3. Remove item\");\n    Console.WriteLine(\"4. Search item\");\n    Console.WriteLine(\"5. Exit\");\n    Console.Write(\"Choose: \");\n    \n    string choice = Console.ReadLine() ?? \"\";\n    \n    if (choice == \"1\")\n    {\n        if (inventory.Count == 0)\n        {\n            Console.WriteLine(\"Inventory empty.\");\n        }\n        else\n        {\n            foreach (string item in inventory)\n            {\n                Console.WriteLine($\"- {item}\");\n            }\n        }\n    }\n    else if (choice == \"2\")\n    {\n        Console.Write(\"Item name: \");\n        string item = Console.ReadLine() ?? \"\";\n        if (!string.IsNullOrEmpty(item))\n        {\n            inventory.Add(item);\n            Console.WriteLine(\"Added!\");\n        }\n    }\n    else if (choice == \"3\")\n    {\n        Console.Write(\"Item name to remove: \");\n        string item = Console.ReadLine() ?? \"\";\n        if (inventory.Remove(item))\n        {\n            Console.WriteLine(\"Removed!\");\n        }\n        else\n        {\n            Console.WriteLine(\"Item not found.\");\n        }\n    }\n    else if (choice == \"4\")\n    {\n        Console.Write(\"Search for: \");\n        string item = Console.ReadLine() ?? \"\";\n        int pos = inventory.IndexOf(item);\n        if (pos \u003e= 0)\n        {\n            Console.WriteLine($\"Found at position {pos + 1}\");\n        }\n        else\n        {\n            Console.WriteLine(\"Not found.\");\n        }\n    }\n    else if (choice == \"5\")\n    {\n        playing = false;\n    }\n}",
+    "tryIt":  "Build a basic version where you can add and view items.",
+    "challenge":  "Extend the system to show item count, limit inventory size, or track item quantities.",
+    "mistakes":  [
+                     "Validate all user input before using it.",
+                     "Check if inventory is empty before viewing.",
+                     "Use appropriate List methods for each operation.",
+                     "Handle edge cases like empty names."
+                 ],
+    "summary":  "A complete inventory system demonstrates practical list usage. Menu-driven interfaces, input validation, and appropriate methods create professional applications.",
+    "quiz":  [
+                 [
+                     "Best collection for inventory?",
+                     [
+                         "Array",
+                         "List",
+                         "Dictionary"
+                     ],
+                     1,
+                     "Lists grow with new items."
+                 ],
+                 [
+                     "View all items?",
+                     [
+                         "for loop",
+                         "foreach loop",
+                         "Both work"
+                     ],
+                     1,
+                     "Foreach is cleaner here."
+                 ],
+                 [
+                     "Check item exists?",
+                     [
+                         "Contains method",
+                         "Loop search",
+                         "Both"
+                     ],
+                     0,
+                     "Contains is direct and clear."
+                 ],
+                 [
+                     "Remove by name?",
+                     [
+                         "Remove method",
+                         "RemoveAt",
+                         "Need IndexOf first"
+                     ],
+                     0,
+                     "Remove takes the item name directly."
+                 ],
+                 [
+                     "Module 7 learning?",
+                     [
+                         "Arrays only",
+                         "Lists only",
+                         "Arrays and Lists"
+                     ],
+                     2,
+                     "This covers both comprehensively."
+                 ]
+             ]
+}

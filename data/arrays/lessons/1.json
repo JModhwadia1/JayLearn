@@ -1,0 +1,97 @@
+﻿{
+    "title":  "Introduction to Arrays",
+    "time":  "45 minutes",
+    "objectives":  [
+                       "Explain what arrays are and why they matter.",
+                       "Identify problems with creating separate variables.",
+                       "Describe array indexing and zero-based positioning.",
+                       "Access array elements using indexes."
+                   ],
+    "theory":  [
+                   "An \u003cstrong\u003earray\u003c/strong\u003e is a collection of values all of the same type stored in a single variable. Without arrays, storing ten scores would require ten separate variables: score1, score2, ..., score10. This is tedious and hard to manage.",
+                   "With an array, you store all ten scores in one variable: \u003ccode\u003eint[] scores = new int[10];\u003c/code\u003e Each score has a position in the array.",
+                   "C# uses zero-based indexing. The first element is at index 0, the second at index 1, and so on. An array of 10 elements has indices 0 through 9. This is universal across programming languages.",
+                   "Arrays are especially useful when processing groups of related data. Game inventories, enemy lists, high scores, and player statistics all use arrays. Professional programs rely on arrays and collections.",
+                   "Arrays are fixed size. Once you declare \u003ccode\u003eint[] scores = new int[10];\u003c/code\u003e, the array always holds 10 elements. If you need a flexible size, you can use a List instead, which you will learn in Lesson 6."
+               ],
+    "terms":  [
+                  [
+                      "Array",
+                      "A collection of values of the same type."
+                  ],
+                  [
+                      "Index",
+                      "The position of an element in an array."
+                  ],
+                  [
+                      "Zero-based indexing",
+                      "First element at index 0."
+                  ],
+                  [
+                      "Element",
+                      "One value in an array."
+                  ]
+              ],
+    "code":  "// Without arrays: tedious and hard to scale\nstring enemy1 = \"Goblin\";\nstring enemy2 = \"Dragon\";\nstring enemy3 = \"Knight\";\n\n// With an array: clean and scalable\nstring[] enemies = {\"Goblin\", \"Dragon\", \"Knight\"};\nConsole.WriteLine(enemies[0]);\nConsole.WriteLine(enemies[1]);\nConsole.WriteLine(enemies[2]);",
+    "tryIt":  "Create an array of five numbers and print each one using its index.",
+    "challenge":  "Create an array of animal names and print them all using a loop.",
+    "mistakes":  [
+                     "Remember arrays are zero-indexed.",
+                     "Arrays are fixed size once created.",
+                     "All elements must be the same type.",
+                     "Index errors cause exceptions."
+                 ],
+    "summary":  "Arrays store multiple values of the same type in one variable. Zero-based indexing positions elements. Arrays are essential for managing groups of data.",
+    "quiz":  [
+                 [
+                     "What is an array?",
+                     [
+                         "A method",
+                         "A collection of values of same type",
+                         "A loop"
+                     ],
+                     1,
+                     "An array groups multiple values."
+                 ],
+                 [
+                     "First element index?",
+                     [
+                         "1",
+                         "0",
+                         "First"
+                     ],
+                     1,
+                     "C# uses zero-based indexing."
+                 ],
+                 [
+                     "How to access enemies[1]?",
+                     [
+                         "First element",
+                         "Second element",
+                         "Error"
+                     ],
+                     1,
+                     "Index 1 is the second element."
+                 ],
+                 [
+                     "Array size set?",
+                     [
+                         "At creation",
+                         "During runtime",
+                         "Whenever needed"
+                     ],
+                     0,
+                     "Array size is fixed at creation."
+                 ],
+                 [
+                     "Can different types mix?",
+                     [
+                         "Yes",
+                         "No",
+                         "Only sometimes"
+                     ],
+                     1,
+                     "All array elements must be the same type."
+                 ]
+             ]
+}

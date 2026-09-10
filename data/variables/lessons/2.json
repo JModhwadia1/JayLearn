@@ -1,0 +1,97 @@
+﻿{
+    "title":  "Primitive Data Types",
+    "time":  "50 minutes",
+    "objectives":  [
+                       "Describe int, double, float, decimal, char, bool, and string.",
+                       "Select an appropriate type.",
+                       "Compare memory usage and precision.",
+                       "Use float and decimal suffixes."
+                   ],
+    "theory":  [
+                   "A data type defines what a variable stores and which operations are valid. \u003cstrong\u003eint\u003c/strong\u003e stores signed whole numbers and commonly uses four bytes.",
+                   "\u003cstrong\u003edouble\u003c/strong\u003e uses eight bytes for general fractional calculations. \u003cstrong\u003efloat\u003c/strong\u003e uses four bytes and requires an \u003ccode\u003ef\u003c/code\u003e suffix. Float is common in graphics and Unity APIs.",
+                   "\u003cstrong\u003edecimal\u003c/strong\u003e uses sixteen bytes and high base-10 precision, making it suitable for money. Decimal literals use an \u003ccode\u003em\u003c/code\u003e suffix.",
+                   "\u003cstrong\u003echar\u003c/strong\u003e stores one character in single quotes. \u003cstrong\u003ebool\u003c/strong\u003e stores true or false. \u003cstrong\u003estring\u003c/strong\u003e stores text in double quotes.",
+                   "Choose according to meaning, range, and precision. Float and double represent many decimal values approximately."
+               ],
+    "terms":  [
+                  [
+                      "int",
+                      "A whole-number type."
+                  ],
+                  [
+                      "double",
+                      "A general floating-point type."
+                  ],
+                  [
+                      "decimal",
+                      "A high-precision base-10 type."
+                  ],
+                  [
+                      "bool",
+                      "A true-or-false type."
+                  ]
+              ],
+    "code":  "int studentCount = 28;\ndouble temperature = 36.75;\nfloat jumpHeight = 2.4f;\ndecimal gamePrice = 1499.95m;\nchar grade = \u0027A\u0027;\nbool submitted = true;\nstring course = \"Game Programming\";",
+    "tryIt":  "Choose suitable types for age, average mark, balance, middle initial, enrolment status, and full name.",
+    "challenge":  "Build a product record using at least six different types and print every value.",
+    "mistakes":  [
+                     "Use single quotes for char and double quotes for string.",
+                     "Add f to float and m to decimal literals.",
+                     "Do not store fractions in int.",
+                     "Prefer decimal for financial calculations."
+                 ],
+    "summary":  "Types define valid values, memory, precision, and operations. Choose types according to the data\u0027s meaning.",
+    "quiz":  [
+                 [
+                     "Best type for number of lives?",
+                     [
+                         "int",
+                         "string",
+                         "char"
+                     ],
+                     0,
+                     "int stores whole-number quantities."
+                 ],
+                 [
+                     "Preferred type for money?",
+                     [
+                         "bool",
+                         "float",
+                         "decimal"
+                     ],
+                     2,
+                     "decimal provides base-10 precision."
+                 ],
+                 [
+                     "Valid char literal?",
+                     [
+                         "\"A\"",
+                         "\u0027A\u0027",
+                         "A"
+                     ],
+                     1,
+                     "A char uses single quotation marks."
+                 ],
+                 [
+                     "Which is a float literal?",
+                     [
+                         "4.5f",
+                         "4.5m",
+                         "\"4.5\""
+                     ],
+                     0,
+                     "The f suffix marks a float literal."
+                 ],
+                 [
+                     "Type for whether a door is open?",
+                     [
+                         "double",
+                         "char",
+                         "bool"
+                     ],
+                     2,
+                     "bool stores true or false."
+                 ]
+             ]
+}

@@ -1,0 +1,95 @@
+﻿{
+    "title":  "Fields and Properties",
+    "time":  "50 minutes",
+    "objectives":  [
+                       "Distinguish fields from properties.",
+                       "Use access modifiers.",
+                       "Expose controlled object data.",
+                       "Apply encapsulation."
+                   ],
+    "theory":  [
+                   "A field stores data directly inside a class. A property provides a controlled way to read or change a value using \u003ccode\u003eget\u003c/code\u003e and \u003ccode\u003eset\u003c/code\u003e.",
+                   "Keeping data private protects an object\u0027s internal state. A property can allow other code to read a value while only the class can change it.",
+                   "Use properties when validation or controlled access matters, such as preventing a player\u0027s health from becoming negative."
+               ],
+    "terms":  [
+                  [
+                      "Property",
+                      "A controlled way to access data."
+                  ],
+                  [
+                      "Access modifier",
+                      "A keyword controlling visibility."
+                  ],
+                  [
+                      "private",
+                      "Accessible only within its containing class."
+                  ],
+                  [
+                      "Encapsulation",
+                      "Protecting internal state behind a public interface."
+                  ]
+              ],
+    "code":  "class Player\n{\n    public string Name { get; set; } = \"Mira\";\n    public int Health { get; private set; } = 100;\n\n    public void TakeDamage(int amount)\n    {\n        Health = Math.Max(0, Health - amount);\n    }\n}",
+    "tryIt":  "Create a Character class with a public Name property and a Health property that cannot be changed directly outside the class.",
+    "challenge":  "Add validation so TakeDamage cannot reduce Health below zero.",
+    "mistakes":  [
+                     "Do not expose every field publicly without a reason.",
+                     "private members cannot be accessed from unrelated classes.",
+                     "A property is not the same as a method.",
+                     "Validate values before changing state."
+                 ],
+    "summary":  "Properties provide controlled access to data. Encapsulation protects object state and keeps values valid.",
+    "quiz":  [
+                 [
+                     "What does private control?",
+                     [
+                         "Visibility",
+                         "Loop count",
+                         "File size"
+                     ],
+                     0,
+                     "private limits access to the containing class."
+                 ],
+                 [
+                     "What does a property provide?",
+                     [
+                         "Controlled data access",
+                         "A namespace",
+                         "A comment"
+                     ],
+                     0,
+                     "Properties expose controlled get and set operations."
+                 ],
+                 [
+                     "What does private set allow?",
+                     [
+                         "Only the class changes it",
+                         "Nobody reads it",
+                         "Any code changes it"
+                     ],
+                     0,
+                     "The class controls assignment while readers can still access it."
+                 ],
+                 [
+                     "What is encapsulation?",
+                     [
+                         "Protecting internal state",
+                         "Removing all methods",
+                         "Creating arrays"
+                     ],
+                     0,
+                     "Encapsulation protects implementation details and state."
+                 ],
+                 [
+                     "Why validate Health?",
+                     [
+                         "Keep state valid",
+                         "Increase screen size",
+                         "Rename the class"
+                     ],
+                     0,
+                     "Validation prevents invalid object data."
+                 ]
+             ]
+}

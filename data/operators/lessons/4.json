@@ -1,0 +1,97 @@
+﻿{
+    "title":  "Increment \u0026 Decrement Operators",
+    "time":  "45 minutes",
+    "objectives":  [
+                       "Use ++ and -- operators.",
+                       "Distinguish prefix from postfix.",
+                       "Recognise practical applications.",
+                       "Avoid common mistakes."
+                   ],
+    "theory":  [
+                   "The increment operator \u003ccode\u003e++\u003c/code\u003e increases a variable by 1. The decrement operator \u003ccode\u003e--\u003c/code\u003e decreases it by 1. These are shortcuts: \u003ccode\u003escore++\u003c/code\u003e is equivalent to \u003ccode\u003escore += 1\u003c/code\u003e.",
+                   "Prefix increment \u003ccode\u003e++score\u003c/code\u003e increases the variable and then returns the new value. Postfix increment \u003ccode\u003escore++\u003c/code\u003e increases the variable but returns the old value before the increase.",
+                   "In most practical cases, prefix and postfix behave identically because the returned value is not used. \u003ccode\u003eint x = 5; x++;\u003c/code\u003e and \u003ccode\u003e++x;\u003c/code\u003e both result in x being 6.",
+                   "In loops and arrays, increment and decrement are essential. A loop counter increments each iteration. Countdown timers decrement. Practising with loops solidifies understanding.",
+                   "Prefix is marginally more efficient in complex scenarios but both are suitable for beginners. The difference rarely matters in simple programs."
+               ],
+    "terms":  [
+                  [
+                      "Increment",
+                      "Increasing a value by 1."
+                  ],
+                  [
+                      "Decrement",
+                      "Decreasing a value by 1."
+                  ],
+                  [
+                      "Prefix",
+                      "Operator before the variable."
+                  ],
+                  [
+                      "Postfix",
+                      "Operator after the variable."
+                  ]
+              ],
+    "code":  "int count = 0;\ncount++;\nConsole.WriteLine(count);\nint level = 10;\nlevel--;\nConsole.WriteLine(level);\nint attempts = 1;\nConsole.WriteLine(attempts++);\nConsole.WriteLine(attempts);",
+    "tryIt":  "Create a variable, increment it five times using ++, and display each result.",
+    "challenge":  "Build a countdown timer using decrement and a loop counter using increment.",
+    "mistakes":  [
+                     "Prefix and postfix usually behave identically; do not overthink.",
+                     "++ and -- require a variable, not a constant.",
+                     "Use in loops where they are most common.",
+                     "Avoid complex expressions mixing prefix, postfix, and other operators."
+                 ],
+    "summary":  "Increment ++ adds 1; decrement -- subtracts 1. Prefix executes before returning; postfix after. Both simplify common updates.",
+    "quiz":  [
+                 [
+                     "What does count++ do?",
+                     [
+                         "Subtracts 1",
+                         "Adds 1 to count",
+                         "Divides by 1"
+                     ],
+                     1,
+                     "++ increases the variable."
+                 ],
+                 [
+                     "Prefix vs postfix: Which increases first?",
+                     [
+                         "Both the same in most cases",
+                         "Prefix",
+                         "Postfix"
+                     ],
+                     0,
+                     "Typically both behave identically."
+                 ],
+                 [
+                     "Result of x++ in a simple statement?",
+                     [
+                         "x is unchanged",
+                         "x increases by 1",
+                         "Error"
+                     ],
+                     1,
+                     "The variable increases even if the returned value is ignored."
+                 ],
+                 [
+                     "Valid syntax?",
+                     [
+                         "count++",
+                         "++count",
+                         "Both"
+                     ],
+                     2,
+                     "Both prefix and postfix are valid."
+                 ],
+                 [
+                     "Best use for ++?",
+                     [
+                         "Declaring variables",
+                         "Loops and counters",
+                         "Comments"
+                     ],
+                     1,
+                     "Increment is essential in loops."
+                 ]
+             ]
+}

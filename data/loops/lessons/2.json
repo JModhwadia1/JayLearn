@@ -1,0 +1,97 @@
+﻿{
+    "title":  "The while Loop",
+    "time":  "50 minutes",
+    "objectives":  [
+                       "Write while loops with correct syntax.",
+                       "Understand loop conditions and termination.",
+                       "Update loop variables to progress toward termination.",
+                       "Apply while loops to real-world scenarios."
+                   ],
+    "theory":  [
+                   "A while loop repeats code as long as a condition is true. The syntax is \u003ccode\u003ewhile (condition) { statements }\u003c/code\u003e. Before each iteration, the condition is tested. If true, the body executes. If false, the loop stops.",
+                   "The loop variable is a variable that changes inside the loop, usually incrementing or decrementing. This variable typically appears in the loop condition. As it changes, the condition eventually becomes false, ending the loop.",
+                   "A common pattern is counting: start with a variable at 1, loop while it is less than or equal to some limit, and increment it each iteration. Another pattern is input validation: loop while the input is invalid, ask again, and check again.",
+                   "While loops are ideal when the number of repetitions is not known in advance. A program might read user input until they type \u0027quit\u0027, or loop until data becomes available. The condition determines termination.",
+                   "A critical mistake is forgetting to update the loop variable. If the loop condition never changes, the loop becomes infinite. Ensure every loop modifies the state it depends on."
+               ],
+    "terms":  [
+                  [
+                      "while loop",
+                      "Repeats while a condition is true."
+                  ],
+                  [
+                      "Loop variable",
+                      "A variable updated in the loop body."
+                  ],
+                  [
+                      "Termination",
+                      "When the loop condition becomes false."
+                  ],
+                  [
+                      "Update",
+                      "Changing a variable to progress toward termination."
+                  ]
+              ],
+    "code":  "int count = 1;\nwhile (count \u003c= 5)\n{\n    Console.WriteLine(count);\n    count++;\n}\n\nConsole.WriteLine(\"Done!\");\n\n// Input validation\nstring answer = \"\";\nwhile (answer != \"quit\")\n{\n    Console.Write(\"Enter a command (or quit): \");\n    answer = Console.ReadLine() ?? \"\";\n    if (answer != \"quit\")\n    {\n        Console.WriteLine($\"You entered: {answer}\");\n    }\n}",
+    "tryIt":  "Write a while loop that prints even numbers from 2 to 10.",
+    "challenge":  "Create a program that asks for a number and sums all numbers from 1 to that number using a while loop.",
+    "mistakes":  [
+                     "Update the loop variable inside the loop.",
+                     "Ensure the condition eventually becomes false.",
+                     "Do not forget curly braces around the loop body.",
+                     "Test with small values to avoid infinite loops."
+                 ],
+    "summary":  "While loops repeat while conditions are true. Loop variables track progress. Updating variables ensures termination. While is ideal for condition-based repetition.",
+    "quiz":  [
+                 [
+                     "When does a while loop start?",
+                     [
+                         "Always immediately",
+                         "Only if the condition is true",
+                         "After one execution"
+                     ],
+                     1,
+                     "The condition is tested before the first iteration."
+                 ],
+                 [
+                     "What must change in a while loop?",
+                     [
+                         "Nothing",
+                         "The loop variable",
+                         "The output"
+                     ],
+                     1,
+                     "Loop variables must change to progress toward termination."
+                 ],
+                 [
+                     "Result of forgotten update?",
+                     [
+                         "Normal termination",
+                         "Infinite loop",
+                         "Error"
+                     ],
+                     1,
+                     "Forgetting to update creates an infinite loop."
+                 ],
+                 [
+                     "Best use for while?",
+                     [
+                         "Known repetitions",
+                         "Unknown repetitions",
+                         "Always"
+                     ],
+                     1,
+                     "While suits condition-based repetition."
+                 ],
+                 [
+                     "How to avoid infinite loops?",
+                     [
+                         "Use if statements",
+                         "Ensure termination",
+                         "Skip updates"
+                     ],
+                     1,
+                     "Always progress toward the termination condition."
+                 ]
+             ]
+}

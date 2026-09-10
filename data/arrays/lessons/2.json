@@ -1,0 +1,97 @@
+﻿{
+    "title":  "Creating and Initialising Arrays",
+    "time":  "50 minutes",
+    "objectives":  [
+                       "Declare arrays with the correct syntax.",
+                       "Initialise arrays with values.",
+                       "Understand array size and default values.",
+                       "Create arrays for different data types."
+                   ],
+    "theory":  [
+                   "An array declaration specifies the type and size. \u003ccode\u003eint[] scores = new int[5];\u003c/code\u003e creates an integer array with 5 elements. The \u003ccode\u003enew\u003c/code\u003e keyword allocates memory.",
+                   "When declared this way, elements receive default values. Numeric arrays default to 0. Boolean arrays default to false. String arrays default to null.",
+                   "You can also initialise an array with specific values. \u003ccode\u003eint[] scores = {90, 85, 88};\u003c/code\u003e creates an array and fills it immediately. The size is inferred from the number of values.",
+                   "Arrays can hold any data type. \u003ccode\u003estring[] names\u003c/code\u003e holds text. \u003ccode\u003ebool[] flags\u003c/code\u003e holds true/false values. \u003ccode\u003edouble[] temperatures\u003c/code\u003e holds decimal numbers. \u003ccode\u003echar[] letters\u003c/code\u003e holds individual characters.",
+                   "Choosing between empty initialization and value initialization depends on your needs. Empty arrays are useful when filling data later. Value initialization is useful when you know the data upfront."
+               ],
+    "terms":  [
+                  [
+                      "Declaration",
+                      "Specifying type and size."
+                  ],
+                  [
+                      "Initialisation",
+                      "Providing initial values."
+                  ],
+                  [
+                      "new keyword",
+                      "Allocates memory for the array."
+                  ],
+                  [
+                      "Default values",
+                      "What empty elements contain."
+                  ]
+              ],
+    "code":  "// Empty array: filled with defaults\nint[] scores = new int[5];\nConsole.WriteLine(scores[0]);\n\n// Array with values\nstring[] weapons = {\"Sword\", \"Bow\", \"Staff\"};\nConsole.WriteLine(weapons[2]);\n\n// Different types\nbool[] achievements = {true, false, true};\ndouble[] health = {100.0, 75.5, 50.0};\nchar[] grades = {\u0027A\u0027, \u0027B\u0027, \u0027C\u0027};\n\n// Modify an element\nscores[0] = 95;\nConsole.WriteLine(scores[0]);",
+    "tryIt":  "Create an array of five player scores, then change the first score to a new value.",
+    "challenge":  "Create three arrays: one of strings, one of integers, and one of booleans. Print all values.",
+    "mistakes":  [
+                     "Use the correct type syntax (int[], string[], etc.).",
+                     "Remember the new keyword for empty arrays.",
+                     "Array size is fixed after creation.",
+                     "All values must match the array type."
+                 ],
+    "summary":  "Arrays are declared with type and size. Initialise with defaults or specific values. Different types create different arrays. Modify elements using index assignment.",
+    "quiz":  [
+                 [
+                     "Syntax for integer array?",
+                     [
+                         "int array",
+                         "int[] scores",
+                         "array[int]"
+                     ],
+                     1,
+                     "Type and square brackets precede the name."
+                 ],
+                 [
+                     "Creating empty array?",
+                     [
+                         "int[] x = {};",
+                         "int[] x = new int[5];",
+                         "Both"
+                     ],
+                     1,
+                     "new keyword allocates memory."
+                 ],
+                 [
+                     "Size of new int[3]?",
+                     [
+                         "1",
+                         "3",
+                         "Variable"
+                     ],
+                     1,
+                     "Size is specified in brackets."
+                 ],
+                 [
+                     "Default int value?",
+                     [
+                         "1",
+                         "null",
+                         "0"
+                     ],
+                     2,
+                     "Numeric arrays default to 0."
+                 ],
+                 [
+                     "Initialising with values?",
+                     [
+                         "int[] x = new int[3];",
+                         "int[] x = {1, 2, 3};",
+                         "Both"
+                     ],
+                     1,
+                     "Both syntax forms are valid."
+                 ]
+             ]
+}

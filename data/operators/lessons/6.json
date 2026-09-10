@@ -1,0 +1,97 @@
+﻿{
+    "title":  "Logical Operators",
+    "time":  "55 minutes",
+    "objectives":  [
+                       "Combine conditions using \u0026\u0026, ||, and !.",
+                       "Understand truth tables.",
+                       "Write complex conditional expressions.",
+                       "Avoid short-circuit pitfalls."
+                   ],
+    "theory":  [
+                   "Logical operators combine Boolean values. The AND operator \u003ccode\u003e\u0026\u0026\u003c/code\u003e returns true only when both operands are true. The OR operator \u003ccode\u003e||\u003c/code\u003e returns true when at least one operand is true. The NOT operator \u003ccode\u003e!\u003c/code\u003e inverts a Boolean.",
+                   "\u003ccode\u003eage \u003e= 13 \u0026\u0026 age \u003c 65\u003c/code\u003e is true only if age satisfies both conditions. This range check is common for validation.",
+                   "\u003ccode\u003ehasWeapon || hasShield\u003c/code\u003e is true if the player has either item or both. This allows flexibility in game logic.",
+                   "\u003ccode\u003e!isGameOver\u003c/code\u003e flips the Boolean. If isGameOver is false, \u003ccode\u003e!isGameOver\u003c/code\u003e is true, making the game active.",
+                   "C# uses short-circuit evaluation. In \u003ccode\u003ea \u0026\u0026 b\u003c/code\u003e, if a is false, b is never evaluated because the result must be false. In \u003ccode\u003ea || b\u003c/code\u003e, if a is true, b is skipped."
+               ],
+    "terms":  [
+                  [
+                      "Logical AND",
+                      "Both conditions must be true."
+                  ],
+                  [
+                      "Logical OR",
+                      "At least one condition is true."
+                  ],
+                  [
+                      "Logical NOT",
+                      "Inverts a Boolean value."
+                  ],
+                  [
+                      "Short-circuit",
+                      "Skipping evaluation when result is certain."
+                  ]
+              ],
+    "code":  "int age = 20;\nbool canVote = age \u003e= 18 \u0026\u0026 age \u003c 150;\nConsole.WriteLine(canVote);\nbool hasAccess = isAdmin || isModerator;\nConsole.WriteLine(hasAccess);\nbool isActive = !isGameOver;\nConsole.WriteLine(isActive);\nbool qualified = score \u003e= 50 \u0026\u0026 attempts \u003c= 3;\nConsole.WriteLine(qualified);",
+    "tryIt":  "Write expressions combining three numeric comparisons with \u0026\u0026 and ||.",
+    "challenge":  "Build a game eligibility checker using multiple logical operators.",
+    "mistakes":  [
+                     "Do not confuse \u0026\u0026 and || .",
+                     "Remember that \u0026\u0026 is stricter than ||.",
+                     "!true is false; !false is true.",
+                     "Parentheses clarify complex logical expressions."
+                 ],
+    "summary":  "Logical operators combine Booleans. \u0026\u0026 requires both true, || requires at least one true, ! inverts.",
+    "quiz":  [
+                 [
+                     "Result of true \u0026\u0026 false?",
+                     [
+                         "true",
+                         "false",
+                         "Error"
+                     ],
+                     1,
+                     "\u0026\u0026 requires both to be true."
+                 ],
+                 [
+                     "Result of true || false?",
+                     [
+                         "true",
+                         "false",
+                         "Error"
+                     ],
+                     0,
+                     "|| requires at least one true."
+                 ],
+                 [
+                     "Result of !true?",
+                     [
+                         "true",
+                         "false",
+                         "Error"
+                     ],
+                     1,
+                     "! inverts the Boolean."
+                 ],
+                 [
+                     "What does age \u003e= 13 \u0026\u0026 age \u003c 18 mean?",
+                     [
+                         "Age 13 or older",
+                         "Age 13 to 17",
+                         "Age 18"
+                     ],
+                     1,
+                     "Both conditions must be true."
+                 ],
+                 [
+                     "When is a || b false?",
+                     [
+                         "When a is false",
+                         "When b is false",
+                         "When both are false"
+                     ],
+                     2,
+                     "OR is false only when both operands are false."
+                 ]
+             ]
+}

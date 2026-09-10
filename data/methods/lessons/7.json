@@ -1,0 +1,97 @@
+﻿{
+    "title":  "Static Methods",
+    "time":  "50 minutes",
+    "objectives":  [
+                       "Understand what static means.",
+                       "Call methods without object instances.",
+                       "Recognise common static patterns.",
+                       "Compare static to instance methods."
+                   ],
+    "theory":  [
+                   "A static method belongs to a class, not to a specific instance. You can call a static method without creating an object. This is why \u003ccode\u003eConsole.WriteLine()\u003c/code\u003e works—WriteLine is a static method.",
+                   "\u003ccode\u003estatic void DisplayMenu()\u003c/code\u003e is a static method. Call it directly: \u003ccode\u003eDisplayMenu();\u003c/code\u003e No object creation required.",
+                   "The Math class contains many static methods. \u003ccode\u003eMath.Abs(-10)\u003c/code\u003e returns 10. \u003ccode\u003eMath.Sqrt(16)\u003c/code\u003e returns 4. These work without creating a Math object.",
+                   "Beginners typically write static methods in console programs. As you learn objects and classes, you will create instance methods belonging to objects. For now, understand that static methods are called directly on the class.",
+                   "The keyword \u003ccode\u003estatic\u003c/code\u003e indicates the method belongs to the class itself. Non-static (instance) methods belong to objects created from the class. For learners beginning with console programs, static is the norm."
+               ],
+    "terms":  [
+                  [
+                      "static",
+                      "Belongs to the class, not instances."
+                  ],
+                  [
+                      "Instance method",
+                      "Belongs to an object created from the class."
+                  ],
+                  [
+                      "Class method",
+                      "Another name for static method."
+                  ],
+                  [
+                      "Namespace",
+                      "Organises related classes and methods."
+                  ]
+              ],
+    "code":  "static void DisplayMenu()\n{\n    Console.WriteLine(\"=== Menu ===\" );\n    Console.WriteLine(\"1. Play\");\n    Console.WriteLine(\"2. Quit\");\n}\n\nstatic int CalculateTotal(int a, int b)\n{\n    return a + b;\n}\n\nstatic double GetTemperature()\n{\n    Console.Write(\"Enter temperature: \");\n    return double.Parse(Console.ReadLine() ?? \"0\");\n}\n\n// Calls:\nDisplayMenu();\nint total = CalculateTotal(10, 20);\ndouble temp = GetTemperature();",
+    "tryIt":  "Create a static method that calculates and returns the area of a rectangle.",
+    "challenge":  "Write two static methods: one that prompts for input and one that displays results.",
+    "mistakes":  [
+                     "Use static for console application methods.",
+                     "Call static methods directly without objects.",
+                     "Non-static methods require object instances.",
+                     "Console class methods are static."
+                 ],
+    "summary":  "Static methods belong to the class and are called directly. Console.WriteLine is static. In console programs, methods are typically static. Instance methods belong to objects and come later.",
+    "quiz":  [
+                 [
+                     "What does static mean?",
+                     [
+                         "Unchanging value",
+                         "Belongs to class, not instances",
+                         "A loop type"
+                     ],
+                     1,
+                     "Static means belonging to the class."
+                 ],
+                 [
+                     "How to call a static method?",
+                     [
+                         "Create an object first",
+                         "Call directly: MethodName()",
+                         "Use new keyword"
+                     ],
+                     1,
+                     "Static methods are called directly."
+                 ],
+                 [
+                     "Is Console.WriteLine static?",
+                     [
+                         "No",
+                         "Yes",
+                         "Only sometimes"
+                     ],
+                     1,
+                     "Console.WriteLine is a static method."
+                 ],
+                 [
+                     "When to use static?",
+                     [
+                         "Always",
+                         "In console programs initially",
+                         "Never"
+                     ],
+                     1,
+                     "Static is common in beginner console programs."
+                 ],
+                 [
+                     "Difference from instance methods?",
+                     [
+                         "None",
+                         "Instance methods require objects",
+                         "Same thing"
+                     ],
+                     1,
+                     "Instance methods require object instances."
+                 ]
+             ]
+}

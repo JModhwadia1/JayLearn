@@ -1,0 +1,97 @@
+﻿{
+    "title":  "Introduction to Methods",
+    "time":  "45 minutes",
+    "objectives":  [
+                       "Explain what methods are and why they matter.",
+                       "Identify problems with writing all code in one place.",
+                       "Describe code reusability and organisation.",
+                       "Recognise methods as the foundation of professional programming."
+                   ],
+    "theory":  [
+                   "A \u003cstrong\u003emethod\u003c/strong\u003e is a named block of code that performs a specific task. Without methods, programmers would write the same instructions repeatedly. This leads to error-prone, hard-to-maintain code.",
+                   "Consider a greeting program. Without methods, you might write \u003ccode\u003eConsole.WriteLine(\"Welcome\");\u003c/code\u003e three times. With a method, you write it once and call it three times. The method groups related statements into a reusable unit.",
+                   "Methods solve several problems. They eliminate repetition—write once, use many times. They improve readability—a method name explains what code does. They enable easier debugging—fix once, not multiple times. They organize large programs into smaller, understandable pieces.",
+                   "A method like \u003ccode\u003eDisplayMenu()\u003c/code\u003e clearly communicates its purpose. Another like \u003ccode\u003eCalculateTotal()\u003c/code\u003e is self-documenting. Programmers reading the code understand what each method does without examining every line.",
+                   "Professional programs contain hundreds of methods. Games have methods for player movement, enemy AI, health systems, and UI updates. Without methods, such programs would be impossible to manage. Learning to write and organize methods is essential for becoming a professional programmer."
+               ],
+    "terms":  [
+                  [
+                      "Method",
+                      "A named block of code performing a specific task."
+                  ],
+                  [
+                      "Reusability",
+                      "Using the same code multiple times."
+                  ],
+                  [
+                      "Code organisation",
+                      "Grouping related instructions logically."
+                  ],
+                  [
+                      "Maintainability",
+                      "How easy code is to update and fix."
+                  ]
+              ],
+    "code":  "// Without methods: repetitive and hard to maintain\nConsole.WriteLine(\"Welcome to the game!\");\nConsole.WriteLine(\"Welcome to the game!\");\nConsole.WriteLine(\"Welcome to the game!\");\n\n// With methods: clean and reusable\nDisplayWelcome();\nDisplayWelcome();\nDisplayWelcome();\n\nvoid DisplayWelcome()\n{\n    Console.WriteLine(\"Welcome to the game!\");\n}",
+    "tryIt":  "Identify three pieces of code you write repeatedly in your programs. How would methods help?",
+    "challenge":  "Imagine a game with a menu, battle system, and score tracker. List five methods that might exist.",
+    "mistakes":  [
+                     "Do not assume methods are optional.",
+                     "Remember methods reduce errors through reuse.",
+                     "Methods improve code clarity and organisation.",
+                     "Professional code is built from many methods."
+                 ],
+    "summary":  "Methods are named code blocks that perform specific tasks. They eliminate repetition, improve readability, enable reuse, and organise large programs. Methods are the foundation of professional programming.",
+    "quiz":  [
+                 [
+                     "What is a method?",
+                     [
+                         "A loop type",
+                         "A named code block performing a task",
+                         "A variable type"
+                     ],
+                     1,
+                     "A method is a named block of code."
+                 ],
+                 [
+                     "Why use methods?",
+                     [
+                         "Repetition only",
+                         "Reusability and clarity",
+                         "Loops only"
+                     ],
+                     1,
+                     "Methods provide reusability and organisation."
+                 ],
+                 [
+                     "Best benefit of methods?",
+                     [
+                         "Slower code",
+                         "Reusing code reduces errors",
+                         "Longer programs"
+                     ],
+                     1,
+                     "Reusing code reduces repeated errors."
+                 ],
+                 [
+                     "Can methods be called multiple times?",
+                     [
+                         "No",
+                         "Yes",
+                         "Only in games"
+                     ],
+                     1,
+                     "Methods are designed to be called repeatedly."
+                 ],
+                 [
+                     "Do professional programs use methods?",
+                     [
+                         "No",
+                         "Yes, hundreds or more",
+                         "Only sometimes"
+                     ],
+                     1,
+                     "Professional programs use many methods."
+                 ]
+             ]
+}

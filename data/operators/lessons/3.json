@@ -1,0 +1,97 @@
+﻿{
+    "title":  "Assignment Operators",
+    "time":  "45 minutes",
+    "objectives":  [
+                       "Use the basic assignment operator =.",
+                       "Apply compound assignment operators.",
+                       "Recognise how compound operators simplify code.",
+                       "Write clear and concise variable updates."
+                   ],
+    "theory":  [
+                   "The equals sign \u003ccode\u003e=\u003c/code\u003e is the basic assignment operator. It stores the right-hand value into the left-hand variable.",
+                   "Compound assignment operators combine an arithmetic operator with assignment. \u003ccode\u003escore += 10\u003c/code\u003e is equivalent to \u003ccode\u003escore = score + 10\u003c/code\u003e. The compound version is shorter and clearer.",
+                   "Available compound operators are \u003ccode\u003e+=\u003c/code\u003e, \u003ccode\u003e-=\u003c/code\u003e, \u003ccode\u003e*=\u003c/code\u003e, \u003ccode\u003e/=\u003c/code\u003e, and \u003ccode\u003e%=\u003c/code\u003e. Each combines the corresponding arithmetic operator with assignment.",
+                   "\u003ccode\u003ehealth -= 5\u003c/code\u003e subtracts 5 from health. \u003ccode\u003emultiplier *= 2\u003c/code\u003e doubles the multiplier. \u003ccode\u003eshares /= 4\u003c/code\u003e divides shares by 4.",
+                   "Using compound operators makes intent clearer and reduces the chance of accidentally typing the wrong variable name when updating a value."
+               ],
+    "terms":  [
+                  [
+                      "Assignment",
+                      "Storing a value in a variable."
+                  ],
+                  [
+                      "Compound assignment",
+                      "Combining an operation with assignment."
+                  ],
+                  [
+                      "Update",
+                      "Changing a variable\u0027s value."
+                  ],
+                  [
+                      "Equivalent",
+                      "Producing the same result."
+                  ]
+              ],
+    "code":  "int score = 100;\nscore += 50;\nConsole.WriteLine(score);\nint health = 50;\nhealth -= 10;\nConsole.WriteLine(health);\nint lives = 3;\nlives *= 2;\nConsole.WriteLine(lives);",
+    "tryIt":  "Create a variable and use four different compound assignment operators to modify it.",
+    "challenge":  "Build a score tracker using compound assignment for bonuses, penalties, and multipliers.",
+    "mistakes":  [
+                     "Do not forget the variable name on the left side.",
+                     "Remember that score += 5 is not the same as 5 += score.",
+                     "Compound operators require a variable, not just a value.",
+                     "Use appropriate suffixes for float and decimal."
+                 ],
+    "summary":  "Assignment operators store values. Compound operators combine arithmetic with assignment, simplifying and clarifying code.",
+    "quiz":  [
+                 [
+                     "What does score += 10 do?",
+                     [
+                         "Adds 10 to score",
+                         "Sets score to 10",
+                         "Subtracts 10"
+                     ],
+                     0,
+                     "Compound += adds to the variable."
+                 ],
+                 [
+                     "Equivalent to health -= 5?",
+                     [
+                         "health = health - 5",
+                         "5 = health - health",
+                         "health = 5 -"
+                     ],
+                     0,
+                     "Compound -= simplifies subtraction assignment."
+                 ],
+                 [
+                     "Valid compound operator?",
+                     [
+                         "=-",
+                         "*=",
+                         "^="
+                     ],
+                     1,
+                     "Multiply-assign *=  is valid."
+                 ],
+                 [
+                     "Result of x *= 3?",
+                     [
+                         "x set to 3",
+                         "x multiplied by 3",
+                         "Error"
+                     ],
+                     1,
+                     "*= multiplies the variable by the right operand."
+                 ],
+                 [
+                     "Why use compound operators?",
+                     [
+                         "Clearer intent",
+                         "Fewer characters",
+                         "Both"
+                     ],
+                     2,
+                     "Compound operators are concise and readable."
+                 ]
+             ]
+}

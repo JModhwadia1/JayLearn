@@ -1,0 +1,97 @@
+﻿{
+    "title":  "Practice Project · Student Results System",
+    "time":  "90 minutes",
+    "objectives":  [
+                       "Collect and validate student data.",
+                       "Calculate averages using arithmetic.",
+                       "Use conditionals to assign grades and feedback.",
+                       "Build a menu-driven application."
+                   ],
+    "theory":  [
+                   "This project integrates all Module 4 concepts. It asks for a student\u0027s name, reads three assessment marks, calculates the average, determines pass/fail status, assigns a letter grade, and provides feedback.",
+                   "The program should loop, allowing entry of multiple students. After each result, it asks whether the user wants to continue.",
+                   "Grade assignment uses else if to check ranges: \u003e= 90 is A, \u003e= 80 is B, \u003e= 70 is C, \u003e= 60 is D, \u003c 60 is F. Feedback should be encouraging for passes and motivating for failures.",
+                   "Input validation checks whether entered marks are numeric and within range (0-100). Invalid input displays an error and re-prompts.",
+                   "A main menu can use switch to allow exit or entry of new students. The complete system demonstrates planning (IPO), conditionals (if/else/else if), logical operators (\u0026\u0026), and repetition (loops)."
+               ],
+    "terms":  [
+                  [
+                      "Validation",
+                      "Checking whether input meets requirements."
+                  ],
+                  [
+                      "Range check",
+                      "Verifying a value is within acceptable bounds."
+                  ],
+                  [
+                      "Feedback",
+                      "User-facing messages providing context."
+                  ],
+                  [
+                      "Menu-driven",
+                      "Programs that present choices to the user."
+                  ]
+              ],
+    "code":  "Console.WriteLine(\"===== Student Results System =====\");\nbool continueProgram = true;\n\nwhile (continueProgram)\n{\n    Console.Write(\"Enter student name: \");\n    string name = Console.ReadLine() ?? \"\";\n    \n    int total = 0;\n    bool validInput = true;\n    \n    for (int i = 1; i \u003c= 3; i++)\n    {\n        Console.Write($\"Enter mark {i}: \");\n        if (int.TryParse(Console.ReadLine() ?? \"0\", out int mark))\n        {\n            if (mark \u003e= 0 \u0026\u0026 mark \u003c= 100)\n            {\n                total += mark;\n            }\n            else\n            {\n                Console.WriteLine(\"Mark must be between 0 and 100.\");\n                validInput = false;\n                break;\n            }\n        }\n        else\n        {\n            Console.WriteLine(\"Please enter a valid number.\");\n            validInput = false;\n            break;\n        }\n    }\n    \n    if (validInput)\n    {\n        int average = total / 3;\n        string grade = average \u003e= 90 ? \"A\" : average \u003e= 80 ? \"B\" : average \u003e= 70 ? \"C\" : average \u003e= 60 ? \"D\" : \"F\";\n        bool passed = average \u003e= 50;\n        \n        Console.WriteLine();\n        Console.WriteLine($\"Name: {name}\");\n        Console.WriteLine($\"Average: {average}\");\n        Console.WriteLine($\"Grade: {grade}\");\n        Console.WriteLine(passed ? \"Status: PASS\" : \"Status: FAIL\");\n        Console.WriteLine();\n    }\n    \n    Console.Write(\"Enter another student? (yes/no): \");\n    string response = Console.ReadLine()?.ToLower() ?? \"\";\n    continueProgram = response == \"yes\" || response == \"y\";\n}",
+    "tryIt":  "Build a simple version that calculates and displays a grade for one student.",
+    "challenge":  "Extend the system to ask for subject name and display a complete report with all students entered.",
+    "mistakes":  [
+                     "Validate input before using it.",
+                     "Check ranges for marks.",
+                     "Ensure calculations are correct.",
+                     "Test the exit condition."
+                 ],
+    "summary":  "You can now build interactive applications that make decisions, validate input, assign grades, provide feedback, and loop through multiple entries.",
+    "quiz":  [
+                 [
+                     "What is input validation?",
+                     [
+                         "Printing data",
+                         "Checking if input meets requirements",
+                         "Storing values"
+                     ],
+                     1,
+                     "Validation ensures data is correct before using it."
+                 ],
+                 [
+                     "How to assign grades?",
+                     [
+                         "Random selection",
+                         "Use else if chains",
+                         "Use variables only"
+                     ],
+                     1,
+                     "Else if chains check ranges and assign grades."
+                 ],
+                 [
+                     "Best way to repeat student entry?",
+                     [
+                         "Copy code",
+                         "Use a loop",
+                         "Manual repeats"
+                     ],
+                     1,
+                     "Loops allow repeated execution."
+                 ],
+                 [
+                     "Grade for average 85?",
+                     [
+                         "A",
+                         "B",
+                         "C"
+                     ],
+                     1,
+                     "85 \u003e= 80 but \u003c 90 produces B."
+                 ],
+                 [
+                     "How to exit the loop?",
+                     [
+                         "break statement",
+                         "Set continueProgram to false",
+                         "Both"
+                     ],
+                     2,
+                     "Set the loop condition to false."
+                 ]
+             ]
+}

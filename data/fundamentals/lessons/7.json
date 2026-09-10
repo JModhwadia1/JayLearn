@@ -1,0 +1,96 @@
+﻿{
+    "title":  "Decomposition and Testing",
+    "time":  "50 minutes",
+    "objectives":  [
+                       "Break large problems into smaller tasks.",
+                       "Define expected results before testing.",
+                       "Use normal, boundary, and invalid test data.",
+                       "Document test outcomes."
+                   ],
+    "theory":  [
+                   "\u003cstrong\u003eDecomposition\u003c/strong\u003e divides a complex problem into smaller, manageable parts. A user-profile program can be separated into displaying prompts, collecting values, validating them, and printing a summary.",
+                   "Each subproblem should have a clear responsibility and a result that can be checked. Smaller pieces are easier to understand, implement, test, and reuse.",
+                   "Testing compares actual behaviour with expected behaviour. Normal data represents typical use. Boundary data checks values at important limits. Invalid data checks whether the program responds safely to unsuitable input.",
+                   "A useful test plan records the test input, expected result, actual result, and pass/fail status. Testing should begin early rather than being postponed until every feature is finished."
+               ],
+    "terms":  [
+                  [
+                      "Decomposition",
+                      "Breaking a problem into smaller subproblems."
+                  ],
+                  [
+                      "Test case",
+                      "A defined input and expected result."
+                  ],
+                  [
+                      "Boundary value",
+                      "A value at or near an important limit."
+                  ],
+                  [
+                      "Expected result",
+                      "The behaviour a correct program should produce."
+                  ]
+              ],
+    "code":  "Task 1: Display instructions\nTask 2: Collect player details\nTask 3: Validate entered values\nTask 4: Calculate the result\nTask 5: Display a summary",
+    "tryIt":  "Decompose a quiz program into at least five tasks, then propose one normal, one boundary, and one invalid test.",
+    "challenge":  "Create a four-row test table for a game-age checker. Include input, expected output, actual output, and pass/fail.",
+    "mistakes":  [
+                     "Do not treat the entire application as one indivisible task.",
+                     "Define expected results before running tests.",
+                     "Include invalid and boundary cases, not only typical data.",
+                     "Retest earlier behaviour after making corrections."
+                 ],
+    "summary":  "Decomposition reduces complexity. Planned test cases verify normal behaviour, limits, and responses to invalid input.",
+    "quiz":  [
+                 [
+                     "What is decomposition?",
+                     [
+                         "Breaking a problem into smaller tasks",
+                         "Adding random features",
+                         "Removing all output"
+                     ],
+                     0,
+                     "Decomposition separates a complex problem into manageable parts."
+                 ],
+                 [
+                     "What does a test case include?",
+                     [
+                         "Input and expected result",
+                         "Only a colour",
+                         "Only source comments"
+                     ],
+                     0,
+                     "A test case defines data and the correct expected behaviour."
+                 ],
+                 [
+                     "What is boundary data?",
+                     [
+                         "Data near an important limit",
+                         "Always a name",
+                         "A compiler"
+                     ],
+                     0,
+                     "Boundary tests examine behaviour at limits."
+                 ],
+                 [
+                     "When should testing begin?",
+                     [
+                         "Early and incrementally",
+                         "Only after release",
+                         "Never"
+                     ],
+                     0,
+                     "Early testing finds defects close to where they were introduced."
+                 ],
+                 [
+                     "Why record actual results?",
+                     [
+                         "To compare them with expectations",
+                         "To hide failures",
+                         "To change syntax"
+                     ],
+                     0,
+                     "The comparison determines whether a test passes."
+                 ]
+             ]
+}

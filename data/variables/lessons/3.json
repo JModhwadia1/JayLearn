@@ -1,0 +1,97 @@
+﻿{
+    "title":  "Declaring and Initialising Variables",
+    "time":  "45 minutes",
+    "objectives":  [
+                       "Distinguish declaration, assignment, and initialisation.",
+                       "Explain defaults for fields.",
+                       "Recognise local assignment requirements.",
+                       "Apply camelCase naming."
+                   ],
+    "theory":  [
+                   "A declaration introduces a variable\u0027s type and name. Assignment stores a value. Initialisation gives a variable its first value, often in the declaration.",
+                   "Combining declaration and initialisation is clear because the starting state is immediately visible. Separate them when the value is only known after another operation.",
+                   "Fields receive automatic defaults, but local variables must be definitely assigned before they can be read.",
+                   "The \u003ccode\u003edefault\u003c/code\u003e keyword requests a type\u0027s default value: int becomes 0 and bool becomes false.",
+                   "Use descriptive camelCase names. Avoid unexplained abbreviations and do not include the type in the name."
+               ],
+    "terms":  [
+                  [
+                      "Initialisation",
+                      "The first value assigned to a variable."
+                  ],
+                  [
+                      "Local variable",
+                      "A variable declared inside a method or block."
+                  ],
+                  [
+                      "Field",
+                      "A variable declared as part of a type."
+                  ],
+                  [
+                      "camelCase",
+                      "A naming style such as favouriteColour."
+                  ]
+              ],
+    "code":  "int attempts;\nattempts = 3;\nstring playerName = \"Leena\";\nint score = default;\nbool gameOver = default;",
+    "tryIt":  "Declare one variable separately, then create three variables using combined declaration and initialisation.",
+    "challenge":  "Write eight clearly named variables: four with separate assignment and four with combined initialisation.",
+    "mistakes":  [
+                     "Assign local variables before reading them.",
+                     "End declarations with semicolons.",
+                     "Do not use spaces or leading digits in names.",
+                     "Keep capitalisation consistent."
+                 ],
+    "summary":  "Declaration introduces type and name, assignment stores a value, and initialisation supplies the first value.",
+    "quiz":  [
+                 [
+                     "Which is only a declaration?",
+                     [
+                         "total = 5;",
+                         "int total;",
+                         "int total = 5;"
+                     ],
+                     1,
+                     "int total; introduces the type and name only."
+                 ],
+                 [
+                     "Which initialises a variable?",
+                     [
+                         "int age;",
+                         "Print age",
+                         "int age = 19;"
+                     ],
+                     2,
+                     "The declaration includes the first value."
+                 ],
+                 [
+                     "Can an unassigned local int be printed?",
+                     [
+                         "No",
+                         "Always",
+                         "Only as null"
+                     ],
+                     0,
+                     "Local variables must be definitely assigned."
+                 ],
+                 [
+                     "Best normal C# name?",
+                     [
+                         "Favourite_colour",
+                         "favouriteColour",
+                         "1colour"
+                     ],
+                     1,
+                     "favouriteColour follows camelCase."
+                 ],
+                 [
+                     "Default bool value?",
+                     [
+                         "0",
+                         "null",
+                         "false"
+                     ],
+                     2,
+                     "The default Boolean value is false."
+                 ]
+             ]
+}

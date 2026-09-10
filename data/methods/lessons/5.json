@@ -1,0 +1,97 @@
+﻿{
+    "title":  "Method Overloading",
+    "time":  "50 minutes",
+    "objectives":  [
+                       "Understand method overloading.",
+                       "Create multiple methods with the same name.",
+                       "Distinguish methods by parameter types.",
+                       "Apply overloading to real problems."
+                   ],
+    "theory":  [
+                   "Method overloading allows multiple methods to share the same name if their parameters differ. C# distinguishes them by the number or type of parameters.",
+                   "\u003ccode\u003evoid Attack() { }\u003c/code\u003e and \u003ccode\u003evoid Attack(int damage) { }\u003c/code\u003e are two different methods. Both are named Attack, but the first takes no parameters while the second takes an integer. When you call Attack, C# chooses the correct version based on your arguments.",
+                   "You can overload by parameter count. \u003ccode\u003evoid Add(int a, int b)\u003c/code\u003e and \u003ccode\u003evoid Add(int a, int b, int c)\u003c/code\u003e both add values but handle different quantities.",
+                   "You can overload by parameter type. \u003ccode\u003evoid Display(int number)\u003c/code\u003e and \u003ccode\u003evoid Display(string text)\u003c/code\u003e both display information but handle different types.",
+                   "Overloading makes code more flexible. A single method name like Add can handle integers or doubles. A method like Print can display numbers or text. This is convenient and reduces the need to remember many method names."
+               ],
+    "terms":  [
+                  [
+                      "Overloading",
+                      "Multiple methods with the same name."
+                  ],
+                  [
+                      "Signature",
+                      "The method name and parameter list."
+                  ],
+                  [
+                      "Overload resolution",
+                      "How C# chooses the correct method."
+                  ],
+                  [
+                      "Polymorphism",
+                      "Using the same name for different behaviours."
+                  ]
+              ],
+    "code":  "void Attack()\n{\n    Console.WriteLine(\"Basic attack!\");\n}\n\nvoid Attack(int damage)\n{\n    Console.WriteLine($\"Attack for {damage} damage!\");\n}\n\nvoid Attack(string weaponName)\n{\n    Console.WriteLine($\"Attack with {weaponName}!\");\n}\n\nint Add(int a, int b)\n{\n    return a + b;\n}\n\ndouble Add(double a, double b)\n{\n    return a + b;\n}\n\n// Calls:\nAttack();\nAttack(25);\nAttack(\"Sword\");\nint sum1 = Add(5, 3);\ndouble sum2 = Add(5.5, 3.2);",
+    "tryIt":  "Create two overloaded Display methods: one for int and one for string.",
+    "challenge":  "Write three overloaded Greet methods: no parameters, one string, and two strings.",
+    "mistakes":  [
+                     "Methods must differ in parameters.",
+                     "Same name but same parameters is an error.",
+                     "C# matches based on argument types.",
+                     "Return type alone does not overload."
+                 ],
+    "summary":  "Overloading allows methods to share names if parameters differ. C# chooses the correct method based on arguments. Overloading makes code flexible and intuitive.",
+    "quiz":  [
+                 [
+                     "Can methods have the same name?",
+                     [
+                         "No",
+                         "Yes, if parameters differ",
+                         "Yes, if return type differs"
+                     ],
+                     1,
+                     "Overloading requires different parameters."
+                 ],
+                 [
+                     "Which is overloading?",
+                     [
+                         "void Test() and void Test(int)",
+                         "void Test() and int Test()",
+                         "void Test() twice"
+                     ],
+                     0,
+                     "Different parameters enable overloading."
+                 ],
+                 [
+                     "How does C# choose method?",
+                     [
+                         "By name only",
+                         "By name and parameters",
+                         "By return type"
+                     ],
+                     1,
+                     "C# matches name and parameter types."
+                 ],
+                 [
+                     "Can you overload by return type?",
+                     [
+                         "Yes",
+                         "No",
+                         "Only for void"
+                     ],
+                     1,
+                     "Return type alone does not distinguish overloads."
+                 ],
+                 [
+                     "Calling Attack(25) with two Attack methods?",
+                     [
+                         "Ambiguous",
+                         "Calls Attack() first",
+                         "Calls Attack(int)"
+                     ],
+                     2,
+                     "C# matches the integer parameter version."
+                 ]
+             ]
+}

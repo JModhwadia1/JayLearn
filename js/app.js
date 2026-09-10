@@ -9,7 +9,7 @@ const pageNames = [
   'resources',
   'module',
 ];
-const modulesDataUrl = 'data/modules.json';
+const modulesDataUrl = 'data/modules-manifest.json';
 
 async function loadModules() {
   try {
@@ -21,15 +21,43 @@ async function loadModules() {
     const moduleManifest = await response.json();
     const loadedModules = {};
 
-    for (const [moduleKey, moduleFile] of Object.entries(moduleManifest)) {
-      const moduleResponse = await fetch(moduleFile);
-      if (!moduleResponse.ok) {
+    for (const [moduleKey, modulePath] of Object.entries(moduleManifest)) {
+      // Load module metadata
+      const moduleMetaResponse = await fetch(`${modulePath}/module.json`);
+      if (!moduleMetaResponse.ok) {
         throw new Error(
-          `Failed to load ${moduleFile}: ${moduleResponse.status}`,
+          `Failed to load ${modulePath}/module.json: ${moduleMetaResponse.status}`,
         );
       }
 
-      loadedModules[moduleKey] = await moduleResponse.json();
+      const moduleMeta = await moduleMetaResponse.json();
+      
+      // Load all lesson files
+      const lessons = [];
+      let lessonIndex = 1;
+      let allLessonsLoaded = false;
+      
+      while (!allLessonsLoaded) {
+        try {
+          const lessonResponse = await fetch(`${modulePath}/lessons/${lessonIndex}.json`);
+          if (!lessonResponse.ok) {
+            allLessonsLoaded = true;
+            break;
+          }
+          const lesson = await lessonResponse.json();
+          lessons.push(lesson);
+          lessonIndex++;
+        } catch (error) {
+          allLessonsLoaded = true;
+          break;
+        }
+      }
+      
+      // Combine metadata with lessons
+      loadedModules[moduleKey] = {
+        ...moduleMeta,
+        lessons: lessons
+      };
     }
 
     Object.assign(modules, loadedModules);
@@ -355,12 +383,12 @@ function renderLesson() {
         <ul class="lesson-list">${lesson.mistakes.map((item) => `<li>${item}</li>`).join('')}</ul>
       </section>
       <section class="success mt-5 rounded-2xl p-5">
-        <h3 class="text-xl font-bold">${activeLesson === 7 ? 'Module summary' : 'Lesson summary'}</h3>
+        <h3 class="text-xl font-bold">${activeLesson === modules[activeModule].lessons.length - 1 ? 'Module summary' : 'Lesson summary'}</h3>
         <p class="mt-3 text-slate-300">${lesson.summary}</p>
       </section>
       <div class="lesson-actions mt-5 flex flex-wrap justify-between gap-3">
         ${activeLesson > 0 ? '<button id="previous-lesson" class="btn-secondary" type="button">Previous lesson</button>' : '<span></span>'}
-        <button id="complete-lesson" class="btn-primary opacity-40" type="button" disabled>${activeLesson === 7 ? 'Complete module' : 'Complete lesson and continue'}</button>
+        <button id="complete-lesson" class="btn-primary opacity-40" type="button" disabled>${activeLesson === modules[activeModule].lessons.length - 1 ? 'Complete module' : 'Complete lesson and continue'}</button>
       </div>
     </article>`;
 
@@ -427,7 +455,7 @@ async function completeLesson() {
   saveProgress();
   await saveRemoteProgress(activeModule, activeLesson);
   updateProgress();
-  if (activeLesson < 7) {
+  if (activeLesson < modules[activeModule].lessons.length - 1) {
     activeLesson++;
     renderModule();
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -449,12 +477,13 @@ function showLesson(index) {
 
 function updateProgress() {
   const count = progress[activeModule].size;
-  const percent = Math.round((count / 8) * 100);
+  const totalLessons = modules[activeModule].lessons.length;
+  const percent = Math.round((count / totalLessons) * 100);
   document.getElementById('module-progress-value').textContent = percent + '%';
   document.getElementById('module-progress-fill').style.width = percent + '%';
   document
     .getElementById('module-complete-panel')
-    .classList.toggle('hidden', count !== 8);
+    .classList.toggle('hidden', count !== totalLessons);
 }
 
 document

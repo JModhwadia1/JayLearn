@@ -1,0 +1,95 @@
+﻿{
+    "title":  "Static Members",
+    "time":  "40 minutes",
+    "objectives":  [
+                       "Distinguish static and instance members.",
+                       "Call static methods through a class.",
+                       "Identify shared behaviour.",
+                       "Avoid unnecessary static state."
+                   ],
+    "theory":  [
+                   "A static member belongs to the class itself rather than to one object. It can be used without creating an instance.",
+                   "Static members suit shared utilities and values common to the whole type. Instance members represent data or behaviour that differs between objects.",
+                   "Static state is shared by every caller, so use it deliberately."
+               ],
+    "terms":  [
+                  [
+                      "static",
+                      "A member belonging to the class itself."
+                  ],
+                  [
+                      "Shared state",
+                      "Data accessed by all users of a type."
+                  ],
+                  [
+                      "Utility",
+                      "A general-purpose helper operation."
+                  ],
+                  [
+                      "Instance state",
+                      "Data belonging to one object."
+                  ]
+              ],
+    "code":  "class ScoreTools\n{\n    public static int DoubleScore(int score)\n    {\n        return score * 2;\n    }\n}\n\nint bonus = ScoreTools.DoubleScore(50);\nConsole.WriteLine(bonus);",
+    "tryIt":  "Create a static method that converts game minutes into seconds.",
+    "challenge":  "Create ScoreTools methods for doubling a score and checking a pass mark.",
+    "mistakes":  [
+                     "Do not call an instance member as if it were static.",
+                     "Static data is shared, not copied per object.",
+                     "Use static only when object state is unnecessary.",
+                     "Call static members through the class name."
+                 ],
+    "summary":  "Static members belong to the class and are useful for shared utilities. Instance members belong to individual objects.",
+    "quiz":  [
+                 [
+                     "What does static belong to?",
+                     [
+                         "The class",
+                         "One object only",
+                         "A loop"
+                     ],
+                     0,
+                     "Static members belong to the type itself."
+                 ],
+                 [
+                     "How do you call a static method?",
+                     [
+                         "Through the class name",
+                         "Through an unrelated object",
+                         "With new only"
+                     ],
+                     0,
+                     "Static methods are called through their class."
+                 ],
+                 [
+                     "When is an instance member useful?",
+                     [
+                         "When objects have separate state",
+                         "For every constant",
+                         "Only for HTML"
+                     ],
+                     0,
+                     "Instance members store or use per-object data."
+                 ],
+                 [
+                     "Is static state shared?",
+                     [
+                         "Yes",
+                         "No",
+                         "Only for strings"
+                     ],
+                     0,
+                     "All callers see the same static state."
+                 ],
+                 [
+                     "What should static state be used for?",
+                     [
+                         "Genuinely shared data",
+                         "Every changing player value",
+                         "All methods"
+                     ],
+                     0,
+                     "Static state is appropriate only when sharing is intentional."
+                 ]
+             ]
+}

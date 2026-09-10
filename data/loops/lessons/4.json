@@ -1,0 +1,98 @@
+﻿{
+    "title":  "The for Loop",
+    "time":  "55 minutes",
+    "objectives":  [
+                       "Write for loops with correct syntax.",
+                       "Understand initialisation, condition, and update.",
+                       "Create loops for counting and processing.",
+                       "Choose for loops over while when appropriate."
+                   ],
+    "theory":  [
+                   "A for loop is the most common loop in C#. It combines initialisation, condition, and update in one statement. The syntax is \u003ccode\u003efor (init; condition; update) { body }\u003c/code\u003e.",
+                   "Initialisation happens once before the loop starts. Usually it sets a counter to 0 or 1.",
+                   "The condition is tested before each iteration. If true, the body executes. If false, the loop stops.",
+                   "The update happens after each iteration. Usually it increments the counter.",
+                   "A for loop counting from 1 to 5 looks like: \u003ccode\u003efor (int i = 1; i \u003c= 5; i++) { }\u003c/code\u003e. The variable i starts at 1, the loop continues while i is 5 or less, and i increments after each iteration.",
+                   "For loops are ideal when you know how many times to repeat. Creating a pattern, printing a table, or processing an array of known size all use for loops. For loops are more compact than while when counting is involved."
+               ],
+    "terms":  [
+                  [
+                      "for loop",
+                      "A loop with init, condition, and update."
+                  ],
+                  [
+                      "Loop counter",
+                      "A variable tracking iterations."
+                  ],
+                  [
+                      "Initialisation",
+                      "Setting the counter before starting."
+                  ],
+                  [
+                      "Update expression",
+                      "Code run after each iteration."
+                  ]
+              ],
+    "code":  "// Count from 1 to 5\nfor (int i = 1; i \u003c= 5; i++)\n{\n    Console.WriteLine(i);\n}\n\n// Create a pattern\nfor (int i = 0; i \u003c 5; i++)\n{\n    for (int j = 0; j \u003c= i; j++)\n    {\n        Console.Write(\"*\");\n    }\n    Console.WriteLine();\n}\n\n// Countdown from 10 to 1\nfor (int i = 10; i \u003e= 1; i--)\n{\n    Console.WriteLine(i);\n}\nConsole.WriteLine(\"Blastoff!\");",
+    "tryIt":  "Write a for loop that prints the multiplication table for 7 (7×1 through 7×10).",
+    "challenge":  "Create a program using nested for loops to print a 5×5 grid of asterisks.",
+    "mistakes":  [
+                     "Use \u003c= or \u003e= to include boundaries.",
+                     "Increment with ++ or decrement with --.",
+                     "Semicolons separate init, condition, and update.",
+                     "The loop variable is local to the for loop."
+                 ],
+    "summary":  "For loops are ideal for counted repetition. Initialisation sets the counter, condition tests it, update advances it. Use for when you know the iteration count.",
+    "quiz":  [
+                 [
+                     "For loop parts in order?",
+                     [
+                         "condition, init, update",
+                         "init, condition, update",
+                         "update, condition, init"
+                     ],
+                     1,
+                     "For loops follow init, then condition, then update."
+                 ],
+                 [
+                     "What does i++ do?",
+                     [
+                         "Adds 1 to i",
+                         "Prints i",
+                         "Ends the loop"
+                     ],
+                     0,
+                     "++ increments the loop counter."
+                 ],
+                 [
+                     "Loop count for (int i=0; i\u003c5; i++)?",
+                     [
+                         "4",
+                         "5",
+                         "6"
+                     ],
+                     1,
+                     "Starting at 0, counting while less than 5 gives 5 iterations."
+                 ],
+                 [
+                     "Can the loop counter change inside?",
+                     [
+                         "Yes, always",
+                         "Yes, but avoid it",
+                         "No"
+                     ],
+                     1,
+                     "Counters can change but usually should not."
+                 ],
+                 [
+                     "Best use for for loops?",
+                     [
+                         "Unknown counts",
+                         "Counted repetition",
+                         "Forever"
+                     ],
+                     1,
+                     "For loops excel when you know the iteration count."
+                 ]
+             ]
+}

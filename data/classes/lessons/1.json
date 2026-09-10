@@ -1,0 +1,95 @@
+﻿{
+    "title":  "Introduction to Classes",
+    "time":  "45 minutes",
+    "objectives":  [
+                       "Explain a class as a blueprint for objects.",
+                       "Create a class with fields.",
+                       "Instantiate objects with new.",
+                       "Access data through an object."
+                   ],
+    "theory":  [
+                   "A class defines the data and behaviour that objects of a particular kind will have. A Player class can describe every player, while each Player object represents one specific player.",
+                   "The \u003ccode\u003enew\u003c/code\u003e keyword creates an object from a class. Each object has its own instance data, so two players can have different names and scores.",
+                   "Good classes model one clear concept. In a game, classes might represent players, enemies, weapons, inventory items, or quests."
+               ],
+    "terms":  [
+                  [
+                      "Class",
+                      "A definition used to create objects."
+                  ],
+                  [
+                      "Object",
+                      "An instance created from a class."
+                  ],
+                  [
+                      "Instance",
+                      "A specific object belonging to a class."
+                  ],
+                  [
+                      "Field",
+                      "Data stored inside an object."
+                  ]
+              ],
+    "code":  "class Player\n{\n    public string Name = \"Mira\";\n    public int Score = 100;\n}\n\nPlayer player = new Player();\nConsole.WriteLine(player.Name);\nConsole.WriteLine(player.Score);",
+    "tryIt":  "Create a Player class with name and health fields, then create one Player object and print its values.",
+    "challenge":  "Create two Enemy objects with different names and health values. Display both objects.",
+    "mistakes":  [
+                     "A class definition does not create an object by itself.",
+                     "Use new to create an instance.",
+                     "Access instance fields through an object variable.",
+                     "Give classes and fields meaningful names."
+                 ],
+    "summary":  "Classes define a type of object. The new keyword creates instances, and each instance stores its own values.",
+    "quiz":  [
+                 [
+                     "What is a class?",
+                     [
+                         "A blueprint for objects",
+                         "A loop",
+                         "A compiler error"
+                     ],
+                     0,
+                     "A class defines the structure and behaviour of objects."
+                 ],
+                 [
+                     "Which keyword creates an object?",
+                     [
+                         "make",
+                         "new",
+                         "class"
+                     ],
+                     1,
+                     "new creates an instance."
+                 ],
+                 [
+                     "What is an object?",
+                     [
+                         "An instance of a class",
+                         "A comment",
+                         "A data type only"
+                     ],
+                     0,
+                     "An object is a specific instance created from a class."
+                 ],
+                 [
+                     "How is a field accessed?",
+                     [
+                         "Through the object",
+                         "Through a comment",
+                         "Through a loop only"
+                     ],
+                     0,
+                     "The dot accesses a member on an object."
+                 ],
+                 [
+                     "Can two objects have different values?",
+                     [
+                         "Yes",
+                         "No",
+                         "Only strings"
+                     ],
+                     0,
+                     "Each instance has its own instance data."
+                 ]
+             ]
+}

@@ -1,0 +1,97 @@
+﻿{
+    "title":  "String Interpolation and Concatenation",
+    "time":  "45 minutes",
+    "objectives":  [
+                       "Join values with concatenation.",
+                       "Insert values using interpolation.",
+                       "Compare readability.",
+                       "Produce labelled output."
+                   ],
+    "theory":  [
+                   "Concatenation joins values using the plus operator. When one operand is a string, compatible values are converted to text.",
+                   "String interpolation begins with a dollar sign and places values or expressions inside braces.",
+                   "Interpolation usually remains clearer when messages contain several values.",
+                   "Formatting such as \u003ccode\u003eF2\u003c/code\u003e displays two decimal places, while currency formatting uses the current culture.",
+                   "Be careful with numeric plus operations. \u003ccode\u003e\"Total: \" + 2 + 3\u003c/code\u003e produces Total: 23; parentheses or interpolation can produce 5."
+               ],
+    "terms":  [
+                  [
+                      "Concatenation",
+                      "Joining values into a string with +."
+                  ],
+                  [
+                      "Interpolation",
+                      "Embedding values in a $ string."
+                  ],
+                  [
+                      "Expression",
+                      "Code that produces a value."
+                  ],
+                  [
+                      "Format specifier",
+                      "A code controlling displayed formatting."
+                  ]
+              ],
+    "code":  "string name = \"Ishan\";\nint level = 7;\nConsole.WriteLine(\"Player: \" + name + \" | Level: \" + level);\nConsole.WriteLine($\"Player: {name} | Level: {level}\");\nConsole.WriteLine($\"Next level: {level + 1}\");",
+    "tryIt":  "Print a student result once with concatenation and once with interpolation.",
+    "challenge":  "Create an item receipt with quantity, unit price, total, and two decimal places.",
+    "mistakes":  [
+                     "Place $ before the opening quote.",
+                     "Use braces around interpolated expressions.",
+                     "Include spaces in concatenated fragments.",
+                     "Use parentheses around numeric addition."
+                 ],
+    "summary":  "Concatenation joins values with +. Interpolation places expressions inside braces and is often clearer.",
+    "quiz":  [
+                 [
+                     "Concatenation operator?",
+                     [
+                         "%",
+                         "$",
+                         "+"
+                     ],
+                     2,
+                     "The plus operator joins strings."
+                 ],
+                 [
+                     "Interpolation prefix?",
+                     [
+                         "$",
+                         "#",
+                         "\u0026"
+                     ],
+                     0,
+                     "A dollar sign enables interpolation."
+                 ],
+                 [
+                     "Where is an interpolated value?",
+                     [
+                         "Square brackets",
+                         "Braces",
+                         "After semicolon"
+                     ],
+                     1,
+                     "Values appear inside curly braces."
+                 ],
+                 [
+                     "Result of \"Value: \" + 2 + 3?",
+                     [
+                         "Value: 5",
+                         "Error",
+                         "Value: 23"
+                     ],
+                     2,
+                     "String concatenation proceeds left to right."
+                 ],
+                 [
+                     "What does F2 request?",
+                     [
+                         "Two decimal places",
+                         "Two strings",
+                         "A Boolean"
+                     ],
+                     0,
+                     "F2 formats a number with two decimal places."
+                 ]
+             ]
+}

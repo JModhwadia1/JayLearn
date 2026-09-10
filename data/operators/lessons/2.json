@@ -1,0 +1,97 @@
+﻿{
+    "title":  "Arithmetic Operators",
+    "time":  "50 minutes",
+    "objectives":  [
+                       "Perform addition, subtraction, multiplication, division, and modulus.",
+                       "Understand integer vs decimal division.",
+                       "Apply order of operations.",
+                       "Write realistic calculations."
+                   ],
+    "theory":  [
+                   "Arithmetic operators act on numeric values. The plus operator \u003ccode\u003e+\u003c/code\u003e adds, minus \u003ccode\u003e-\u003c/code\u003e subtracts, asterisk \u003ccode\u003e*\u003c/code\u003e multiplies, forward slash \u003ccode\u003e/\u003c/code\u003e divides, and percent \u003ccode\u003e%\u003c/code\u003e computes the remainder.",
+                   "When both operands are \u003cstrong\u003eint\u003c/strong\u003e, division produces an int result truncating any fractional part. \u003ccode\u003e(int)7 / 3\u003c/code\u003e is 2. When either operand is \u003cstrong\u003edouble\u003c/strong\u003e, division produces a double. \u003ccode\u003e7.0 / 3\u003c/code\u003e is 2.333...",
+                   "The modulus operator returns the remainder. \u003ccode\u003e17 % 5\u003c/code\u003e is 2 because 17 divided by 5 is 3 with remainder 2. Modulus helps detect even and odd numbers: \u003ccode\u003enumber % 2 == 0\u003c/code\u003e means even.",
+                   "Order of operations follows the PEMDAS/BODMAS rule: parentheses first, then multiplication and division from left to right, then addition and subtraction from left to right.",
+                   "Expressions commonly represent real calculations. A game might compute damage as \u003ccode\u003ebaseDamage * multiplier - armourReduction\u003c/code\u003e."
+               ],
+    "terms":  [
+                  [
+                      "Division",
+                      "Splitting a value by another."
+                  ],
+                  [
+                      "Remainder",
+                      "The value left after division."
+                  ],
+                  [
+                      "Modulus",
+                      "The operator computing remainder."
+                  ],
+                  [
+                      "Precedence",
+                      "The order in which operators execute."
+                  ]
+              ],
+    "code":  "int damage = 10 * 3 - 2;\nConsole.WriteLine(damage);\nint health = 100;\nint reduced = health - damage;\nConsole.WriteLine(reduced);\ndouble average = 7.0 / 3;\nConsole.WriteLine(average);\nint remainder = 17 % 5;\nConsole.WriteLine(remainder);",
+    "tryIt":  "Calculate a recipe scaling, a game score penalty, and a remainder from a division.",
+    "challenge":  "Write a calculation for employee overtime pay, student average marks, and enemy health reduction.",
+    "mistakes":  [
+                     "Integer division truncates without rounding.",
+                     "Modulus works only with integers.",
+                     "Order matters: 2 + 3 * 4 is 14, not 20.",
+                     "Use parentheses to override precedence."
+                 ],
+    "summary":  "Arithmetic operators calculate new values. Division behaves differently for int and double. Modulus finds remainders. Order of operations governs evaluation.",
+    "quiz":  [
+                 [
+                     "Result of 10 + 3 * 2?",
+                     [
+                         "26",
+                         "16",
+                         "14"
+                     ],
+                     2,
+                     "Multiplication happens before addition."
+                 ],
+                 [
+                     "Result of 7 / 2 (both int)?",
+                     [
+                         "3.5",
+                         "3",
+                         "Error"
+                     ],
+                     1,
+                     "Integer division truncates: 7 / 2 = 3."
+                 ],
+                 [
+                     "Result of 7 / 2.0?",
+                     [
+                         "3",
+                         "3.5",
+                         "Error"
+                     ],
+                     1,
+                     "One double operand produces a double result."
+                 ],
+                 [
+                     "What is 17 % 5?",
+                     [
+                         "3",
+                         "2",
+                         "Error"
+                     ],
+                     1,
+                     "The remainder of 17 divided by 5 is 2."
+                 ],
+                 [
+                     "How to override precedence?",
+                     [
+                         "Use semicolons",
+                         "Use parentheses",
+                         "Use comments"
+                     ],
+                     1,
+                     "Parentheses force evaluation order."
+                 ]
+             ]
+}

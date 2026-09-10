@@ -1,0 +1,97 @@
+﻿{
+    "title":  "Loop Control: break and continue",
+    "time":  "55 minutes",
+    "objectives":  [
+                       "Use break to exit loops early.",
+                       "Use continue to skip to the next iteration.",
+                       "Understand when to use each.",
+                       "Apply to search and filtering patterns."
+                   ],
+    "theory":  [
+                   "The break statement exits a loop immediately, bypassing remaining iterations. Use break when you have found what you are looking for or when a condition demands stopping.",
+                   "The continue statement skips the current iteration and moves to the next one. Use continue when you want to skip processing certain items but keep looping.",
+                   "Break is useful for searching. A program might loop through a list of names looking for a specific one. When found, break stops searching.",
+                   "Continue is useful for filtering. A program might process numbers, skipping invalid ones. Continue moves to the next number without processing the invalid one.",
+                   "Both break and continue are powerful but can make loops harder to understand. Use them sparingly and always document their purpose. A well-designed loop should be clear without excessive break and continue."
+               ],
+    "terms":  [
+                  [
+                      "break",
+                      "Exits the loop immediately."
+                  ],
+                  [
+                      "continue",
+                      "Skips to the next iteration."
+                  ],
+                  [
+                      "Early exit",
+                      "Stopping before all iterations complete."
+                  ],
+                  [
+                      "Skip iteration",
+                      "Bypassing processing for an item."
+                  ]
+              ],
+    "code":  "// Break: search for a value\nint[] numbers = { 10, 20, 30, 40, 50 };\nint target = 30;\nbool found = false;\nforeach (int num in numbers)\n{\n    if (num == target)\n    {\n        found = true;\n        break;\n    }\n}\nConsole.WriteLine(found ? \"Found!\" : \"Not found.\");\n\n// Continue: skip invalid values\nint[] scores = { 95, -5, 87, 110, 92 };\nint sum = 0;\nint count = 0;\nforeach (int score in scores)\n{\n    if (score \u003c 0 || score \u003e 100)\n    {\n        continue;\n    }\n    sum += score;\n    count++;\n}\nConsole.WriteLine($\"Average: {sum / count}\");\n\n// Menu exit with break\nstring choice = \"\";\nwhile (choice != \"exit\")\n{\n    Console.Write(\"Enter command: \");\n    choice = Console.ReadLine() ?? \"\";\n    if (choice == \"quit\") break;\n    Console.WriteLine($\"You entered: {choice}\");\n}",
+    "tryIt":  "Write a loop that searches for a number in an array and breaks when found.",
+    "challenge":  "Create a loop that sums only positive numbers from an array, skipping negatives with continue.",
+    "mistakes":  [
+                     "Do not overuse break and continue.",
+                     "Ensure break and continue are necessary for clarity.",
+                     "Test with edge cases (found on first, found on last, never found).",
+                     "Keep loop logic readable."
+                 ],
+    "summary":  "Break exits loops; continue skips iterations. Use break for early exit; continue for filtering. Both improve efficiency and handle special cases.",
+    "quiz":  [
+                 [
+                     "What does break do?",
+                     [
+                         "Pauses the loop",
+                         "Exits the loop",
+                         "Skips to next iteration"
+                     ],
+                     1,
+                     "Break terminates the loop immediately."
+                 ],
+                 [
+                     "What does continue do?",
+                     [
+                         "Terminates the loop",
+                         "Exits the program",
+                         "Skips to the next iteration"
+                     ],
+                     2,
+                     "Continue moves to the next iteration."
+                 ],
+                 [
+                     "Best use for break?",
+                     [
+                         "Always needed",
+                         "Search patterns",
+                         "Loops under 10"
+                     ],
+                     1,
+                     "Break is ideal for searching."
+                 ],
+                 [
+                     "Best use for continue?",
+                     [
+                         "Filtering items",
+                         "Counting iterations",
+                         "Printing output"
+                     ],
+                     0,
+                     "Continue is ideal for filtering."
+                 ],
+                 [
+                     "Can break exit nested loops?",
+                     [
+                         "Only the inner",
+                         "Only the outer",
+                         "Both"
+                     ],
+                     0,
+                     "Break exits only the innermost loop."
+                 ]
+             ]
+}

@@ -1,0 +1,97 @@
+﻿{
+    "title":  "Operator Precedence",
+    "time":  "50 minutes",
+    "objectives":  [
+                       "Understand the order operators execute.",
+                       "Use parentheses to control evaluation.",
+                       "Break down complex expressions.",
+                       "Write readable code."
+                   ],
+    "theory":  [
+                   "When an expression contains multiple operators, precedence determines which execute first. All operators have a precedence level established by C#.",
+                   "Parentheses always execute first, making them the highest precedence. Then multiplication, division, and modulus from left to right. Then addition and subtraction from left to right. Then comparison operators. Then logical AND. Finally logical OR.",
+                   "\u003ccode\u003e2 + 3 * 4\u003c/code\u003e is 14, not 20, because \u003ccode\u003e*\u003c/code\u003e has higher precedence than \u003ccode\u003e+\u003c/code\u003e. Writing \u003ccode\u003e(2 + 3) * 4\u003c/code\u003e makes intent explicit and produces 20.",
+                   "Complex expressions become unreadable without parentheses. \u003ccode\u003escore \u003e= 50 \u0026\u0026 bonus \u003e 0 || lives \u003e 0\u003c/code\u003e is ambiguous. Rewrite as \u003ccode\u003e(score \u003e= 50 \u0026\u0026 bonus \u003e 0) || lives \u003e 0\u003c/code\u003e for clarity.",
+                   "Readability is more important than relying on precedence memory. Break complex expressions into smaller parts or use intermediate variables."
+               ],
+    "terms":  [
+                  [
+                      "Precedence",
+                      "The order operators execute."
+                  ],
+                  [
+                      "Parentheses",
+                      "Highest-precedence grouping."
+                  ],
+                  [
+                      "Left to right",
+                      "Evaluation direction for same-precedence operators."
+                  ],
+                  [
+                      "Readability",
+                      "Code clarity through explicit grouping."
+                  ]
+              ],
+    "code":  "int result = 2 + 3 * 4;\nConsole.WriteLine(result);\nresult = (2 + 3) * 4;\nConsole.WriteLine(result);\nbool qualified = score \u003e= 50 \u0026\u0026 bonus \u003e 0 || lives \u003e 0;\nbool explicit = (score \u003e= 50 \u0026\u0026 bonus \u003e 0) || lives \u003e 0;\nConsole.WriteLine(qualified);\nConsole.WriteLine(explicit);",
+    "tryIt":  "Write two expressions: one relying on precedence and one using parentheses for clarity.",
+    "challenge":  "Rewrite a complex expression using parentheses and break it into simpler intermediate calculations.",
+    "mistakes":  [
+                     "Do not assume readers remember precedence rules.",
+                     "Use parentheses liberally for clarity.",
+                     "Precedence is left-to-right for same levels.",
+                     "Test expressions by adding parentheses incrementally."
+                 ],
+    "summary":  "Parentheses override precedence. Use them to clarify intent and make complex expressions readable.",
+    "quiz":  [
+                 [
+                     "Result of 5 + 2 * 3?",
+                     [
+                         "21",
+                         "11",
+                         "14"
+                     ],
+                     2,
+                     "Multiplication before addition."
+                 ],
+                 [
+                     "Result of (5 + 2) * 3?",
+                     [
+                         "21",
+                         "11",
+                         "14"
+                     ],
+                     0,
+                     "Parentheses force addition first."
+                 ],
+                 [
+                     "Highest precedence?",
+                     [
+                         "Arithmetic",
+                         "Logical OR",
+                         "Parentheses"
+                     ],
+                     2,
+                     "Parentheses always execute first."
+                 ],
+                 [
+                     "Which evaluates first: \u0026\u0026 or ||?",
+                     [
+                         "Both equally",
+                         "\u0026\u0026",
+                         "||"
+                     ],
+                     1,
+                     "AND has higher precedence than OR."
+                 ],
+                 [
+                     "Why use extra parentheses?",
+                     [
+                         "Clearer intent",
+                         "No other reason",
+                         "Slower code"
+                     ],
+                     0,
+                     "Parentheses make precedence explicit."
+                 ]
+             ]
+}

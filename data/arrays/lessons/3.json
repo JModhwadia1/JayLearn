@@ -1,0 +1,97 @@
+﻿{
+    "title":  "Accessing and Modifying Array Values",
+    "time":  "50 minutes",
+    "objectives":  [
+                       "Read values from arrays using indexes.",
+                       "Change array values.",
+                       "Understand index boundaries.",
+                       "Handle common index errors."
+                   ],
+    "theory":  [
+                   "Reading an array element uses the index. \u003ccode\u003eint firstScore = scores[0];\u003c/code\u003e reads the first element. \u003ccode\u003eConsole.WriteLine(weapons[2]);\u003c/code\u003e prints the third element.",
+                   "Changing an array element uses assignment. \u003ccode\u003escores[0] = 95;\u003c/code\u003e replaces the first element with 95. \u003ccode\u003einventory[2] = \"Key\";\u003c/code\u003e changes the third inventory item.",
+                   "Index boundaries are critical. An array of size 5 has valid indices 0 through 4. Accessing \u003ccode\u003escores[5]\u003c/code\u003e is out of bounds and causes an IndexOutOfRangeException.",
+                   "The .Length property tells you the array size. \u003ccode\u003escores.Length\u003c/code\u003e returns 5 for an array of 5 elements. Use it to prevent index errors: \u003ccode\u003eif (i \u003c scores.Length)\u003c/code\u003e",
+                   "Common mistakes include forgetting zero-based indexing, accessing beyond array bounds, and confusing index numbers. Always verify indices are within 0 to length−1."
+               ],
+    "terms":  [
+                  [
+                      "Index bounds",
+                      "Valid range 0 to length−1."
+                  ],
+                  [
+                      "IndexOutOfRangeException",
+                      "Error accessing invalid index."
+                  ],
+                  [
+                      "Length property",
+                      "Returns array size."
+                  ],
+                  [
+                      "Out of bounds",
+                      "Accessing invalid index."
+                  ]
+              ],
+    "code":  "string[] weapons = {\"Sword\", \"Bow\", \"Staff\"};\n\n// Read values\nConsole.WriteLine(weapons[0]);\nConsole.WriteLine(weapons[1]);\n\n// Modify values\nweapons[0] = \"Great Sword\";\nConsole.WriteLine(weapons[0]);\n\n// Check length\nConsole.WriteLine(weapons.Length);\n\n// Verify index before accessing\nint index = 1;\nif (index \u003c weapons.Length)\n{\n    Console.WriteLine(weapons[index]);\n}\nelse\n{\n    Console.WriteLine(\"Index out of bounds\");\n}",
+    "tryIt":  "Create an array, modify a value, and print it before and after the change.",
+    "challenge":  "Create an array and verify the index is valid before accessing each element.",
+    "mistakes":  [
+                     "Remember zero-based indexing starts at 0.",
+                     "Use .Length to check valid range.",
+                     "Index out of bounds causes exceptions.",
+                     "Always verify before accessing unfamiliar indices."
+                 ],
+    "summary":  "Access array elements using indexes within bounds. Modify with assignment. Use .Length to check validity. Index errors are a common source of bugs.",
+    "quiz":  [
+                 [
+                     "Accessing second element?",
+                     [
+                         "scores[1]",
+                         "scores[2]",
+                         "scores[0]"
+                     ],
+                     0,
+                     "Index 1 is the second element."
+                 ],
+                 [
+                     "Out of bounds error?",
+                     [
+                         "Syntax error",
+                         "RuntimeException",
+                         "IndexOutOfRangeException"
+                     ],
+                     2,
+                     "This exception is thrown for invalid indices."
+                 ],
+                 [
+                     "Check array size?",
+                     [
+                         "Length()",
+                         "length",
+                         "Length"
+                     ],
+                     2,
+                     "Length is a property without parentheses."
+                 ],
+                 [
+                     "Valid indices for int[5]?",
+                     [
+                         "0 to 5",
+                         "0 to 4",
+                         "1 to 5"
+                     ],
+                     1,
+                     "Last index is length−1."
+                 ],
+                 [
+                     "Modify element?",
+                     [
+                         "array[i]",
+                         "array[i] = value",
+                         "element(i)"
+                     ],
+                     1,
+                     "Assignment updates the element."
+                 ]
+             ]
+}

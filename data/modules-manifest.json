@@ -1,0 +1,10 @@
+{
+  "fundamentals": "data/fundamentals",
+  "variables": "data/variables",
+  "operators": "data/operators",
+  "conditionals": "data/conditionals",
+  "loops": "data/loops",
+  "methods": "data/methods",
+  "arrays": "data/arrays",
+  "classes": "data/classes"
+}

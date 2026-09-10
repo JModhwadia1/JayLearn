@@ -1,0 +1,97 @@
+﻿{
+    "title":  "Nested Loops",
+    "time":  "55 minutes",
+    "objectives":  [
+                       "Understand nested loops and their flow.",
+                       "Write loops inside loops.",
+                       "Trace nested loops to understand output.",
+                       "Apply nested loops to patterns and grids."
+                   ],
+    "theory":  [
+                   "A nested loop is a loop inside another loop. For each iteration of the outer loop, the inner loop completes all its iterations.",
+                   "A common example is printing a grid. The outer loop controls rows; the inner loop controls columns. For three rows and three columns, the outer loop repeats three times. Each time, the inner loop prints three items.",
+                   "Nested loops are essential for processing 2D data or creating patterns. A multiplication table, a checkerboard, a pyramid, or any rectangular structure uses nested loops.",
+                   "Tracing nested loops carefully is important. When the outer loop increments, the inner loop resets and runs again. Understanding this flow prevents confusion.",
+                   "Performance matters with nested loops. A loop repeating 10 times containing a loop repeating 10 times executes 100 times total. Nested loops execute frequently. Optimize carefully."
+               ],
+    "terms":  [
+                  [
+                      "Nested loop",
+                      "A loop inside another loop."
+                  ],
+                  [
+                      "Outer loop",
+                      "The first loop."
+                  ],
+                  [
+                      "Inner loop",
+                      "The loop inside the outer loop."
+                  ],
+                  [
+                      "Iteration count",
+                      "The total executions (outer × inner)."
+                  ]
+              ],
+    "code":  "// Print a 3x3 grid\nfor (int row = 1; row \u003c= 3; row++)\n{\n    for (int col = 1; col \u003c= 3; col++)\n    {\n        Console.Write(\"* \");\n    }\n    Console.WriteLine();\n}\n\n// Multiplication table\nfor (int i = 1; i \u003c= 3; i++)\n{\n    for (int j = 1; j \u003c= 3; j++)\n    {\n        Console.Write((i * j) + \" \");\n    }\n    Console.WriteLine();\n}\n\n// Pyramid pattern\nfor (int row = 1; row \u003c= 5; row++)\n{\n    for (int space = 1; space \u003c= 5 - row; space++)\n    {\n        Console.Write(\" \");\n    }\n    for (int star = 1; star \u003c= row; star++)\n    {\n        Console.Write(\"*\");\n    }\n    Console.WriteLine();\n}",
+    "tryIt":  "Write nested loops to print a 4×4 grid of numbers (1-16).",
+    "challenge":  "Create a checkerboard pattern using nested loops, alternating spaces and asterisks.",
+    "mistakes":  [
+                     "Trace nested loops on paper to verify logic.",
+                     "The inner loop completes before the outer increments.",
+                     "Use different variable names for outer and inner loops.",
+                     "Test with small values first."
+                 ],
+    "summary":  "Nested loops repeat code blocks within loops. The outer loop controls outer iteration; the inner loop controls inner iteration. Total executions = outer × inner.",
+    "quiz":  [
+                 [
+                     "Executions for nested 3×4 loops?",
+                     [
+                         "3",
+                         "4",
+                         "12"
+                     ],
+                     2,
+                     "3 outer iterations × 4 inner = 12 total."
+                 ],
+                 [
+                     "When does inner loop reset?",
+                     [
+                         "Every iteration of inner",
+                         "Never",
+                         "After outer increments"
+                     ],
+                     2,
+                     "Inner loop resets when outer increments."
+                 ],
+                 [
+                     "Best use for nested loops?",
+                     [
+                         "Single lines",
+                         "2D patterns and grids",
+                         "Simple counting"
+                     ],
+                     1,
+                     "Nested loops create grids and patterns."
+                 ],
+                 [
+                     "Inner loop variable name?",
+                     [
+                         "Same as outer",
+                         "Different from outer",
+                         "Do not use variables"
+                     ],
+                     1,
+                     "Use different names to avoid confusion."
+                 ],
+                 [
+                     "How many times for (1 to 2) nested in (1 to 3)?",
+                     [
+                         "3",
+                         "6",
+                         "2"
+                     ],
+                     1,
+                     "2 × 3 = 6 executions."
+                 ]
+             ]
+}

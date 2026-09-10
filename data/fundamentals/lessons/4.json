@@ -1,0 +1,96 @@
+﻿{
+    "title":  "Syntax, Keywords and Comments",
+    "time":  "45 minutes",
+    "objectives":  [
+                       "Explain syntax as a language\u0027s grammar.",
+                       "Recognise identifiers and keywords.",
+                       "Write single-line and multi-line comments.",
+                       "Use indentation and whitespace for readability."
+                   ],
+    "theory":  [
+                   "Every programming language has \u003cstrong\u003esyntax\u003c/strong\u003e: rules that describe valid code structure. Syntax includes punctuation, ordering, spelling, and capitalisation. Compiler errors often indicate that one of these rules has been broken.",
+                   "A \u003cstrong\u003ekeyword\u003c/strong\u003e has a reserved meaning in C#, such as \u003ccode\u003eint\u003c/code\u003e, \u003ccode\u003estring\u003c/code\u003e, \u003ccode\u003eif\u003c/code\u003e, or \u003ccode\u003eclass\u003c/code\u003e. An \u003cstrong\u003eidentifier\u003c/strong\u003e is a name created for something in the program. Identifiers cannot normally reuse reserved keywords.",
+                   "Comments explain intent and are ignored during execution. A single-line comment starts with \u003ccode\u003e//\u003c/code\u003e. A block comment begins with \u003ccode\u003e/*\u003c/code\u003e and ends with \u003ccode\u003e*/\u003c/code\u003e. Comments should explain why, not restate obvious code.",
+                   "Whitespace and indentation make structure visible. Although extra spaces often do not change behaviour, consistent formatting reduces mistakes and helps other programmers review code."
+               ],
+    "terms":  [
+                  [
+                      "Syntax",
+                      "Rules that define valid program structure."
+                  ],
+                  [
+                      "Keyword",
+                      "A word reserved by the language."
+                  ],
+                  [
+                      "Identifier",
+                      "A programmer-defined name."
+                  ],
+                  [
+                      "Comment",
+                      "Explanatory source text ignored during execution."
+                  ]
+              ],
+    "code":  "// Display the learning goal\nConsole.WriteLine(\"Learn C# clearly.\");\n\n/* This comment can\n   span multiple lines. */",
+    "tryIt":  "Add one useful single-line comment and one block comment to a three-line console program.",
+    "challenge":  "Correct a program containing incorrect capitalisation, a missing quote, a missing parenthesis, and a missing semicolon.",
+    "mistakes":  [
+                     "Do not place required code inside a comment accidentally.",
+                     "Close every block comment with */.",
+                     "Avoid using reserved keywords as ordinary names.",
+                     "Use comments to explain purpose rather than obvious punctuation."
+                 ],
+    "summary":  "Syntax defines valid C# structure. Keywords have reserved meanings, identifiers name program elements, and comments document intent.",
+    "quiz":  [
+                 [
+                     "What is syntax?",
+                     [
+                         "Language structure rules",
+                         "A physical device",
+                         "Only program output"
+                     ],
+                     0,
+                     "Syntax defines how valid C# structure must be arranged."
+                 ],
+                 [
+                     "Which starts a single-line comment?",
+                     [
+                         "//",
+                         "##",
+                         "**"
+                     ],
+                     0,
+                     "Two forward slashes begin a single-line C# comment."
+                 ],
+                 [
+                     "What is a keyword?",
+                     [
+                         "A reserved language word",
+                         "Any sentence",
+                         "A file extension"
+                     ],
+                     0,
+                     "Keywords have predefined meanings in C#."
+                 ],
+                 [
+                     "Are comments executed?",
+                     [
+                         "Yes",
+                         "No",
+                         "Only on Fridays"
+                     ],
+                     1,
+                     "Comments are ignored during program execution."
+                 ],
+                 [
+                     "Why use indentation?",
+                     [
+                         "To improve readability",
+                         "To increase internet speed",
+                         "To rename C#"
+                     ],
+                     0,
+                     "Consistent indentation makes code structure easier to understand."
+                 ]
+             ]
+}

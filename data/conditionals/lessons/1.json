@@ -1,0 +1,97 @@
+﻿{
+    "title":  "Introduction to Conditional Statements",
+    "time":  "45 minutes",
+    "objectives":  [
+                       "Explain what conditional statements are and why they matter.",
+                       "Describe how programs evaluate true and false conditions.",
+                       "Identify real-world decision-making scenarios.",
+                       "Understand flowcharts as a planning tool."
+                   ],
+    "theory":  [
+                   "Conditional statements allow a program to make decisions. When a program evaluates a condition as true or false, it can execute different code paths. Without conditionals, programs would execute the same steps every time.",
+                   "A condition is a Boolean expression that evaluates to true or false. Examples include \u003ccode\u003escore \u003e= 50\u003c/code\u003e, \u003ccode\u003ename == \"Admin\"\u003c/code\u003e, and \u003ccode\u003elives \u003e 0\u003c/code\u003e. Every decision depends on evaluating one or more conditions.",
+                   "Real-world decision making is everywhere. A game decides whether a player has won. A form validator checks whether entered text is valid. A login system determines whether credentials match. A grading system assigns letter grades based on numeric scores.",
+                   "A flowchart visually represents decision logic using diamond shapes for conditions and rectangles for actions. Flowcharts help programmers plan code before writing it. The flowchart structure directly translates to if, else if, else, and switch statements.",
+                   "C# provides several conditional statement types. The if statement executes code only if a condition is true. The if...else statement chooses between two paths. The else if statement evaluates multiple conditions. The switch statement is useful when one variable has many possible values."
+               ],
+    "terms":  [
+                  [
+                      "Condition",
+                      "A Boolean expression evaluating to true or false."
+                  ],
+                  [
+                      "Decision",
+                      "Choosing which code to execute based on a condition."
+                  ],
+                  [
+                      "Branch",
+                      "A path of execution chosen by a conditional."
+                  ],
+                  [
+                      "Flowchart",
+                      "A visual representation of program logic using symbols."
+                  ]
+              ],
+    "code":  "// Simple decision\nif (score \u003e= 50)\n{\n    Console.WriteLine(\"You passed!\");\n}\n\n// Choose between two outcomes\nif (age \u003e= 13)\n{\n    Console.WriteLine(\"Welcome to the game.\");\n}\nelse\n{\n    Console.WriteLine(\"You are too young.\");\n}",
+    "tryIt":  "Draw a flowchart for a login system that checks whether a password is correct.",
+    "challenge":  "Describe three everyday situations where a computer needs to make a decision.",
+    "mistakes":  [
+                     "Do not assume a program always follows the same path.",
+                     "Remember that conditions produce Boolean results.",
+                     "Use flowcharts to plan before coding.",
+                     "All code paths should be intentional, not accidental."
+                 ],
+    "summary":  "Conditional statements let programs make decisions. True conditions execute one block; false conditions execute another or skip entirely. Flowcharts plan decision logic.",
+    "quiz":  [
+                 [
+                     "What does a condition produce?",
+                     [
+                         "Text",
+                         "A Boolean value",
+                         "An error"
+                     ],
+                     1,
+                     "Conditions evaluate to true or false."
+                 ],
+                 [
+                     "Why use conditionals?",
+                     [
+                         "Make programs wait",
+                         "Execute different code based on situations",
+                         "Slow programs down"
+                     ],
+                     1,
+                     "Conditionals allow different outcomes based on data."
+                 ],
+                 [
+                     "What is a flowchart?",
+                     [
+                         "Source code",
+                         "A visual logic diagram",
+                         "A compiler message"
+                     ],
+                     1,
+                     "Flowcharts plan decision structures visually."
+                 ],
+                 [
+                     "Which evaluates to true?",
+                     [
+                         "score \u003c 50",
+                         "age == 5 \u0026\u0026 age \u003e 10",
+                         "name == name"
+                     ],
+                     2,
+                     "A variable always equals itself."
+                 ],
+                 [
+                     "What happens if a condition is false?",
+                     [
+                         "Program crashes",
+                         "Else block executes or code skips",
+                         "Variables are deleted"
+                     ],
+                     1,
+                     "False conditions skip the if block or run else."
+                 ]
+             ]
+}

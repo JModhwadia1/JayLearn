@@ -1,0 +1,97 @@
+﻿{
+    "title":  "Looping Through Arrays",
+    "time":  "55 minutes",
+    "objectives":  [
+                       "Use for loops with arrays.",
+                       "Process each element with foreach.",
+                       "Combine loops and arrays.",
+                       "Choose the right loop type."
+                   ],
+    "theory":  [
+                   "Processing every array element is common. A for loop with a counter is perfect for this. \u003ccode\u003efor (int i = 0; i \u003c scores.Length; i++) { }\u003c/code\u003e iterates through each index.",
+                   "The foreach loop is even simpler when you only need the values, not indices. \u003ccode\u003eforeach (int score in scores) { }\u003c/code\u003e automatically provides each element.",
+                   "For loops give you the index, useful when you need to know position or modify elements. Foreach is cleaner when you just want to read each value.",
+                   "Nested loops process multi-dimensional data. Outer loops iterate rows, inner loops iterate columns. This is essential for game grids and matrices.",
+                   "Combining loops and arrays unlocks powerful data processing. Calculating sums, finding averages, searching for values, and transforming data all use loops over arrays."
+               ],
+    "terms":  [
+                  [
+                      "for loop with arrays",
+                      "Using index to access elements."
+                  ],
+                  [
+                      "foreach loop",
+                      "Iterating without explicit index."
+                  ],
+                  [
+                      "Loop variable",
+                      "Current element or index."
+                  ],
+                  [
+                      "Array length",
+                      "Property used in loop condition."
+                  ]
+              ],
+    "code":  "int[] scores = {90, 85, 88, 92, 87};\n\n// For loop: access by index\nint sum = 0;\nfor (int i = 0; i \u003c scores.Length; i++)\n{\n    sum += scores[i];\n}\nConsole.WriteLine($\"Total: {sum}\");\n\n// Foreach loop: direct element access\nforeach (int score in scores)\n{\n    Console.WriteLine(score);\n}\n\n// Find highest\nint highest = scores[0];\nforeach (int score in scores)\n{\n    if (score \u003e highest) highest = score;\n}\nConsole.WriteLine($\"Highest: {highest}\");",
+    "tryIt":  "Create an array and calculate the sum using a for loop.",
+    "challenge":  "Use a foreach loop to find the average of array values.",
+    "mistakes":  [
+                     "For loop condition uses \u003c not \u003c=.",
+                     "Use scores[i], not scores.",
+                     "Foreach creates a new variable each iteration.",
+                     "Initialize accumulator variables before loops."
+                 ],
+    "summary":  "For loops process arrays by index. Foreach loops process by value. Choose based on needs: for when you need index, foreach when you don\u0027t. Both are essential.",
+    "quiz":  [
+                 [
+                     "For loop array syntax?",
+                     [
+                         "for (int i=0; i\u003carray.Length; i++)",
+                         "for (i in array)",
+                         "for (array)"
+                     ],
+                     0,
+                     "For loops use index and .Length."
+                 ],
+                 [
+                     "Foreach syntax?",
+                     [
+                         "foreach (type var in array)",
+                         "foreach array",
+                         "foreach type array"
+                     ],
+                     0,
+                     "Type, variable, in, array."
+                 ],
+                 [
+                     "Sum accumulator start?",
+                     [
+                         "1",
+                         "array[0]",
+                         "0"
+                     ],
+                     2,
+                     "Sums start at 0."
+                 ],
+                 [
+                     "Find highest?",
+                     [
+                         "Min value first",
+                         "First element as initial",
+                         "array[0]"
+                     ],
+                     2,
+                     "Start with first element."
+                 ],
+                 [
+                     "When use foreach?",
+                     [
+                         "Need index",
+                         "Just reading values",
+                         "Modifying array"
+                     ],
+                     1,
+                     "Foreach is for reading without index."
+                 ]
+             ]
+}

@@ -1,0 +1,97 @@
+﻿{
+    "title":  "Useful Collection Methods",
+    "time":  "55 minutes",
+    "objectives":  [
+                       "Use common List methods.",
+                       "Understand method purposes.",
+                       "Apply methods to real problems.",
+                       "Build practical solutions."
+                   ],
+    "theory":  [
+                   "Lists have many useful methods beyond Add and Remove. \u003ccode\u003eAdd()\u003c/code\u003e appends to the end. \u003ccode\u003eRemoveAt(int index)\u003c/code\u003e removes by position. \u003ccode\u003eRemove(T item)\u003c/code\u003e removes by value.",
+                   "\u003ccode\u003eContains(T item)\u003c/code\u003e returns true if the item exists, useful for inventory checks. \u003ccode\u003eIndexOf(T item)\u003c/code\u003e returns the position of an item, or −1 if not found.",
+                   "\u003ccode\u003eClear()\u003c/code\u003e removes all items. \u003ccode\u003eCount\u003c/code\u003e returns the number of items. \u003ccode\u003eInsert(int index, T item)\u003c/code\u003e adds an item at a specific position.",
+                   "Practical examples show method power. Inventory systems check Contains before using an item. Quest systems clear objectives with Clear(). Undo systems use RemoveAt on the most recent action.",
+                   "Mastering these methods makes programs cleaner and more efficient. Instead of manual loops searching for items, Contains does it directly. Professional code uses built-in methods rather than reinventing them."
+               ],
+    "terms":  [
+                  [
+                      "Contains",
+                      "Checks if item exists."
+                  ],
+                  [
+                      "IndexOf",
+                      "Finds item position."
+                  ],
+                  [
+                      "Insert",
+                      "Adds at specific position."
+                  ],
+                  [
+                      "Clear",
+                      "Removes all items."
+                  ]
+              ],
+    "code":  "List\u003cstring\u003e inventory = new List\u003cstring\u003e {\"Sword\", \"Shield\", \"Potion\", \"Key\"};\n\n// Check if item exists\nif (inventory.Contains(\"Key\"))\n{\n    Console.WriteLine(\"Door unlocked!\");\n}\n\n// Find position\nint pos = inventory.IndexOf(\"Potion\");\nif (pos \u003e= 0)\n{\n    Console.WriteLine($\"Potion at position {pos}\");\n}\n\n// Insert at position\ninventory.Insert(0, \"Crown\");\nConsole.WriteLine($\"First item: {inventory[0]}\");\n\n// Remove by position\ninventory.RemoveAt(2);\n\n// Show all items\nforeach (string item in inventory)\n{\n    Console.WriteLine(item);\n}\n\n// Clear inventory\ninventory.Clear();\nConsole.WriteLine($\"Items remaining: {inventory.Count}\");",
+    "tryIt":  "Create a list, use Contains to check for an item, then use IndexOf to find its position.",
+    "challenge":  "Build an inventory where you can add, remove, and search for weapons by name.",
+    "mistakes":  [
+                     "IndexOf returns −1 if not found, not null.",
+                     "Insert shifts other items, does not replace.",
+                     "Remove removes first occurrence only.",
+                     "Clear removes everything permanently in that session."
+                 ],
+    "summary":  "Essential List methods include Add, Remove, Contains, IndexOf, Insert, and Clear. These methods handle common tasks efficiently. Master them for professional code.",
+    "quiz":  [
+                 [
+                     "Contains method?",
+                     [
+                         "Checks if item exists",
+                         "Adds item",
+                         "Removes item"
+                     ],
+                     0,
+                     "Contains returns true/false."
+                 ],
+                 [
+                     "IndexOf not found?",
+                     [
+                         "Returns null",
+                         "Returns -1",
+                         "Throws error"
+                     ],
+                     1,
+                     "IndexOf returns −1 if not found."
+                 ],
+                 [
+                     "Insert at position?",
+                     [
+                         "Replaces item",
+                         "Adds and shifts items",
+                         "Appends only"
+                     ],
+                     1,
+                     "Insert shifts existing items right."
+                 ],
+                 [
+                     "Difference Remove and RemoveAt?",
+                     [
+                         "Same",
+                         "Remove uses value, RemoveAt uses index",
+                         "No difference"
+                     ],
+                     1,
+                     "Remove takes item, RemoveAt takes index."
+                 ],
+                 [
+                     "Clear method?",
+                     [
+                         "Removes one item",
+                         "Removes all items",
+                         "Shows all items"
+                     ],
+                     1,
+                     "Clear empties the entire list."
+                 ]
+             ]
+}

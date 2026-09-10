@@ -1,0 +1,95 @@
+﻿{
+    "title":  "Constructors",
+    "time":  "45 minutes",
+    "objectives":  [
+                       "Explain a constructor.",
+                       "Write a parameterised constructor.",
+                       "Use this to refer to the current object.",
+                       "Initialise objects consistently."
+                   ],
+    "theory":  [
+                   "A constructor is a special member that runs when an object is created. It has the same name as the class and no return type.",
+                   "Constructors establish a valid starting state. A parameterised constructor receives values so each object can be initialised with the data it needs.",
+                   "A class can have multiple constructors with different parameter lists. This is called constructor overloading."
+               ],
+    "terms":  [
+                  [
+                      "Constructor",
+                      "A member that initialises a new object."
+                  ],
+                  [
+                      "Parameter",
+                      "Input supplied to a method or constructor."
+                  ],
+                  [
+                      "this",
+                      "A reference to the current object."
+                  ],
+                  [
+                      "Overloading",
+                      "Multiple members with different parameter lists."
+                  ]
+              ],
+    "code":  "class Enemy\n{\n    public string Name { get; }\n    public int Health { get; }\n\n    public Enemy(string name, int health)\n    {\n        Name = name;\n        Health = health;\n    }\n}\n\nEnemy dragon = new Enemy(\"Dragon\", 250);",
+    "tryIt":  "Create a Weapon class with a constructor that receives a name and damage value.",
+    "challenge":  "Add a second constructor that creates a default weapon with no arguments.",
+    "mistakes":  [
+                     "Constructors do not have a return type.",
+                     "The constructor name must match the class name.",
+                     "Initialise required properties in the constructor.",
+                     "Pass arguments in the correct order and type."
+                 ],
+    "summary":  "Constructors run during object creation and establish the object\u0027s initial valid state.",
+    "quiz":  [
+                 [
+                     "When does a constructor run?",
+                     [
+                         "When an object is created",
+                         "Only after a loop",
+                         "When a file closes"
+                     ],
+                     0,
+                     "Constructors initialise new objects."
+                 ],
+                 [
+                     "Does a constructor have a return type?",
+                     [
+                         "Yes, int",
+                         "No",
+                         "Only string"
+                     ],
+                     1,
+                     "Constructors have no return type."
+                 ],
+                 [
+                     "What must match the class name?",
+                     [
+                         "Constructor name",
+                         "Field value",
+                         "Namespace"
+                     ],
+                     0,
+                     "The constructor has the class name."
+                 ],
+                 [
+                     "What does a parameter provide?",
+                     [
+                         "Input data",
+                         "A colour",
+                         "A comment"
+                     ],
+                     0,
+                     "Parameters supply values to initialise the object."
+                 ],
+                 [
+                     "What is overloading?",
+                     [
+                         "Different parameter lists",
+                         "Deleting a class",
+                         "Changing a file"
+                     ],
+                     0,
+                     "Overloads share a name but accept different parameters."
+                 ]
+             ]
+}

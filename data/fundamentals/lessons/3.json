@@ -1,0 +1,96 @@
+﻿{
+    "title":  "Your First C# Program",
+    "time":  "45 minutes",
+    "objectives":  [
+                       "Recognise a basic console application.",
+                       "Use Console.WriteLine to display output.",
+                       "Explain statements and semicolons.",
+                       "Run and inspect a simple program."
+                   ],
+    "theory":  [
+                   "A console application communicates through text. Modern C# supports top-level statements, allowing a beginner program to begin directly with instructions such as \u003ccode\u003eConsole.WriteLine\u003c/code\u003e.",
+                   "\u003ccode\u003eConsole\u003c/code\u003e represents the console interface. The dot selects one of its members, and \u003ccode\u003eWriteLine\u003c/code\u003e displays information followed by a new line. Parentheses contain the value supplied to the method.",
+                   "A string literal is text enclosed in double quotation marks. The semicolon marks the end of a C# statement. Removing a quotation mark, parenthesis, or semicolon usually produces a syntax error.",
+                   "Programs normally execute statements from top to bottom. Changing statement order changes output order, making a small console program a useful way to observe sequence."
+               ],
+    "terms":  [
+                  [
+                      "Statement",
+                      "A complete instruction in source code."
+                  ],
+                  [
+                      "Method",
+                      "A named block of behaviour that can be called."
+                  ],
+                  [
+                      "String literal",
+                      "Text written inside double quotation marks."
+                  ],
+                  [
+                      "Semicolon",
+                      "Punctuation that terminates many C# statements."
+                  ]
+              ],
+    "code":  "Console.WriteLine(\"JayLearn\");\nConsole.WriteLine(\"C# Fundamentals\");\nConsole.WriteLine(\"Ready to build.\");",
+    "tryIt":  "Display your name, course, and favourite game on separate lines. Rearrange the statements and run the program again.",
+    "challenge":  "Create a five-line welcome screen with a title, divider, learner name, goal, and closing message.",
+    "mistakes":  [
+                     "Use double quotation marks around text.",
+                     "Include both opening and closing parentheses.",
+                     "End each WriteLine statement with a semicolon.",
+                     "Capitalise Console and WriteLine correctly."
+                 ],
+    "summary":  "A console program executes statements in sequence. Console.WriteLine displays a value and then moves output to a new line.",
+    "quiz":  [
+                 [
+                     "Which method displays a line?",
+                     [
+                         "Console.WriteLine",
+                         "Console.ReadOnly",
+                         "String.Print"
+                     ],
+                     0,
+                     "Console.WriteLine displays a value and adds a line break."
+                 ],
+                 [
+                     "What encloses a string literal?",
+                     [
+                         "Double quotation marks",
+                         "Square brackets",
+                         "Semicolons"
+                     ],
+                     0,
+                     "C# string literals use double quotation marks."
+                 ],
+                 [
+                     "What commonly ends a statement?",
+                     [
+                         "A colon",
+                         "A semicolon",
+                         "A hashtag"
+                     ],
+                     1,
+                     "Many C# statements end with a semicolon."
+                 ],
+                 [
+                     "In which order do simple statements run?",
+                     [
+                         "Top to bottom",
+                         "Randomly",
+                         "Bottom to top only"
+                     ],
+                     0,
+                     "Straight-line code normally executes from top to bottom."
+                 ],
+                 [
+                     "Is Console.WriteLine capitalisation important?",
+                     [
+                         "Yes",
+                         "No",
+                         "Only in output"
+                     ],
+                     0,
+                     "C# is case-sensitive, including member names."
+                 ]
+             ]
+}

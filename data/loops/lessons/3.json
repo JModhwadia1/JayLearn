@@ -1,0 +1,97 @@
+﻿{
+    "title":  "The do...while Loop",
+    "time":  "50 minutes",
+    "objectives":  [
+                       "Understand the difference between while and do...while.",
+                       "Write do...while loops with correct syntax.",
+                       "Ensure code executes at least once.",
+                       "Apply do...while to validation and menus."
+                   ],
+    "theory":  [
+                   "A do...while loop is similar to a while loop but checks the condition after executing the body. The syntax is \u003ccode\u003edo { statements } while (condition);\u003c/code\u003e. The body always executes at least once, then the condition is tested.",
+                   "This guarantees minimum execution, which is useful for validation. A program can ask for input, then loop if the input is invalid. The question is asked at least once before checking validity.",
+                   "Menu systems often use do...while loops. Display menu options, read the user\u0027s choice, then loop if they did not choose to exit. The menu appears at least once.",
+                   "The key difference: while tests before entering the loop; do...while tests after. If the condition is initially false, while skips entirely while do...while executes once.",
+                   "Do...while is less common than while and for, but essential for certain patterns. Use it when you must execute code at least once. Otherwise, while is usually clearer."
+               ],
+    "terms":  [
+                  [
+                      "do...while loop",
+                      "Repeats, then checks condition."
+                  ],
+                  [
+                      "Post-test",
+                      "Testing the condition after execution."
+                  ],
+                  [
+                      "Guaranteed execution",
+                      "Code runs at least once."
+                  ],
+                  [
+                      "Menu system",
+                      "A do...while pattern offering choices."
+                  ]
+              ],
+    "code":  "// Input validation with do...while\nint age = 0;\nbool valid = false;\ndo\n{\n    Console.Write(\"Enter your age: \");\n    valid = int.TryParse(Console.ReadLine() ?? \"0\", out age);\n    if (!valid || age \u003c 0 || age \u003e 150)\n    {\n        Console.WriteLine(\"Please enter a valid age.\");\n        valid = false;\n    }\n} while (!valid);\n\nConsole.WriteLine($\"You are {age} years old.\");\n\n// Menu system\nstring choice = \"\";\ndo\n{\n    Console.WriteLine(\"\\n=== Menu ===\" );\n    Console.WriteLine(\"1. Start game\");\n    Console.WriteLine(\"2. Settings\");\n    Console.WriteLine(\"3. Exit\");\n    Console.Write(\"Choose: \");\n    choice = Console.ReadLine() ?? \"\";\n    if (choice == \"1\") Console.WriteLine(\"Starting game...\");\n    else if (choice == \"2\") Console.WriteLine(\"Opening settings...\");\n} while (choice != \"3\");",
+    "tryIt":  "Write a do...while that asks the user to guess a number and repeats until correct.",
+    "challenge":  "Create a menu system with at least three options that loops until the user chooses exit.",
+    "mistakes":  [
+                     "Remember the semicolon after the while condition.",
+                     "Use do...while only when minimum execution is needed.",
+                     "Update loop variables inside the body.",
+                     "Test all menu options."
+                 ],
+    "summary":  "Do...while executes at least once, then checks condition. Ideal for validation and menus. Semicolon terminates the statement.",
+    "quiz":  [
+                 [
+                     "When does the body execute?",
+                     [
+                         "Only if true",
+                         "At least once",
+                         "Never"
+                     ],
+                     1,
+                     "Do...while always executes the body once."
+                 ],
+                 [
+                     "When is condition tested?",
+                     [
+                         "Before entering",
+                         "After executing",
+                         "Never"
+                     ],
+                     1,
+                     "The condition is tested after execution."
+                 ],
+                 [
+                     "Difference from while?",
+                     [
+                         "No difference",
+                         "Body guarantee",
+                         "Loop order"
+                     ],
+                     1,
+                     "Do...while executes first, then tests."
+                 ],
+                 [
+                     "Best use case?",
+                     [
+                         "Known counts",
+                         "Menu validation",
+                         "Arrays"
+                     ],
+                     1,
+                     "Do...while suits validation and menus."
+                 ],
+                 [
+                     "What terminates do...while?",
+                     [
+                         "The do",
+                         "A semicolon",
+                         "The break"
+                     ],
+                     1,
+                     "A semicolon ends the do...while statement."
+                 ]
+             ]
+}

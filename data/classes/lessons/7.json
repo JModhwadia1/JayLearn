@@ -1,0 +1,95 @@
+﻿{
+    "title":  "Polymorphism and Interfaces",
+    "time":  "55 minutes",
+    "objectives":  [
+                       "Explain polymorphism.",
+                       "Override virtual methods.",
+                       "Use a shared base type.",
+                       "Describe an interface contract."
+                   ],
+    "theory":  [
+                   "Polymorphism allows code to work with a common type while each derived object provides its own behaviour.",
+                   "A base method marked \u003ccode\u003evirtual\u003c/code\u003e can be replaced by a derived class using \u003ccode\u003eoverride\u003c/code\u003e.",
+                   "An interface defines a contract that a class promises to provide. Interfaces are useful when unrelated classes share a capability, such as being damageable."
+               ],
+    "terms":  [
+                  [
+                      "Polymorphism",
+                      "One interface with multiple implementations."
+                  ],
+                  [
+                      "virtual",
+                      "A method that derived classes may replace."
+                  ],
+                  [
+                      "override",
+                      "A derived implementation of a virtual member."
+                  ],
+                  [
+                      "Interface",
+                      "A contract describing required members."
+                  ]
+              ],
+    "code":  "interface IDamageable\n{\n    void TakeDamage(int amount);\n}\n\nclass Enemy : IDamageable\n{\n    public int Health { get; private set; } = 100;\n\n    public void TakeDamage(int amount)\n    {\n        Health = Math.Max(0, Health - amount);\n    }\n}\n\nIDamageable target = new Enemy();\ntarget.TakeDamage(25);",
+    "tryIt":  "Create an IDamageable interface and implement it in an Enemy class.",
+    "challenge":  "Create two different IDamageable types and write a method that damages either one through the interface.",
+    "mistakes":  [
+                     "Implement every required interface member.",
+                     "Use override only for an inherited virtual member.",
+                     "Use a shared base type or interface for polymorphism.",
+                     "Keep interfaces focused on capabilities."
+                 ],
+    "summary":  "Polymorphism supports interchangeable implementations, while interfaces define capabilities different classes can share.",
+    "quiz":  [
+                 [
+                     "What does polymorphism allow?",
+                     [
+                         "Different implementations through one type",
+                         "Only one object",
+                         "No methods"
+                     ],
+                     0,
+                     "Polymorphism supports interchangeable implementations."
+                 ],
+                 [
+                     "What does override do?",
+                     [
+                         "Replaces an inherited virtual method",
+                         "Creates an array",
+                         "Makes a field private"
+                     ],
+                     0,
+                     "override supplies a derived implementation."
+                 ],
+                 [
+                     "What is an interface?",
+                     [
+                         "A contract",
+                         "A constructor only",
+                         "A loop"
+                     ],
+                     0,
+                     "Interfaces describe members a class promises to implement."
+                 ],
+                 [
+                     "Can unrelated classes share an interface?",
+                     [
+                         "Yes",
+                         "No",
+                         "Only if static"
+                     ],
+                     0,
+                     "Interfaces can describe a shared capability."
+                 ],
+                 [
+                     "What must an implementing class provide?",
+                     [
+                         "Required interface members",
+                         "Every class in the project",
+                         "Only comments"
+                     ],
+                     0,
+                     "The class must fulfil the interface contract."
+                 ]
+             ]
+}

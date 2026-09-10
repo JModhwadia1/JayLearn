@@ -1,0 +1,97 @@
+﻿{
+    "title":  "The if Statement",
+    "time":  "50 minutes",
+    "objectives":  [
+                       "Write if statements with correct syntax.",
+                       "Use code blocks to group statements.",
+                       "Create Boolean expressions.",
+                       "Build practical programs with single conditions."
+                   ],
+    "theory":  [
+                   "An if statement executes a code block only if its condition is true. The syntax is \u003ccode\u003eif (condition) { statements }\u003c/code\u003e. If the condition is false, the entire block is skipped.",
+                   "The condition goes in parentheses and must evaluate to a Boolean. Comparison operators such as ==, !=, \u003c, \u003e, \u003c=, and \u003e= produce Boolean results. Logical operators such as \u0026\u0026 and || combine conditions.",
+                   "Code blocks group statements using curly braces. The statements inside execute only if the condition is true. Indentation makes nesting visible and readable.",
+                   "A common mistake is confusing assignment \u003ccode\u003e=\u003c/code\u003e with comparison \u003ccode\u003e==\u003c/code\u003e. The condition \u003ccode\u003escore = 50\u003c/code\u003e assigns 50 to score, while \u003ccode\u003escore == 50\u003c/code\u003e tests whether score equals 50.",
+                   "If statements are the foundation of decision-making. A program might check whether a user has entered valid input, whether an item is available, or whether a game has ended. Each check uses an if statement."
+               ],
+    "terms":  [
+                  [
+                      "if statement",
+                      "Executes code if a condition is true."
+                  ],
+                  [
+                      "Condition",
+                      "The Boolean expression tested."
+                  ],
+                  [
+                      "Code block",
+                      "Statements grouped with curly braces."
+                  ],
+                  [
+                      "Indentation",
+                      "Spacing that shows code structure."
+                  ]
+              ],
+    "code":  "int score = 75;\nif (score \u003e= 50)\n{\n    Console.WriteLine(\"Congratulations!\");\n    Console.WriteLine(\"You passed the exam.\");\n}\nConsole.WriteLine(\"Test complete.\");\n\nstring status = \"admin\";\nif (status == \"admin\")\n{\n    Console.WriteLine(\"You have access.\");\n}",
+    "tryIt":  "Write an if statement that checks whether a number is positive and displays a message.",
+    "challenge":  "Create a program that asks for a user\u0027s age and displays a message only if they are 18 or older.",
+    "mistakes":  [
+                     "Use == for comparison, not =.",
+                     "Include curly braces even for single statements.",
+                     "The condition must be Boolean.",
+                     "Ensure statements end with semicolons."
+                 ],
+    "summary":  "If statements execute code blocks only when conditions are true. Use == to compare, not = to assign. Indentation clarifies structure.",
+    "quiz":  [
+                 [
+                     "When does an if block execute?",
+                     [
+                         "Always",
+                         "Only if the condition is true",
+                         "Never"
+                     ],
+                     1,
+                     "An if block runs only when the condition is true."
+                 ],
+                 [
+                     "Correct if syntax?",
+                     [
+                         "if condition { }",
+                         "if (condition) { }",
+                         "if [condition] { }"
+                     ],
+                     1,
+                     "Parentheses and braces are required."
+                 ],
+                 [
+                     "What does score = 50 do in an if?",
+                     [
+                         "Tests equality",
+                         "Assigns 50",
+                         "Creates an error"
+                     ],
+                     1,
+                     "= is assignment, not comparison."
+                 ],
+                 [
+                     "What executes if the condition is false?",
+                     [
+                         "The if block",
+                         "The next line after the if",
+                         "An error"
+                     ],
+                     1,
+                     "False conditions skip the if block entirely."
+                 ],
+                 [
+                     "Why use curly braces?",
+                     [
+                         "Terminate statements",
+                         "Group related statements",
+                         "End the program"
+                     ],
+                     1,
+                     "Braces create code blocks."
+                 ]
+             ]
+}

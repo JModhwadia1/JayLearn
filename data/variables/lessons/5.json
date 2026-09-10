@@ -1,0 +1,97 @@
+﻿{
+    "title":  "Type Conversion",
+    "time":  "55 minutes",
+    "objectives":  [
+                       "Explain implicit and explicit conversion.",
+                       "Use numeric casts.",
+                       "Use Convert methods.",
+                       "Identify truncation and precision loss."
+                   ],
+    "theory":  [
+                   "Type conversion creates a value of one type from another. An implicit conversion occurs automatically when C# considers it safe.",
+                   "An int can be assigned to double implicitly. A potentially lossy conversion such as double to int requires an explicit cast.",
+                   "\u003ccode\u003e(int)9.8\u003c/code\u003e produces 9 by removing the fractional portion; it does not round.",
+                   "Convert methods such as \u003ccode\u003eConvert.ToInt32\u003c/code\u003e provide readable conversions and may use different rounding behaviour.",
+                   "Always consider destination range and precision. Double-to-float conversion may lose significant digits."
+               ],
+    "terms":  [
+                  [
+                      "Implicit conversion",
+                      "An automatic safe conversion."
+                  ],
+                  [
+                      "Explicit conversion",
+                      "A requested potentially lossy conversion."
+                  ],
+                  [
+                      "Cast",
+                      "Parenthesised destination-type conversion syntax."
+                  ],
+                  [
+                      "Precision loss",
+                      "Reduction in represented numeric detail."
+                  ]
+              ],
+    "code":  "int enemies = 12;\ndouble enemyCount = enemies;\ndouble exactDistance = 14.95;\nint wholeDistance = (int)exactDistance;\nint rounded = Convert.ToInt32(14.95);",
+    "tryIt":  "Convert an int to double, cast 27.89 to int, and compare it with Convert.ToInt32.",
+    "challenge":  "Display cast, Convert.ToInt32, and float versions of a temperature.",
+    "mistakes":  [
+                     "A cast to int truncates.",
+                     "Invalid text can cause conversion exceptions.",
+                     "Check range before narrowing.",
+                     "Do not assume precision is preserved."
+                 ],
+    "summary":  "Widening conversions may be implicit. Potentially lossy conversions require casts or conversion methods.",
+    "quiz":  [
+                 [
+                     "Normally implicit conversion?",
+                     [
+                         "int to double",
+                         "double to int",
+                         "string to int"
+                     ],
+                     0,
+                     "int can widen to double."
+                 ],
+                 [
+                     "Explicit cast syntax?",
+                     [
+                         "int.value",
+                         "Convert(value)",
+                         "(int)value"
+                     ],
+                     2,
+                     "A cast places the destination type in parentheses."
+                 ],
+                 [
+                     "What is (int)8.9?",
+                     [
+                         "9",
+                         "8",
+                         "8.9"
+                     ],
+                     1,
+                     "Casting truncates the fraction."
+                 ],
+                 [
+                     "Method converting to double?",
+                     [
+                         "Convert.ToDouble",
+                         "Console.ToDouble",
+                         "Convert.Char"
+                     ],
+                     0,
+                     "Convert.ToDouble creates a compatible double."
+                 ],
+                 [
+                     "Risk converting double to float?",
+                     [
+                         "Becomes text",
+                         "Becomes zero",
+                         "Precision loss"
+                     ],
+                     2,
+                     "Float has fewer significant digits."
+                 ]
+             ]
+}

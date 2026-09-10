@@ -1,0 +1,97 @@
+﻿{
+    "title":  "Variable Scope",
+    "time":  "55 minutes",
+    "objectives":  [
+                       "Understand variable scope.",
+                       "Distinguish local and global scope.",
+                       "Recognise scope boundaries.",
+                       "Pass data between methods."
+                   ],
+    "theory":  [
+                   "Variable scope defines where a variable can be accessed. A variable declared inside a method is local to that method. It cannot be accessed elsewhere.",
+                   "\u003ccode\u003evoid Test() { int score = 100; }\u003c/code\u003e declares score inside Test. The variable exists only within Test\u0027s curly braces. Outside Test, score does not exist.",
+                   "Attempting to use a variable outside its scope causes a compiler error. \u003ccode\u003evoid Main() { Console.WriteLine(score); }\u003c/code\u003e fails because score was declared in a different method.",
+                   "Local scope is intentional protection. Multiple methods can each have a variable named score without confusion. Each is independent. This prevents accidental overwrites and makes code modular.",
+                   "To use data across methods, pass it as a parameter or return it from a method. \u003ccode\u003evoid UpdateScore(int newScore)\u003c/code\u003e receives the score. \u003ccode\u003eint GetScore()\u003c/code\u003e returns it. This controlled data flow is professional practice."
+               ],
+    "terms":  [
+                  [
+                      "Scope",
+                      "The region where a variable can be accessed."
+                  ],
+                  [
+                      "Local variable",
+                      "A variable declared inside a method."
+                  ],
+                  [
+                      "Method scope",
+                      "The boundaries of a method."
+                  ],
+                  [
+                      "Lifetime",
+                      "How long a variable exists."
+                  ]
+              ],
+    "code":  "void Test1()\n{\n    int score = 100;\n    Console.WriteLine(score);\n}\n\nvoid Test2()\n{\n    // score is not accessible here\n    // Uncomment to see error:\n    // Console.WriteLine(score);\n}\n\nvoid DisplayScore(int score)\n{\n    Console.WriteLine($\"Score: {score}\");\n}\n\nint GetScore()\n{\n    return 250;\n}\n\n// In Main:\nint mainScore = 50;\nDisplayScore(mainScore);\nint retrievedScore = GetScore();\nConsole.WriteLine(retrievedScore);",
+    "tryIt":  "Create two methods, each with a local variable named x. Change one and observe the other is unaffected.",
+    "challenge":  "Write a method that calculates and returns a value, then use it in another method.",
+    "mistakes":  [
+                     "Variables declared in a method stay local.",
+                     "Use parameters to pass data between methods.",
+                     "Scope protects variables from unwanted access.",
+                     "Each block has its own scope."
+                 ],
+    "summary":  "Variable scope determines where variables can be accessed. Local variables are confined to their method. Use parameters and return values to share data between methods.",
+    "quiz":  [
+                 [
+                     "Can a variable declared in Method1 be used in Method2?",
+                     [
+                         "Yes, always",
+                         "No, unless passed as parameter",
+                         "Yes, if global"
+                     ],
+                     1,
+                     "Local variables stay local."
+                 ],
+                 [
+                     "What creates a scope?",
+                     [
+                         "A variable name",
+                         "Curly braces {}",
+                         "A method call"
+                     ],
+                     1,
+                     "Curly braces define scope boundaries."
+                 ],
+                 [
+                     "How to use data across methods?",
+                     [
+                         "Share global variables",
+                         "Pass parameters or return values",
+                         "Copy the code"
+                     ],
+                     1,
+                     "Parameters and returns are the proper way."
+                 ],
+                 [
+                     "Can two methods have variables named x?",
+                     [
+                         "No",
+                         "Yes, they are independent",
+                         "Only in the same file"
+                     ],
+                     1,
+                     "Each scope has independent variables."
+                 ],
+                 [
+                     "Scope protects against what?",
+                     [
+                         "Performance issues",
+                         "Accidental variable overwrites",
+                         "Slow compilation"
+                     ],
+                     1,
+                     "Scope prevents naming conflicts and accidents."
+                 ]
+             ]
+}

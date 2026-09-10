@@ -1,0 +1,46 @@
+{
+  "title": "Your Lesson Title Here",
+  "time": "45 minutes",
+  "objectives": [
+    "First objective you want students to achieve",
+    "Second objective",
+    "Third objective",
+    "Fourth objective"
+  ],
+  "theory": [
+    "First paragraph of theory content",
+    "Second paragraph explaining concepts",
+    "Third paragraph with more detail"
+  ],
+  "terms": [
+    ["Term Name", "Definition of the term"],
+    ["Another Term", "What it means"]
+  ],
+  "code": "// Example C# code\nConsole.WriteLine(\"Hello\");",
+  "tryIt": "Task for students to practice this lesson's concept",
+  "challenge": "A harder challenge that extends the lesson",
+  "mistakes": [
+    "Common mistake 1 to avoid",
+    "Common mistake 2 to avoid",
+    "Common mistake 3 to avoid"
+  ],
+  "summary": "Brief summary of what was learned",
+  "quiz": [
+    [
+      "Question text here?",
+      [
+        "Answer option 1",
+        "Answer option 2",
+        "Answer option 3"
+      ],
+      1,
+      "Explanation why option 1 is correct"
+    ],
+    [
+      "Second question?",
+      ["Option A", "Option B", "Option C"],
+      0,
+      "Explanation for this answer"
+    ]
+  ]
+}

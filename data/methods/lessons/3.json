@@ -1,0 +1,97 @@
+﻿{
+    "title":  "Method Parameters",
+    "time":  "50 minutes",
+    "objectives":  [
+                       "Understand what parameters are.",
+                       "Pass values into methods.",
+                       "Use multiple parameters.",
+                       "Apply parameters to real problems."
+                   ],
+    "theory":  [
+                   "Parameters let methods receive information. Without parameters, a method always behaves the same way. With parameters, a method adapts based on input.",
+                   "A method that prints a greeting always prints the same thing. With a parameter, it can greet different names: \u003ccode\u003evoid SayHello(string name) { Console.WriteLine(\"Hello \" + name); }\u003c/code\u003e",
+                   "Parameters go in parentheses after the method name. Each parameter has a type and name. \u003ccode\u003evoid Damage(int amount) { health -= amount; }\u003c/code\u003e takes an integer amount.",
+                   "Multiple parameters are separated by commas. \u003ccode\u003evoid PlayerInfo(string name, int level, int health)\u003c/code\u003e receives three values. When called, provide them in order: \u003ccode\u003ePlayerInfo(\"Alex\", 5, 100);\u003c/code\u003e",
+                   "Parameter names should be clear. \u003ccode\u003evoid Attack(int damageAmount)\u003c/code\u003e is clearer than \u003ccode\u003evoid Attack(int x)\u003c/code\u003e. Good names make code self-documenting."
+               ],
+    "terms":  [
+                  [
+                      "Parameter",
+                      "A variable received by a method."
+                  ],
+                  [
+                      "Argument",
+                      "The value passed to a parameter."
+                  ],
+                  [
+                      "Formal parameter",
+                      "The parameter defined in the method."
+                  ],
+                  [
+                      "Actual argument",
+                      "The value provided when calling the method."
+                  ]
+              ],
+    "code":  "void SayHello(string name)\n{\n    Console.WriteLine($\"Hello, {name}!\");\n}\n\nvoid TakeDamage(int damageAmount)\n{\n    health -= damageAmount;\n    Console.WriteLine($\"You took {damageAmount} damage.\");\n}\n\nvoid DisplayPlayerStats(string playerName, int level, int health)\n{\n    Console.WriteLine($\"Player: {playerName}\");\n    Console.WriteLine($\"Level: {level}\");\n    Console.WriteLine($\"Health: {health}\");\n}\n\n// Calls:\nSayHello(\"Maya\");\nTakeDamage(15);\nDisplayPlayerStats(\"Alex\", 7, 80);",
+    "tryIt":  "Create a method that takes a player name and a score, then displays both.",
+    "challenge":  "Write a method accepting three numbers and displaying their sum.",
+    "mistakes":  [
+                     "Parameter type and name are required.",
+                     "Arguments must be provided in order.",
+                     "Types must match.",
+                     "Use meaningful parameter names."
+                 ],
+    "summary":  "Parameters allow methods to receive information. Provide values in the same order as method definition. Parameters make methods flexible and reusable.",
+    "quiz":  [
+                 [
+                     "Method taking parameters syntax?",
+                     [
+                         "void Method(int x)",
+                         "void Method int x",
+                         "int Method(x)"
+                     ],
+                     0,
+                     "Parameter type and name go in parentheses."
+                 ],
+                 [
+                     "Calling SayHello(string name) with \"Bob\"?",
+                     [
+                         "SayHello(Bob)",
+                         "SayHello(\"Bob\")",
+                         "SayHello Bob"
+                     ],
+                     1,
+                     "String arguments use double quotes."
+                 ],
+                 [
+                     "Multiple parameters?",
+                     [
+                         "Separated by commas",
+                         "Separated by semicolons",
+                         "One per method"
+                     ],
+                     0,
+                     "Commas separate multiple parameters."
+                 ],
+                 [
+                     "What is an argument?",
+                     [
+                         "Parameter name",
+                         "Value passed to parameter",
+                         "Method name"
+                     ],
+                     1,
+                     "Arguments are the values passed to parameters."
+                 ],
+                 [
+                     "Order of arguments?",
+                     [
+                         "Any order",
+                         "Same as definition",
+                         "Reversed order"
+                     ],
+                     1,
+                     "Arguments must be in the defined order."
+                 ]
+             ]
+}
