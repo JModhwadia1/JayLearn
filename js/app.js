@@ -1,3 +1,55 @@
+let csharpCompilerExports = null;
+
+// Initialize WebAssembly compiler runtime
+async function initCompilerEngine() {
+  try {
+    const { getAssemblyExports } = await globalThis.getDotnetRuntime(0);
+    const exports = await getAssemblyExports("JayLearnCompiler.dll");
+    csharpCompilerExports = exports.JayLearnCompiler.WebCompiler;
+    console.log("JayLearn WASM Engine Ready:", csharpCompilerExports.TestExport());
+  } catch (err) {
+    console.error("WASM Compiler failed to initialize:", err);
+  }
+}
+
+// Execute student code using Roslyn engine
+async function executeStudentCSharpCode() {
+  const outputElement = document.getElementById('console-output');
+  const runBtn = document.getElementById('run-code-btn');
+  const editor = document.getElementById('practice-editor');
+
+  if (!editor || !outputElement) return;
+
+  if (!csharpCompilerExports) {
+    outputElement.textContent = "Compiler runtime is still loading... Please wait a moment.";
+    outputElement.className = "text-amber-400 whitespace-pre-wrap";
+    return;
+  }
+
+  outputElement.textContent = "Compiling and running in browser...";
+  outputElement.className = "text-amber-400 whitespace-pre-wrap";
+  if (runBtn) runBtn.disabled = true;
+
+  try {
+    const sourceCode = editor.value;
+    const result = await csharpCompilerExports.CompileAndRun(sourceCode, []);
+
+    if (runBtn) runBtn.disabled = false;
+
+    if (result.includes("Compilation Error:") || result.includes("Compiler exception:") || result.includes("Runtime Error:")) {
+      outputElement.className = "text-rose-400 whitespace-pre-wrap";
+    } else {
+      outputElement.className = "text-emerald-400 whitespace-pre-wrap";
+    }
+
+    outputElement.textContent = result || "[Program executed successfully with no console output]";
+  } catch (err) {
+    if (runBtn) runBtn.disabled = false;
+    outputElement.className = "text-rose-400 whitespace-pre-wrap";
+    outputElement.textContent = "Execution Exception: " + err.message;
+  }
+}
+
 const modules = {};
 
 const pageNames = [
@@ -22,7 +74,6 @@ async function loadModules() {
     const loadedModules = {};
 
     for (const [moduleKey, modulePath] of Object.entries(moduleManifest)) {
-      // Load module metadata
       const moduleMetaResponse = await fetch(`${modulePath}/module.json`);
       if (!moduleMetaResponse.ok) {
         throw new Error(
@@ -32,7 +83,6 @@ async function loadModules() {
 
       const moduleMeta = await moduleMetaResponse.json();
       
-      // Load all lesson files
       const lessons = [];
       let lessonIndex = 1;
       let allLessonsLoaded = false;
@@ -53,7 +103,6 @@ async function loadModules() {
         }
       }
       
-      // Combine metadata with lessons
       loadedModules[moduleKey] = {
         ...moduleMeta,
         lessons: lessons
@@ -90,7 +139,6 @@ const moduleOrder = [
   'classes',
 ];
 const progressStorageKey = 'jaylearn-progress-v1';
-const practiceStorageKey = 'jaylearn-practice-v1';
 const supabaseClient = supabase.createClient(
   'https://xgmaefjrcdtyzxesmmnw.supabase.co',
   'sb_publishable_k3FcY5cJBMB0QX7uyAsHzw_6XKIeLke',
@@ -147,20 +195,6 @@ function saveProgress() {
     userProgressStorageKey(activeUserId),
     JSON.stringify(saved),
   );
-}
-
-function practiceDraftKey() {
-  return `${activeModule}-${activeLesson}`;
-}
-
-function savePracticeDraft() {
-  const editor = document.getElementById('practice-editor');
-  if (!editor) return;
-  const drafts = JSON.parse(localStorage.getItem(practiceStorageKey) || '{}');
-  drafts[practiceDraftKey()] = editor.value;
-  localStorage.setItem(practiceStorageKey, JSON.stringify(drafts));
-  document.getElementById('practice-status').textContent =
-    'Draft saved on this device.';
 }
 
 async function loadRemoteProgress() {
@@ -299,7 +333,7 @@ function showPage(page) {
 
 function isModuleUnlocked(moduleKey) {
   const moduleIndex = moduleOrder.indexOf(moduleKey);
-  if (moduleIndex === 0) return true; // First module always unlocked
+  if (moduleIndex === 0) return true;
   const previousModule = moduleOrder[moduleIndex - 1];
   const prevModuleComplete =
     progress[previousModule].size ===
@@ -401,11 +435,16 @@ function renderLesson() {
       <section class="callout mt-5 rounded-2xl p-5">
         <h3 class="text-xl font-bold text-sky-200">Try It Yourself</h3>
         <p class="mt-3 text-slate-300">${lesson.tryIt}</p>
-        <label class="mt-4 block text-sm font-bold text-white" for="practice-editor">Your answer</label>
-        <textarea id="practice-editor" class="practice-editor mt-2" rows="8" placeholder="Write your C# code or pseudocode here..."></textarea>
+        <label class="mt-4 block text-sm font-bold text-white" for="practice-editor">Your C# Code</label>
+        <textarea id="practice-editor" class="practice-editor mt-2 font-mono w-full bg-slate-950 text-slate-100 p-4 rounded-xl border border-white/10" rows="10" placeholder="Write your C# code here..."></textarea>
         <div class="mt-3 flex flex-wrap items-center gap-3">
-          <button id="save-practice" class="btn-secondary" type="button">Save draft</button>
+          <button id="run-code-btn" class="btn-primary" type="button">▶ Run Code</button>
+          <button id="reset-code-btn" class="btn-secondary" type="button">Reset code</button>
           <span id="practice-status" class="text-sm text-slate-400" aria-live="polite"></span>
+        </div>
+        <div class="mt-4 rounded-2xl border border-white/10 bg-slate-950 p-4 font-mono text-sm">
+          <p class="text-xs text-slate-400 mb-2">Console Output:</p>
+          <pre id="console-output" class="text-emerald-400 whitespace-pre-wrap">Click "Run Code" to compile and run your solution in-browser.</pre>
         </div>
       </section>
       <section class="surface mt-5 rounded-3xl p-6">
@@ -431,12 +470,30 @@ function renderLesson() {
     </article>`;
 
   content.querySelector('code').textContent = lesson.code;
-  const drafts = JSON.parse(localStorage.getItem(practiceStorageKey) || '{}');
+
   const practiceEditor = document.getElementById('practice-editor');
-  practiceEditor.value = drafts[practiceDraftKey()] || '';
-  document
-    .getElementById('save-practice')
-    .addEventListener('click', savePracticeDraft);
+  const defaultBoilerplate = `using System;\n\npublic class Program\n{\n    public static void Main(string[] args)\n    {\n        Console.WriteLine("Hello, World!");\n    }\n}`;
+
+  // Priority: 1. Lesson JSON Starter Code -> 2. Default Boilerplate
+  const starterText = lesson.starterCode || defaultBoilerplate;
+  practiceEditor.value = starterText;
+
+  // Reset editor back to starter template
+  const resetBtn = document.getElementById('reset-code-btn');
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+      practiceEditor.value = starterText;
+      const status = document.getElementById('practice-status');
+      if (status) status.textContent = 'Code reset to starter template.';
+    });
+  }
+
+  // Attach execution listener to the Run Code button
+  const runBtn = document.getElementById('run-code-btn');
+  if (runBtn) {
+    runBtn.addEventListener('click', executeStudentCSharpCode);
+  }
+
   const quizList = content.querySelector('.quiz-list');
   lesson.quiz.forEach((question, qIndex) => {
     const block = document.createElement('div');
@@ -587,4 +644,7 @@ lucide.createIcons();
   renderModule();
   await loadRemoteProgress();
   updateModuleButtons();
+  
+  // Initialize Roslyn WASM Engine
+  await initCompilerEngine();
 })();

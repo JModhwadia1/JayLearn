@@ -33,6 +33,7 @@
               ],
     "code":  "Console.WriteLine(\"My first C# program\");\nConsole.WriteLine(\"Programming turns ideas into instructions.\");",
     "tryIt":  "List three programs you use. For each one, identify an input, a task it performs, and an output.",
+    "starterCode": "using System;\n\npublic class Program\n{\n    public static void Main(string[] args)\n    {\n        // TODO: Print your first message to the console\n        Console.WriteLine(\"Welcome to C# Fundamentals!\");\n    }\n}",
     "challenge":  "Write a three-line console introduction explaining your name, course, and one program you would like to build.",
     "mistakes":  [
                      "Do not assume the computer understands unstated intentions.",

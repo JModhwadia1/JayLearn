@@ -1,97 +1,97 @@
 ﻿{
-    "title":  "Introduction to Variables",
-    "time":  "40 minutes",
-    "objectives":  [
-                       "Explain a variable as a named location used to store a value.",
-                       "Declare variables using a C# type and meaningful name.",
-                       "Assign initial values and update values later.",
-                       "Print stored values with Console.WriteLine."
-                   ],
-    "theory":  [
-                   "A program becomes useful when it can remember information. A game may remember a player\u0027s name, score, health, or level. C# commonly stores these values in \u003cstrong\u003evariables\u003c/strong\u003e.",
-                   "A variable is a named storage location. Instead of repeatedly writing \u003ccode\u003e100\u003c/code\u003e, a program can store it as \u003ccode\u003eplayerHealth\u003c/code\u003e. The name communicates meaning and allows later access or change.",
-                   "C# is strongly typed. \u003ccode\u003eint score;\u003c/code\u003e declares a whole-number variable. \u003ccode\u003escore = 250;\u003c/code\u003e assigns a value. \u003ccode\u003eint score = 250;\u003c/code\u003e combines both steps.",
-                   "Assignment stores the right-hand value in the left-hand variable. Therefore \u003ccode\u003escore = score + 50;\u003c/code\u003e reads the score, adds 50, and stores the new result.",
-                   "Use descriptive camelCase names such as \u003ccode\u003estudentAge\u003c/code\u003e. Names cannot contain spaces, begin with digits, or use reserved C# keywords."
-               ],
-    "terms":  [
-                  [
-                      "Variable",
-                      "A named location that stores a value."
-                  ],
-                  [
-                      "Declaration",
-                      "Specifying a variable\u0027s type and name."
-                  ],
-                  [
-                      "Assignment",
-                      "Storing a value with the equals sign."
-                  ],
-                  [
-                      "Reassignment",
-                      "Replacing a variable\u0027s current value."
-                  ]
-              ],
-    "code":  "string playerName = \"Mira\";\nint score = 250;\ndouble movementSpeed = 4.5;\nbool hasMap = true;\n\nscore = score + 50;\nConsole.WriteLine(score);",
-    "tryIt":  "Create variables for your name, course, year of study, and whether you enjoy programming. Print and update them.",
-    "challenge":  "Create a character profile containing name, level, health, movement speed, and alive status.",
-    "mistakes":  [
-                     "Use double quotation marks around strings.",
-                     "End declarations with semicolons.",
-                     "Do not begin names with numbers.",
-                     "Remember that score and Score differ."
-                 ],
-    "summary":  "Variables give meaningful names to stored values. Declaration supplies type and name; assignment stores or replaces a value.",
-    "quiz":  [
-                 [
-                     "What is a variable?",
-                     [
-                         "A compiler error",
-                         "A named storage location",
-                         "A comment"
-                     ],
-                     1,
-                     "A variable is a named storage location."
-                 ],
-                 [
-                     "Which declares a whole number?",
-                     [
-                         "score int;",
-                         "score = int;",
-                         "int score;"
-                     ],
-                     2,
-                     "int score; declares a whole-number variable."
-                 ],
-                 [
-                     "What does assignment do?",
-                     [
-                         "Stores the right-hand value",
-                         "Prints a value",
-                         "Creates a comment"
-                     ],
-                     0,
-                     "Assignment stores the right-hand value."
-                 ],
-                 [
-                     "Which is the clearest name?",
-                     [
-                         "a",
-                         "studentAge",
-                         "2age"
-                     ],
-                     1,
-                     "studentAge is descriptive and valid camelCase."
-                 ],
-                 [
-                     "After level = 4, what is stored?",
-                     [
-                         "3",
-                         "34",
-                         "4"
-                     ],
-                     2,
-                     "Reassignment replaces the previous value with 4."
-                 ]
-             ]
+    "title": "Introduction to Variables",
+    "time": "40 minutes",
+    "objectives": [
+        "Explain a variable as a named location used to store a value.",
+        "Declare variables using a C# type and meaningful name.",
+        "Assign initial values and update values later.",
+        "Print stored values with Console.WriteLine."
+    ],
+    "theory": [
+        "A program becomes useful when it can remember information. A game may remember a player's name, score, health, or level. C# commonly stores these values in <strong>variables</strong>.",
+        "A variable is a named storage location. Instead of repeatedly writing <code>100</code>, a program can store it as <code>playerHealth</code>. The name communicates meaning and allows later access or change.",
+        "C# is strongly typed. <code>int score;</code> declares a whole-number variable. <code>score = 250;</code> assigns a value. <code>int score = 250;</code> combines both steps.",
+        "Assignment stores the right-hand value in the left-hand variable. Therefore <code>score = score + 50;</code> reads the score, adds 50, and stores the new result.",
+        "Use descriptive camelCase names such as <code>studentAge</code>. Names cannot contain spaces, begin with digits, or use reserved C# keywords."
+    ],
+    "terms": [
+        [
+            "Variable",
+            "A named location that stores a value."
+        ],
+        [
+            "Declaration",
+            "Specifying a variable's type and name."
+        ],
+        [
+            "Assignment",
+            "Storing a value with the equals sign."
+        ],
+        [
+            "Reassignment",
+            "Replacing a variable's current value."
+        ]
+    ],
+    "code": "string playerName = \"Mira\";\nint score = 250;\ndouble movementSpeed = 4.5;\nbool hasMap = true;\n\nscore = score + 50;\nConsole.WriteLine(score);",
+    "tryIt": "Create variables for your name, course, year of study, and whether you enjoy programming. Print and update them.",
+    "starterCode": "using System;\n\npublic class Program\n{\n    public static void Main(string[] args)\n    {\n        // TODO 1: Declare your name and course\n        string name = \"Student\";\n        string course = \"Games Software Engineering\";\n        \n        // TODO 2: Declare yearOfStudy and enjoysProgramming (bool)\n        int yearOfStudy = 1;\n        bool enjoysProgramming = true;\n        \n        // TODO 3: Print your details to the console below\n        Console.WriteLine(\"Hello, \" + name + \"!\");\n        Console.WriteLine(\"Course: \" + course + \" (Year \" + yearOfStudy + \")\");\n        Console.WriteLine(\"Enjoys programming: \" + enjoysProgramming);\n        \n        // TODO 4: Update yearOfStudy to the next year and print it again\n        yearOfStudy = yearOfStudy + 1;\n        Console.WriteLine(\"Next year you will be in Year \" + yearOfStudy + \".\");\n    }\n}",
+    "mistakes": [
+        "Use double quotation marks around strings.",
+        "End declarations with semicolons.",
+        "Do not begin names with numbers.",
+        "Remember that score and Score differ."
+    ],
+    "summary": "Variables give meaningful names to stored values. Declaration supplies type and name; assignment stores or replaces a value.",
+    "quiz": [
+        [
+            "What is a variable?",
+            [
+                "A compiler error",
+                "A named storage location",
+                "A comment"
+            ],
+            1,
+            "A variable is a named storage location."
+        ],
+        [
+            "Which declares a whole number?",
+            [
+                "score int;",
+                "score = int;",
+                "int score;"
+            ],
+            2,
+            "int score; declares a whole-number variable."
+        ],
+        [
+            "What does assignment do?",
+            [
+                "Stores the right-hand value",
+                "Prints a value",
+                "Creates a comment"
+            ],
+            0,
+            "Assignment stores the right-hand value."
+        ],
+        [
+            "Which is the clearest name?",
+            [
+                "a",
+                "studentAge",
+                "2age"
+            ],
+            1,
+            "studentAge is descriptive and valid camelCase."
+        ],
+        [
+            "After level = 4, what is stored?",
+            [
+                "3",
+                "34",
+                "4"
+            ],
+            2,
+            "Reassignment replaces the previous value with 4."
+        ]
+    ]
 }
