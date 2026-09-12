@@ -33,6 +33,7 @@
               ],
     "code":  "Task 1: Display instructions\nTask 2: Collect player details\nTask 3: Validate entered values\nTask 4: Calculate the result\nTask 5: Display a summary",
     "tryIt":  "Decompose a quiz program into at least five tasks, then propose one normal, one boundary, and one invalid test.",
+    "starterCode": "using System;\n\npublic class Program\n{\n    public static void Main(string[] args)\n    {\n        // TODO: Write your code here !\n    }\n}",
     "challenge":  "Create a four-row test table for a game-age checker. Include input, expected output, actual output, and pass/fail.",
     "mistakes":  [
                      "Do not treat the entire application as one indivisible task.",

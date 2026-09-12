@@ -33,6 +33,7 @@
               ],
     "code":  "// Display the learning goal\nConsole.WriteLine(\"Learn C# clearly.\");\n\n/* This comment can\n   span multiple lines. */",
     "tryIt":  "Add one useful single-line comment and one block comment to a three-line console program.",
+     "starterCode": "using System;\n\npublic class Program\n{\n    public static void Main(string[] args)\n    {\n        // TODO: Write your code here !\n    }\n}",
     "challenge":  "Correct a program containing incorrect capitalisation, a missing quote, a missing parenthesis, and a missing semicolon.",
     "mistakes":  [
                      "Do not place required code inside a comment accidentally.",

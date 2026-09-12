@@ -33,6 +33,7 @@
               ],
     "code":  "INPUT length\nINPUT width\nCALCULATE area = length × width\nDISPLAY area",
     "tryIt":  "Write pseudocode for making a hot drink or calculating the total cost of three items.",
+    "starterCode": "using System;\n\npublic class Program\n{\n    public static void Main(string[] args)\n    {\n        // TODO: Write your code here !\n    }\n}",
     "challenge":  "Plan an algorithm that asks for a player\u0027s name and score, adds a 100-point bonus, and displays the updated score.",
     "mistakes":  [
                      "Keep steps in executable order.",

@@ -33,6 +33,7 @@
               ],
     "code":  "// Logic error: multiplication was intended\nint width = 5;\nint height = 4;\nint area = width + height;\nConsole.WriteLine(area);",
     "tryIt":  "Classify a missing semicolon, invalid numeric input, and an incorrect total as syntax, runtime, or logic errors.",
+     "starterCode": "using System;\n\npublic class Program\n{\n    public static void Main(string[] args)\n    {\n        // TODO: Write your code here !\n    }\n}",
     "challenge":  "Debug a small program containing one syntax error and one logic error. Record each symptom, cause, fix, and retest result.",
     "mistakes":  [
                      "Read the first relevant compiler message before later cascading errors.",

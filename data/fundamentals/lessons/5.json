@@ -33,6 +33,7 @@
               ],
     "code":  "Console.Write(\"Enter your name: \");\nstring name = Console.ReadLine() ?? \"\";\nConsole.WriteLine($\"Welcome, {name}!\");",
     "tryIt":  "Create an IPO table for a rectangle-area calculator and for a simple game score bonus.",
+     "starterCode": "using System;\n\npublic class Program\n{\n    public static void Main(string[] args)\n    {\n        // TODO: Write your code here !\n    }\n}",
     "challenge":  "Write a program that asks for a nickname and displays a three-line welcome message.",
     "mistakes":  [
                      "Do not confuse input with the prompt that requests it.",

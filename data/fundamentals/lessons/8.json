@@ -33,6 +33,7 @@
               ],
     "code":  "// Display the application heading\nConsole.WriteLine(\"JAYLEARN STUDY CARD\");\nConsole.WriteLine(\"-------------------\");\n\n// Collect input\nConsole.Write(\"Name: \");\nstring name = Console.ReadLine() ?? \"\";\n\nConsole.Write(\"Programming goal: \");\nstring goal = Console.ReadLine() ?? \"\";\n\n// Display output\nConsole.WriteLine();\nConsole.WriteLine($\"Learner: {name}\");\nConsole.WriteLine($\"Goal: {goal}\");\nConsole.WriteLine(\"Next step: Variables \u0026 Data Types\");",
     "tryIt":  "Type the project yourself, test it, and add one more text question without removing the original fields.",
+    "starterCode": "using System;\n\npublic class Program\n{\n    public static void Main(string[] args)\n    {\n        // TODO: Write your code here !\n    }\n}",
     "challenge":  "Extend the welcome app with a favourite game, a divider, and a final encouragement message. Create three documented test cases.",
     "mistakes":  [
                      "Do not skip the IPO plan.",

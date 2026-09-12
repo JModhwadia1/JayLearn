@@ -33,6 +33,7 @@
               ],
     "code":  "Console.WriteLine(\"JayLearn\");\nConsole.WriteLine(\"C# Fundamentals\");\nConsole.WriteLine(\"Ready to build.\");",
     "tryIt":  "Display your name, course, and favourite game on separate lines. Rearrange the statements and run the program again.",
+     "starterCode": "using System;\n\npublic class Program\n{\n    public static void Main(string[] args)\n    {\n        // TODO: Write your code here !\n    }\n}",
     "challenge":  "Create a five-line welcome screen with a title, divider, learner name, goal, and closing message.",
     "mistakes":  [
                      "Use double quotation marks around text.",
